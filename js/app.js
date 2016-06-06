@@ -9,7 +9,6 @@ angular.module('testApp', [])
       'url':'http://framerjs.com/',
       'image':'img/framer.png',
       'mac':true,
-      'design':true,
       'sketch':true,
       'photoshop':true,
       'micro':true,

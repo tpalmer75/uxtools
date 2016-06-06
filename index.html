@@ -30,14 +30,14 @@
               <th>Name</th>
               <th colspan="4">Platform</th>
               <th>Design</th>
-              <th>Import</th>
+              <th colspan="2">Import</th>
               <th>Animations</th>
               <th>Navigation</th>
               <th>Transitions</th>
               <th>Data</th>
               <th>Code</th>
               <th>Remote Test</th>
-              <th>Sharing</th>
+              <th colspan="4">Sharing</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +59,8 @@
               <td>
                 <div ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch"></div>
               </td>
-              <td><img ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch"/><img ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop"/></td>
+              <td><img ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch"/></td>
+              <td><img ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop"/></td>
               <td>
                 <div ng-include="'img/icons/check.svg'" ng-show="app.micro"></div>
               </td>
@@ -80,9 +81,15 @@
               </td>
               <td>
                 <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web"></div>
+              </td>
+              <td>
                 <div ng-include="'img/icons/desktop-mac.svg'" ng-show="app.shareDesktop" title="Desktop"></div>
                 <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS"></div>
+              </td>
+              <td>
                 <div ng-include="'img/icons/watch.svg'" ng-show="app.shareWatch" title="Apple Watch"></div>
+              </td>
+              <td>
                 <div ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android"></div>
               </td>
             </tr>

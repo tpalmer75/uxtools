@@ -26,14 +26,14 @@ html(ng-app="testApp")
               th Name
               th(colspan="4") Platform
               th Design
-              th Import
+              th(colspan="2") Import
               th Animations
               th Navigation
               th Transitions
               th Data
               th Code
               th Remote Test
-              th Sharing
+              th(colspan="4") Sharing
           tbody
             tr(ng-repeat="app in testObjects | orderBy:'name'")
               td
@@ -53,6 +53,7 @@ html(ng-app="testApp")
                 div(ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch")
               td
                 img(ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch")
+              td
                 img(ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop")
               td
                 div(ng-include="'img/icons/check.svg'" ng-show="app.micro")
@@ -68,8 +69,11 @@ html(ng-app="testApp")
                 div(ng-include="'img/icons/check.svg'" ng-show="app.remote")
               td
                 div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web")
+              td
                 div(ng-include="'img/icons/desktop-mac.svg'" ng-show="app.shareDesktop" title="Desktop")
                 div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS")
+              td
                 div(ng-include="'img/icons/watch.svg'" ng-show="app.shareWatch" title="Apple Watch")
+              td
                 div(ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android")
 
