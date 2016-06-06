@@ -64,7 +64,6 @@ angular.module('testApp', [])
       'transition':true,
       'remote':true,
       'shareWeb':true,
-      'shareWatch':true,
       'shareDesktop':true
     }, { 
       'name':'Flinto',
