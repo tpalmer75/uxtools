@@ -110,7 +110,8 @@ angular.module('testApp', [])
       'web':true,
       'navigation':true,
       'remote':true,
-      'shareWeb':true
+      'shareWeb':true,
+      'sharePdf':true,
     },{ 
       'name':'Lucidchart',
       'url':'https://lucidchart.com/',
@@ -160,5 +161,42 @@ angular.module('testApp', [])
       'transition':true,
       'remote':true,
       'shareIos':true
+    },{ 
+      'name':'Proto.io',
+      'url':'https://proto.io/',
+      'image':'img/proto.io.png',
+      'web':true,
+      'photoshop':true,
+      'sketch':true,
+      'design':true,
+      'dropbox':true,
+      'micro':true,
+      'navigation':true,
+      'transition':true,
+      'remote':true,
+      'shareIos':true,
+      'shareAndroid':true,
+      'shareWeb':true
+    },{ 
+      'name':'Moqups',
+      'url':'https://moqups.com/',
+      'image':'img/moqups.png',
+      'web':true,
+      'design':true,
+      'navigation':true,
+      'remote':true,
+      'shareWeb':true,
+      'sharePdf':true,
+    },{ 
+      'name':'Atomic.io',
+      'url':'https://atomic.io/',
+      'image':'img/atomic.io.png',
+      'web':true,
+      'design':true,
+      'micro':true,
+      'navigation':true,
+      'transition':true,
+      'remote':true,
+      'shareWeb':true,
     }];
 });
