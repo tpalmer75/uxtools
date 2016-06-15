@@ -1,8 +1,8 @@
 /*global angular:true */
 
-angular.module('testApp', [])
+angular.module('uxTools', [])
 
-.controller('testCtrl', function($scope) {
+.controller('prototypeCtrl', function($scope) {
   $scope.testObjects = 
     [{ 
       'name':'Framer',
@@ -25,6 +25,7 @@ angular.module('testApp', [])
       'mac':true,
       'sketch':true,
       'micro':true,
+      'remote':true,
       'navigation':true,
       'transition':true,
       'shareIos':true
@@ -199,4 +200,20 @@ angular.module('testApp', [])
       'remote':true,
       'shareWeb':true,
     }];
+})
+
+.directive('fixedHeaderTable', function($timeout) {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            $timeout(function() {
+              $(element).fixedTblHdrLftCol({
+                scroll: {
+                  height: '100%',
+                  width: '100%'
+                }
+              });
+            }, 0);
+        }
+    };
 });
