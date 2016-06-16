@@ -1,15 +1,14 @@
 /*global angular:true */
 
-angular.module('testApp', [])
+angular.module('uxTools', [])
 
-.controller('testCtrl', function($scope) {
+.controller('prototypeCtrl', function($scope) {
   $scope.testObjects = 
     [{ 
       'name':'Framer',
       'url':'http://framerjs.com/',
       'image':'img/framer.png',
       'mac':true,
-      'design':true,
       'sketch':true,
       'photoshop':true,
       'micro':true,
@@ -26,6 +25,7 @@ angular.module('testApp', [])
       'mac':true,
       'sketch':true,
       'micro':true,
+      'remote':true,
       'navigation':true,
       'transition':true,
       'shareIos':true
@@ -65,7 +65,6 @@ angular.module('testApp', [])
       'transition':true,
       'remote':true,
       'shareWeb':true,
-      'shareWatch':true,
       'shareDesktop':true
     }, { 
       'name':'Flinto',
@@ -112,7 +111,8 @@ angular.module('testApp', [])
       'web':true,
       'navigation':true,
       'remote':true,
-      'shareWeb':true
+      'shareWeb':true,
+      'sharePdf':true,
     },{ 
       'name':'Lucidchart',
       'url':'https://lucidchart.com/',
@@ -162,5 +162,58 @@ angular.module('testApp', [])
       'transition':true,
       'remote':true,
       'shareIos':true
+    },{ 
+      'name':'Proto.io',
+      'url':'https://proto.io/',
+      'image':'img/proto.io.png',
+      'web':true,
+      'photoshop':true,
+      'sketch':true,
+      'design':true,
+      'dropbox':true,
+      'micro':true,
+      'navigation':true,
+      'transition':true,
+      'remote':true,
+      'shareIos':true,
+      'shareAndroid':true,
+      'shareWeb':true
+    },{ 
+      'name':'Moqups',
+      'url':'https://moqups.com/',
+      'image':'img/moqups.png',
+      'web':true,
+      'design':true,
+      'navigation':true,
+      'remote':true,
+      'shareWeb':true,
+      'sharePdf':true,
+    },{ 
+      'name':'Atomic.io',
+      'url':'https://atomic.io/',
+      'image':'img/atomic.io.png',
+      'web':true,
+      'design':true,
+      'micro':true,
+      'navigation':true,
+      'transition':true,
+      'remote':true,
+      'shareWeb':true,
     }];
+})
+
+.directive('fixedHeaderTable', function($timeout) {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            $timeout(function() {
+              $(element).fixedTblHdrLftCol({
+                scroll: {
+                  height: '100%',
+                  width: '100%'
+                }
+              });
+            }, 0);
+        }
+    };
 });
