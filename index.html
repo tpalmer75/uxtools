@@ -19,32 +19,45 @@
             <tr>
               <th></th>
               <th>Name</th>
-              <th colspan="4" class="colspan-4">Platform</th>
+              <th>Platform</th>
               <th>Design</th>
-              <th colspan="2" class="colspan-2">Import</th>
+              <th>Import</th>
               <th>Animations</th>
               <th>Navigation</th>
               <th>Transitions</th>
               <th>Data</th>
               <th>Code</th>
               <th>Remote Test</th>
-              <th colspan="3" class="colspan-3">Sharing</th>
+              <th>Sharing</th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="app in testObjects | orderBy:'name'">
               <td><a ng-href="{{app.url}}" title="{{app.url}}"><img ng-src="{{app.image}}"/></a></td>
               <td> <a ng-href="{{app.url}}" title="{{app.url}}">{{ app.name }}</a></td>
-              <td class="sub-item">
-                <div ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac"></div>
-                <div ng-include="'img/icons/windows.svg'" ng-show="app.windows" title="Windows"></div>
-                <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web"></div>
-                <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS"></div>
+              <td class="colspan-4">
+                <div class="flex-wrapper">
+                  <div class="flex-col">
+                    <div ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac"></div>
+                  </div>
+                  <div class="flex-col">   
+                    <div ng-include="'img/icons/windows.svg'" ng-show="app.windows" title="Windows"></div>
+                  </div>
+                  <div class="flex-col">
+                    <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web"></div>
+                  </div>
+                  <div class="flex-col">
+                    <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS"></div>
+                  </div>
+                </div>
               </td>
               <td>
                 <div ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch"></div>
               </td>
-              <td class="sub-item"><img ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch"/><img ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop"/></td>
+              <td class="colspan-2">
+                <div class="flex-col"><img ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch"/></div>
+                <div class="flex-col"><img ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop"/></div>
+              </td>
               <td>
                 <div ng-include="'img/icons/check.svg'" ng-show="app.micro"></div>
               </td>
@@ -63,10 +76,16 @@
               <td>
                 <div ng-include="'img/icons/check.svg'" ng-show="app.remote"></div>
               </td>
-              <td class="sub-item">
-                <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web"></div>
-                <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS"></div>
-                <div ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android"></div>
+              <td class="colspan-3">
+                <div class="flex-col">
+                  <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web"></div>
+                </div>
+                <div class="flex-col">
+                  <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS"></div>
+                </div>
+                <div class="flex-col">
+                  <div ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android"></div>
+                </div>
               </td>
             </tr>
           </tbody>

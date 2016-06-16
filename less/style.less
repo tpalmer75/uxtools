@@ -1,7 +1,9 @@
 @import "reset.less";
 
 @purple: #684AFF;
-@col-width: 40px;
+@col-width: 35px;
+@midsize: 800px;
+@smallsize: 500px;
 
 html, body {
 	width: 100%;
@@ -16,6 +18,10 @@ h1 {
 	font-family: "Slabo 13px", "Roboto Slab", Georgia, serif;
 	font-size: 32px;
 	margin-bottom: 16px;
+	@media all and (max-width: @smallsize) {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
 }
 
 .page {
@@ -29,7 +35,13 @@ header {
 	padding: 20px 20px 48px;
 	width: 100%;
 	color: white;
+	line-height: 1.2;
 	flex: 1 0 auto;
+	@media all and (max-width: @smallsize) {
+		//height: 100px;
+		font-size: 14px;
+		padding: 10px 10px 15px;
+	}
 	a {
 		color: white;
 	}
@@ -41,13 +53,17 @@ header {
 	display: block;
 	margin: auto;
 }
+
 section {
 	flex: 0 1 auto;
 	height: 100%;
 	padding: 20px;
 	overflow: hidden;
+	@media all and (max-width: @midsize) {
+		padding: 0;
+	}
 	.wrapper {
-		max-width: auto;
+		max-width: 1125px;
 		box-shadow: 0 10px 48px rgba(0,0,0,.35);
 		text-align: center;
 		margin: auto;
@@ -58,6 +74,9 @@ section {
 
 table {
 	width: 100%;
+	@media all and (max-width: @smallsize) {
+		font-size: 14px;
+	}
 	a {
 		text-decoration: none;
 		color: inherit;
@@ -68,45 +87,48 @@ table {
 		text-align: left;
 		border-right: 1px solid #ddd;
 		padding-left: 5px;
-		// width: 80px;
-
-		// &.colspan-4 {
-		// 	width: @col-width*4;
-		// }
-		// &.sub-item {
-		// 	width: @col-width;
-		// }
+		div {
+			display: inline-block;
+		}
+	}
+	td {
+		min-width: 80px;
 		&:first-of-type {
-			border: none;
 			min-width: auto;
 			width: 50px;
-			padding: 0;
+			border-top: none;
+			border-right: none;
+			margin-top: 1px;
 			img {
 				width: 48px
 			}
-		}
-		div {
-			display: inline-block;
 		}
 	}
 	th {
 		background: #ddd;
 		padding-top: 15px;
+		&:first-of-type {
+			width: 50px;
+			height: 51px;
+			background: #ddd;
+		}
 	}
+
 	thead tr {
 		background: #ddd;
+		td:first-of-type {
+			margin: 0;
+		}
 	}
-	tbody {
-		tr {
+
+	tbody tr {
+		td {
+			background: white;
+			border-bottom: 1px solid #ddd;
+		}
+		&:nth-of-type(even) {
 			td {
-				background: white;
-			}
-			&:nth-of-type(even) {
-				td {
-					background: #f0f0f0;
-					border-bottom: 1px solid #ddd;
-					border-top: 1px solid #ddd;
-				}
+				background: #f0f0f0;
 			}
 		}
 	}
@@ -116,8 +138,25 @@ table {
 	svg {
 		fill: #555;
 	}
+	.colspan-2 {
+		min-width: @col-width*2;
+	}
+	.colspan-3 {
+		min-width: @col-width*3+;
+	}
+	.colspan-4 {
+		min-width: @col-width*4;
+	}
+	.flex-wrapper {
+		display: flex;
+	}
+	.flex-col {
+		width: 30px;
+		text-align: center;
+	}
 }
 
 .fTHLC-outer-wrapper {
-	background: #ddd;
+	background: #ddd; // make clone table header full color
 }
+
