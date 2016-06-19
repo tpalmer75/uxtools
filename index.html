@@ -5,93 +5,91 @@
     <link href="https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed:400,700,400italic" rel="stylesheet" type="text/css"/>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
   </head>
-  <div class="page">
-    <header>
-      <div class="wrapper">
-        <h1>All the tools, ever.</h1>
-        <p>Well, not quite. But getting there! See one I missed? <a href="http://www.twitter.com/@_taylorpalmer">@_taylorpalmer</a></p>
-      </div>
-    </header>
-    <section>
-      <div class="wrapper">
-        <table ng-controller="prototypeCtrl" fixed-header-table="fixed-header-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Platform</th>
-              <th>Design</th>
-              <th>Import</th>
-              <th>Animations</th>
-              <th>Navigation</th>
-              <th>Transitions</th>
-              <th>Data</th>
-              <th>Code</th>
-              <th>Remote Test</th>
-              <th>Sharing</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="app in testObjects | orderBy:'name'">
-              <td><a ng-href="{{app.url}}" title="{{app.url}}"><img ng-src="{{app.image}}"/></a></td>
-              <td> <a ng-href="{{app.url}}" title="{{app.url}}">{{ app.name }}</a></td>
-              <td class="colspan-4">
-                <div class="flex-wrapper">
-                  <div class="flex-col">
-                    <div ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac"></div>
-                  </div>
-                  <div class="flex-col">   
-                    <div ng-include="'img/icons/windows.svg'" ng-show="app.windows" title="Windows"></div>
-                  </div>
-                  <div class="flex-col">
-                    <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web"></div>
-                  </div>
-                  <div class="flex-col">
-                    <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS"></div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch"></div>
-              </td>
-              <td class="colspan-2">
-                <div class="flex-col"><img ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch"/></div>
-                <div class="flex-col"><img ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop"/></div>
-              </td>
-              <td>
-                <div ng-include="'img/icons/check.svg'" ng-show="app.micro"></div>
-              </td>
-              <td>
-                <div ng-include="'img/icons/check.svg'" ng-show="app.navigation"></div>
-              </td>
-              <td>
-                <div ng-include="'img/icons/check.svg'" ng-show="app.transition"></div>
-              </td>
-              <td>
-                <div ng-include="'img/icons/check.svg'" ng-show="app.data"></div>
-              </td>
-              <td>
-                <div ng-include="'img/icons/check.svg'" ng-show="app.code"></div>
-              </td>
-              <td>
-                <div ng-include="'img/icons/check.svg'" ng-show="app.remote"></div>
-              </td>
-              <td class="colspan-3">
+  <header>
+    <div class="wrapper">
+      <h1>All the tools, ever.</h1>
+      <p>Well, not quite. But getting there! See one I missed? <a href="http://www.twitter.com/@_taylorpalmer">@_taylorpalmer</a></p>
+    </div>
+  </header>
+  <section>
+    <div class="wrapper">
+      <table ng-controller="prototypeCtrl" fixed-header-table="fixed-header-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Platform</th>
+            <th>Design</th>
+            <th>Import</th>
+            <th>Animations</th>
+            <th>Navigation</th>
+            <th>Transitions</th>
+            <th>Data</th>
+            <th>Code</th>
+            <th>Remote Test</th>
+            <th>Sharing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="app in testObjects | orderBy:'name'">
+            <td><a ng-href="{{app.url}}" title="{{app.url}}"><img ng-src="{{app.image}}"/></a></td>
+            <td> <a ng-href="{{app.url}}" title="{{app.url}}">{{ app.name }}</a></td>
+            <td class="colspan-4">
+              <div class="flex-wrapper">
                 <div class="flex-col">
-                  <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web"></div>
+                  <div ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac"></div>
+                </div>
+                <div class="flex-col">   
+                  <div ng-include="'img/icons/windows.svg'" ng-show="app.windows" title="Windows"></div>
                 </div>
                 <div class="flex-col">
-                  <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS"></div>
+                  <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web"></div>
                 </div>
                 <div class="flex-col">
-                  <div ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android"></div>
+                  <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS"></div>
                 </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+              </div>
+            </td>
+            <td>
+              <div ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch"></div>
+            </td>
+            <td class="colspan-2">
+              <div class="flex-col"><img ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch"/></div>
+              <div class="flex-col"><img ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop"/></div>
+            </td>
+            <td>
+              <div ng-include="'img/icons/check.svg'" ng-show="app.micro"></div>
+            </td>
+            <td>
+              <div ng-include="'img/icons/check.svg'" ng-show="app.navigation"></div>
+            </td>
+            <td>
+              <div ng-include="'img/icons/check.svg'" ng-show="app.transition"></div>
+            </td>
+            <td>
+              <div ng-include="'img/icons/check.svg'" ng-show="app.data"></div>
+            </td>
+            <td>
+              <div ng-include="'img/icons/check.svg'" ng-show="app.code"></div>
+            </td>
+            <td>
+              <div ng-include="'img/icons/check.svg'" ng-show="app.remote"></div>
+            </td>
+            <td class="colspan-3">
+              <div class="flex-col">
+                <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web"></div>
+              </div>
+              <div class="flex-col">
+                <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS"></div>
+              </div>
+              <div class="flex-col">
+                <div ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="js/jquery.fixedTblHdrLftCol-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
@@ -104,5 +102,5 @@
       ga('create', 'UA-78846271-1', 'auto');
       ga('send', 'pageview');
     </script>
-  </div>
+  </section>
 </html>
