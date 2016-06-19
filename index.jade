@@ -3,73 +3,72 @@ html(ng-app="uxTools")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href='https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed:400,700,400italic' rel='stylesheet' type='text/css')
     link(href="css/style.css" rel="stylesheet" type="text/css")
-  .page
-    header
-      .wrapper
-        h1 All the tools, ever.
-        p Well, not quite. But getting there! See one I missed? 
-          a(href="http://www.twitter.com/@_taylorpalmer") @_taylorpalmer
-    section
-      .wrapper
-        table(ng-controller="prototypeCtrl" fixed-header-table)
-          thead
-            tr
-              th
-              th Name
-              th Platform
-              th Design
-              th Import
-              th Animations
-              th Navigation
-              th Transitions
-              th Data
-              th Code
-              th Remote Test
-              th Sharing
-          tbody
-            tr(ng-repeat="app in testObjects | orderBy:'name'")
-              td
-                a(ng-href="{{app.url}}" title="{{app.url}}")
-                  img(ng-src="{{app.image}}")
-              td 
-                a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
-              td.colspan-4
-                div.flex-wrapper
-                  div.flex-col
-                    div(ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac")
-                  div.flex-col    
-                    div(ng-include="'img/icons/windows.svg'" ng-show="app.windows" title="Windows")
-                  div.flex-col
-                    div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web")
-                  div.flex-col
-                    div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch")
-              td.colspan-2
+  header
+    .wrapper
+      h1 All the tools, ever.
+      p Well, not quite. But getting there! See one I missed? 
+        a(href="http://www.twitter.com/@_taylorpalmer") @_taylorpalmer
+  section
+    .wrapper
+      table(ng-controller="prototypeCtrl" fixed-header-table)
+        thead
+          tr
+            th
+            th Name
+            th Platform
+            th Design
+            th Import
+            th Animations
+            th Navigation
+            th Transitions
+            th Data
+            th Code
+            th Remote Test
+            th Sharing
+        tbody
+          tr(ng-repeat="app in testObjects | orderBy:'name'")
+            td
+              a(ng-href="{{app.url}}" title="{{app.url}}")
+                img(ng-src="{{app.image}}")
+            td 
+              a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
+            td.colspan-4
+              div.flex-wrapper
                 div.flex-col
-                  img(ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch")
+                  div(ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac")
+                div.flex-col    
+                  div(ng-include="'img/icons/windows.svg'" ng-show="app.windows" title="Windows")
                 div.flex-col
-                  img(ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.micro")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.navigation")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.transition")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.data")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.code")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.remote")
-              td.colspan-3
+                  div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web")
                 div.flex-col
-                  div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web")
-                div.flex-col
-                  div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS")
-                div.flex-col
-                  div(ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android")
-              //- div(ng-include="'img/icons/desktop-mac.svg'" ng-show="app.shareDesktop" title="Desktop")
+                  div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS")
+            td
+              div(ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch")
+            td.colspan-2
+              div.flex-col
+                img(ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch")
+              div.flex-col
+                img(ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop")
+            td
+              div(ng-include="'img/icons/check.svg'" ng-show="app.micro")
+            td
+              div(ng-include="'img/icons/check.svg'" ng-show="app.navigation")
+            td
+              div(ng-include="'img/icons/check.svg'" ng-show="app.transition")
+            td
+              div(ng-include="'img/icons/check.svg'" ng-show="app.data")
+            td
+              div(ng-include="'img/icons/check.svg'" ng-show="app.code")
+            td
+              div(ng-include="'img/icons/check.svg'" ng-show="app.remote")
+            td.colspan-3
+              div.flex-col
+                div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web")
+              div.flex-col
+                div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS")
+              div.flex-col
+                div(ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android")
+            //- div(ng-include="'img/icons/desktop-mac.svg'" ng-show="app.shareDesktop" title="Desktop")
                 
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
     script(src="js/jquery.fixedTblHdrLftCol-min.js")
