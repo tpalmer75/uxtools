@@ -65,6 +65,7 @@ angular.module('uxTools', [])
       'transition':true,
       'remote':true,
       'shareWeb':true,
+      'shareIos':true,
       'shareDesktop':true
     }, { 
       'name':'Flinto',
