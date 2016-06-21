@@ -4,72 +4,86 @@
 @col-width: 35px;
 @midsize: 800px;
 @smallsize: 500px;
+@header-height-lg: 94px;
+@header-height-sm: 100px;
 
 html, body {
-	width: 100%;
 	height: 100%;
-	overflow: hidden;
 }
 
 body {
 	font-family: "Roboto Condensed", Roboto, Helvetica, Arial, sans-serif;
 }
 
-h1 {
-	font-family: "Slabo 13px", "Roboto Slab", Georgia, serif;
-	font-size: 32px;
-	margin-bottom: 16px;
-	@media all and (max-width: @smallsize) {
-		font-size: 24px;
-		margin-bottom: 10px;
-	}
-}
-
-.page {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-}
-
 header {
-	background: @purple;
-	padding: 20px 20px 48px;
+	height: @header-height-lg;
+	position: absolute;
+	top: 0;
 	width: 100%;
 	color: white;
 	line-height: 1.2;
-	flex: 1 0 auto;
+	padding: 16px 20px 0;
+	background: @purple;
 	@media all and (max-width: @smallsize) {
-		//height: 100px;
-		font-size: 14px;
-		padding: 10px 10px 15px;
+		height: @header-height-sm;
+		padding: 0 10px;
 	}
 	a {
 		color: white;
+		text-decoration: none;
+	}
+	.icon {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+		svg {
+			fill: white;
+		}
+	}
+}
+
+h1 {
+	font-family: "Slabo 13px", "Roboto Slab", Georgia, serif;
+	font-size: 32px;
+	@media all and (max-width: @smallsize) {
 	}
 }
 
 .wrapper {
 	max-width: 1024px;
-	text-align: center;
-	display: block;
+	display: flex;
+	justify-content: space-between;
 	margin: auto;
 }
 
+.scroll-tabs {
+	width: 100%;
+	margin-top: 10px;
+	overflow: scroll;
+	ul {
+		width: 400px;
+		li {
+			display: inline-block;
+			padding: 0 10px 5px;
+			margin-right: 10px;
+			&.active {
+				border-bottom: 4px solid white;
+			}
+		}
+	}
+}
+
 section {
-	flex: 0 1 auto;
 	height: 100%;
-	padding: 20px;
-	overflow: hidden;
+	padding: (@header-height-lg + 20px) 20px 20px;
 	@media all and (max-width: @midsize) {
-		padding: 0 0 80px;
+		padding: @header-height-lg 0 0;
+	}
+	@media all and (max-width: @smallsize) {
+		padding-top: @header-height-sm;
 	}
 	.wrapper {
-		max-width: 1125px;
-		box-shadow: 0 10px 48px rgba(0,0,0,.35);
-		text-align: center;
-		margin: auto;
-		flex: 0 1 auto;
-		height: 100%;
+		box-shadow: 0 20px 56px rgba(0,0,0,.35);
 	}
 }
 

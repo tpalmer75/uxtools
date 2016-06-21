@@ -1,6 +1,18 @@
 /*global angular:true */
 
-angular.module('uxTools', [])
+angular.module('uxTools', ['ui.router'])
+
+.config(function($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+        .state('home', {
+            url: '/',
+            templateUrl : 'templates/prototyping.html',
+            controller: 'prototypingCtrl'
+        });
+})
 
 .controller('prototypeCtrl', function($scope) {
   $scope.testObjects = 
