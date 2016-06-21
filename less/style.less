@@ -61,6 +61,16 @@ h1 {
 	}
 }
 
+h1 {
+	font-family: "Slabo 13px", "Roboto Slab", Georgia, serif;
+	font-size: 32px;
+	margin-bottom: 16px;
+	@media all and (max-width: @smallsize) {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+}
+
 .wrapper {
 	max-width: 1024px;
 	display: flex;
@@ -177,6 +187,9 @@ table {
 	}
 	.colspan-4 {
 		min-width: @col-width*4;
+	}
+	.colspan-5 {
+		min-width: @col-width*5;
 	}
 	.flex-wrapper {
 		display: flex;

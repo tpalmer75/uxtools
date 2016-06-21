@@ -71,13 +71,18 @@ angular.module('uxTools', ['ui.router'])
       'image':'img/marvel.png',
       'web':true,
       'ios':true,
+      'android':true,
       'design':true,
       'sketch':true,
       'navigation':true,
       'transition':true,
       'remote':true,
       'shareWeb':true,
-      'shareDesktop':true
+      'shareIos':true,
+      'shareAndroid':true,
+      'shareDesktop':true,
+      'shareAppleWatch':true,
+      'shareAppleTv':true
     }, { 
       'name':'Flinto',
       'url':'https://www.flinto.com/mac',
@@ -124,7 +129,7 @@ angular.module('uxTools', ['ui.router'])
       'navigation':true,
       'remote':true,
       'shareWeb':true,
-      'sharePdf':true,
+      'sharePdf':true, // keep an eye out
     },{ 
       'name':'Lucidchart',
       'url':'https://lucidchart.com/',
@@ -210,6 +215,20 @@ angular.module('uxTools', ['ui.router'])
       'navigation':true,
       'transition':true,
       'remote':true,
+      'shareWeb':true,
+    },{ 
+      'name':'CanvasFlip',
+      'url':'http://canvasflip.com/',
+      'image':'img/canvasflip.png',
+      'web':true,
+      'sketch':true,
+      'photoImport':true, // keep an eye out
+      'micro':true,
+      'navigation':true,
+      'transition':true,
+      'remote':true,
+      'shareIos':true,
+      'shareAndroid':true,
       'shareWeb':true,
     }];
 })
