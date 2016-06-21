@@ -59,6 +59,7 @@ angular.module('uxTools', [])
       'image':'img/marvel.png',
       'web':true,
       'ios':true,
+      'android':true,
       'design':true,
       'sketch':true,
       'navigation':true,
@@ -66,7 +67,10 @@ angular.module('uxTools', [])
       'remote':true,
       'shareWeb':true,
       'shareIos':true,
-      'shareDesktop':true
+      'shareAndroid':true,
+      'shareDesktop':true,
+      'shareAppleWatch':true,
+      'shareAppleTv':true
     }, { 
       'name':'Flinto',
       'url':'https://www.flinto.com/mac',

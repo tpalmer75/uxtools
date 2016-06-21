@@ -34,7 +34,7 @@
           <tr ng-repeat="app in testObjects | orderBy:'name'">
             <td><a ng-href="{{app.url}}" title="{{app.url}}"><img ng-src="{{app.image}}"/></a></td>
             <td> <a ng-href="{{app.url}}" title="{{app.url}}">{{ app.name }}</a></td>
-            <td class="colspan-4">
+            <td class="colspan-5">
               <div class="flex-wrapper">
                 <div class="flex-col">
                   <div ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac"></div>
@@ -47,6 +47,9 @@
                 </div>
                 <div class="flex-col">
                   <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS"></div>
+                </div>
+                <div class="flex-col">
+                  <div ng-include="'img/icons/android.svg'" ng-show="app.android" title="Android"></div>
                 </div>
               </div>
             </td>
@@ -75,7 +78,7 @@
             <td>
               <div ng-include="'img/icons/check.svg'" ng-show="app.remote"></div>
             </td>
-            <td class="colspan-3">
+            <td class="colspan-5">
               <div class="flex-col">
                 <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web"></div>
               </div>
@@ -84,6 +87,12 @@
               </div>
               <div class="flex-col">
                 <div ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android"></div>
+              </div>
+              <div class="flex-col">
+                <div ng-include="'img/icons/watch.svg'" ng-show="app.shareAppleWatch" title="Apple Watch"></div>
+              </div>
+              <div class="flex-col">
+                <div ng-include="'img/icons/appletv.svg'" ng-show="app.shareAppleTv" title="Apple TV"></div>
               </div>
             </td>
           </tr>
