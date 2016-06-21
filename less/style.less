@@ -4,8 +4,8 @@
 @col-width: 35px;
 @midsize: 800px;
 @smallsize: 500px;
-@header-height-lg: 94px;
-@header-height-sm: 100px;
+@header-height-lg: 88px;
+@header-height-sm: 74px;
 
 html, body {
 	height: 100%;
@@ -22,15 +22,26 @@ header {
 	width: 100%;
 	color: white;
 	line-height: 1.2;
-	padding: 16px 20px 0;
+	//padding: 16px 20px 0;
 	background: @purple;
 	@media all and (max-width: @smallsize) {
 		height: @header-height-sm;
-		padding: 0 10px;
+		//padding: 0 10px;
+	}
+	.top-wrapper {
+		padding: 10px 10px 0;
+		@media all and (max-width: @smallsize) {
+			padding-top: 5px;
+		}
 	}
 	a {
 		color: white;
 		text-decoration: none;
+	}
+	span {
+		@media all and (max-width: @smallsize) {
+			display: none;
+		}
 	}
 	.icon {
 		display: inline-block;
@@ -46,6 +57,7 @@ h1 {
 	font-family: "Slabo 13px", "Roboto Slab", Georgia, serif;
 	font-size: 32px;
 	@media all and (max-width: @smallsize) {
+		font-size: 24px;
 	}
 }
 
@@ -53,6 +65,7 @@ h1 {
 	max-width: 1024px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin: auto;
 }
 
