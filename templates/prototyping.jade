@@ -20,7 +20,7 @@ table(fixed-header-table)
           img(ng-src="{{app.image}}")
       td 
         a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
-      td.colspan-4
+      td.colspan-5
         div.flex-wrapper
           div.flex-col
             div(ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac")
@@ -30,6 +30,8 @@ table(fixed-header-table)
             div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web")
           div.flex-col
             div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS")
+          div.flex-col
+            div(ng-include="'img/icons/android.svg'" ng-show="app.android" title="Android")
       td
         div(ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch")
       td.colspan-2
@@ -49,11 +51,15 @@ table(fixed-header-table)
         div(ng-include="'img/icons/check.svg'" ng-show="app.code")
       td
         div(ng-include="'img/icons/check.svg'" ng-show="app.remote")
-      td.colspan-3
+      td.colspan-5
         div.flex-col
           div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web")
         div.flex-col
           div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS")
         div.flex-col
           div(ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android")
+        div.flex-col
+          div(ng-include="'img/icons/watch.svg'" ng-show="app.shareAppleWatch" title="Apple Watch")
+        div.flex-col
+          div(ng-include="'img/icons/appletv.svg'" ng-show="app.shareAppleTv" title="Apple TV")
       //- div(ng-include="'img/icons/desktop-mac.svg'" ng-show="app.shareDesktop" title="Desktop")

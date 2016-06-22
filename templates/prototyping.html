@@ -20,56 +20,65 @@
     <tr ng-repeat="app in testObjects | orderBy:'name'">
       <td><a ng-href="{{app.url}}" title="{{app.url}}"><img ng-src="{{app.image}}"/></a></td>
       <td> <a ng-href="{{app.url}}" title="{{app.url}}">{{ app.name }}</a></td>
-      <td class="colspan-4">
+      <td class="colspan-5">
         <div class="flex-wrapper">
           <div class="flex-col">
-            <div ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac"></div>
+            <div ng-include="'img/icons/apple.svg'" ng-if="app.mac" title="Mac"></div>
           </div>
           <div class="flex-col">   
-            <div ng-include="'img/icons/windows.svg'" ng-show="app.windows" title="Windows"></div>
+            <div ng-include="'img/icons/windows.svg'" ng-if="app.windows" title="Windows"></div>
           </div>
           <div class="flex-col">
-            <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web"></div>
+            <div ng-include="'img/icons/cloud-outline.svg'" ng-if="app.web" title="Web"></div>
           </div>
           <div class="flex-col">
-            <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS"></div>
+            <div ng-include="'img/icons/apple-ios.svg'" ng-if="app.ios" title="iOS"></div>
+          </div>
+          <div class="flex-col">
+            <div ng-include="'img/icons/android.svg'" ng-if="app.android" title="Android"></div>
           </div>
         </div>
       </td>
       <td>
-        <div ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch"></div>
+        <div ng-include="'img/icons/check.svg'" ng-if="app.design" title="Design from scratch"></div>
       </td>
       <td class="colspan-2">
-        <div class="flex-col"><img ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch"/></div>
-        <div class="flex-col"><img ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop"/></div>
+        <div class="flex-col"><img ng-src="img/icons/sketch.png" ng-if="app.sketch" title="Sketch"/></div>
+        <div class="flex-col"><img ng-src="img/icons/photoshop.png" ng-if="app.photoshop" title="Photoshop"/></div>
       </td>
       <td>
-        <div ng-include="'img/icons/check.svg'" ng-show="app.micro"></div>
+        <div ng-include="'img/icons/check.svg'" ng-if="app.micro"></div>
       </td>
       <td>
-        <div ng-include="'img/icons/check.svg'" ng-show="app.navigation"></div>
+        <div ng-include="'img/icons/check.svg'" ng-if="app.navigation"></div>
       </td>
       <td>
-        <div ng-include="'img/icons/check.svg'" ng-show="app.transition"></div>
+        <div ng-include="'img/icons/check.svg'" ng-if="app.transition"></div>
       </td>
       <td>
-        <div ng-include="'img/icons/check.svg'" ng-show="app.data"></div>
+        <div ng-include="'img/icons/check.svg'" ng-if="app.data"></div>
       </td>
       <td>
-        <div ng-include="'img/icons/check.svg'" ng-show="app.code"></div>
+        <div ng-include="'img/icons/check.svg'" ng-if="app.code"></div>
       </td>
       <td>
-        <div ng-include="'img/icons/check.svg'" ng-show="app.remote"></div>
+        <div ng-include="'img/icons/check.svg'" ng-if="app.remote"></div>
       </td>
-      <td class="colspan-3">
+      <td class="colspan-5">
         <div class="flex-col">
-          <div ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web"></div>
+          <div ng-include="'img/icons/cloud-outline.svg'" ng-if="app.shareWeb" title="Web"></div>
         </div>
         <div class="flex-col">
-          <div ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS"></div>
+          <div ng-include="'img/icons/apple-ios.svg'" ng-if="app.shareIos" title="iOS"></div>
         </div>
         <div class="flex-col">
-          <div ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android"></div>
+          <div ng-include="'img/icons/android.svg'" ng-if="app.shareAndroid" title="Android"></div>
+        </div>
+        <div class="flex-col">
+          <div ng-include="'img/icons/watch.svg'" ng-if="app.shareAppleWatch" title="Apple Watch"></div>
+        </div>
+        <div class="flex-col">
+          <div ng-include="'img/icons/appletv.svg'" ng-if="app.shareAppleTv" title="Apple TV"></div>
         </div>
       </td>
     </tr>

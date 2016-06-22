@@ -4,22 +4,37 @@ angular.module('uxTools', ['ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/');
 
-    $stateProvider
-        .state('home', {
-            url: '/',
-            templateUrl : 'templates/prototyping.html',
-            controller: 'prototypingCtrl'
-        });
+  $stateProvider
+    .state('prototyping', {
+      url: '/',
+      templateUrl : '../templates/prototyping.html',
+      controller: 'prototypingCtrl'
+    })
+    .state('hand-off', {
+      url: '/hand-off',
+      templateUrl : '../templates/hand-off.html',
+      controller: 'prototypingCtrl'
+    })
+    .state('monitoring', {
+      url: '/monitoring',
+      templateUrl : '../templates/monitoring.html',
+      controller: 'prototypingCtrl'
+    })
+    .state('usability-testing', {
+      url: '/usability-testing',
+      templateUrl : '../templates/usability-testing.html',
+      controller: 'prototypingCtrl'
+    });
 })
 
-.controller('prototypeCtrl', function($scope) {
+.controller('prototypingCtrl', function($scope) {
   $scope.testObjects = 
     [{ 
       'name':'Framer',
       'url':'http://framerjs.com/',
-      'image':'img/framer.png',
+      'image':'img/prototyping/framer.png',
       'mac':true,
       'sketch':true,
       'photoshop':true,
@@ -33,7 +48,7 @@ angular.module('uxTools', ['ui.router'])
     }, { 
       'name':'Principle',
       'url':'http://principleformac.com/',
-      'image':'img/principle.png',
+      'image':'img/prototyping/principle.png',
       'mac':true,
       'sketch':true,
       'micro':true,
@@ -44,7 +59,7 @@ angular.module('uxTools', ['ui.router'])
     }, { 
       'name':'UX Pin',
       'url':'https://uxpin.com/',
-      'image':'img/uxpin.png',
+      'image':'img/prototyping/uxpin.png',
       'web':true,
       'design':true,
       'sketch':true,
@@ -56,7 +71,7 @@ angular.module('uxTools', ['ui.router'])
     }, { 
       'name':'InVision',
       'url':'https://www.invisionapp.com/',
-      'image':'img/invision.png',
+      'image':'img/prototyping/invision.png',
       'web':true,
       'sketch':true,
       'photoshop':true,
@@ -68,7 +83,7 @@ angular.module('uxTools', ['ui.router'])
     }, { 
       'name':'Marvel',
       'url':'https://marvelapp.com/',
-      'image':'img/marvel.png',
+      'image':'img/prototyping/marvel.png',
       'web':true,
       'ios':true,
       'android':true,
@@ -86,7 +101,7 @@ angular.module('uxTools', ['ui.router'])
     }, { 
       'name':'Flinto',
       'url':'https://www.flinto.com/mac',
-      'image':'img/flinto.png',
+      'image':'img/prototyping/flinto.png',
       'web':true,
       'ios':true,
       'micro':true,
@@ -100,7 +115,7 @@ angular.module('uxTools', ['ui.router'])
     }, { 
       'name':'Flinto Lite',
       'url':'https://www.flinto.com/lite',
-      'image':'img/flinto-lite.png',
+      'image':'img/prototyping/flinto-lite.png',
       'web':true,
       'ios':true,
       'navigation':true,
@@ -111,7 +126,7 @@ angular.module('uxTools', ['ui.router'])
     }, { 
       'name':'Axure',
       'url':'http://www.axure.com/',
-      'image':'img/axure.png',
+      'image':'img/prototyping/axure.png',
       'mac':true,
       'windows':true,
       'design':true,
@@ -123,7 +138,7 @@ angular.module('uxTools', ['ui.router'])
     },{ 
       'name':'Basalmiq',
       'url':'https://balsamiq.com/',
-      'image':'img/basalmiq.png',
+      'image':'img/prototyping/basalmiq.png',
       'design':true,
       'web':true,
       'navigation':true,
@@ -133,7 +148,7 @@ angular.module('uxTools', ['ui.router'])
     },{ 
       'name':'Lucidchart',
       'url':'https://lucidchart.com/',
-      'image':'img/lucidchart.png',
+      'image':'img/prototyping/lucidchart.png',
       'design':true,
       'web':true,
       'navigation':true,
@@ -142,7 +157,7 @@ angular.module('uxTools', ['ui.router'])
     },{ 
       'name':'Adobe XD',
       'url':'http://www.adobe.com/products/experience-design',
-      'image':'img/adobe-xd.png',
+      'image':'img/prototyping/adobe-xd.png',
       'design':true,
       'mac':true,
       'windows':true,
@@ -151,7 +166,7 @@ angular.module('uxTools', ['ui.router'])
     }, { 
       'name':'Craft',
       'url':'http://www.adobe.com/products/experience-design',
-      'image':'img/craft.png',
+      'image':'img/prototyping/craft.png',
       'mac':true,
       'sketch':true,
       'navigation':true,
@@ -160,7 +175,7 @@ angular.module('uxTools', ['ui.router'])
     },{ 
       'name':'Pixate',
       'url':'http://www.pixate.com/',
-      'image':'img/pixate.png',
+      'image':'img/prototyping/pixate.png',
       'mac':true,
       'sketch':true,
       'micro':true,
@@ -172,7 +187,7 @@ angular.module('uxTools', ['ui.router'])
     },{ 
       'name':'Origami',
       'url':'https://facebook.github.io/origami/',
-      'image':'img/origami.png',
+      'image':'img/prototyping/origami.png',
       'mac':true,
       'micro':true,
       'navigation':true,
@@ -182,7 +197,7 @@ angular.module('uxTools', ['ui.router'])
     },{ 
       'name':'Proto.io',
       'url':'https://proto.io/',
-      'image':'img/proto.io.png',
+      'image':'img/prototyping/proto.io.png',
       'web':true,
       'photoshop':true,
       'sketch':true,
@@ -198,7 +213,7 @@ angular.module('uxTools', ['ui.router'])
     },{ 
       'name':'Moqups',
       'url':'https://moqups.com/',
-      'image':'img/moqups.png',
+      'image':'img/prototyping/moqups.png',
       'web':true,
       'design':true,
       'navigation':true,
@@ -208,7 +223,7 @@ angular.module('uxTools', ['ui.router'])
     },{ 
       'name':'Atomic.io',
       'url':'https://atomic.io/',
-      'image':'img/atomic.io.png',
+      'image':'img/prototyping/atomic.io.png',
       'web':true,
       'design':true,
       'micro':true,
@@ -219,7 +234,7 @@ angular.module('uxTools', ['ui.router'])
     },{ 
       'name':'CanvasFlip',
       'url':'http://canvasflip.com/',
-      'image':'img/canvasflip.png',
+      'image':'img/prototyping/canvasflip.png',
       'web':true,
       'sketch':true,
       'photoImport':true, // keep an eye out
