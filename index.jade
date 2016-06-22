@@ -3,88 +3,39 @@ html(ng-app="uxTools")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href='https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed:400,700,400italic' rel='stylesheet' type='text/css')
     link(href="css/style.css" rel="stylesheet" type="text/css")
-  header
-    .wrapper
-      h1 All the tools, ever.
-      p Well, not quite. But getting there! See one I missed? 
-        a(href="http://www.twitter.com/@_taylorpalmer") @_taylorpalmer
-  section
-    .wrapper
-      table(ng-controller="prototypeCtrl" fixed-header-table)
-        thead
-          tr
-            th
-            th Name
-            th Platform
-            th Design
-            th Import
-            th Animations
-            th Navigation
-            th Transitions
-            th Data
-            th Code
-            th Remote Test
-            th Sharing
-        tbody
-          tr(ng-repeat="app in testObjects | orderBy:'name'")
-            td
-              a(ng-href="{{app.url}}" title="{{app.url}}")
-                img(ng-src="{{app.image}}")
-            td 
-              a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
-            td.colspan-5
-              div.flex-wrapper
-                div.flex-col
-                  div(ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac")
-                div.flex-col    
-                  div(ng-include="'img/icons/windows.svg'" ng-show="app.windows" title="Windows")
-                div.flex-col
-                  div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web")
-                div.flex-col
-                  div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS")
-                div.flex-col
-                  div(ng-include="'img/icons/android.svg'" ng-show="app.android" title="Android")
-            td
-              div(ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch")
-            td.colspan-2
-              div.flex-col
-                img(ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch")
-              div.flex-col
-                img(ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop")
-            td
-              div(ng-include="'img/icons/check.svg'" ng-show="app.micro")
-            td
-              div(ng-include="'img/icons/check.svg'" ng-show="app.navigation")
-            td
-              div(ng-include="'img/icons/check.svg'" ng-show="app.transition")
-            td
-              div(ng-include="'img/icons/check.svg'" ng-show="app.data")
-            td
-              div(ng-include="'img/icons/check.svg'" ng-show="app.code")
-            td
-              div(ng-include="'img/icons/check.svg'" ng-show="app.remote")
-            td.colspan-5
-              div.flex-col
-                div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web")
-              div.flex-col
-                div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS")
-              div.flex-col
-                div(ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android")
-              div.flex-col
-                div(ng-include="'img/icons/watch.svg'" ng-show="app.shareAppleWatch" title="Apple Watch")
-              div.flex-col
-                div(ng-include="'img/icons/appletv.svg'" ng-show="app.shareAppleTv" title="Apple TV")
-            //- div(ng-include="'img/icons/desktop-mac.svg'" ng-show="app.shareDesktop" title="Desktop")
+  body
+    header
+      h1 uxtools
+      .wrapper.top-wrapper
+        img#logo(src="img/uxtools-logo.svg" alt="UX Tools")
+        a(href="http://www.twitter.com/@_taylorpalmer") 
+          div(class="icon" ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter!")
+          span @_taylorpalmer
+      .wrapper
+        .scroll-tabs
+          ul
+            li(ui-sref-active="active")
+              a(ui-sref="prototyping") Prototyping
+            li(ui-sref-active="active")
+              a(ui-sref="hand-off") Hand-Off
+            li(ui-sref-active="active")
+              a(ui-sref="monitoring") Monitoring
+            li(ui-sref-active="active")
+              a(ui-sref="usability-testing") Usability Testing
+    section
+      .wrapper(ui-view="")
+        //- injected Angular Views
                 
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
     script(src="js/jquery.fixedTblHdrLftCol-min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
     script(src="js/app.js")
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-78846271-1', 'auto');
-      ga('send', 'pageview');
+    //- script.
+    //-   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    //-   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    //-   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    //-   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    //-   ga('create', 'UA-78846271-1', 'auto');
+    //-   ga('send', 'pageview');
 
