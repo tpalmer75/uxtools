@@ -11,7 +11,6 @@ table(fixed-header-table)
       th Transitions
       th Data
       th Code
-      th Remote Test
       th Sharing
   tbody
     tr(ng-repeat="app in testObjects | orderBy:'name'")
@@ -49,8 +48,6 @@ table(fixed-header-table)
         div(ng-include="'img/icons/check.svg'" ng-show="app.data")
       td
         div(ng-include="'img/icons/check.svg'" ng-show="app.code")
-      td
-        div(ng-include="'img/icons/check.svg'" ng-show="app.remote")
       td.colspan-5
         div.flex-col
           div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web")

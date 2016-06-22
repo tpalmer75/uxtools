@@ -41,7 +41,6 @@ angular.module('uxTools', ['ui.router'])
       'micro':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'data':true,
       'code':true,
       'shareWeb':true
@@ -52,7 +51,6 @@ angular.module('uxTools', ['ui.router'])
       'mac':true,
       'sketch':true,
       'micro':true,
-      'remote':true,
       'navigation':true,
       'transition':true,
       'shareIos':true
@@ -66,7 +64,6 @@ angular.module('uxTools', ['ui.router'])
       'photoshop':true,
       'micro':true,
       'navigation':true,
-      'remote':true,
       'shareWeb':true
     }, { 
       'name':'InVision',
@@ -77,7 +74,6 @@ angular.module('uxTools', ['ui.router'])
       'photoshop':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'shareWeb':true,
       'fixedHeader':true
     }, { 
@@ -91,7 +87,6 @@ angular.module('uxTools', ['ui.router'])
       'sketch':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'shareWeb':true,
       'shareIos':true,
       'shareAndroid':true,
@@ -109,7 +104,6 @@ angular.module('uxTools', ['ui.router'])
       'sketch':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'shareIos':true,
       'fixedHeader':true
     }, { 
@@ -133,7 +127,6 @@ angular.module('uxTools', ['ui.router'])
       'micro':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'shareWeb':true
     },{ 
       'name':'Basalmiq',
@@ -142,7 +135,6 @@ angular.module('uxTools', ['ui.router'])
       'design':true,
       'web':true,
       'navigation':true,
-      'remote':true,
       'shareWeb':true,
       'sharePdf':true, // keep an eye out
     },{ 
@@ -152,7 +144,6 @@ angular.module('uxTools', ['ui.router'])
       'design':true,
       'web':true,
       'navigation':true,
-      'remote':true,
       'shareWeb':true
     },{ 
       'name':'Adobe XD',
@@ -181,7 +172,6 @@ angular.module('uxTools', ['ui.router'])
       'micro':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'shareIos':true,
       'shareAndroid':true
     },{ 
@@ -192,7 +182,6 @@ angular.module('uxTools', ['ui.router'])
       'micro':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'shareIos':true
     },{ 
       'name':'Proto.io',
@@ -206,7 +195,6 @@ angular.module('uxTools', ['ui.router'])
       'micro':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'shareIos':true,
       'shareAndroid':true,
       'shareWeb':true
@@ -217,7 +205,6 @@ angular.module('uxTools', ['ui.router'])
       'web':true,
       'design':true,
       'navigation':true,
-      'remote':true,
       'shareWeb':true,
       'sharePdf':true,
     },{ 
@@ -229,7 +216,6 @@ angular.module('uxTools', ['ui.router'])
       'micro':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'shareWeb':true,
     },{ 
       'name':'CanvasFlip',
@@ -241,7 +227,6 @@ angular.module('uxTools', ['ui.router'])
       'micro':true,
       'navigation':true,
       'transition':true,
-      'remote':true,
       'shareIos':true,
       'shareAndroid':true,
       'shareWeb':true,
