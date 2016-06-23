@@ -230,6 +230,19 @@ angular.module('uxTools', ['ui.router'])
       'shareIos':true,
       'shareAndroid':true,
       'shareWeb':true,
+    },{ 
+      'name':'iRise',
+      'url':'https://www.irise.com/',
+      'image':'img/prototyping/irise.png',
+      'design':true,
+      'web':true,
+      'micro':true,
+      'navigation':true,
+      'transition':true,
+      'shareIos':true,
+      'shareWeb':true,
+      'shareWindows':true,
+      'shareMac':true
     }];
 })
 
