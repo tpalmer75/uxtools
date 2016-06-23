@@ -240,6 +240,7 @@ angular.module('uxTools', ['ui.router'])
       'windows':true,
       'mac':true,
       'micro':true,
+      'data':true,
       'navigation':true,
       'transition':true,
       'shareIos':true,
