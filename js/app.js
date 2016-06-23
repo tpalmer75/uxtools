@@ -53,7 +53,8 @@ angular.module('uxTools', ['ui.router'])
       'micro':true,
       'navigation':true,
       'transition':true,
-      'shareIos':true
+      'shareIos':true,
+      'shareMac':true
     }, { 
       'name':'UX Pin',
       'url':'https://uxpin.com/',
