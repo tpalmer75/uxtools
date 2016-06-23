@@ -237,6 +237,8 @@ angular.module('uxTools', ['ui.router'])
       'image':'img/prototyping/irise.png',
       'design':true,
       'web':true,
+      'windows':true,
+      'mac':true,
       'micro':true,
       'navigation':true,
       'transition':true,

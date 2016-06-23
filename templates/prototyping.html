@@ -22,13 +22,13 @@
       <td class="colspan-5">
         <div class="flex-wrapper">
           <div class="flex-col">
+            <div ng-include="'img/icons/cloud-outline.svg'" ng-if="app.web" title="Web"></div>
+          </div>
+          <div class="flex-col">
             <div ng-include="'img/icons/apple.svg'" ng-if="app.mac" title="Mac"></div>
           </div>
           <div class="flex-col">   
             <div ng-include="'img/icons/windows.svg'" ng-if="app.windows" title="Windows"></div>
-          </div>
-          <div class="flex-col">
-            <div ng-include="'img/icons/cloud-outline.svg'" ng-if="app.web" title="Web"></div>
           </div>
           <div class="flex-col">
             <div ng-include="'img/icons/apple-ios.svg'" ng-if="app.ios" title="iOS"></div>
