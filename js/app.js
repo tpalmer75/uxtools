@@ -152,7 +152,6 @@ angular.module('uxTools', ['ui.router'])
       'image':'img/prototyping/adobe-xd.png',
       'design':true,
       'mac':true,
-      'windows':true,
       'navigation':true,
       'transition':true
     }, { 
