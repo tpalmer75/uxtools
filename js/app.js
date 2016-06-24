@@ -153,7 +153,8 @@ angular.module('uxTools', ['ui.router'])
       'design':true,
       'mac':true,
       'navigation':true,
-      'transition':true
+      'transition':true,
+      'shareWeb':true
     }, { 
       'name':'Craft',
       'url':'http://www.adobe.com/products/experience-design',
