@@ -1,66 +1,60 @@
+div.filters(ng-include="'img/icons/table-edit.svg'" title="Filters" ng-click="showFilters = true;")
+//- div.filters-modal
+//-   .modal-wrapper
+//-     ul
+//-       li(ng-repeat="filter in filters") {{ filter.name }}
 table(fixed-header-table)
   thead
     tr
-      th
-      th Name
-      th Platform
-      th Design
-      th Import
-      th Animations
-      th Navigation
-      th Transitions
-      th Data
-      th Code
-      th Sharing
+      th(ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)") {{ filter.title }}
   tbody
-    tr(ng-repeat="app in testObjects | orderBy:'name'")
+    tr(ng-repeat="app in prototypingTools | orderBy:'name'")
       td
         a(ng-href="{{app.url}}" title="{{app.url}}")
           img(ng-src="{{app.image}}")
       td 
         a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
-      td.colspan-5
+      td.colspan-5(ng-if="isFilterVisible('Platform');")
         div.flex-wrapper
           div.flex-col
-            div(ng-include="'img/icons/cloud-outline.svg'" ng-if="app.web" title="Web")
+            div(ng-include="'img/icons/cloud-outline.svg'" ng-if="app.platforms.web" title="Web")
           div.flex-col
-            div(ng-include="'img/icons/apple.svg'" ng-if="app.mac" title="Mac")
+            div(ng-include="'img/icons/apple.svg'" ng-if="app.platforms.mac" title="Mac")
           div.flex-col    
-            div(ng-include="'img/icons/windows.svg'" ng-if="app.windows" title="Windows")
+            div(ng-include="'img/icons/windows.svg'" ng-if="app.platforms.windows" title="Windows")
           div.flex-col
-            div(ng-include="'img/icons/apple-ios.svg'" ng-if="app.ios" title="iOS")
+            div(ng-include="'img/icons/apple-ios.svg'" ng-if="app.platforms.iOS" title="iOS")
           div.flex-col
-            div(ng-include="'img/icons/android.svg'" ng-if="app.android" title="Android")
-      td
+            div(ng-include="'img/icons/android.svg'" ng-if="app.platforms.android" title="Android")
+      td(ng-if="isFilterVisible('Design');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.design" title="Design from scratch")
-      td.colspan-2
+      td.colspan-2(ng-if="isFilterVisible('Import');")
         div.flex-col
-          img(ng-src="img/icons/sketch.png" ng-if="app.sketch" title="Sketch")
+          img(ng-src="img/icons/sketch.png" ng-if="app.import.sketch" title="Sketch")
         div.flex-col
-          img(ng-src="img/icons/photoshop.png" ng-if="app.photoshop" title="Photoshop")
-      td
+          img(ng-src="img/icons/photoshop.png" ng-if="app.import.photoshop" title="Photoshop")
+      td(ng-if="isFilterVisible('Animations');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.micro")
-      td
+      td(ng-if="isFilterVisible('Navigation');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.navigation")
-      td
+      td(ng-if="isFilterVisible('Transitions');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.transition")
-      td
+      td(ng-if="isFilterVisible('Data');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.data")
-      td
+      td(ng-if="isFilterVisible('Code');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.code")
-      td.colspan-7
+      td.colspan-7(ng-if="isFilterVisible('Sharing');")
         div.flex-col
-          div(ng-include="'img/icons/cloud-outline.svg'" ng-if="app.shareWeb" title="Web")
+          div(ng-include="'img/icons/cloud-outline.svg'" ng-if="app.sharing.web" title="Web")
         div.flex-col
-          div(ng-include="'img/icons/apple-ios.svg'" ng-if="app.shareIos" title="iOS")
+          div(ng-include="'img/icons/apple-ios.svg'" ng-if="app.sharing.iOS" title="iOS")
         div.flex-col
-          div(ng-include="'img/icons/android.svg'" ng-if="app.shareAndroid" title="Android")
+          div(ng-include="'img/icons/android.svg'" ng-if="app.sharing.android" title="Android")
         div.flex-col
-          div(ng-include="'img/icons/apple.svg'" ng-if="app.shareMac" title="Mac")
+          div(ng-include="'img/icons/apple.svg'" ng-if="app.sharing.mac" title="Mac")
         div.flex-col
-          div(ng-include="'img/icons/windows.svg'" ng-if="app.shareWindows" title="Windows")
+          div(ng-include="'img/icons/windows.svg'" ng-if="app.sharing.windows" title="Windows")
         div.flex-col
-          div(ng-include="'img/icons/watch.svg'" ng-if="app.shareAppleWatch" title="Apple Watch")
+          div(ng-include="'img/icons/watch.svg'" ng-if="app.sharing.appleWatch" title="Apple Watch")
         div.flex-col
-          div(ng-include="'img/icons/appletv.svg'" ng-if="app.shareAppleTv" title="Apple TV")
-      //- div(ng-include="'img/icons/desktop-mac.svg'" ng-if="app.shareDesktop" title="Desktop")
+          div(ng-include="'img/icons/appletv.svg'" ng-if="app.sharing.appleTv" title="Apple TV")
