@@ -1,9 +1,10 @@
 @import "reset.less";
 
+@font-stack: "Roboto Condensed", Roboto, Helvetica, Arial, sans-serif;
 @purple: #684AFF;
 @col-width: 35px;
-@midsize: 800px;
-@smallsize: 500px;
+@mid-size: 800px;
+@small-size: 500px;
 @header-height-lg: 88px;
 @header-height-sm: 74px;
 
@@ -12,7 +13,8 @@ html, body {
 }
 
 body {
-	font-family: "Roboto Condensed", Roboto, Helvetica, Arial, sans-serif;
+	font-family: @font-stack;
+	color: #333;
 }
 
 header {
@@ -24,13 +26,13 @@ header {
 	line-height: 1.2;
 	//padding: 16px 20px 0;
 	background: @purple;
-	@media all and (max-width: @smallsize) {
+	@media all and (max-width: @small-size) {
 		height: @header-height-sm;
 		//padding: 0 10px;
 	}
 	.top-wrapper {
 		padding: 10px 10px 0;
-		@media all and (max-width: @smallsize) {
+		@media all and (max-width: @small-size) {
 			padding-top: 5px;
 		}
 	}
@@ -39,7 +41,7 @@ header {
 		text-decoration: none;
 	}
 	span {
-		@media all and (max-width: @smallsize) {
+		@media all and (max-width: @small-size) {
 			display: none;
 		}
 	}
@@ -55,7 +57,7 @@ header {
 
 #logo {
 	margin: -8px 0;
-	@media all and (max-width: @smallsize) {
+	@media all and (max-width: @small-size) {
 		width: 120px;
 		margin: -4px 0 -10px;
 	}
@@ -90,7 +92,7 @@ h1 {
 			&.active {
 				border-bottom: 4px solid white;
 			}
-			@media all and (max-width: @smallsize) {
+			@media all and (max-width: @small-size) {
 				padding: 0 5px 5px;
 			}
 		}
@@ -101,10 +103,10 @@ section {
 	height: 100%;
 	padding: (@header-height-lg + 20px) 20px 20px;
 	position: relative;
-	@media all and (max-width: @midsize) {
+	@media all and (max-width: @mid-size) {
 		padding: @header-height-lg 0 0;
 	}
-	@media all and (max-width: @smallsize) {
+	@media all and (max-width: @small-size) {
 		padding-top: @header-height-sm;
 	}
 	.wrapper {
@@ -127,7 +129,7 @@ section {
 
 table {
 	width: 100%;
-	@media all and (max-width: @smallsize) {
+	@media all and (max-width: @small-size) {
 		font-size: 14px;
 	}
 	a {
@@ -240,21 +242,61 @@ table {
 }
 
 .filters-modal {
-	position: fixed;
-	top: 0;
-	left: 0;
-	background: fade(black, 50%);
-	width: 100%;
-	height: 100%;
-	z-index: 10;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	.modal-wrapper {
-		width: 500px;
-		height: 500px;
-		background: white;
-		box-shadow: 0 10px 48px fade(black, 30%);
+	position: absolute;
+	top: 36px;
+	left: 14px;
+	padding: 16px 20px;
+	background: white;
+	max-width: 500px;
+	z-index: 2;
+	box-shadow: 0 10px 24px fade(black, 30%);
+	ul {
+		columns: 100px 2;
+		li {
+			line-height: 32px;
+		}
+		input {
+			margin-right: 10px;
+		}
+	}
+	button {
+		appearance: none;
+		background: none;
+		cursor: pointer;
+		color: @purple;
+		outline: none;
+		box-shadow: none;
+		font-family: @font-stack;
+		font-size: 16px;
+		border: 0;
+		margin-top: 10px;
+		height: 32px;
+	}
+	.button-container {
+		text-align: center;
+		clear: both;
+	}
+	@media all and (max-width: @small-size) {
+		padding: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: fade(black, 50%);
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: flex-end;
+		.modal-wrapper {
+			//width:
+			width: 100%;
+			//height: 00px;
+			background: white;
+			box-shadow: 0 10px 48px fade(black, 30%);
+			padding: 20px;
+			//columns: 150px 2;
+		}
 	}
 }
 
