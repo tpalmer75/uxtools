@@ -25,6 +25,7 @@ header {
 	color: white;
 	line-height: 1.2;
 	//padding: 16px 20px 0;
+	z-index: 2;
 	background: @purple;
 	@media all and (max-width: @small-size) {
 		height: @header-height-sm;
@@ -110,9 +111,11 @@ section {
 		padding-top: @header-height-sm;
 	}
 	.wrapper {
-		box-shadow: 0 20px 56px rgba(0,0,0,.35);
 		height: 100%;
 		position: relative;
+	}
+	.shadow-wrapper {
+		box-shadow: 0 20px 56px rgba(0,0,0,.35);
 	}
 }
 
@@ -242,14 +245,24 @@ table {
 }
 
 .filters-modal {
-	position: absolute;
-	top: 36px;
-	left: 14px;
-	padding: 16px 20px;
-	background: white;
-	max-width: 500px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	background: fade(black, 10%);
 	z-index: 2;
-	box-shadow: 0 10px 24px fade(black, 30%);
+	.modal-wrapper{
+		position: absolute;
+		top: 126px;
+		left: 14px;
+		padding: 16px 20px;
+		background: white;
+		max-width: 500px;
+		z-index: 2;
+		box-shadow: 0 10px 24px fade(black, 30%);
+	}
 	ul {
 		columns: 100px 2;
 		li {
@@ -277,26 +290,22 @@ table {
 		clear: both;
 	}
 	@media all and (max-width: @small-size) {
-		padding: 0;
-		position: fixed;
-		top: 0;
-		left: 0;
 		background: fade(black, 50%);
-		width: 100%;
-		height: 100%;
-		z-index: 10;
-		display: flex;
-		flex-direction: column-reverse;
-		align-items: flex-end;
+		.wrapper {
+			display: flex;
+			flex-direction: column-reverse;
+			align-items: flex-end;
+		}
 		.modal-wrapper {
-			//width:
+			position: static;
 			width: 100%;
-			//height: 00px;
 			background: white;
 			box-shadow: 0 10px 48px fade(black, 30%);
 			padding: 20px;
-			//columns: 150px 2;
 		}
+	}
+	@media all and (max-width: @mid-size) {
+		padding: 0;
 	}
 }
 
