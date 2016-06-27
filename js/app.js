@@ -29,7 +29,7 @@ angular.module('uxTools', ['ui.router'])
     });
 })
 
-.controller('prototypingCtrl', function($scope, $state) {
+.controller('prototypingCtrl', function($scope) {
 
   $scope.filters = [
     {
@@ -42,6 +42,10 @@ angular.module('uxTools', ['ui.router'])
       'canChange':true
     }, {
       'title':'Platform',
+      'show':true,
+      'canChange':true
+    }, {
+      'title':'Design',
       'show':true,
       'canChange':true
     }, {
@@ -97,6 +101,7 @@ angular.module('uxTools', ['ui.router'])
           'photoshop':true,
           'sketch':true
         },
+      'micro':true,
       'navigation':true,
       'transition':true,
       'data':true,
@@ -178,7 +183,6 @@ angular.module('uxTools', ['ui.router'])
         'web':true,
         'iOS':true,
         'android':true,
-        'mac':true,
         'appleWatch':true,
         'appleTv':true
       }
@@ -232,11 +236,13 @@ angular.module('uxTools', ['ui.router'])
         'web':true
       }
     }, {
-     'name':'Basalmiq',
+     'name':'Balsamiq',
       'url':'https://balsamiq.com/',
       'image':'img/prototyping/basalmiq.png',
       'design':true,
-      'web':true,
+      'platforms': {
+        'web':true  
+      },
       'navigation':true,
       'sharing': {
         'web':true,
