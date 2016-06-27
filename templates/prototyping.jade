@@ -1,8 +1,13 @@
-div.filters(ng-include="'img/icons/table-edit.svg'" title="Filters" ng-click="showFilters = true;")
-//- div.filters-modal
-//-   .modal-wrapper
-//-     ul
-//-       li(ng-repeat="filter in filters") {{ filter.name }}
+div.filters(ng-include="'img/icons/table-edit.svg'" title="Filters"  ng-click="showFiltersModal('show');")
+div.filters-modal(ng-show="modalShowing" ng-click="showFiltersModal('hide')")
+  .wrapper
+    .modal-wrapper(ng-click="$event.stopPropagation()")
+      ul
+        li(ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange") 
+          input(type="checkbox" ng-model="tempFilters[$index].show")
+          | {{ filter.title }}
+      .button-container
+        button(ng-click="setFilters()") Set Filters
 table(fixed-header-table)
   thead
     tr

@@ -1,5 +1,19 @@
 
-<div ng-include="'img/icons/table-edit.svg'" title="Filters" ng-click="showFilters = true;" class="filters"></div>
+<div ng-include="'img/icons/table-edit.svg'" title="Filters" ng-click="showFiltersModal('show');" class="filters"></div>
+<div ng-show="modalShowing" ng-click="showFiltersModal('hide')" class="filters-modal">
+  <div class="wrapper">
+    <div ng-click="$event.stopPropagation()" class="modal-wrapper">
+      <ul>
+        <li ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange"> 
+          <input type="checkbox" ng-model="tempFilters[$index].show"/>{{ filter.title }}
+        </li>
+      </ul>
+      <div class="button-container">
+        <button ng-click="setFilters()">Set Filters</button>
+      </div>
+    </div>
+  </div>
+</div>
 <table fixed-header-table="fixed-header-table">
   <thead>
     <tr>
