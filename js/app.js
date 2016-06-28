@@ -1,6 +1,6 @@
 /*global angular:true */
 
-angular.module('uxTools', ['ui.router', 'uxTools.services'])
+angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -39,9 +39,9 @@ angular.module('uxTools', ['ui.router', 'uxTools.services'])
   $scope.modalShowing = false;
 
   $scope.showFiltersModal = function(command) {
-    if (command == 'show') {
+    if (command === 'show') {
       $scope.modalShowing = true;
-    } else if (command == 'hide') {
+    } else if (command === 'hide') {
       $scope.modalShowing = false;
     }
   };

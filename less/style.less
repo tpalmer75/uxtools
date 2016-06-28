@@ -144,7 +144,8 @@ table {
 		vertical-align: middle;
 		text-align: left;
 		border-right: 1px solid #ddd;
-		padding-left: 5px;
+		padding: 0 5px;
+		white-space: nowrap;
 		div {
 			display: inline-block;
 		}
@@ -214,6 +215,9 @@ table {
 	.colspan-7 {
 		min-width: @col-width*7;
 	}
+	.colspan-8 {
+		min-width: @col-width*8;
+	}
 	.flex-wrapper {
 		display: flex;
 	}
@@ -253,6 +257,8 @@ table {
 	padding: 20px;
 	background: fade(black, 10%);
 	z-index: 2;
+	opacity: 1;
+	transition: opacity .2s;
 	.modal-wrapper{
 		position: absolute;
 		top: 126px;
@@ -262,6 +268,7 @@ table {
 		max-width: 500px;
 		z-index: 2;
 		box-shadow: 0 10px 24px fade(black, 30%);
+		transition: all .2s ease-in-out;
 	}
 	ul {
 		columns: 100px 2;
@@ -289,6 +296,12 @@ table {
 		text-align: center;
 		clear: both;
 	}
+	&.ng-hide {
+			opacity: 0;
+			.modal-wrapper {
+				transform: translateY(-10px);
+			}
+		}
 	@media all and (max-width: @small-size) {
 		background: fade(black, 50%);
 		.wrapper {
@@ -297,15 +310,25 @@ table {
 			align-items: flex-end;
 		}
 		.modal-wrapper {
-			position: static;
+			position: relative;
+			transform: translateY(0);
+			top: auto;
+			left: auto;
 			width: 100%;
 			background: white;
 			box-shadow: 0 10px 48px fade(black, 30%);
 			padding: 20px;
 		}
+		&.ng-hide {
+			opacity: 0;
+			.modal-wrapper {
+				transform: translateY(100px);
+			}
+		}
 	}
 	@media all and (max-width: @mid-size) {
 		padding: 0;
 	}
+	
 }
 
