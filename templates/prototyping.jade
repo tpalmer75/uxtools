@@ -33,11 +33,13 @@ table(fixed-header-table)
             div(ng-include="'img/icons/android.svg'" ng-if="app.platforms.android" title="Android")
       td(ng-if="isFilterVisible('Design');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.design" title="Design from scratch")
-      td.colspan-2(ng-if="isFilterVisible('Import');")
+      td.colspan-3(ng-if="isFilterVisible('Import');")
         div.flex-col
           img(ng-src="img/icons/sketch.png" ng-if="app.import.sketch" title="Sketch")
         div.flex-col
           img(ng-src="img/icons/photoshop.png" ng-if="app.import.photoshop" title="Photoshop")
+        div.flex-col
+          img(ng-src="img/icons/balsamiq.png" ng-if="app.import.balsamiq" title="balsamiq")
       td(ng-if="isFilterVisible('Animations');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.micro")
       td(ng-if="isFilterVisible('Navigation');")
@@ -48,7 +50,7 @@ table(fixed-header-table)
         div(ng-include="'img/icons/check.svg'" ng-if="app.data")
       td(ng-if="isFilterVisible('Code');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.code")
-      td.colspan-7(ng-if="isFilterVisible('Sharing');")
+      td.colspan-8(ng-if="isFilterVisible('Sharing');")
         div.flex-col
           div(ng-include="'img/icons/cloud-outline.svg'" ng-if="app.sharing.web" title="Web")
         div.flex-col
@@ -63,3 +65,11 @@ table(fixed-header-table)
           div(ng-include="'img/icons/watch.svg'" ng-if="app.sharing.appleWatch" title="Apple Watch")
         div.flex-col
           div(ng-include="'img/icons/appletv.svg'" ng-if="app.sharing.appleTv" title="Apple TV")
+        div.flex-col
+          div(ng-include="'img/icons/file-pdf-box.svg'" ng-if="app.sharing.pdf" title="PDF")
+      td(ng-if="isFilterVisible('Tasks');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.tasks")
+      td(ng-if="isFilterVisible('Analytics');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.analytics")
+      td(ng-if="isFilterVisible('Heatmap');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.heatmap")
