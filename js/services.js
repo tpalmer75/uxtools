@@ -95,6 +95,7 @@ angular.module('uxTools.services', [])
             'android': true,
             'appleWatch': true,
             'appleTv': true
+            //- HTML
         }
     }, {
         'name': 'Flinto',
@@ -245,7 +246,8 @@ angular.module('uxTools.services', [])
         'sharing': {
             'iOS': true,
             'android': true,
-            'web': true
+            'web': true,
+            //- html
         }
     }, {
         'name': 'Moqups',
@@ -343,11 +345,13 @@ angular.module('uxTools.services', [])
     }, {
         'title': 'Name',
         'show': true,
-        'canChange': true
+        'canChange': true,
+        'tipText': 'The name of the app'
     }, {
         'title': 'Platform',
         'show': true,
-        'canChange': true
+        'canChange': true,
+        'tipText': 'The platform for building prototypes'
     }, {
         'title': 'Design',
         'show': true,

@@ -1,6 +1,6 @@
 /*global angular:true */
 
-angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services'])
+angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.tooltips'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 

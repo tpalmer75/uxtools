@@ -17,7 +17,7 @@
 <table fixed-header-table="fixed-header-table">
   <thead>
     <tr>
-      <th ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)">{{ filter.title }}</th>
+      <th ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)"><span tooltips="tooltips" tooltip-side="bottom" tooltip-speed="fast" tooltip-template="{{filter.tipText}}">{{ filter.title }}</span></th>
     </tr>
   </thead>
   <tbody>
@@ -26,7 +26,7 @@
       <td> <a ng-href="{{app.url}}" title="{{app.url}}">{{ app.name }}</a></td>
       <td ng-if="isFilterVisible('Platform');" class="colspan-5">
         <div class="flex-wrapper">
-          <div class="flex-col">
+          <div tooltips="tooltips" tooltip-template="test" class="flex-col">
             <div ng-include="'img/icons/cloud-outline.svg'" ng-if="app.platforms.web" title="Web"></div>
           </div>
           <div class="flex-col">
