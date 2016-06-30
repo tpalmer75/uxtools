@@ -1,4 +1,5 @@
 @import "reset.less";
+@import "angular-tooltips.less";
 
 @font-stack: "Roboto Condensed", Roboto, Helvetica, Arial, sans-serif;
 @purple: #684AFF;
@@ -121,13 +122,10 @@ section {
 
 .filters {
 	position: absolute;
-	top: 13px;
+	top: 14px;
 	left: 13px;
 	z-index:1;
 	cursor: pointer;
-	svg {
-		fill: @purple;
-	}
 }
 
 table {
@@ -146,6 +144,7 @@ table {
 		border-right: 1px solid #ddd;
 		padding: 0 5px;
 		white-space: nowrap;
+		cursor: default;
 		div {
 			display: inline-block;
 		}

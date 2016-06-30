@@ -1,6 +1,6 @@
 /*global angular:true */
 
-angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services'])
+angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.tooltips'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -28,6 +28,13 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services'])
       controller: 'prototypingCtrl'
     });
 })
+
+.config(['tooltipsConfProvider', function configConf(tooltipsConfProvider) {
+  tooltipsConfProvider.configure({
+    'speed': 'fast',
+    'side': 'bottom'
+  });
+}])
 
 .controller('prototypingCtrl', function($scope, $state, prototypingFactory) {
 

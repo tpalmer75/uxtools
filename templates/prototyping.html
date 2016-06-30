@@ -1,5 +1,5 @@
 
-<div ng-include="'img/icons/table-edit.svg'" title="Filters" ng-click="showFiltersModal('show');" class="filters"></div>
+<div title="Filters" ng-click="showFiltersModal('show');" class="filters"><img src="img/icons/table-edit.svg" tooltip-side="bottom" tooltips="tooltips" tooltip-template="Filters"/></div>
 <div ng-show="modalShowing" ng-click="showFiltersModal('hide')" class="filters-modal">
   <div class="wrapper">
     <div ng-click="$event.stopPropagation()" class="modal-wrapper">
@@ -17,7 +17,7 @@
 <table fixed-header-table="fixed-header-table">
   <thead>
     <tr>
-      <th ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)">{{ filter.title }}</th>
+      <th ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)"><span tooltips="tooltips" tooltip-side="bottom" tooltip-template="{{filter.tipText}}">{{ filter.title }}</span></th>
     </tr>
   </thead>
   <tbody>
@@ -27,19 +27,29 @@
       <td ng-if="isFilterVisible('Platform');" class="colspan-5">
         <div class="flex-wrapper">
           <div class="flex-col">
-            <div ng-include="'img/icons/cloud-outline.svg'" ng-if="app.platforms.web" title="Web"></div>
+            <div ng-if="app.platforms.web" tooltips="tooltips" tooltip-template="Web">
+              <div ng-include="'img/icons/cloud-outline.svg'" title="Web"></div>
+            </div>
           </div>
           <div class="flex-col">
-            <div ng-include="'img/icons/apple.svg'" ng-if="app.platforms.mac" title="Mac"></div>
-          </div>
-          <div class="flex-col">   
-            <div ng-include="'img/icons/windows.svg'" ng-if="app.platforms.windows" title="Windows"></div>
-          </div>
-          <div class="flex-col">
-            <div ng-include="'img/icons/apple-ios.svg'" ng-if="app.platforms.iOS" title="iOS"></div>
+            <div ng-if="app.platforms.mac" tooltips="tooltips" tooltip-template="Mac">
+              <div ng-include="'img/icons/apple.svg'" title="Mac"></div>
+            </div>
           </div>
           <div class="flex-col">
-            <div ng-include="'img/icons/android.svg'" ng-if="app.platforms.android" title="Android"></div>
+            <div ng-if="app.platforms.windows" tooltips="tooltips" tooltip-template="Windows"> 
+              <div ng-include="'img/icons/windows.svg'" title="Windows"></div>
+            </div>
+          </div>
+          <div class="flex-col">
+            <div ng-if="app.platforms.iOS" tooltips="tooltips" tooltip-template="iOS">
+              <div ng-include="'img/icons/apple-ios.svg'" title="iOS"></div>
+            </div>
+          </div>
+          <div class="flex-col">
+            <div ng-if="app.platforms.android" tooltips="tooltips" tooltip-template="Android">
+              <div ng-include="'img/icons/android.svg'" title="Android"></div>
+            </div>
           </div>
         </div>
       </td>
@@ -47,9 +57,15 @@
         <div ng-include="'img/icons/check.svg'" ng-if="app.design" title="Design from scratch"></div>
       </td>
       <td ng-if="isFilterVisible('Import');" class="colspan-3">
-        <div class="flex-col"><img ng-src="img/icons/sketch.png" ng-if="app.import.sketch" title="Sketch"/></div>
-        <div class="flex-col"><img ng-src="img/icons/photoshop.png" ng-if="app.import.photoshop" title="Photoshop"/></div>
-        <div class="flex-col"><img ng-src="img/icons/balsamiq.png" ng-if="app.import.balsamiq" title="balsamiq"/></div>
+        <div class="flex-col">
+          <div tooltips="tooltips" tooltip-template="Sketch"><img ng-src="img/icons/sketch.png" ng-if="app.import.sketch" title="Sketch"/></div>
+        </div>
+        <div class="flex-col">
+          <div tooltips="tooltips" tooltip-template="Photoshop"><img ng-src="img/icons/photoshop.png" ng-if="app.import.photoshop" title="Photoshop"/></div>
+        </div>
+        <div class="flex-col">
+          <div tooltips="tooltips" tooltip-template="Balsamiq"><img ng-src="img/icons/balsamiq.png" ng-if="app.import.balsamiq" title="balsamiq"/></div>
+        </div>
       </td>
       <td ng-if="isFilterVisible('Animations');">
         <div ng-include="'img/icons/check.svg'" ng-if="app.micro"></div>
@@ -68,28 +84,44 @@
       </td>
       <td ng-if="isFilterVisible('Sharing');" class="colspan-8">
         <div class="flex-col">
-          <div ng-include="'img/icons/cloud-outline.svg'" ng-if="app.sharing.web" title="Web"></div>
+          <div ng-if="app.sharing.web" tooltips="tooltips" tooltip-template="Web">
+            <div ng-include="'img/icons/cloud-outline.svg'" title="Web"></div>
+          </div>
         </div>
         <div class="flex-col">
-          <div ng-include="'img/icons/apple-ios.svg'" ng-if="app.sharing.iOS" title="iOS"></div>
+          <div ng-if="app.sharing.iOS" tooltips="tooltips" tooltip-template="iOS">
+            <div ng-include="'img/icons/apple-ios.svg'" title="iOS"></div>
+          </div>
         </div>
         <div class="flex-col">
-          <div ng-include="'img/icons/android.svg'" ng-if="app.sharing.android" title="Android"></div>
+          <div ng-if="app.sharing.android" tooltips="tooltips" tooltip-template="Android">
+            <div ng-include="'img/icons/android.svg'" title="Android"></div>
+          </div>
         </div>
         <div class="flex-col">
-          <div ng-include="'img/icons/apple.svg'" ng-if="app.sharing.mac" title="Mac"></div>
+          <div ng-if="app.sharing.mac" tooltips="tooltips" tooltip-template="Mac">
+            <div ng-include="'img/icons/apple.svg'" title="Mac"></div>
+          </div>
         </div>
         <div class="flex-col">
-          <div ng-include="'img/icons/windows.svg'" ng-if="app.sharing.windows" title="Windows"></div>
+          <div ng-if="app.sharing.windows" tooltips="tooltips" tooltip-template="Windows">
+            <div ng-include="'img/icons/windows.svg'" title="Windows"></div>
+          </div>
         </div>
         <div class="flex-col">
-          <div ng-include="'img/icons/watch.svg'" ng-if="app.sharing.appleWatch" title="Apple Watch"></div>
+          <div ng-if="app.sharing.appleWatch" tooltips="tooltips" tooltip-template="Apple Watch">
+            <div ng-include="'img/icons/watch.svg'" title="Apple Watch"></div>
+          </div>
         </div>
         <div class="flex-col">
-          <div ng-include="'img/icons/appletv.svg'" ng-if="app.sharing.appleTv" title="Apple TV"></div>
+          <div ng-if="app.sharing.appleTv" tooltips="tooltips" tooltip-template="Apple TV">
+            <div ng-include="'img/icons/appletv.svg'" title="Apple TV"></div>
+          </div>
         </div>
         <div class="flex-col">
-          <div ng-include="'img/icons/file-pdf-box.svg'" ng-if="app.sharing.pdf" title="PDF"></div>
+          <div ng-if="app.sharing.pdf" tooltips="tooltips" tooltip-template="PDF">
+            <div ng-include="'img/icons/file-pdf-box.svg'" title="PDF"></div>
+          </div>
         </div>
       </td>
       <td ng-if="isFilterVisible('Tasks');">
