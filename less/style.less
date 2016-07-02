@@ -82,7 +82,9 @@ h1 {
 	width: 100%;
 	margin-top: 12px;
 	padding: 0 10px;
-	overflow: scroll;
+	@media all and (max-width: @small-size) {
+		overflow: scroll;
+	}
 	ul {
 		width: 450px;
 		li {
@@ -236,7 +238,24 @@ table {
 }
 
 .fTHLC-outer-wrapper {
-	background: #ddd; // make clone table header full color
+	&:before { // for header background color
+		content: '';
+		background: #ddd;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 51px;
+	}
+	// &:after { // for shadow, but renders on top of scrollbars on Windows
+	// 	content: '';
+	// 	background-image: linear-gradient(right, rgba(0,0,0,.1), rgba(0,0,0,0));
+	// 	position: absolute;
+	// 	right: 0;
+	// 	top: 0;
+	// 	width: 30px;
+	// 	height: 100%;
+	// }
 }
 
 .zero-state {

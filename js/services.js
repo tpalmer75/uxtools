@@ -423,4 +423,47 @@ angular.module('uxTools.services', [])
         }
     };
 
+})
+
+.factory('handOffFactory', function() {
+
+    var tools = [{
+        "name": "Framer",
+        "url": "http://framerjs.com/",
+        "image": "img/prototyping/framer.png",
+        "platforms": {
+            "mac": true
+        },
+        "import": {
+            "photoshop": true,
+            "sketch": true
+        },
+        "micro": true,
+        "navigation": true,
+        "transition": true,
+        "data": true,
+        "code": true,
+        "sharing": {
+            "web": true
+        }
+    }];
+
+    var filters = [{
+        "title": "",
+        "show": true,
+        "canChange": false
+    }];
+
+    return {
+        tools: function() {
+            return tools;
+        },
+        filters: function() {
+            return filters;
+        },
+        setFilters: function(data) {
+            filters = data;
+        }
+    };
+
 });

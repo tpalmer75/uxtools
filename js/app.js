@@ -15,7 +15,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
     .state('hand-off', {
       url: '/hand-off',
       templateUrl : '../templates/hand-off.html',
-      controller: 'prototypingCtrl'
+      controller: 'handOffCtrl'
     })
     .state('monitoring', {
       url: '/monitoring',
@@ -53,8 +53,6 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
     }
   };
 
-
-
   $scope.isFilterVisible = function(string) {
     for ( var i = 0; i < $scope.filters.length; i++ ) {
       if ( $scope.filters[i].title === string ) {
@@ -65,6 +63,39 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
 
   $scope.setFilters = function() {
     prototypingFactory.setFilters($scope.tempFilters);
+    $state.reload();
+    $scope.showFiltersModal = false;
+  };
+
+})
+
+.controller('handOffCtrl', function($scope, $state, handOffFactory) {
+
+  $scope.prototypingTools = handOffFactory.tools();
+  $scope.filters = handOffFactory.filters();
+  // Copy filters so ngModel doesn't reflect while changing
+  $scope.tempFilters = angular.copy($scope.filters);
+
+  $scope.modalShowing = false;
+
+  $scope.showFiltersModal = function(command) {
+    if (command === 'show') {
+      $scope.modalShowing = true;
+    } else if (command === 'hide') {
+      $scope.modalShowing = false;
+    }
+  };
+
+  $scope.isFilterVisible = function(string) {
+    for ( var i = 0; i < $scope.filters.length; i++ ) {
+      if ( $scope.filters[i].title === string ) {
+        return $scope.filters[i].show;
+      }
+    }
+  };
+
+  $scope.setFilters = function() {
+    handOffFactory.setFilters($scope.tempFilters);
     $state.reload();
     $scope.showFiltersModal = false;
   };
