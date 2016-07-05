@@ -36,7 +36,11 @@
               <div ng-include="'img/icons/apple.svg'" title="Mac"></div>
             </div>
           </div>
-          <div tooltips="tooltips" tooltip-template="Sketch"><img ng-src="img/icons/sketch.png" ng-if="app.platforms.sketch" title="Sketch"/></div>
+          <div class="flex-col">
+            <div ng-if="app.platforms.windows" tooltips="tooltips" tooltip-template="Windows"> 
+              <div ng-include="'img/icons/windows.svg'" title="Windows"></div>
+            </div>
+          </div>
         </div>
       </td>
       <td ng-if="isFilterVisible('Import');" class="colspan-2">
