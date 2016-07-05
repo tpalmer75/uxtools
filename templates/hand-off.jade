@@ -33,6 +33,9 @@ table(fixed-header-table)
           div.flex-col
             div(ng-if="app.platforms.windows" tooltips tooltip-template="Windows")  
               div(ng-include="'img/icons/windows.svg'" title="Windows")
+          div.flex-col
+            div(ng-if="app.platforms.linux" tooltips tooltip-template="Linux")
+              div(ng-include="'img/icons/linux.svg'" title="Linux")
       td.colspan-2(ng-if="isFilterVisible('Import');")
         div.flex-col
           div(tooltips tooltip-template="Sketch")
