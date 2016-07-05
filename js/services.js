@@ -497,10 +497,12 @@ angular.module('uxTools.services', [])
         "url": "https://zeplin.io/",
         "image": "img/handoff/zeplin.png",
         "platforms": {
-            "mac": true
+            "mac": true,
+            "windows": true
         },
         "import": {
-            "sketch": true
+            "sketch": true,
+            "photoshop": true
         },
         "automatic": true,
         "assets": true,
