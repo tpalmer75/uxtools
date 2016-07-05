@@ -1,3 +1,84 @@
-div.zero-state
-	div(ng-include="'img/icons/gift.svg'")
-	h4 More tools coming soon!
+div.filters(title="Filters" ng-click="showFiltersModal('show');")
+  img(src="img/icons/table-edit.svg" tooltip-side="bottom" tooltips tooltip-template="Filters")
+
+div.filters-modal(ng-show="modalShowing" ng-click="showFiltersModal('hide')")
+  .wrapper
+    .modal-wrapper(ng-click="$event.stopPropagation()")
+      ul
+        li(ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange") 
+          input(type="checkbox" ng-model="tempFilters[$index].show")
+          | {{ filter.title }}
+      .button-container
+        button(ng-click="setFilters()") Set Filters
+table(fixed-header-table)
+  thead
+    tr
+      th(ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)")
+        span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
+  tbody
+    tr(ng-repeat="app in prototypingTools | orderBy:'name'")
+      td
+        a(ng-href="{{app.url}}" title="{{app.url}}")
+          img(ng-src="{{app.image}}")
+      td 
+        a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
+      td.colspan-3(ng-if="isFilterVisible('Platform');")
+        div.flex-wrapper
+          div.flex-col
+            div(ng-if="app.platforms.web" tooltips tooltip-template="Web")
+              div(ng-include="'img/icons/cloud-outline.svg'" title="Web")
+          div.flex-col
+            div(ng-if="app.platforms.mac" tooltips tooltip-template="Mac")
+              div(ng-include="'img/icons/apple.svg'" title="Mac")
+          div(tooltips tooltip-template="Sketch")
+            img(ng-src="img/icons/sketch.png" ng-if="app.platforms.sketch" title="Sketch")
+      td.colspan-2(ng-if="isFilterVisible('Import');")
+        div.flex-col
+          div(tooltips tooltip-template="Sketch")
+            img(ng-src="img/icons/sketch.png" ng-if="app.import.sketch" title="Sketch")
+        div.flex-col
+          div(tooltips tooltip-template="Photoshop")
+            img(ng-src="img/icons/photoshop.png" ng-if="app.import.photoshop" title="Photoshop")
+      td(ng-if="isFilterVisible('Automatic');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.automatic")
+      td(ng-if="isFilterVisible('Assets');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.assets")
+      td(ng-if="isFilterVisible('Measure');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.measure")
+      td(ng-if="isFilterVisible('CSS');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.css")
+      td(ng-if="isFilterVisible('Variables');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.variables")
+      td(ng-if="isFilterVisible('Guides');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.guides")
+      td(ng-if="isFilterVisible('Layers');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.layers")
+      td(ng-if="isFilterVisible('Comments');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.comments")
+      td(ng-if="isFilterVisible('Revisions');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.revisions")
+      td.colspan-5(ng-if="isFilterVisible('Sharing');")
+        div.flex-col
+          div(ng-if="app.sharing.web" tooltips tooltip-template="Web")
+            div(ng-include="'img/icons/cloud-outline.svg'" title="Web")
+        div.flex-col
+          div(ng-if="app.sharing.html" tooltips tooltip-template="Static HTML file")
+            div(ng-include="'img/icons/html.svg'" title="HTML")
+        div.flex-col
+          div(ng-if="app.sharing.mac" tooltips tooltip-template="Mac")
+            div(ng-include="'img/icons/apple.svg'" title="Mac")
+        div.flex-col
+          div(ng-if="app.sharing.windows" tooltips tooltip-template="Windows")
+            div(ng-include="'img/icons/windows.svg'" title="Windows")
+        div.flex-col
+          div(ng-if="app.sharing.linux" tooltips tooltip-template="Linux")
+            div(ng-include="'img/icons/linux.svg'" title="Linux")
+        div.flex-col
+          div(ng-if="app.sharing.xcode" tooltips tooltip-template="Xcode")
+            img(src="img/icons/xcode.png" title="Xcode")
+        div.flex-col
+          div(ng-if="app.sharing.androidStudio" tooltips tooltip-template="Android Studio")
+            img(src="img/icons/androidStudio.png" title="Android Studio")
+      td(ng-if="isFilterVisible('Integrations');" style="min-width: 100px")
+        div(ng-if="app.integrations.slack" tooltips tooltip-template="Slack")
+            img(src="img/icons/slack.png" title="Slack")

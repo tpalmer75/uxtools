@@ -17,11 +17,17 @@ table(fixed-header-table)
         span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
   tbody
     tr(ng-repeat="app in prototypingTools | orderBy:'name'")
+
+
       td
         a(ng-href="{{app.url}}" title="{{app.url}}")
-          img(ng-src="{{app.image}}")
+          img(ng-src="{{app.image}}" )
+
+
       td 
         a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
+
+
       td.colspan-5(ng-if="isFilterVisible('Platform');")
         div.flex-wrapper
           div.flex-col
@@ -39,8 +45,12 @@ table(fixed-header-table)
           div.flex-col
             div(ng-if="app.platforms.android" tooltips tooltip-template="Android")
               div(ng-include="'img/icons/android.svg'" title="Android")
+
+
       td(ng-if="isFilterVisible('Design');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.design" title="Design from scratch")
+
+
       td.colspan-3(ng-if="isFilterVisible('Import');")
         div.flex-col
           div(tooltips tooltip-template="Sketch")
@@ -51,16 +61,28 @@ table(fixed-header-table)
         div.flex-col
           div(tooltips tooltip-template="Balsamiq")
             img(ng-src="img/icons/balsamiq.png" ng-if="app.import.balsamiq" title="balsamiq")
+
+
       td(ng-if="isFilterVisible('Animations');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.micro")
+
+
       td(ng-if="isFilterVisible('Navigation');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.navigation")
+
+
       td(ng-if="isFilterVisible('Transitions');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.transition")
+
+
       td(ng-if="isFilterVisible('Data');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.data")
+
+
       td(ng-if="isFilterVisible('Code');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.code")
+
+
       td.colspan-8(ng-if="isFilterVisible('Sharing');")
         div.flex-col
           div(ng-if="app.sharing.web" tooltips tooltip-template="Web")
@@ -86,9 +108,43 @@ table(fixed-header-table)
         div.flex-col
           div(ng-if="app.sharing.pdf" tooltips tooltip-template="PDF")
             div(ng-include="'img/icons/file-pdf-box.svg'" title="PDF")
+
+
+      //- td.pricing(ng-if="isFilterVisible('Pricing');")
+      //-   div.pricing-col(ng-if="app.pricing.free" tooltips tooltip-template="{{app.pricing.free.tipText}}") Free
+      //-   div(ng-if="showMonthly")
+      //-     div.colspan-5(ng-if="app.pricing.monthly")
+      //-       //- To line up personal columns
+      //-       div(style="min-width: 150px")
+      //-         div.pricing-col(ng-repeat="item in app.pricing.monthly.personal" tooltips tooltip-template="{{item.tipText}}")
+      //-           div(ng-include="'img/icons/account.svg'")
+      //-           span {{item.price}}
+      //-       div.pricing-col(ng-repeat="item in app.pricing.monthly.team" tooltips tooltip-template="{{item.tipText}}")
+      //-         div(ng-include="'img/icons/account-multiple.svg'")
+      //-         span {{item.price}}
+      //-       div.pricing-col(ng-repeat="item in app.pricing.monthly.enterprise" tooltips tooltip-template="{{item.tipText}}")
+      //-         div(ng-include="'img/icons/domain.svg'")
+      //-         span {{item.price}}
+      //-   div(ng-if="!showMonthly")
+      //-     div.colspan-5(ng-if="app.pricing.annual")
+      //-       div.pricing-col(ng-repeat="item in app.pricing.annual.personal" tooltips tooltip-template="{{item.tipText}}")
+      //-         div(ng-include="'img/icons/account.svg'")
+      //-         span {{item.price}}
+      //-       div.pricing-col(ng-repeat="item in app.pricing.annual.team" tooltips tooltip-template="{{item.tipText}}")
+      //-         div(ng-include="'img/icons/account-multiple.svg'")
+      //-         span {{item.price}}
+      //-       div.pricing-col(ng-repeat="item in app.pricing.annual.enterprise" tooltips tooltip-template="{{item.tipText}}")
+      //-         div(ng-include="'img/icons/domain.svg'")
+      //-         span {{item.price}}
+
       td(ng-if="isFilterVisible('Tasks');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.tasks")
+
+
       td(ng-if="isFilterVisible('Analytics');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.analytics")
+
+
       td(ng-if="isFilterVisible('Heatmap');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.heatmap")
+
