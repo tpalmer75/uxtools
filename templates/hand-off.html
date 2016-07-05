@@ -41,6 +41,11 @@
               <div ng-include="'img/icons/windows.svg'" title="Windows"></div>
             </div>
           </div>
+          <div class="flex-col">
+            <div ng-if="app.platforms.linux" tooltips="tooltips" tooltip-template="Linux">
+              <div ng-include="'img/icons/linux.svg'" title="Linux"></div>
+            </div>
+          </div>
         </div>
       </td>
       <td ng-if="isFilterVisible('Import');" class="colspan-2">

@@ -513,7 +513,8 @@ angular.module('uxTools.services', [])
         "comments": true,
         "sharing": {
             "mac": true,
-            "web": true
+            "web": true,
+            "windows": true
         },
         "integrations": {
             "slack": true,
@@ -544,7 +545,8 @@ angular.module('uxTools.services', [])
         "image": "img/handoff/avocode.png",
         "platforms": {
             "mac": true,
-            "windows": true
+            "windows": true,
+            "linux": true
         },
         "import": {
             "sketch": true,
