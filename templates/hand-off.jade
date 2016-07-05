@@ -30,8 +30,9 @@ table(fixed-header-table)
           div.flex-col
             div(ng-if="app.platforms.mac" tooltips tooltip-template="Mac")
               div(ng-include="'img/icons/apple.svg'" title="Mac")
-          div(tooltips tooltip-template="Sketch")
-            img(ng-src="img/icons/sketch.png" ng-if="app.platforms.sketch" title="Sketch")
+          div.flex-col
+            div(ng-if="app.platforms.windows" tooltips tooltip-template="Windows")  
+              div(ng-include="'img/icons/windows.svg'" title="Windows")
       td.colspan-2(ng-if="isFilterVisible('Import');")
         div.flex-col
           div(tooltips tooltip-template="Sketch")

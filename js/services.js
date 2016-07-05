@@ -542,6 +542,7 @@ angular.module('uxTools.services', [])
         "image": "img/handoff/avocode.png",
         "platforms": {
             "mac": true,
+            "windows": true
         },
         "import": {
             "sketch": true,
