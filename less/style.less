@@ -115,6 +115,9 @@ section {
 		left: 0;
 		width: 100%;
 		content: '';
+		@media all and (max-width: @mid-size) {
+			display: none;
+		}
 	}
 	@media all and (max-width: @mid-size) {
 		padding: @header-height-lg 0 0;
@@ -210,6 +213,12 @@ table {
 	svg {
 		fill: #555;
 	}
+	.pricing-col {
+		min-width: 56px;
+		* {
+			vertical-align: middle;
+		}
+	}
 	.colspan-2 {
 		min-width: @col-width*2;
 	}
@@ -235,6 +244,14 @@ table {
 		width: 30px;
 		text-align: center;
 	}
+	// .pricing {
+	// 	.col {
+	// 		margin-right: 5px;
+	// 	}
+	// 	* {
+	// 		vertical-align: middle;
+	// 	}
+	// }
 }
 
 .fTHLC-outer-wrapper {

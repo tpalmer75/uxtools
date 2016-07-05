@@ -73,7 +73,46 @@ angular.module('uxTools.services', [])
         "sharing": {
             "web": true
         },
-        "fixedHeader": true
+        "fixedHeader": true,
+        "pricing": {
+            "free": {
+                "tipText": "1 Project"
+            },
+            "monthly": {
+                "personal": [{
+                    "price":"$15",
+                    "tipText":"3 Projects"
+                    }, {
+                    "price":"$25",
+                    "tipText":"Unlimited Projects"
+                }],
+                "team": [{
+                    "price":"$99",
+                    "tipText":"Unlimited Projects"
+                }],
+                "enterprise": [{
+                    "price":"$--",
+                    "tipText":"Unlimited everything"
+                }]
+            },
+            "annual": {
+                "personal": [{
+                    "price":"$13",
+                    "tipText":"3 Projects"
+                    }, {
+                    "price":"$22",
+                    "tipText":"Unlimited Projects"
+                }],
+                "team": [{
+                    "price":"$89",
+                    "tipText":"Unlimited Projects"
+                }],
+                "enterprise": [{
+                    "price":"$--",
+                    "tipText":"Unlimited everything"
+                }]
+            }
+        }
     }, {
         "name": "Marvel",
         "url": "https://marvelapp.com/",
@@ -96,6 +135,24 @@ angular.module('uxTools.services', [])
             "appleWatch": true,
             "appleTv": true
             //- HTML
+        },
+        "pricing": {
+            "free": {
+                "tipText": "1 Project"
+            },
+            "monthly": {
+                "personal": [{
+                    "price":"$10",
+                    "tipText":"3 Projects"
+                    }, {
+                    "price":"$555",
+                    "tipText":"Unlimited Projects"
+                }],
+                "enterprise": [{
+                    "price":"$--",
+                    "tipText":"Unlimited everything"
+                }]
+            }
         }
     }, {
         "name": "Flinto",
@@ -186,7 +243,7 @@ angular.module('uxTools.services', [])
         }
     }, {
         "name": "Craft",
-        "url": "http://www.adobe.com/products/experience-design",
+        "url": "https://www.invisionapp.com/craft",
         "image": "img/prototyping/craft.png",
         "platforms": {
             "mac": true
@@ -296,8 +353,8 @@ angular.module('uxTools.services', [])
             "android": true,
             "web": true
         },
-        "analytics":true,
-        "heatmap":true,
+        "analytics": true,
+        "heatmap": true,
         // fixed header
         // screen overlays
         // timers
@@ -335,81 +392,89 @@ angular.module('uxTools.services', [])
         },
         "tasks": true,
         "heatmap": true,
-        "analytics":true
+        "analytics": true
     }];
 
     var filters = [{
-        "title": "",
-        "show": true,
-        "canChange": false
-    }, {
-        "title": "Name",
-        "show": true,
-        "canChange": true,
-        "tipText": "The app's name"
-    }, {
-        "title": "Platform",
-        "show": true,
-        "canChange": true,
-        "tipText": "Platforms used for <br>building prototypes"
-    }, {
-        "title": "Design",
-        "show": true,
-        "canChange": true,
-        "tipText": "App can design<br>from scratch"
-    }, {
-        "title": "Import",
-        "show": true,
-        "canChange": true,
-        "tipText": "Integrations with<br>other apps"
-    }, {
-        "title": "Animations",
-        "show": true,
-        "canChange": true,
-        "tipText": "Individual animations<br>& micro-interactions"
-    }, 
-    // {
-    //     "title": "Navigation",
-    //     "show": true,
-    //     "canChange": true,
-    //     "tipText": ""
-    // }, 
-    {
-        "title": "Transitions",
-        "show": true,
-        "canChange": true,
-        "tipText": "App can animate<br>between screens"
-    }, {
-        "title": "Data",
-        "show": true,
-        "canChange": true,
-        "tipText": "App can use<br>data to render UI"
-    }, {
-        "title": "Code",
-        "show": true,
-        "canChange": true,
-        "tipText": "App uses code"
-    }, {
-        "title": "Sharing",
-        "show": true,
-        "canChange": true,
-        "tipText": "How others can<br>use the prototype"
-    }, {
-        "title": "Tasks",
-        "show": false,
-        "canChange": true,
-        "tipText": ""
-    }, {
-        "title": "Analytics",
-        "show": false,
-        "canChange": true,
-        "tipText": "App can track events"
-    }, {
-        "title": "Heatmap",
-        "show": false,
-        "canChange": true,
-        "tipText": "App generates heatmaps<br>from user testing"
-    }];
+            "title": "",
+            "show": true,
+            "canChange": false
+        }, {
+            "title": "Name",
+            "show": true,
+            "canChange": true,
+            "tipText": "Name of app"
+        }, {
+            "title": "Platform",
+            "show": true,
+            "canChange": true,
+            "tipText": "Platforms used for <br>building prototypes"
+        }, {
+            "title": "Design",
+            "show": true,
+            "canChange": true,
+            "tipText": "App can design<br>from scratch"
+        }, {
+            "title": "Import",
+            "show": true,
+            "canChange": true,
+            "tipText": "Integrations with<br>other apps"
+        }, {
+            "title": "Animations",
+            "show": true,
+            "canChange": true,
+            "tipText": "Individual animations<br>& micro-interactions"
+        },
+        // {
+        //     "title": "Navigation",
+        //     "show": true,
+        //     "canChange": true,
+        //     "tipText": ""
+        // }, 
+        {
+            "title": "Transitions",
+            "show": true,
+            "canChange": true,
+            "tipText": "App can animate<br>between screens"
+        }, {
+            "title": "Data",
+            "show": true,
+            "canChange": true,
+            "tipText": "App can use<br>data to render UI"
+        }, {
+            "title": "Code",
+            "show": true,
+            "canChange": true,
+            "tipText": "App uses code"
+        }, {
+            "title": "Sharing",
+            "show": true,
+            "canChange": true,
+            "tipText": "How others can<br>use the prototype"
+        }, 
+        // {
+        //     "title": "Pricing",
+        //     "show": true,
+        //     "canChange": true,
+        //     "tipText": "How much the app costs"
+        // }, 
+        {
+            "title": "Tasks",
+            "show": false,
+            "canChange": true,
+            "tipText": ""
+        }, {
+            "title": "Analytics",
+            "show": false,
+            "canChange": true,
+            "tipText": "App can track events"
+        }, {
+            "title": "Heatmap",
+            "show": false,
+            "canChange": true,
+            "tipText": "App generates heatmaps<br>from user testing"
+        }
+    ];
 
     return {
         tools: function() {
@@ -428,30 +493,233 @@ angular.module('uxTools.services', [])
 .factory('handOffFactory', function() {
 
     var tools = [{
-        "name": "Framer",
-        "url": "http://framerjs.com/",
-        "image": "img/prototyping/framer.png",
+        "name": "Zeplin",
+        "url": "https://zeplin.io/",
+        "image": "img/handoff/zeplin.png",
         "platforms": {
             "mac": true
         },
         "import": {
-            "photoshop": true,
             "sketch": true
         },
-        "micro": true,
-        "navigation": true,
-        "transition": true,
-        "data": true,
-        "code": true,
+        "automatic": true,
+        "assets": true,
+        "measure": true,
+        "css": true,
+        "variables": true,
+        "guides": true,
+        "comments": true,
         "sharing": {
+            "mac": true,
             "web": true
-        }
+        },
+        "integrations": {
+            "slack": true,
+        },
+        // "pricingMonthly": {
+        //     "free": true,
+        //     "freeText": "1 Project",
+        //     "levelOne": "$15/mo",
+        //     "levelOneText": "3 Projects",
+        //     "levelTwo": "$25/mo",
+        //     "levelTwoText": "8 Projects",
+        //     "levelThree": "$100/mo",
+        //     "levelThreeText": "Unlimited Projects"
+        // }, 
+        // "pricingAnnual": {
+        //     "free": true,
+        //     "freeText": "1 Project",
+        //     "levelOne": "$13/mo",
+        //     "levelOneText": "3 Projects",
+        //     "levelTwo": "$22/mo",
+        //     "levelTwoText": "8 Projects",
+        //     "levelThree": "$90/mo",
+        //     "levelThreeText": "Unlimited Projects"
+        // }
+    }, {
+        "name": "Avocode",
+        "url": "https://avocode.com/",
+        "image": "img/handoff/avocode.png",
+        "platforms": {
+            "mac": true,
+        },
+        "import": {
+            "sketch": true,
+            "photoshop":true
+        },
+        "automatic": true,
+        "assets": true,
+        "measure": true,
+        "css": true,
+        "variables": true,
+        "guides": true,
+        "layers": true,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "mac": true,
+            "windows": true,
+            "linux": true
+        },
+        "integrations": {
+            "slack": true,
+        },
+        // "pricingMonthly": {
+        //     "levelOne": "$7/user",
+        //     "levelOneText": "Per user, max 3",
+        //     "levelTwo": "$10/mo",
+        //     "levelTwoText": "Per user, unlimited",
+        //     "levelThree": "???",
+        //     "levelThreeText": "Not publicized"
+        // }
+    }, {
+        "name": "Marketch",
+        "url": "https://github.com/tudou527/marketch",
+        "image": "img/handoff/marketch.png",
+        "platforms": {
+            "mac": true,
+        },
+        "import": {
+            "sketch": true
+        },
+        "measure": true,
+        "css": true,
+        "sharing": {
+            "html": true
+        },
+    }, {
+        "name": "Sketch Measure",
+        "url": "https://github.com/utom/sketch-measure",
+        "image": "img/handoff/sketchmeasure.png",
+        "platforms": {
+            "mac": true
+        },
+        "import": {
+            "sketch": true
+        },
+        "measure": true,
+        "css": true,
+        "sharing": {
+            "html": true
+        },
+    }, {
+        "name": "Sympli",
+        "url": "https://sympli.io/",
+        "image": "img/handoff/sympli.png",
+        "platforms": {
+            "web": true
+        },
+        "import": {
+            "sketch": true,
+            "photoshop": true
+        },
+        "automatic": true,
+        "assets": true,
+        "measure": true,
+        "css": true,
+        "variables": true,
+        "guides": true,
+        "layers": true,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+            "xcode": true,
+            "androidStudio": true
+        },
+    }, {
+        "name": "Markly",
+        "url": "http://marklyapp.com/",
+        "image": "img/handoff/markly.png",
+        "platforms": {
+            "mac": true
+        },
+        "import": {
+            "sketch": true,
+            "photoshop": true
+        },
+        "measure": true,
+        "css": true,
+        "sharing": {
+            "web": true,
+        },
     }];
 
-    var filters = [{
-        "title": "",
-        "show": true,
-        "canChange": false
+    var filters = [
+    {
+            "title": "",
+            "show": true,
+            "canChange": false
+    }, {
+            "title": "Name",
+            "show": true,
+            "canChange": true,
+            "tipText": "Name of app"
+    }, {
+            "title": "Platform",
+            "show": true,
+            "canChange": true,
+            "tipText": "Platforms used to <br>upload designs"
+    }, {
+            "title": "Import",
+            "show": true,
+            "canChange": true,
+            "tipText": "Integrations with <br>design apps"
+    }, {
+            "title": "Automatic",
+            "show": true,
+            "canChange": true,
+            "tipText": "App automatically <br>generates specs"
+    }, {
+            "title": "Assets",
+            "show": true,
+            "canChange": true,
+            "tipText": "Export <br>design assets"
+    }, {
+            "title": "Measure",
+            "show": true,
+            "canChange": true,
+            "tipText": "Measure <br>distance and size"
+    }, {
+            "title": "CSS",
+            "show": true,
+            "canChange": true,
+            "tipText": "Can generate CSS"
+    }, {
+            "title": "Variables",
+            "show": true,
+            "canChange": true,
+            "tipText": "Provide <br>custom CSS variables"
+    }, {
+            "title": "Guides",
+            "show": true,
+            "canChange": true,
+            "tipText": "Maintains layout guides <br>from design apps"
+    }, {
+            "title": "Layers",
+            "show": false,
+            "canChange": true,
+            "tipText": "App shows layer tree"
+    }, {
+            "title": "Comments",
+            "show": true,
+            "canChange": true,
+            "tipText": "Users can comment <br>on designs"
+    }, {
+            "title": "Revisions",
+            "show": false,
+            "canChange": true,
+            "tipText": "Save versions <br>of files"
+    }, {
+            "title": "Sharing",
+            "show": true,
+            "canChange": true,
+            "tipText": "How users can <br>access designs"
+    }, {
+            "title": "Integrations",
+            "show": true,
+            "canChange": true,
+            "tipText": "Other external apps"
     }];
 
     return {

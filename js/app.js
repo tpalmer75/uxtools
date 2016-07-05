@@ -44,6 +44,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
   $scope.tempFilters = angular.copy($scope.filters);
 
   $scope.modalShowing = false;
+  //$scope.showMonthly = true; for pricing
 
   $scope.showFiltersModal = function(command) {
     if (command === 'show') {
