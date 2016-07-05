@@ -632,6 +632,9 @@ angular.module('uxTools.services', [])
             "xcode": true,
             "androidStudio": true
         },
+        "integrations": {
+            "slack": true,
+        }
     }, {
         "name": "Markly",
         "url": "http://marklyapp.com/",
