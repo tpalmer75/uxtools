@@ -15,7 +15,12 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
     .state('hand-off', {
       url: '/hand-off',
       templateUrl : '../templates/hand-off.html',
-      controller: 'handOffCtrl'
+      controller: 'collaborationCtrl'
+    })
+    .state('collaboration', {
+      url: '/collaboration',
+      templateUrl : '../templates/collaboration.html',
+      controller: 'collaborationCtrl'
     })
     .state('monitoring', {
       url: '/monitoring',
@@ -70,10 +75,10 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
 
 })
 
-.controller('handOffCtrl', function($scope, $state, handOffFactory) {
+.controller('collaborationCtrl', function($scope, $state, collaborationFactory) {
 
-  $scope.prototypingTools = handOffFactory.tools();
-  $scope.filters = handOffFactory.filters();
+  $scope.prototypingTools = collaborationFactory.tools();
+  $scope.filters = collaborationFactory.filters();
   // Copy filters so ngModel doesn't reflect while changing
   $scope.tempFilters = angular.copy($scope.filters);
 
@@ -96,7 +101,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
   };
 
   $scope.setFilters = function() {
-    handOffFactory.setFilters($scope.tempFilters);
+    collaborationFactory.setFilters($scope.tempFilters);
     $state.reload();
     $scope.showFiltersModal = false;
   };

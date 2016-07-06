@@ -36,13 +36,21 @@ table(fixed-header-table)
           div.flex-col
             div(ng-if="app.platforms.linux" tooltips tooltip-template="Linux")
               div(ng-include="'img/icons/linux.svg'" title="Linux")
-      td.colspan-2(ng-if="isFilterVisible('Import');")
+      td.colspan-2(ng-if="isFilterVisible('Programs');")
         div.flex-col
           div(tooltips tooltip-template="Sketch")
-            img(ng-src="img/icons/sketch.png" ng-if="app.import.sketch" title="Sketch")
+            img(ng-src="img/icons/sketch.png" ng-if="app.programs.sketch" title="Sketch")
         div.flex-col
           div(tooltips tooltip-template="Photoshop")
-            img(ng-src="img/icons/photoshop.png" ng-if="app.import.photoshop" title="Photoshop")
+            img(ng-src="img/icons/photoshop.png" ng-if="app.programs.photoshop" title="Photoshop")
+        div.flex-col
+          div(tooltips tooltip-template="Illustrator")
+            img(ng-src="img/icons/illustrator.png" ng-if="app.programs.illustrator" title="Illustrator")
+        div.flex-col
+          div(tooltips tooltip-template="Indesign")
+            img(ng-src="img/icons/indesign.png" ng-if="app.programs.indesign" title="Indesign")
+      td(ng-if="isFilterVisible('Specs');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.specs")
       td(ng-if="isFilterVisible('Automatic');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.automatic")
       td(ng-if="isFilterVisible('Assets');")
