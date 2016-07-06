@@ -490,24 +490,24 @@ angular.module('uxTools.services', [])
 
 })
 
-.factory('handOffFactory', function() {
+.factory('collaborationFactory', function() {
 
     var tools = [{
         "name": "Zeplin",
         "url": "https://zeplin.io/",
-        "image": "img/handoff/zeplin.png",
+        "image": "img/collaboration/zeplin.png",
         "platforms": {
             "mac": true,
             "windows": true
         },
-        "import": {
+        "programs": {
             "sketch": true,
             "photoshop": true
         },
+        "specs": true,
         "automatic": true,
         "assets": true,
         "measure": true,
-        "css": true,
         "variables": true,
         "guides": true,
         "comments": true,
@@ -542,20 +542,20 @@ angular.module('uxTools.services', [])
     }, {
         "name": "Avocode",
         "url": "https://avocode.com/",
-        "image": "img/handoff/avocode.png",
+        "image": "img/collaboration/avocode.png",
         "platforms": {
             "mac": true,
             "windows": true,
             "linux": true
         },
-        "import": {
+        "programs": {
             "sketch": true,
             "photoshop":true
         },
+        "specs": true,
         "automatic": true,
         "assets": true,
         "measure": true,
-        "css": true,
         "variables": true,
         "guides": true,
         "layers": true,
@@ -580,48 +580,48 @@ angular.module('uxTools.services', [])
     }, {
         "name": "Marketch",
         "url": "https://github.com/tudou527/marketch",
-        "image": "img/handoff/marketch.png",
+        "image": "img/collaboration/marketch.png",
         "platforms": {
             "mac": true,
         },
-        "import": {
+        "programs": {
             "sketch": true
         },
+        "specs": true,
         "measure": true,
-        "css": true,
         "sharing": {
             "html": true
         },
     }, {
         "name": "Sketch Measure",
         "url": "https://github.com/utom/sketch-measure",
-        "image": "img/handoff/sketchmeasure.png",
+        "image": "img/collaboration/sketchmeasure.png",
         "platforms": {
             "mac": true
         },
-        "import": {
+        "programs": {
             "sketch": true
         },
+        "specs": true,
         "measure": true,
-        "css": true,
         "sharing": {
             "html": true
         },
     }, {
         "name": "Sympli",
         "url": "https://sympli.io/",
-        "image": "img/handoff/sympli.png",
+        "image": "img/collaboration/sympli.png",
         "platforms": {
             "web": true
         },
-        "import": {
+        "programs": {
             "sketch": true,
             "photoshop": true
         },
+        "specs": true,
         "automatic": true,
         "assets": true,
         "measure": true,
-        "css": true,
         "variables": true,
         "guides": true,
         "layers": true,
@@ -638,19 +638,51 @@ angular.module('uxTools.services', [])
     }, {
         "name": "Markly",
         "url": "http://marklyapp.com/",
-        "image": "img/handoff/markly.png",
+        "image": "img/collaboration/markly.png",
         "platforms": {
             "mac": true
         },
-        "import": {
+        "programs": {
             "sketch": true,
             "photoshop": true
         },
+        "specs": true,
         "measure": true,
-        "css": true,
         "sharing": {
             "web": true,
         },
+    }, {
+        "name": "Red Pen",
+        "url": "https://redpen.io/",
+        "image": "img/collaboration/redpen.png",
+        "platforms": {
+            "web": true,
+        },
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+        }
+    }, {
+        "name": "Specctr",
+        "url": "https://specctr.com/cloud/home",
+        "image": "img/collaboration/specctr.png",
+        "platforms": {
+            "mac": true,
+            "windows": true,
+        },
+        "programs": {
+            "photoshop":true,
+            "illustrator": true,
+            "indesign": true
+        },
+        "specs": true,
+        "measure": true,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+        }
     }];
 
     var filters = [
@@ -669,10 +701,15 @@ angular.module('uxTools.services', [])
             "canChange": true,
             "tipText": "Platforms used to <br>upload designs"
     }, {
-            "title": "Import",
+            "title": "Programs",
             "show": true,
             "canChange": true,
-            "tipText": "Integrations with <br>design apps"
+            "tipText": "Compatible design programs"
+    }, {
+            "title": "Specs",
+            "show": true,
+            "canChange": true,
+            "tipText": "App creates design <br>specifications"
     }, {
             "title": "Automatic",
             "show": true,
@@ -689,15 +726,10 @@ angular.module('uxTools.services', [])
             "canChange": true,
             "tipText": "Measure <br>distance and size"
     }, {
-            "title": "CSS",
-            "show": true,
-            "canChange": true,
-            "tipText": "Can generate CSS"
-    }, {
             "title": "Variables",
             "show": true,
             "canChange": true,
-            "tipText": "Provide <br>custom CSS variables"
+            "tipText": "Allows custom <br>CSS variables"
     }, {
             "title": "Guides",
             "show": true,

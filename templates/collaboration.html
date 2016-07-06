@@ -48,13 +48,22 @@
           </div>
         </div>
       </td>
-      <td ng-if="isFilterVisible('Import');" class="colspan-2">
+      <td ng-if="isFilterVisible('Programs');" class="colspan-2">
         <div class="flex-col">
-          <div tooltips="tooltips" tooltip-template="Sketch"><img ng-src="img/icons/sketch.png" ng-if="app.import.sketch" title="Sketch"/></div>
+          <div tooltips="tooltips" tooltip-template="Sketch"><img ng-src="img/icons/sketch.png" ng-if="app.programs.sketch" title="Sketch"/></div>
         </div>
         <div class="flex-col">
-          <div tooltips="tooltips" tooltip-template="Photoshop"><img ng-src="img/icons/photoshop.png" ng-if="app.import.photoshop" title="Photoshop"/></div>
+          <div tooltips="tooltips" tooltip-template="Photoshop"><img ng-src="img/icons/photoshop.png" ng-if="app.programs.photoshop" title="Photoshop"/></div>
         </div>
+        <div class="flex-col">
+          <div tooltips="tooltips" tooltip-template="Illustrator"><img ng-src="img/icons/illustrator.png" ng-if="app.programs.illustrator" title="Illustrator"/></div>
+        </div>
+        <div class="flex-col">
+          <div tooltips="tooltips" tooltip-template="Indesign"><img ng-src="img/icons/indesign.png" ng-if="app.programs.indesign" title="Indesign"/></div>
+        </div>
+      </td>
+      <td ng-if="isFilterVisible('Specs');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.specs"></div>
       </td>
       <td ng-if="isFilterVisible('Automatic');">
         <div ng-include="'img/icons/check.svg'" ng-if="app.automatic"></div>
