@@ -326,6 +326,9 @@ angular.module('uxTools.services', [])
         "platforms": {
             "web": true,
         },
+        "import": {
+            "sketch": true
+        },
         "design": true,
         "micro": true,
         "navigation": true,
