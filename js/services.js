@@ -396,6 +396,26 @@ angular.module('uxTools.services', [])
         "tasks": true,
         "heatmap": true,
         "analytics": true
+    }, {
+        "name": "Fuse",
+        "url": "https://www.fusetools.com/",
+        "image": "img/prototyping/fuse.png",
+        "platforms": {
+            "mac": true,
+            "windows": true,
+        },
+        "import": {
+            "sketch": true,
+        },
+        "navigation": true,
+        "micro": true,
+        "transition": true,
+        "data": true,
+        "code": true,
+        "sharing": {
+            "iOS": true,
+            "android": true
+        }
     }];
 
     var filters = [{
