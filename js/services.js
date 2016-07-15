@@ -160,7 +160,8 @@ angular.module('uxTools.services', [])
         "image": "img/prototyping/flinto.png",
         "platforms": {
             "web": true,
-            "iOS": true
+            "iOS": true,
+            "mac": true
         },
         "micro": true,
         "design": true,
