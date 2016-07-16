@@ -295,6 +295,7 @@ angular.module('uxTools.services', [])
         "import": {
             "photoshop": true,
             "dropbox": true,
+            "sketch": true,
         },
         "sketch": true,
         "design": true,
