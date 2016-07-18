@@ -123,6 +123,11 @@
             <div ng-include="'img/icons/file-pdf-box.svg'" title="PDF"></div>
           </div>
         </div>
+        <div class="flex-col">
+          <div ng-if="app.sharing.html" tooltips="tooltips" tooltip-template="HTML">
+            <div ng-include="'img/icons/html.svg'" title="HTML"></div>
+          </div>
+        </div>
       </td>
       <td ng-if="isFilterVisible('Tasks');">
         <div ng-include="'img/icons/check.svg'" ng-if="app.tasks"></div>

@@ -108,6 +108,9 @@ table(fixed-header-table)
         div.flex-col
           div(ng-if="app.sharing.pdf" tooltips tooltip-template="PDF")
             div(ng-include="'img/icons/file-pdf-box.svg'" title="PDF")
+        div.flex-col
+          div(ng-if="app.sharing.html" tooltips tooltip-template="HTML")
+            div(ng-include="'img/icons/html.svg'" title="HTML")
 
 
       //- td.pricing(ng-if="isFilterVisible('Pricing');")
