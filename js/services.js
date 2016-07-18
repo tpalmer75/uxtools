@@ -55,7 +55,7 @@ angular.module('uxTools.services', [])
         "micro": true,
         "navigation": true,
         "sharing": {
-            "web": true
+            "web": true,
         }
     }, {
         "name": "InVision",
@@ -71,7 +71,9 @@ angular.module('uxTools.services', [])
         "navigation": true,
         "transition": true,
         "sharing": {
-            "web": true
+            "web": true,
+            "pdf": true,
+            "html": true
         },
         "fixedHeader": true,
         "pricing": {
@@ -133,8 +135,9 @@ angular.module('uxTools.services', [])
             "iOS": true,
             "android": true,
             "appleWatch": true,
-            "appleTv": true
-            //- HTML
+            "appleTv": true,
+            "html": true,
+            "pdf": true
         },
         "pricing": {
             "free": {
@@ -417,6 +420,20 @@ angular.module('uxTools.services', [])
         "sharing": {
             "iOS": true,
             "android": true
+        }
+    }, {
+        "name": "HotGloo",
+        "url": "hhttps://www.hotgloo.com/",
+        "image": "img/prototyping/hotgloo.png",
+        "platforms": {
+            "web": true,
+        },
+        "navigation": true,
+        "micro": true,
+        "sharing": {
+            "web": true,
+            "pdf": true,
+            "html":true
         }
     }];
 
