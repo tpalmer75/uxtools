@@ -423,7 +423,7 @@ angular.module('uxTools.services', [])
         }
     }, {
         "name": "HotGloo",
-        "url": "hhttps://www.hotgloo.com/",
+        "url": "https://www.hotgloo.com/",
         "image": "img/prototyping/hotgloo.png",
         "platforms": {
             "web": true,
