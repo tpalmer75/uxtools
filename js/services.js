@@ -436,6 +436,22 @@ angular.module('uxTools.services', [])
             "pdf": true,
             "html":true
         }
+    }, {
+        "name": "Webflow",
+        "url": "https://webflow.com/",
+        "image": "img/prototyping/webflow.png",
+        "design": true,
+        "platforms": {
+            "web": true,
+        },
+        "navigation": true,
+        "micro": true,
+        "transition": true,
+        "data": true,
+        "sharing": {
+            "web": true,
+            "html":true
+        }
     }];
 
     var filters = [{
@@ -478,17 +494,17 @@ angular.module('uxTools.services', [])
             "title": "Transitions",
             "show": true,
             "canChange": true,
-            "tipText": "App can animate<br>between screens"
+            "tipText": "Animates between screens"
         }, {
             "title": "Data",
             "show": true,
             "canChange": true,
-            "tipText": "App can use<br>data to render UI"
+            "tipText": "Uses data to<br>render UI"
         }, {
             "title": "Code",
             "show": true,
             "canChange": true,
-            "tipText": "App uses code"
+            "tipText": "Requires knowledge<br>of code"
         }, {
             "title": "Sharing",
             "show": true,
