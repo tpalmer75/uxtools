@@ -425,6 +425,7 @@ angular.module('uxTools.services', [])
         "name": "HotGloo",
         "url": "https://www.hotgloo.com/",
         "image": "img/prototyping/hotgloo.png",
+        "design": true,
         "platforms": {
             "web": true,
         },
