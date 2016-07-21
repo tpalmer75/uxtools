@@ -661,6 +661,8 @@ angular.module('uxTools.services', [])
         "programs": {
             "sketch": true
         },
+        "automatic": true,
+        "assets": true,
         "specs": true,
         "measure": true,
         "sharing": {
