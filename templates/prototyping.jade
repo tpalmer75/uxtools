@@ -51,7 +51,7 @@ table(fixed-header-table)
         div(ng-include="'img/icons/check.svg'" ng-if="app.design" title="Design from scratch")
 
 
-      td.colspan-3(ng-if="isFilterVisible('Import');")
+      td.colspan-5(ng-if="isFilterVisible('Import');")
         div.flex-col
           div(tooltips tooltip-template="Sketch")
             img(ng-src="img/icons/sketch.png" ng-if="app.import.sketch" title="Sketch")
@@ -61,6 +61,12 @@ table(fixed-header-table)
         div.flex-col
           div(tooltips tooltip-template="Balsamiq")
             img(ng-src="img/icons/balsamiq.png" ng-if="app.import.balsamiq" title="balsamiq")
+        div.flex-col
+          div(tooltips tooltip-template="Dropbox")
+            img(ng-src="img/icons/dropbox.png" ng-if="app.import.dropbox" title="dropbox")
+        div.flex-col
+          div(tooltips tooltip-template="Mobile Camera")
+            div(ng-include="'img/icons/camera.svg'" ng-if="app.import.camera" title="camera")
 
 
       td(ng-if="isFilterVisible('Animations');")

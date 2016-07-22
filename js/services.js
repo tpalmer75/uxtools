@@ -66,7 +66,8 @@ angular.module('uxTools.services', [])
         },
         "import": {
             "sketch": true,
-            "photoshop": true
+            "photoshop": true,
+            "dropbox": true
         },
         "navigation": true,
         "transition": true,
@@ -126,7 +127,11 @@ angular.module('uxTools.services', [])
         },
         "design": true,
         "import": {
-            "sketch": true
+            "sketch": true,
+            "dropbox": true,
+            "camera": true,
+            "googleDrive": true,
+            "box": true
         },
         "navigation": true,
         "transition": true,
@@ -163,13 +168,13 @@ angular.module('uxTools.services', [])
         "image": "img/prototyping/flinto.png",
         "platforms": {
             "web": true,
-            "iOS": true,
             "mac": true
         },
         "micro": true,
         "design": true,
         "import": {
-            "sketch": true
+            "sketch": true,
+            "dropbox": true
         },
         "navigation": true,
         "transition": true,
@@ -183,7 +188,9 @@ angular.module('uxTools.services', [])
         "image": "img/prototyping/flinto-lite.png",
         "platforms": {
             "web": true,
-            "iOS": true
+        },
+        "import": {
+            "dropbox": true
         },
         "navigation": true,
         "transition": true,
@@ -252,7 +259,9 @@ angular.module('uxTools.services', [])
         "platforms": {
             "mac": true
         },
-        "sketch": true,
+        "import": {
+            "sketch": true
+        },
         "navigation": true,
         "transition": true,
         "sharing": {
@@ -351,6 +360,7 @@ angular.module('uxTools.services', [])
         "import": {
             "sketch": true,
             "balsamiq": true,
+            "dropbox": true,
             "camera": true
         },
         // "micro": only with GIF,
@@ -451,6 +461,43 @@ angular.module('uxTools.services', [])
         "sharing": {
             "web": true,
             "html":true
+        }
+    }, {
+        "name": "Demonstrate",
+        "url": "http://nfnlabs.in/demonstrate/",
+        "image": "img/prototyping/demonstrate.png",
+        "platforms": {
+            "iOS": true,
+        },
+        "import": {
+            "dropbox": true,
+            "camera": true
+        },
+        "navigation": true,
+        "transition": true,
+        "sharing": {
+            "iOS": true
+        }
+    }, {
+        "name": "Prott",
+        "url": "https://prottapp.com/",
+        "image": "img/prototyping/prott.png",
+        "platforms": {
+            "web": true,
+            "mac": true,
+            "iOS": true,
+        },
+        "design": true,
+        "import": {
+            "sketch": true,
+            "camera": true,
+            "dropbox": true
+        },
+        "navigation": true,
+        "transition": true,
+        "sharing": {
+            "web": true,
+            "iOS": true
         }
     }];
 
