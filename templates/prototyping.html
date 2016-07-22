@@ -56,7 +56,7 @@
       <td ng-if="isFilterVisible('Design');">
         <div ng-include="'img/icons/check.svg'" ng-if="app.design" title="Design from scratch"></div>
       </td>
-      <td ng-if="isFilterVisible('Import');" class="colspan-3">
+      <td ng-if="isFilterVisible('Import');" class="colspan-5">
         <div class="flex-col">
           <div tooltips="tooltips" tooltip-template="Sketch"><img ng-src="img/icons/sketch.png" ng-if="app.import.sketch" title="Sketch"/></div>
         </div>
@@ -65,6 +65,14 @@
         </div>
         <div class="flex-col">
           <div tooltips="tooltips" tooltip-template="Balsamiq"><img ng-src="img/icons/balsamiq.png" ng-if="app.import.balsamiq" title="balsamiq"/></div>
+        </div>
+        <div class="flex-col">
+          <div tooltips="tooltips" tooltip-template="Dropbox"><img ng-src="img/icons/dropbox.png" ng-if="app.import.dropbox" title="dropbox"/></div>
+        </div>
+        <div class="flex-col">
+          <div tooltips="tooltips" tooltip-template="Mobile Camera">
+            <div ng-include="'img/icons/camera.svg'" ng-if="app.import.camera" title="camera"></div>
+          </div>
         </div>
       </td>
       <td ng-if="isFilterVisible('Animations');">
