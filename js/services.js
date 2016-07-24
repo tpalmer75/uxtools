@@ -499,6 +499,24 @@ angular.module('uxTools.services', [])
             "web": true,
             "iOS": true
         }
+    }, {
+        "name": "Justinmind",
+        "url": "http://www.justinmind.com/",
+        "image": "img/prototyping/justinmind.png",
+        "platforms": {
+            "mac": true,
+            "windows": true
+        },
+        "design": true,
+        "navigation": true,
+        "transition": true,
+        "sharing": {
+            "web": true,
+            "iOS": true,
+            "android": true
+        },
+        "mobileOnly": false,
+        "responsive": true
     }];
 
     var filters = [{
