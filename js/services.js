@@ -21,7 +21,8 @@ angular.module('uxTools.services', [])
         "data": true,
         "code": true,
         "sharing": {
-            "web": true
+            "web": true,
+            "iOS": true
         }
     }, {
         "name": "Principle",
@@ -486,10 +487,12 @@ angular.module('uxTools.services', [])
             "web": true,
             "mac": true,
             "iOS": true,
+            "android": true
         },
         "design": true,
         "import": {
             "sketch": true,
+            "photoshop": true,
             "camera": true,
             "dropbox": true
         },
@@ -497,7 +500,8 @@ angular.module('uxTools.services', [])
         "transition": true,
         "sharing": {
             "web": true,
-            "iOS": true
+            "iOS": true,
+            "android": true
         }
     }, {
         "name": "Justinmind",
