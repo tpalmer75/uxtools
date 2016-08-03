@@ -904,4 +904,68 @@ angular.module('uxTools.services', [])
         }
     };
 
+})
+
+.factory('monitoringFactory', function() {
+
+    var tools = [{
+        "name": "Inspectlet",
+        "url": "http://www.inspectlet.com/",
+        "image": "img/monitoring/inspectlet.png",
+        "platforms": {
+            "web": true
+        },
+        "heatmaps": true,
+        "tags": true,
+
+        "sharing": {
+            "web": true,
+            "html": true
+        }
+    }, {
+        "name": "Lucky Orange",
+        "url": "http://www.luckyorange.com/",
+        "image": "img/monitoring/luckyorange.png",
+        "platforms": {
+            "web": true
+        },
+        "heatmaps": true,
+        "tags": true,
+        "polls": true,
+        "formAnalytics": true,
+        "liveVisitors": true,
+        "referrersMonitor": true,
+        "twitterMonitor": true,
+        "geography": true,
+        
+        "sharing": {
+            "web": true,
+            "html": true
+        }
+    }];
+
+    var filters = [
+    {
+            "title": "",
+            "show": true,
+            "canChange": false
+    }, {
+            "title": "Name",
+            "show": true,
+            "canChange": true,
+            "tipText": "Name of app"
+    }];
+
+    return {
+        tools: function() {
+            return tools;
+        },
+        filters: function() {
+            return filters;
+        },
+        setFilters: function(data) {
+            filters = data;
+        }
+    };
+
 });
