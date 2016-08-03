@@ -917,7 +917,9 @@ angular.module('uxTools.services', [])
         },
         "heatmaps": true,
         "tags": true,
-
+        "location": true,
+        "skipInactivity": true,
+        "playbackSpeed": true,
         "sharing": {
             "web": true,
             "html": true
@@ -933,14 +935,52 @@ angular.module('uxTools.services', [])
         "tags": true,
         "polls": true,
         "formAnalytics": true,
-        "liveVisitors": true,
-        "referrersMonitor": true,
-        "twitterMonitor": true,
-        "geography": true,
-        
+        "location": true,
+        "console": true,
+        "skipInactivity": true,
+        "playbackSpeed": true,
         "sharing": {
             "web": true,
             "html": true
+        }
+        // can watch live sessions
+        // can show trending referrers
+        // can show trending tweets
+
+    }, {
+        "name": "Fullstory",
+        "url": "http://www.fullstory.com/",
+        "image": "img/monitoring/fullstory.png",
+        "platforms": {
+            "web": true
+        },
+        "tags": true,
+        "location": true,
+        "console": true,
+        "skipInactivity": true,
+        "playbackSpeed": true,
+        "jumpBack": true, // Skip backwards a few seconds
+        // Can search according the the html element a user clicked
+        // can watch live sessions
+        "sharing": {
+            "web": true,
+        }
+    }, {
+        "name": "Hotjar",
+        "url": "https://www.hotjar.com/",
+        "image": "img/monitoring/hotjar.png",
+        "platforms": {
+            "web": true
+        },
+        "heatmaps": true,
+        "location": true,
+        "formAnalytics": true,
+        "polls": true,
+        "playbackSpeed": true,
+        "skipInactivity": true,
+        // host custom surveys like Qualtrics
+        "sharing": {
+            "web": true,
         }
     }];
 
