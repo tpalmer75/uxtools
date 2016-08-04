@@ -25,7 +25,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
     .state('monitoring', {
       url: '/monitoring',
       templateUrl : '../templates/monitoring.html',
-      controller: 'prototypingCtrl'
+      controller: 'monitoringCtrl'
     })
     .state('usability-testing', {
       url: '/usability-testing',
@@ -102,6 +102,39 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
 
   $scope.setFilters = function() {
     collaborationFactory.setFilters($scope.tempFilters);
+    $state.reload();
+    $scope.showFiltersModal = false;
+  };
+
+})
+
+.controller('monitoringCtrl', function($scope, $state, monitoringFactory) {
+
+  $scope.prototypingTools = monitoringFactory.tools();
+  $scope.filters = monitoringFactory.filters();
+  // Copy filters so ngModel doesn't reflect while changing
+  $scope.tempFilters = angular.copy($scope.filters);
+
+  $scope.modalShowing = false;
+
+  $scope.showFiltersModal = function(command) {
+    if (command === 'show') {
+      $scope.modalShowing = true;
+    } else if (command === 'hide') {
+      $scope.modalShowing = false;
+    }
+  };
+
+  $scope.isFilterVisible = function(string) {
+    for ( var i = 0; i < $scope.filters.length; i++ ) {
+      if ( $scope.filters[i].title === string ) {
+        return $scope.filters[i].show;
+      }
+    }
+  };
+
+  $scope.setFilters = function() {
+    monitoringFactory.setFilters($scope.tempFilters);
     $state.reload();
     $scope.showFiltersModal = false;
   };
