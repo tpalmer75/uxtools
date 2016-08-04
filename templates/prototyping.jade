@@ -22,7 +22,7 @@ table(fixed-header-table)
       td
         a(ng-href="{{app.url}}" title="{{app.url}}")
           img(ng-src="{{app.image}}" )
-
+        .star(ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice")
 
       td 
         a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
