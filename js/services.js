@@ -521,6 +521,18 @@ angular.module('uxTools.services', [])
         },
         "mobileOnly": false,
         "responsive": true
+    }, {
+        "name": "Notable",
+        "url": "http://notable.zurb.com/",
+        "image": "img/prototyping/notable.png",
+        "platforms": {
+            "web": true
+        },
+        "navigation": true,
+        "transition": true,
+        "sharing": {
+            "web": true,
+        },
     }];
 
     var filters = [{
