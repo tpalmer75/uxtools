@@ -22,10 +22,10 @@
   </thead>
   <tbody>
     <tr ng-repeat="app in prototypingTools | orderBy:'name'">
-      <td><a ng-href="{{app.url}}" title="{{app.url}}"><img ng-src="{{app.image}}"/></a>
+      <td><a ng-href="{{app.url}}" title="{{app.url}}" target="_blank"><img ng-src="{{app.image}}"/></a>
         <div ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice" class="star"></div>
       </td>
-      <td> <a ng-href="{{app.url}}" title="{{app.url}}">{{ app.name }}</a></td>
+      <td> <a ng-href="{{app.url}}" title="{{app.url}}" target="_blank">{{ app.name }}</a></td>
       <td ng-if="isFilterVisible('Platform');" class="colspan-5">
         <div class="flex-wrapper">
           <div class="flex-col">

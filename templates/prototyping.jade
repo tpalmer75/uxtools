@@ -20,12 +20,12 @@ table(fixed-header-table)
 
 
       td
-        a(ng-href="{{app.url}}" title="{{app.url}}")
+        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
           img(ng-src="{{app.image}}" )
         .star(ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice")
 
       td 
-        a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
+        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }}
 
 
       td.colspan-5(ng-if="isFilterVisible('Platform');")
