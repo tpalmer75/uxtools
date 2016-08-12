@@ -18,11 +18,11 @@ table(fixed-header-table)
   tbody
     tr(ng-repeat="app in prototypingTools | orderBy:'name'")
       td
-        a(ng-href="{{app.url}}" title="{{app.url}}")
+        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
           img(ng-src="{{app.image}}")
         .star(ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice")
       td 
-        a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
+        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }}
       td(ng-if="isFilterVisible('Platform');")
         div.flex-wrapper
           div.flex-col
