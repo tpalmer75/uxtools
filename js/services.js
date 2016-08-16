@@ -742,6 +742,7 @@ angular.module('uxTools.services', [])
         "programs": {
             "sketch": true
         },
+        "variables": true,
         "automatic": true,
         "assets": true,
         "specs": true,
@@ -886,7 +887,7 @@ angular.module('uxTools.services', [])
             "title": "Comments",
             "show": true,
             "canChange": true,
-            "tipText": "Users can comment <br>on designs"
+            "tipText": "Viewers can comment <br>on designs"
     }, {
             "title": "Revisions",
             "show": false,
