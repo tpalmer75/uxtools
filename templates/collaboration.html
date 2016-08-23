@@ -50,6 +50,11 @@
           </div>
         </div>
       </td>
+      <td ng-if="isFilterVisible('Free');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.pricing.free"></div>
+      </td>
+      <td style="min-width: 100px" ng-if="isFilterVisible('Subscription');"><span>{{app.pricing.subscription}}</span></td>
+      <td ng-if="isFilterVisible('Purchase');"><span>{{app.pricing.purchase}}</span></td>
       <td ng-if="isFilterVisible('Programs');" class="colspan-2">
         <div class="flex-col">
           <div tooltips="tooltips" tooltip-template="Sketch"><img ng-src="img/icons/sketch.png" ng-if="app.programs.sketch" title="Sketch"/></div>

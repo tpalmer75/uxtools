@@ -37,6 +37,14 @@ table(fixed-header-table)
           div.flex-col
             div(ng-if="app.platforms.linux" tooltips tooltip-template="Linux")
               div(ng-include="'img/icons/linux.svg'" title="Linux")
+
+      td(ng-if="isFilterVisible('Free');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.pricing.free")
+      td(style="min-width: 100px" ng-if="isFilterVisible('Subscription');")
+        span {{app.pricing.subscription}}
+      td(ng-if="isFilterVisible('Purchase');")
+        span {{app.pricing.purchase}}
+
       td.colspan-2(ng-if="isFilterVisible('Programs');")
         div.flex-col
           div(tooltips tooltip-template="Sketch")
