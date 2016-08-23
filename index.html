@@ -1,7 +1,7 @@
 
 <html ng-app="uxTools">
   <head>
-    <title>UX Tools</title>
+    <title>Uxtools.co</title>
     <meta name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing."/>
     <meta name="ROBOTS" content="INDEX, FOLLOW"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -12,17 +12,20 @@
   <body>
     <header>
       <h1>uxtools</h1>
-      <div class="wrapper top-wrapper"><img id="logo" src="img/uxtools-logo.svg" alt="UX Tools"/><a href="http://www.twitter.com/@_taylorpalmer"> 
-          <div ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter!" class="icon"></div><span>@_taylorpalmer</span></a></div>
-      <div class="wrapper">
-        <div class="scroll-tabs">
-          <ul>
-            <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
-            <li ui-sref-active="active"><a ui-sref="collaboration">Collaboration</a></li>
-            <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
-            <li ui-sref-active="active"><a ui-sref="usability-testing">Usability Testing</a></li>
-          </ul>
+      <div class="wrapper top-wrapper">
+        <div class="left"><img id="logo" src="img/uxtools-logo.svg" alt="UX Tools"/></div>
+        <div class="middle">
+          <div class="scroll-tabs">
+            <ul>
+              <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
+              <li ui-sref-active="active"><a ui-sref="collaboration">Collaboration</a></li>
+              <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
+              <li ui-sref-active="active"><a ui-sref="usability-testing">Usability Testing</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="right"><a href="http://www.twitter.com/@_taylorpalmer"> 
+            <div ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter!" class="icon"></div><span>@_taylorpalmer</span></a></div>
       </div>
     </header>
     <section>

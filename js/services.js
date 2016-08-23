@@ -8,6 +8,7 @@ angular.module('uxTools.services', [])
         "name": "Framer",
         "url": "http://framerjs.com/",
         "image": "img/prototyping/framer.png",
+        "taylorChoice": true,
         "platforms": {
             "mac": true
         },
@@ -23,11 +24,17 @@ angular.module('uxTools.services', [])
         "sharing": {
             "web": true,
             "iOS": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$129"
         }
     }, {
         "name": "Principle",
         "url": "http://principleformac.com/",
         "image": "img/prototyping/principle.png",
+        "taylorChoice": true,
         "platforms": {
             "mac": true
         },
@@ -40,6 +47,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "iOS": true,
             "mac": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$99"
         }
     }, {
         "name": "UX Pin",
@@ -57,6 +69,11 @@ angular.module('uxTools.services', [])
         "navigation": true,
         "sharing": {
             "web": true,
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$19",
+            "purchase": ""
         }
     }, {
         "name": "InVision",
@@ -79,43 +96,9 @@ angular.module('uxTools.services', [])
         },
         "fixedHeader": true,
         "pricing": {
-            "free": {
-                "tipText": "1 Project"
-            },
-            "monthly": {
-                "personal": [{
-                    "price":"$15",
-                    "tipText":"3 Projects"
-                    }, {
-                    "price":"$25",
-                    "tipText":"Unlimited Projects"
-                }],
-                "team": [{
-                    "price":"$99",
-                    "tipText":"Unlimited Projects"
-                }],
-                "enterprise": [{
-                    "price":"$--",
-                    "tipText":"Unlimited everything"
-                }]
-            },
-            "annual": {
-                "personal": [{
-                    "price":"$13",
-                    "tipText":"3 Projects"
-                    }, {
-                    "price":"$22",
-                    "tipText":"Unlimited Projects"
-                }],
-                "team": [{
-                    "price":"$89",
-                    "tipText":"Unlimited Projects"
-                }],
-                "enterprise": [{
-                    "price":"$--",
-                    "tipText":"Unlimited everything"
-                }]
-            }
+            "free": true,
+            "subscription": "$15",
+            "purchase": ""
         }
     }, {
         "name": "Marvel",
@@ -146,22 +129,9 @@ angular.module('uxTools.services', [])
             "pdf": true
         },
         "pricing": {
-            "free": {
-                "tipText": "1 Project"
-            },
-            "monthly": {
-                "personal": [{
-                    "price":"$10",
-                    "tipText":"3 Projects"
-                    }, {
-                    "price":"$555",
-                    "tipText":"Unlimited Projects"
-                }],
-                "enterprise": [{
-                    "price":"$--",
-                    "tipText":"Unlimited everything"
-                }]
-            }
+            "free": true,
+            "subscription": "$12",
+            "purchase": ""
         }
     }, {
         "name": "Flinto",
@@ -182,7 +152,12 @@ angular.module('uxTools.services', [])
         "sharing": {
             "iOS": true
         },
-        "fixedHeader": true
+        "fixedHeader": true,
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$99"
+        }
     }, {
         "name": "Flinto Lite",
         "url": "https://www.flinto.com/lite",
@@ -199,7 +174,12 @@ angular.module('uxTools.services', [])
             "iOS": true,
             "android": true
         },
-        "fixedHeader": true
+        "fixedHeader": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$20",
+            "purchase": ""
+        }
     }, {
         "name": "Axure",
         "url": "http://www.axure.com/",
@@ -214,6 +194,11 @@ angular.module('uxTools.services', [])
         "transition": true,
         "sharing": {
             "web": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$29",
+            "purchase": "$495"
         }
     }, {
         "name": "Balsamiq",
@@ -227,6 +212,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "web": true,
             "pdf": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$12",
+            "purchase": "$89"
         }
     }, {
         "name": "Lucidchart",
@@ -239,6 +229,11 @@ angular.module('uxTools.services', [])
         "navigation": true,
         "sharing": {
             "web": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$5",
+            "purchase": ""
         }
     }, {
         "name": "Adobe XD",
@@ -252,6 +247,11 @@ angular.module('uxTools.services', [])
         "transition": true,
         "sharing": {
             "web": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$19",
+            "purchase": ""
         }
     }, {
         "name": "Craft",
@@ -267,6 +267,11 @@ angular.module('uxTools.services', [])
         "transition": true,
         "sharing": {
             "iOS": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "",
+            "purchase": ""
         }
     }, {
         "name": "Pixate",
@@ -284,6 +289,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "iOS": true,
             "android": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$5",
+            "purchase": ""
         }
     }, {
         "name": "Origami",
@@ -297,6 +307,11 @@ angular.module('uxTools.services', [])
         "transition": true,
         "sharing": {
             "iOS": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "",
+            "purchase": ""
         }
     }, {
         "name": "Proto.io",
@@ -319,7 +334,12 @@ angular.module('uxTools.services', [])
             "iOS": true,
             "android": true,
             "web": true,
-            //- html
+            "html": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$24",
+            "purchase": ""
         }
     }, {
         "name": "Moqups",
@@ -333,6 +353,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "web": true,
             "pdf": true,
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$19",
+            "purchase": ""
         }
     }, {
         "name": "Atomic.io",
@@ -350,6 +375,11 @@ angular.module('uxTools.services', [])
         "transition": true,
         "sharing": {
             "web": true,
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$15",
+            "purchase": ""
         }
     }, {
         "name": "CanvasFlip",
@@ -374,9 +404,14 @@ angular.module('uxTools.services', [])
         },
         "analytics": true,
         "heatmap": true,
+        "pricing": {
+            "free": true,
+            "subscription": "$19",
+            "purchase": ""
+        }
         // fixed header
         // screen overlays
-        // timers
+        // timers,
     }, {
         "name": "iRise",
         "url": "https://www.irise.com/",
@@ -396,6 +431,11 @@ angular.module('uxTools.services', [])
             "web": true,
             "windows": true,
             "mac": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$29",
+            "purchase": ""
         }
     }, {
         "name": "Koncept App",
@@ -411,7 +451,12 @@ angular.module('uxTools.services', [])
         },
         "tasks": true,
         "heatmap": true,
-        "analytics": true
+        "analytics": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$15",
+            "purchase": ""
+        }
     }, {
         "name": "Fuse",
         "url": "https://www.fusetools.com/",
@@ -431,6 +476,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "iOS": true,
             "android": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "",
+            "purchase": ""
         }
     }, {
         "name": "HotGloo",
@@ -446,6 +496,11 @@ angular.module('uxTools.services', [])
             "web": true,
             "pdf": true,
             "html":true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$15",
+            "purchase": ""
         }
     }, {
         "name": "Webflow",
@@ -462,6 +517,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "web": true,
             "html":true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$16",
+            "purchase": null
         }
     }, {
         "name": "Demonstrate",
@@ -478,6 +538,11 @@ angular.module('uxTools.services', [])
         "transition": true,
         "sharing": {
             "iOS": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "",
+            "purchase": ""
         }
     }, {
         "name": "Prott",
@@ -502,6 +567,11 @@ angular.module('uxTools.services', [])
             "web": true,
             "iOS": true,
             "android": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$19",
+            "purchase": null
         }
     }, {
         "name": "Justinmind",
@@ -520,7 +590,12 @@ angular.module('uxTools.services', [])
             "android": true
         },
         "mobileOnly": false,
-        "responsive": true
+        "responsive": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$19",
+            "purchase": "$495"
+        }
     }, {
         "name": "Notable",
         "url": "http://notable.zurb.com/",
@@ -533,6 +608,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "web": true,
         },
+        "pricing": {
+            "free": false,
+            "subscription": "$20",
+            "purchase": ""
+        }
     }];
 
     var filters = [{
@@ -549,6 +629,21 @@ angular.module('uxTools.services', [])
             "show": true,
             "canChange": true,
             "tipText": "Platforms used for <br>building prototypes"
+        }, {
+            "title": "Free",
+            "show": true,
+            "canChange": true,
+            "tipText": "Has a free version"
+        }, {
+            "title": "Subscription",
+            "show": true,
+            "canChange": true,
+            "tipText": "Cheapest monthly<br>payment"
+        }, {
+            "title": "Purchase",
+            "show": true,
+            "canChange": true,
+            "tipText": "One time cost"
         }, {
             "title": "Design",
             "show": true,
@@ -591,14 +686,7 @@ angular.module('uxTools.services', [])
             "show": true,
             "canChange": true,
             "tipText": "How others can<br>use the prototype"
-        }, 
-        // {
-        //     "title": "Pricing",
-        //     "show": true,
-        //     "canChange": true,
-        //     "tipText": "How much the app costs"
-        // }, 
-        {
+        }, {
             "title": "Tasks",
             "show": false,
             "canChange": true,
@@ -659,26 +747,11 @@ angular.module('uxTools.services', [])
         "integrations": {
             "slack": true,
         },
-        // "pricingMonthly": {
-        //     "free": true,
-        //     "freeText": "1 Project",
-        //     "levelOne": "$15/mo",
-        //     "levelOneText": "3 Projects",
-        //     "levelTwo": "$25/mo",
-        //     "levelTwoText": "8 Projects",
-        //     "levelThree": "$100/mo",
-        //     "levelThreeText": "Unlimited Projects"
-        // }, 
-        // "pricingAnnual": {
-        //     "free": true,
-        //     "freeText": "1 Project",
-        //     "levelOne": "$13/mo",
-        //     "levelOneText": "3 Projects",
-        //     "levelTwo": "$22/mo",
-        //     "levelTwoText": "8 Projects",
-        //     "levelThree": "$90/mo",
-        //     "levelThreeText": "Unlimited Projects"
-        // }
+        "pricing": {
+            "free": true,
+            "subscription": "$15",
+            "purchase": ""
+        }
     }, {
         "name": "Avocode",
         "url": "https://avocode.com/",
@@ -709,14 +782,11 @@ angular.module('uxTools.services', [])
         "integrations": {
             "slack": true,
         },
-        // "pricingMonthly": {
-        //     "levelOne": "$7/user",
-        //     "levelOneText": "Per user, max 3",
-        //     "levelTwo": "$10/mo",
-        //     "levelTwoText": "Per user, unlimited",
-        //     "levelThree": "???",
-        //     "levelThreeText": "Not publicized"
-        // }
+        "pricing": {
+            "free": false,
+            "subscription": "$7",
+            "purchase": ""
+        }
     }, {
         "name": "Marketch",
         "url": "https://github.com/tudou527/marketch",
@@ -732,6 +802,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "html": true
         },
+        "pricing": {
+            "free": true,
+            "subscription": "",
+            "purchase": ""
+        }
     }, {
         "name": "Sketch Measure",
         "url": "https://github.com/utom/sketch-measure",
@@ -750,6 +825,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "html": true
         },
+        "pricing": {
+            "free": true,
+            "subscription": "",
+            "purchase": ""
+        }
     }, {
         "name": "Sympli",
         "url": "https://sympli.io/",
@@ -777,6 +857,11 @@ angular.module('uxTools.services', [])
         },
         "integrations": {
             "slack": true,
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$15",
+            "purchase": ""
         }
     }, {
         "name": "Markly",
@@ -794,6 +879,11 @@ angular.module('uxTools.services', [])
         "sharing": {
             "web": true,
         },
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$50"
+        }
     }, {
         "name": "Red Pen",
         "url": "https://redpen.io/",
@@ -805,6 +895,11 @@ angular.module('uxTools.services', [])
         "revisions": true,
         "sharing": {
             "web": true,
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$20",
+            "purchase": ""
         }
     }, {
         "name": "Specctr",
@@ -825,6 +920,11 @@ angular.module('uxTools.services', [])
         "revisions": true,
         "sharing": {
             "web": true,
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$9",
+            "purchase": ""
         }
     }];
 
@@ -843,6 +943,21 @@ angular.module('uxTools.services', [])
             "show": true,
             "canChange": true,
             "tipText": "Platforms used to <br>upload designs"
+    }, {
+            "title": "Free",
+            "show": true,
+            "canChange": true,
+            "tipText": "Has a free version"
+    }, {
+            "title": "Subscription",
+            "show": true,
+            "canChange": true,
+            "tipText": "Cheapest monthly<br>payment"
+    }, {
+            "title": "Purchase",
+            "show": true,
+            "canChange": true,
+            "tipText": "One time cost"
     }, {
             "title": "Programs",
             "show": true,
@@ -936,6 +1051,10 @@ angular.module('uxTools.services', [])
         "playbackSpeed": true,
         "export": {
             "html": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$39"
         }
     }, {
         "name": "Lucky Orange",
@@ -953,6 +1072,10 @@ angular.module('uxTools.services', [])
         "console": true,
         "skipInactivity": true,
         "playbackSpeed": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$10"
+        }
         // can watch live sessions
         // can show trending referrers
         // can show trending tweets
@@ -971,7 +1094,11 @@ angular.module('uxTools.services', [])
         "skipInactivity": true,
         "playbackSpeed": true,
         "jumpBack": true, // Skip backwards a few seconds
-        "taylorChoice": true
+        "taylorChoice": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$199"
+        }
         // Can search according the the html element a user clicked
         // can watch live sessions
     }, {
@@ -988,6 +1115,10 @@ angular.module('uxTools.services', [])
         "polls": true,
         "playbackSpeed": true,
         "skipInactivity": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$29"
+        }
         // host custom surveys like Qualtrics
     }, {
         "name": "MouseStats",
@@ -1001,6 +1132,10 @@ angular.module('uxTools.services', [])
         "formAnalytics": true,
         "polls": true,
         "skipInactivity": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$29"
+        }
     }, {
         "name": "UserTrack",
         "url": "https://www.usertrack.net/",
@@ -1010,7 +1145,11 @@ angular.module('uxTools.services', [])
         },
         "playback": true,
         "heatmaps": true,
-        "location": true
+        "location": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$27"
+        }
     }, {
         "name": "Zeerat",
         "url": "https://zeerat.com",
@@ -1022,6 +1161,10 @@ angular.module('uxTools.services', [])
         "heatmaps": true,
         "location": true,
         "formAnalytics": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$40"
+        }
     }];
 
     var filters = [
@@ -1039,6 +1182,16 @@ angular.module('uxTools.services', [])
             "show": false,
             "canChange": true,
             "tipText": "Platform used to<br> view recordings"
+    }, {
+            "title": "Free",
+            "show": true,
+            "canChange": true,
+            "tipText": "Has a free version"
+    }, {
+            "title": "Subscription",
+            "show": true,
+            "canChange": true,
+            "tipText": "Cheapest monthly<br>payment"
     }, {
             "title": "Playback",
             "show": true,
@@ -1089,6 +1242,21 @@ angular.module('uxTools.services', [])
             "show": true,
             "canChange": true,
             "tipText": "Format for<br> downloaded"
+    }, {
+            "title": "Free",
+            "show": true,
+            "canChange": true,
+            "tipText": "Has a free version"
+    }, {
+            "title": "Subscription",
+            "show": true,
+            "canChange": true,
+            "tipText": "Cheapest monthly<br>payment"
+    }, {
+            "title": "Purchase",
+            "show": true,
+            "canChange": true,
+            "tipText": "One time cost"
     }];
 
     return {

@@ -17,12 +17,19 @@ table(fixed-header-table)
         span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
   tbody
     tr(ng-repeat="app in prototypingTools | orderBy:'name'")
+
       td
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
           img(ng-src="{{app.image}}")
         .star(ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice")
       td 
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }}
+
+      td(ng-if="isFilterVisible('Free');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.pricing.free")
+      td(style="min-width: 100px" ng-if="isFilterVisible('Subscription');")
+        span {{app.pricing.subscription}}
+        
       td(ng-if="isFilterVisible('Platform');")
         div.flex-wrapper
           div.flex-col

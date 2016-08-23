@@ -2,12 +2,13 @@
 @import "angular-tooltips.less";
 
 @font-stack: "Roboto Condensed", Roboto, Helvetica, Arial, sans-serif;
-@purple: #684AFF;
+@banner: #586362;
 @col-width: 35px;
-@mid-size: 800px;
+@mid-size: 899px;
 @small-size: 500px;
-@header-height-lg: 88px;
-@header-height-sm: 74px;
+@header-height-lg: 54px;
+@header-height-md: 72px;
+@header-height-sm: 59px;
 
 html, body {
 	height: 100vh;
@@ -26,14 +27,23 @@ header {
 	color: white;
 	line-height: 1.2;
 	//padding: 16px 20px 0;
+	padding: 0 20px;
 	z-index: 2;
-	background: @purple;
+	background: @banner;
+	@media all and (max-width: @mid-size) {
+		height: @header-height-md;
+		padding-left: 0;
+		padding-right: 0;
+	}
 	@media all and (max-width: @small-size) {
 		height: @header-height-sm;
 		//padding: 0 10px;
 	}
 	.top-wrapper {
-		padding: 10px 10px 0;
+		padding: 16px 0px;
+		@media all and (max-width: @mid-size) {
+			padding: 10px;
+		}
 		@media all and (max-width: @small-size) {
 			padding-top: 5px;
 		}
@@ -58,10 +68,8 @@ header {
 }
 
 #logo {
-	margin: -8px 0;
 	@media all and (max-width: @small-size) {
 		width: 120px;
-		margin: -4px 0 -10px;
 	}
 }
 
@@ -76,14 +84,40 @@ h1 {
 	justify-content: space-between;
 	align-items: center;
 	margin: auto;
+	flex-wrap: wrap;
+	@media all and (max-width: @mid-size) {
+		.right {
+			flex: 0 0 300px;
+			text-align: right;
+		}
+		.middle {
+			order: 3;
+			overflow: hidden; //for tab scrolling
+		}
+		.right {
+			order: 2;
+		}
+		.scroll-tabs {
+			margin-top: 6px;
+		}
+	}
+	@media all and (max-width: @small-size) {
+		.right {
+			flex: 0 0 100px;
+		}
+		.middle {
+			margin: 0 -10px;
+		}
+	}
+	
 }
 
 .scroll-tabs {
 	width: 100%;
-	margin-top: 12px;
-	padding: 0 10px;
 	@media all and (max-width: @small-size) {
 		overflow: scroll;
+		font-size: 14px;
+		padding: 0 10px;
 	}
 	ul {
 		min-width: 470px;
@@ -93,8 +127,14 @@ h1 {
 			margin-right: 10px;
 			border-bottom: 4px solid transparent;
 			transition: border .2s;
+			a {
+				color: fade(white, 75%);
+			}
 			&.active {
-				border-bottom: 4px solid white;
+				border-bottom: 3px solid white; //#FEC00A;
+				a {
+					color: white;
+				}
 			}
 			@media all and (max-width: @small-size) {
 				padding: 0 5px 5px;
@@ -108,19 +148,20 @@ section {
 	padding: (@header-height-lg + 10px) 20px 20px;
 	position: relative;
 	&:before {
-		height: 40px + @header-height-lg;
-		background: @purple;
+		height: 140px + @header-height-lg;
+		background: @banner;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		content: '';
+		box-shadow: 0 2px 24px rgba(0,0,0,.35);
 		@media all and (max-width: @mid-size) {
 			display: none;
 		}
 	}
 	@media all and (max-width: @mid-size) {
-		padding: @header-height-lg 0 0;
+		padding: @header-height-md 0 0;
 	}
 	@media all and (max-width: @small-size) {
 		padding-top: @header-height-sm;
@@ -128,6 +169,7 @@ section {
 	.wrapper {
 		height: 100%;
 		position: relative;
+		background: white;
 	}
 	.shadow-wrapper {
 		box-shadow: 0 20px 56px rgba(0,0,0,.35);
@@ -155,7 +197,7 @@ table {
 		height: 50px;
 		vertical-align: middle;
 		text-align: left;
-		border-right: 1px solid #ddd;
+		//border-right: 1px solid #ddd;
 		padding: 0 5px;
 		white-space: nowrap;
 		cursor: default;
@@ -180,12 +222,12 @@ table {
 		}
 	}
 	th {
-		background: #ddd;
+		background: #f0f0f0;
+		border-bottom: 1px solid #ddd;
 		padding-top: 15px;
 		&:first-of-type {
 			width: 50px;
 			height: 51px;
-			background: #ddd;
 		}
 	}
 
@@ -199,12 +241,18 @@ table {
 	tbody tr {
 		td {
 			background: white;
-			border-bottom: 1px solid #ddd;
+			border-right: 1px solid #eee;
+			//border-bottom: 1px solid #ddd;
 		}
 		&:nth-of-type(even) {
 			td {
 				background: #f0f0f0;
 			}
+		}
+	}
+	tr:last-of-type {
+		td {
+			border-bottom: 1px solid #eee;
 		}
 	}
 	img {
@@ -257,7 +305,8 @@ table {
 .fTHLC-outer-wrapper {
 	&:before { // for header background color
 		content: '';
-		background: #ddd;
+		background: #f0f0f0;
+		border-bottom: 1px solid #ddd;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -303,9 +352,13 @@ table {
 	z-index: 2;
 	opacity: 1;
 	transition: opacity .2s;
+	.wrapper {
+		background: none;
+
+	}
 	.modal-wrapper{
 		position: absolute;
-		top: 126px;
+		top: 86px;
 		left: 14px;
 		padding: 16px 20px;
 		background: white;
@@ -327,7 +380,7 @@ table {
 		appearance: none;
 		background: none;
 		cursor: pointer;
-		color: @purple;
+		color: @banner;
 		outline: none;
 		box-shadow: none;
 		font-family: @font-stack;
@@ -354,9 +407,10 @@ table {
 			align-items: flex-end;
 		}
 		.modal-wrapper {
-			position: relative;
+			position: absolute;
 			transform: translateY(0);
 			top: auto;
+			bottom: 0;
 			left: auto;
 			width: 100%;
 			background: white;

@@ -16,7 +16,7 @@ table(fixed-header-table)
       th(ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)")
         span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
   tbody
-    tr(ng-repeat="app in prototypingTools | orderBy:'name'")
+    tr(ng-repeat="app in prototypingTools | orderBy:['name']")
 
 
       td
@@ -46,7 +46,13 @@ table(fixed-header-table)
             div(ng-if="app.platforms.android" tooltips tooltip-template="Android")
               div(ng-include="'img/icons/android.svg'" title="Android")
 
-
+      td(ng-if="isFilterVisible('Free');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.pricing.free")
+      td(style="min-width: 100px" ng-if="isFilterVisible('Subscription');")
+        span {{app.pricing.subscription}}
+      td(ng-if="isFilterVisible('Purchase');")
+        span {{app.pricing.purchase}}
+        
       td(ng-if="isFilterVisible('Design');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.design" title="Design from scratch")
 
@@ -117,34 +123,6 @@ table(fixed-header-table)
         div.flex-col
           div(ng-if="app.sharing.html" tooltips tooltip-template="HTML")
             div(ng-include="'img/icons/html.svg'" title="HTML")
-
-
-      //- td.pricing(ng-if="isFilterVisible('Pricing');")
-      //-   div.pricing-col(ng-if="app.pricing.free" tooltips tooltip-template="{{app.pricing.free.tipText}}") Free
-      //-   div(ng-if="showMonthly")
-      //-     div.colspan-5(ng-if="app.pricing.monthly")
-      //-       //- To line up personal columns
-      //-       div(style="min-width: 150px")
-      //-         div.pricing-col(ng-repeat="item in app.pricing.monthly.personal" tooltips tooltip-template="{{item.tipText}}")
-      //-           div(ng-include="'img/icons/account.svg'")
-      //-           span {{item.price}}
-      //-       div.pricing-col(ng-repeat="item in app.pricing.monthly.team" tooltips tooltip-template="{{item.tipText}}")
-      //-         div(ng-include="'img/icons/account-multiple.svg'")
-      //-         span {{item.price}}
-      //-       div.pricing-col(ng-repeat="item in app.pricing.monthly.enterprise" tooltips tooltip-template="{{item.tipText}}")
-      //-         div(ng-include="'img/icons/domain.svg'")
-      //-         span {{item.price}}
-      //-   div(ng-if="!showMonthly")
-      //-     div.colspan-5(ng-if="app.pricing.annual")
-      //-       div.pricing-col(ng-repeat="item in app.pricing.annual.personal" tooltips tooltip-template="{{item.tipText}}")
-      //-         div(ng-include="'img/icons/account.svg'")
-      //-         span {{item.price}}
-      //-       div.pricing-col(ng-repeat="item in app.pricing.annual.team" tooltips tooltip-template="{{item.tipText}}")
-      //-         div(ng-include="'img/icons/account-multiple.svg'")
-      //-         span {{item.price}}
-      //-       div.pricing-col(ng-repeat="item in app.pricing.annual.enterprise" tooltips tooltip-template="{{item.tipText}}")
-      //-         div(ng-include="'img/icons/domain.svg'")
-      //-         span {{item.price}}
 
       td(ng-if="isFilterVisible('Tasks');")
         div(ng-include="'img/icons/check.svg'" ng-if="app.tasks")

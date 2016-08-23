@@ -26,6 +26,10 @@
         <div ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice" class="star"></div>
       </td>
       <td> <a ng-href="{{app.url}}" title="{{app.url}}" target="_blank">{{ app.name }}</a></td>
+      <td ng-if="isFilterVisible('Free');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.pricing.free"></div>
+      </td>
+      <td style="min-width: 100px" ng-if="isFilterVisible('Subscription');"><span>{{app.pricing.subscription}}</span></td>
       <td ng-if="isFilterVisible('Platform');">
         <div class="flex-wrapper">
           <div class="flex-col">
