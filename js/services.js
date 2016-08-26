@@ -1148,7 +1148,7 @@ angular.module('uxTools.services', [])
         "location": true,
         "pricing": {
             "free": false,
-            "subscription": "$27"
+            "purchase": "$27"
         }
     }, {
         "name": "Zeerat",
@@ -1178,11 +1178,6 @@ angular.module('uxTools.services', [])
             "canChange": true,
             "tipText": "Name of app"
     }, {
-            "title": "Platform",
-            "show": false,
-            "canChange": true,
-            "tipText": "Platform used to<br> view recordings"
-    }, {
             "title": "Free",
             "show": true,
             "canChange": true,
@@ -1192,6 +1187,11 @@ angular.module('uxTools.services', [])
             "show": true,
             "canChange": true,
             "tipText": "Cheapest monthly<br>payment"
+    }, {
+            "title": "Purchase",
+            "show": true,
+            "canChange": true,
+            "tipText": "One time cost"
     }, {
             "title": "Playback",
             "show": true,
@@ -1252,11 +1252,6 @@ angular.module('uxTools.services', [])
             "show": true,
             "canChange": true,
             "tipText": "Cheapest monthly<br>payment"
-    }, {
-            "title": "Purchase",
-            "show": true,
-            "canChange": true,
-            "tipText": "One time cost"
     }];
 
     return {

@@ -29,6 +29,8 @@ table(fixed-header-table)
         div(ng-include="'img/icons/check.svg'" ng-if="app.pricing.free")
       td(style="min-width: 100px" ng-if="isFilterVisible('Subscription');")
         span {{app.pricing.subscription}}
+      td(style="min-width: 100px" ng-if="isFilterVisible('Purchase');")
+        span {{app.pricing.purchase}}
         
       td(ng-if="isFilterVisible('Platform');")
         div.flex-wrapper
