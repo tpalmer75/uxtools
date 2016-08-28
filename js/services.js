@@ -1146,6 +1146,7 @@ angular.module('uxTools.services', [])
         "playback": true,
         "heatmaps": true,
         "location": true,
+        "skipInactivity": true,
         "pricing": {
             "free": false,
             "purchase": "$27"
