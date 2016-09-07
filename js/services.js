@@ -1166,6 +1166,26 @@ angular.module('uxTools.services', [])
             "free": false,
             "subscription": "$40"
         }
+    }, {
+        "name": "Jaco",
+        "url": "http://www.getjaco.com/",
+        "image": "img/monitoring/jaco.png",
+        "platforms": {
+            "web": true
+        },
+        "playback": true,
+        "tags": false,
+        "location": false,
+        "console": false,
+        "skipInactivity": true,
+        "playbackSpeed": true,
+        "taylorChoice": true,
+        "pricing": {
+            "free": true,
+            "subscription": "$39"
+        }
+        // Can search according the the html element a user clicked
+        // can watch live sessions
     }];
 
     var filters = [
