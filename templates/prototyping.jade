@@ -16,7 +16,7 @@ table(fixed-header-table)
       th(ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)")
         span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
   tbody
-    tr(ng-repeat="app in prototypingTools | orderBy:['name']")
+    tr(ng-repeat="app in prototypingTools | orderBy:['name', orderValue]")
 
 
       td
@@ -25,7 +25,7 @@ table(fixed-header-table)
         .star(ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice")
 
       td 
-        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }}
+        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }} {{orderValue}}
 
 
       td.colspan-5(ng-if="isFilterVisible('Platform');")

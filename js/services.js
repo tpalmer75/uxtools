@@ -302,6 +302,9 @@ angular.module('uxTools.services', [])
         "plaforms": {
             "mac": true,
         },
+        "import": {
+            "sketch": true,
+        },
         "micro": true,
         "navigation": true,
         "transition": true,
