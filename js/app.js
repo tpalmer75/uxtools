@@ -1,6 +1,13 @@
 /*global angular:true */
 
-angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.tooltips'])
+// @codekit-prepend "jquery.fixedTblHdrLftCol-min.js"
+// @codekit-prepend "angular-tooltips.js"
+// @codekit-prepend "prototyping.js"
+// @codekit-prepend "collaboration.js"
+// @codekit-prepend "monitoring.js"
+
+
+angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxTools.collaboration', 'uxTools.monitoring', '720kb.tooltips'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -34,113 +41,6 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
     });
 })
 
-.config(['tooltipsConfProvider', function configConf(tooltipsConfProvider) {
-  tooltipsConfProvider.configure({
-    'speed': 'fast',
-    'side': 'bottom'
-  });
-}])
-
-.controller('prototypingCtrl', function($scope, $state, prototypingFactory) {
-
-  $scope.prototypingTools = prototypingFactory.tools();
-  $scope.filters = prototypingFactory.filters();
-  // Copy filters so ngModel doesn't reflect while changing
-  $scope.tempFilters = angular.copy($scope.filters);
-
-  $scope.modalShowing = false;
-  //$scope.showMonthly = true; for pricing
-
-  $scope.showFiltersModal = function(command) {
-    if (command === 'show') {
-      $scope.modalShowing = true;
-    } else if (command === 'hide') {
-      $scope.modalShowing = false;
-    }
-  };
-
-  $scope.isFilterVisible = function(string) {
-    for ( var i = 0; i < $scope.filters.length; i++ ) {
-      if ( $scope.filters[i].title === string ) {
-        return $scope.filters[i].show;
-      }
-    }
-  };
-
-  $scope.setFilters = function() {
-    prototypingFactory.setFilters($scope.tempFilters);
-    $state.reload();
-    $scope.showFiltersModal = false;
-  };
-
-})
-
-.controller('collaborationCtrl', function($scope, $state, collaborationFactory) {
-
-  $scope.prototypingTools = collaborationFactory.tools();
-  $scope.filters = collaborationFactory.filters();
-  // Copy filters so ngModel doesn't reflect while changing
-  $scope.tempFilters = angular.copy($scope.filters);
-
-  $scope.modalShowing = false;
-
-  $scope.showFiltersModal = function(command) {
-    if (command === 'show') {
-      $scope.modalShowing = true;
-    } else if (command === 'hide') {
-      $scope.modalShowing = false;
-    }
-  };
-
-  $scope.isFilterVisible = function(string) {
-    for ( var i = 0; i < $scope.filters.length; i++ ) {
-      if ( $scope.filters[i].title === string ) {
-        return $scope.filters[i].show;
-      }
-    }
-  };
-
-  $scope.setFilters = function() {
-    collaborationFactory.setFilters($scope.tempFilters);
-    $state.reload();
-    $scope.showFiltersModal = false;
-  };
-
-})
-
-.controller('monitoringCtrl', function($scope, $state, monitoringFactory) {
-
-  $scope.prototypingTools = monitoringFactory.tools();
-  $scope.filters = monitoringFactory.filters();
-  // Copy filters so ngModel doesn't reflect while changing
-  $scope.tempFilters = angular.copy($scope.filters);
-
-  $scope.modalShowing = false;
-
-  $scope.showFiltersModal = function(command) {
-    if (command === 'show') {
-      $scope.modalShowing = true;
-    } else if (command === 'hide') {
-      $scope.modalShowing = false;
-    }
-  };
-
-  $scope.isFilterVisible = function(string) {
-    for ( var i = 0; i < $scope.filters.length; i++ ) {
-      if ( $scope.filters[i].title === string ) {
-        return $scope.filters[i].show;
-      }
-    }
-  };
-
-  $scope.setFilters = function() {
-    monitoringFactory.setFilters($scope.tempFilters);
-    $state.reload();
-    $scope.showFiltersModal = false;
-  };
-
-})
-
 .directive('fixedHeaderTable', function($timeout) {
     return {
         restrict: 'A',
@@ -155,4 +55,11 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.services', '720kb.
             }, 0);
         }
     };
-});
+})
+
+.config(['tooltipsConfProvider', function configConf(tooltipsConfProvider) {
+  tooltipsConfProvider.configure({
+    'speed': 'fast',
+    'side': 'bottom'
+  });
+}]);
