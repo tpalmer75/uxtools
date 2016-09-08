@@ -43,6 +43,7 @@ angular.module('uxTools.design', [])
             "mac": true
         },
         "import": {
+            "sketch": true,
             "svg": true,
             "eps": true,
             "pdf": true,
@@ -107,7 +108,7 @@ angular.module('uxTools.design', [])
             "svg": true,
             "eps": true,
             "pdf": true,
-            "psd": true,
+            "photoshop": true,
             "tiff": true
         },
         "export": {
@@ -123,6 +124,7 @@ angular.module('uxTools.design', [])
         "collaboration": false,
         "handoff": false,
         "artboards": true,
+        "plugins": true,
         "symbols": true,
         "responsive": true,
         "vector": true,
@@ -140,7 +142,7 @@ angular.module('uxTools.design', [])
         },
         "import": {
             "pdf": true,
-            "psd": true,
+            "photoshop": true,
             "ai": true,
             "tiff": true
         },
@@ -152,6 +154,7 @@ angular.module('uxTools.design', [])
         "offline": false,
         "penTool": true,
         "collaboration": false,
+        "plugins": true,
         "handoff": false,
         "artboards": true,
         "symbols": false,
@@ -233,7 +236,89 @@ angular.module('uxTools.design', [])
             "free": false,
             "subscription": "$--"
         }
+
+    }, {
+        "name": "UX Pin",
+        "url": "https://www.uxpin.com/",
+        "image": "img/design/uxpin.png",
+        "platforms": {
+            "web": true
+        },
+        "import": {
+            "sketch": true,
+            "photoshop": true,
+            "svg": true,
+            "eps": true,
+            "pdf": true,
+            "ai": true,
+            "tiff": true
+        },
+        "export": {
+            "png": true,
+            "pdf": true,
+            "html": true
+        },
+        "offline": false,
+        "penTool": false,
+        "collaboration": true,
+        "handoff": false,
+        "artboards": false,
+        "symbols": false,
+        "responsive": false,
+        "prototyping": true,
+        "vector": true,
+        "pricing": {
+            "free": false,
+            "subscription": "$20"
+        }
+
+    }, {
+        "name": "Axure",
+        "url": "http://www.axure.com/",
+        "image": "img/design/axure.png",
+        "platforms": {
+            "mac": true,
+            "windows": true
+        },
+        "import": {
+            "png": true,
+            "jpg": true,
+            "gif": true
+        },
+        "export": {
+            "word": true,
+            "png": true,
+            "jpg": true,
+            "html": true
+        },
+        "offline": false,
+        "penTool": false,
+        "collaboration": true,
+        "handoff": false, // generate a spec Word doc
+        "artboards": false,
+        "symbols": false,
+        "responsive": false,
+        "prototyping": true,
+        "vector": false, // Seems HTML based
+        "pricing": {
+            "free": false,
+            "subscription": "$29",
+            "purchase": "$495"
+        }
     }];
+
+    // Atomic.io
+    // Balsamiq
+    // Flinto
+    // Hotgloo
+    // iRise
+    // Justinmind
+    // Lucidchart
+    // Marvel
+    // Moqups
+    // Proto.io
+    // Prott
+    // Webflow
 
     var filters = [
     {
