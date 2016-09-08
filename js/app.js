@@ -5,9 +5,10 @@
 // @codekit-prepend "prototyping.js"
 // @codekit-prepend "collaboration.js"
 // @codekit-prepend "monitoring.js"
+// @codekit-prepend "design.js"
 
 
-angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxTools.collaboration', 'uxTools.monitoring', '720kb.tooltips'])
+angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxTools.collaboration', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
