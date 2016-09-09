@@ -177,7 +177,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Affinity Designer",
         "url": "https://affinity.serif.com/en-us/",
-        "image": "img/design/affinitydesigner.png",
+        "image": "img/design/affinity-designer.png",
         "platforms": {
             "mac": true
         },
@@ -213,7 +213,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe XD",
         "url": "http://www.adobe.com/products/experience-design.html",
-        "image": "img/design/adobexd.png",
+        "image": "img/design/adobe-xd.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -240,7 +240,7 @@ angular.module('uxTools.design', [])
         "prototyping": true,
         "vector": true,
         "pricing": {
-            "free": false,
+            "free": true,
             "subscription": "$--"
         }
 
@@ -400,12 +400,12 @@ angular.module('uxTools.design', [])
             "tipText": "Can prototype<br>within the app"
     }, {
             "title": "Import",
-            "show": true,
+            "show": false,
             "canChange": true,
             "tipText": "Unique formats that<br>can be opened"
     }, {
             "title": "Export",
-            "show": true,
+            "show": false,
             "canChange": true,
             "tipText": "Unique formats that can<br>be exported"
     }];
