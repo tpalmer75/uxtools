@@ -35,10 +35,10 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
       templateUrl : '../templates/monitoring.html',
       controller: 'monitoringCtrl'
     })
-    .state('usability-testing', {
-      url: '/usability-testing',
-      templateUrl : '../templates/usability-testing.html',
-      controller: 'prototypingCtrl'
+    .state('design', {
+      url: '/design',
+      templateUrl : '../templates/design.html',
+      controller: 'designCtrl'
     });
 })
 

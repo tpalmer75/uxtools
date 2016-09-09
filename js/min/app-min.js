@@ -2209,7 +2209,7 @@ angular.module('uxTools.design', [])
 
 .controller('designCtrl', function($scope, $state, designFactory) {
 
-  $scope.prototypingTools = designFactory.tools();
+  $scope.designTools = designFactory.tools();
   $scope.filters = designFactory.filters();
   // Copy filters so ngModel doesn't reflect while changing
   $scope.tempFilters = angular.copy($scope.filters);
@@ -2284,6 +2284,11 @@ angular.module('uxTools.design', [])
         "platforms": {
             "web": true
         },
+        "import": {
+            "svg": true,
+            "jpg": true,
+            "png": true,
+        },
         "export": {
             "png": true,
             "jpg": true,
@@ -2315,8 +2320,9 @@ angular.module('uxTools.design', [])
             "svg": true,
             "eps": true,
             "pdf": true,
-            "photoshop": true,
-            "tiff": true
+            "psd": true,
+            "tiff": true,
+            "ai": true
         },
         "export": {
             "png": true,
@@ -2324,9 +2330,10 @@ angular.module('uxTools.design', [])
             "svg": true,
             "pdf": true,
             "eps": true,
-            "tiff": true
+            "tiff": true,
+            "ai": true
         },
-        "offline": false,
+        "offline": true,
         "penTool": true,
         "collaboration": false,
         "handoff": false,
@@ -2349,16 +2356,19 @@ angular.module('uxTools.design', [])
         },
         "import": {
             "pdf": true,
-            "photoshop": true,
+            "psd": true,
             "ai": true,
-            "tiff": true
+            "tiff": true,
+            "eps": true
         },
         "export": {
             "png": true,
             "jpg": true,
-            "tiff": true
+            "tiff": true,
+            "pdf": true,
+            "psd": true
         },
-        "offline": false,
+        "offline": true,
         "penTool": true,
         "collaboration": false,
         "plugins": true,
@@ -2392,9 +2402,10 @@ angular.module('uxTools.design', [])
             "svg": true,
             "psd": true,
             "eps": true,
-            "tiff": true
+            "tiff": true,
+            "pdf": true
         },
-        "offline": false,
+        "offline": true,
         "penTool": true,
         "collaboration": false,
         "handoff": false,
@@ -2416,9 +2427,6 @@ angular.module('uxTools.design', [])
         },
         "import": {
             "svg": true,
-            "eps": true,
-            "pdf": true,
-            "ai": true,
             "tiff": true
         },
         "export": {
@@ -2426,11 +2434,10 @@ angular.module('uxTools.design', [])
             "jpg": true,
             "gif": true,
             "svg": true,
-            "psd": true,
-            "eps": true,
-            "tiff": true
+            "tiff": true,
+            "pdf": true
         },
-        "offline": false,
+        "offline": true,
         "penTool": true,
         "collaboration": false,
         "handoff": false,
@@ -2453,7 +2460,7 @@ angular.module('uxTools.design', [])
         },
         "import": {
             "sketch": true,
-            "photoshop": true,
+            "psd": true,
             "svg": true,
             "eps": true,
             "pdf": true,
@@ -2496,9 +2503,10 @@ angular.module('uxTools.design', [])
             "word": true,
             "png": true,
             "jpg": true,
-            "html": true
+            "html": true,
+            "pdf": true
         },
-        "offline": false,
+        "offline": true,
         "penTool": false,
         "collaboration": true,
         "handoff": false, // generate a spec Word doc
@@ -2538,6 +2546,11 @@ angular.module('uxTools.design', [])
             "canChange": true,
             "tipText": "Name of app"
     }, {
+            "title": "Platform",
+            "show": true,
+            "canChange": true,
+            "tipText": "Platforms used for <br>building prototypes"
+    }, {
             "title": "Free",
             "show": true,
             "canChange": true,
@@ -2552,6 +2565,56 @@ angular.module('uxTools.design', [])
             "show": true,
             "canChange": true,
             "tipText": "One time cost"
+    }, {
+            "title": "Offline",
+            "show": true,
+            "canChange": true,
+            "tipText": "Can open and<br>edit offline"
+    }, {
+            "title": "Pen Tool",
+            "show": true,
+            "canChange": true,
+            "tipText": "Draw vectors<br>and paths"
+    }, {
+            "title": "Collaborate",
+            "show": true,
+            "canChange": true,
+            "tipText": "Simultaneous editing"
+    }, {
+            "title": "Handoff",
+            "show": true,
+            "canChange": true,
+            "tipText": "Automatic specs<br>for developers"
+    }, {
+            "title": "Artboards",
+            "show": true,
+            "canChange": true,
+            "tipText": "Multiple visible<br>artboards"
+    }, {
+            "title": "Symbols",
+            "show": true,
+            "canChange": true,
+            "tipText": "Document-wide<br>master symbols"
+    }, {
+            "title": "Responsive",
+            "show": true,
+            "canChange": true,
+            "tipText": "Dynamically resizing<br>groups"
+    }, {
+            "title": "Prototyping",
+            "show": true,
+            "canChange": true,
+            "tipText": "Can prototype<br>within the app"
+    }, {
+            "title": "Import",
+            "show": true,
+            "canChange": true,
+            "tipText": "Unique formats that<br>can be opened"
+    }, {
+            "title": "Export",
+            "show": true,
+            "canChange": true,
+            "tipText": "Unique formats that can<br>be exported"
     }];
 
     return {
@@ -2605,10 +2668,10 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
       templateUrl : '../templates/monitoring.html',
       controller: 'monitoringCtrl'
     })
-    .state('usability-testing', {
-      url: '/usability-testing',
-      templateUrl : '../templates/usability-testing.html',
-      controller: 'prototypingCtrl'
+    .state('design', {
+      url: '/design',
+      templateUrl : '../templates/design.html',
+      controller: 'designCtrl'
     });
 })
 
