@@ -6,7 +6,7 @@
 @col-width: 35px;
 @mid-size: 899px;
 @small-size: 500px;
-@header-height-lg: 54px;
+@header-height-lg: 84px;
 @header-height-md: 72px;
 @header-height-sm: 59px;
 
@@ -17,6 +17,28 @@ html, body {
 body {
 	font-family: @font-stack;
 	color: #333;
+}
+
+.newsletter {
+	background: #6D7A79;
+	height: 30px;
+	width: ~'calc(100% + 40px)';
+	margin-left: -20px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	@media all and (max-width: @mid-size) {
+		display: none;
+	}
+	a {
+		text-decoration: underline;
+	}
+	svg {
+		fill: #FCC438;
+		margin-right: 5px;
+	}
 }
 
 header {

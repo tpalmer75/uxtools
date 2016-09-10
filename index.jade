@@ -26,7 +26,12 @@ html(ng-app="uxTools")
     link(href="css/style.css" rel="stylesheet" type="text/css")
   body
     header
-      h1 uxtools
+      .newsletter
+        div(ng-include="'img/icons/email-open.svg'")
+        p 
+          | New! Keep up with industry tools and trends with the UX Tools newsletter. 
+          a(href="http://eepurl.com/ce9aV5") Subscribe
+      h1 Uxtools
       .wrapper.top-wrapper
         .left
           img#logo(src="img/uxtools-logo.svg" alt="UX Tools")
