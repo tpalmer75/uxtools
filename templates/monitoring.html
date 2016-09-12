@@ -1,0 +1,79 @@
+
+<div title="Filters" ng-click="showFiltersModal('show');" class="filters"><img src="img/icons/table-edit.svg" tooltip-side="bottom" tooltips="tooltips" tooltip-template="Filters"/></div>
+<div ng-show="modalShowing" ng-click="showFiltersModal('hide')" class="filters-modal">
+  <div class="wrapper">
+    <div ng-click="$event.stopPropagation()" class="modal-wrapper">
+      <ul>
+        <li ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange"> 
+          <input type="checkbox" ng-model="tempFilters[$index].show"/>{{ filter.title }}
+        </li>
+      </ul>
+      <div class="button-container">
+        <button ng-click="setFilters()">Set Filters</button>
+      </div>
+    </div>
+  </div>
+</div>
+<table fixed-header-table="fixed-header-table">
+  <thead>
+    <tr>
+      <th ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)"><span tooltips="tooltips" tooltip-side="bottom" tooltip-template="{{filter.tipText}}">{{ filter.title }}</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="app in prototypingTools | orderBy:'name'">
+      <td><a ng-href="{{app.url}}" title="{{app.url}}" target="_blank"><img ng-src="{{app.image}}"/></a>
+        <div ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice" class="star"></div>
+      </td>
+      <td> <a ng-href="{{app.url}}" title="{{app.url}}" target="_blank">{{ app.name }}</a></td>
+      <td ng-if="isFilterVisible('Free');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.pricing.free"></div>
+      </td>
+      <td style="min-width: 100px" ng-if="isFilterVisible('Subscription');"><span>{{app.pricing.subscription}}</span></td>
+      <td style="min-width: 100px" ng-if="isFilterVisible('Purchase');"><span>{{app.pricing.purchase}}</span></td>
+      <td ng-if="isFilterVisible('Platform');">
+        <div class="flex-wrapper">
+          <div class="flex-col">
+            <div ng-if="app.platforms.web" tooltips="tooltips" tooltip-template="Web">
+              <div ng-include="'img/icons/cloud-outline.svg'" title="Web"></div>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td ng-if="isFilterVisible('Playback');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.playback"></div>
+      </td>
+      <td ng-if="isFilterVisible('Skip');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.skipInactivity"></div>
+      </td>
+      <td ng-if="isFilterVisible('Speed');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.playbackSpeed"></div>
+      </td>
+      <td ng-if="isFilterVisible('Jump Back');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.jumpBack"></div>
+      </td>
+      <td ng-if="isFilterVisible('Console');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.console"></div>
+      </td>
+      <td ng-if="isFilterVisible('Heatmaps');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.heatmaps"></div>
+      </td>
+      <td ng-if="isFilterVisible('Location');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.location"></div>
+      </td>
+      <td ng-if="isFilterVisible('Form Stats');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.formAnalytics"></div>
+      </td>
+      <td ng-if="isFilterVisible('Polls');">
+        <div ng-include="'img/icons/check.svg'" ng-if="app.polls"></div>
+      </td>
+      <td ng-if="isFilterVisible('Export');">
+        <div class="flex-col">
+          <div ng-if="app.export.html" tooltips="tooltips" tooltip-template="Static HTML file">
+            <div ng-include="'img/icons/html.svg'" title="HTML"></div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,80 +1,73 @@
 html(ng-app="uxTools")
   head
+    title Uxtools.co
+    meta(name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing.")
+    meta(name="ROBOTS" content="INDEX, FOLLOW")
+    meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png")
+    link(rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png")
+    link(rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png")
+    link(rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png")
+    link(rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png")
+    link(rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png")
+    link(rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png")
+    link(rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png")
+    link(rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png")
+    link(rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png")
+    link(rel="manifest" href="/manifest.json")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
+    meta(name="theme-color" content="#ffffff")
     link(href='https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed:400,700,400italic' rel='stylesheet' type='text/css')
-    link(href="css/style.css" rel="stylesheet" type="text/css")
-  .page
+    link(href="css/style-2.css" rel="stylesheet" type="text/css")
+
+  body
     header
-      .wrapper
-        h1 All the tools, ever.
-        p Well, not quite. But getting there! See one I missed? 
-          a(href="http://www.twitter.com/@_taylorpalmer") @_taylorpalmer
+      .newsletter
+        div(ng-include="'img/icons/email-open.svg'")
+        p 
+          | New! Keep up with industry tools and trends with the UX Tools newsletter. 
+          a(href="http://eepurl.com/ce9aV5") Subscribe
+      h1 Uxtools
+      .wrapper.top-wrapper
+        .left
+          img#logo(src="img/uxtools-logo.svg" alt="UX Tools")
+        .middle
+          .scroll-tabs
+            ul
+              li(ui-sref-active="active")
+                a(ui-sref="design") Design
+              li(ui-sref-active="active")
+                a(ui-sref="prototyping") Prototyping
+              li(ui-sref-active="active")
+                a(ui-sref="collaboration") Collaboration
+              li(ui-sref-active="active")
+                a(ui-sref="monitoring") Monitoring
+        .right
+          a(href="http://www.twitter.com/@_taylorpalmer") 
+            div(class="icon" ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter!")
+            span @_taylorpalmer
     section
-      .wrapper
-        table(ng-controller="prototypeCtrl" fixed-header-table)
-          thead
-            tr
-              th
-              th Name
-              th Platform
-              th Design
-              th Import
-              th Animations
-              th Navigation
-              th Transitions
-              th Data
-              th Code
-              th Remote Test
-              th Sharing
-          tbody
-            tr(ng-repeat="app in testObjects | orderBy:'name'")
-              td
-                a(ng-href="{{app.url}}" title="{{app.url}}")
-                  img(ng-src="{{app.image}}")
-              td 
-                a(ng-href="{{app.url}}" title="{{app.url}}") {{ app.name }}
-              td.colspan-4
-                div.flex-wrapper
-                  div.flex-col
-                    div(ng-include="'img/icons/apple.svg'" ng-show="app.mac" title="Mac")
-                  div.flex-col    
-                    div(ng-include="'img/icons/windows.svg'" ng-show="app.windows" title="Windows")
-                  div.flex-col
-                    div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.web" title="Web")
-                  div.flex-col
-                    div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.ios" title="iOS")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.design" title="Design from scratch")
-              td.colspan-2
-                div.flex-col
-                  img(ng-src="img/icons/sketch.png" ng-show="app.sketch" title="Sketch")
-                div.flex-col
-                  img(ng-src="img/icons/photoshop.png" ng-show="app.photoshop" title="Photoshop")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.micro")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.navigation")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.transition")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.data")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.code")
-              td
-                div(ng-include="'img/icons/check.svg'" ng-show="app.remote")
-              td.colspan-3
-                div.flex-col
-                  div(ng-include="'img/icons/cloud-outline.svg'" ng-show="app.shareWeb" title="Web")
-                div.flex-col
-                  div(ng-include="'img/icons/apple-ios.svg'" ng-show="app.shareIos" title="iOS")
-                div.flex-col
-                  div(ng-include="'img/icons/android.svg'" ng-show="app.shareAndroid" title="Android")
-              //- div(ng-include="'img/icons/desktop-mac.svg'" ng-show="app.shareDesktop" title="Desktop")
+      .wrapper.shadow-wrapper(ui-view="")
+        //- injected Angular Views
+        //- div.loading-container Loading...
                 
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
-    script(src="js/jquery.fixedTblHdrLftCol-min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js")
-    script(src="js/app.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
+    script(src="js/min/app-min.js")
+    script(type="text/javascript" id="inspectletjs").
+      window.__insp = window.__insp || [];
+      __insp.push(['wid', 1656300355]);
+      (function() {
+      function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+      setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+      })();
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -82,4 +75,5 @@ html(ng-app="uxTools")
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-78846271-1', 'auto');
       ga('send', 'pageview');
+
 

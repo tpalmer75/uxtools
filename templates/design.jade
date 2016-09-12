@@ -1,0 +1,91 @@
+div.filters(title="Filters" ng-click="showFiltersModal('show');")
+  img(src="img/icons/table-edit.svg" tooltip-side="bottom" tooltips tooltip-template="Filters")
+
+div.filters-modal(ng-show="modalShowing" ng-click="showFiltersModal('hide')")
+  .wrapper
+    .modal-wrapper(ng-click="$event.stopPropagation()")
+      ul
+        li(ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange") 
+          input(type="checkbox" ng-model="tempFilters[$index].show")
+          | {{ filter.title }}
+      .button-container
+        button(ng-click="setFilters()") Set Filters
+table(fixed-header-table)
+  thead
+    tr
+      th(ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)")
+        span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
+  tbody
+    tr(ng-repeat="app in designTools | orderBy:'name'")
+
+      td
+        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
+          img(ng-src="{{app.image}}")
+        .star(ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice")
+      td 
+        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }}
+
+      td(ng-if="isFilterVisible('Platform');")
+        div.flex-wrapper
+          div.flex-col
+            div(ng-if="app.platforms.web" tooltips tooltip-template="Web")
+              div(ng-include="'img/icons/cloud-outline.svg'" title="Web")
+          div.flex-col
+            div(ng-if="app.platforms.mac" tooltips tooltip-template="Mac")
+              div(ng-include="'img/icons/apple.svg'" title="Mac")
+          div.flex-col
+            div(ng-if="app.platforms.windows" tooltips tooltip-template="Windows")  
+              div(ng-include="'img/icons/windows.svg'" title="Windows")
+
+      td(ng-if="isFilterVisible('Free');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.pricing.free")
+      td(style="min-width: 100px" ng-if="isFilterVisible('Subscription');")
+        span {{app.pricing.subscription}}
+      td(style="min-width: 100px" ng-if="isFilterVisible('Purchase');")
+        span {{app.pricing.purchase}}
+
+      td(ng-if="isFilterVisible('Offline');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.offline")
+      td(ng-if="isFilterVisible('Pen Tool');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.penTool")
+      td(ng-if="isFilterVisible('Collaborate');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.collaboration")
+      td(ng-if="isFilterVisible('Handoff');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.handoff")
+      td(ng-if="isFilterVisible('Artboards');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.artboards")
+      td(ng-if="isFilterVisible('Symbols');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.symbols")
+      td(ng-if="isFilterVisible('Responsive');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.responsive")
+      td(ng-if="isFilterVisible('Prototyping');")
+        div(ng-include="'img/icons/check.svg'" ng-if="app.prototyping")
+      td(ng-if="isFilterVisible('Import');")
+        div.flex-wrapper
+          div.flex-col
+            span(ng-if="app.import.svg") .svg
+          div.flex-col
+            span(ng-if="app.import.eps") .eps
+          div.flex-col
+            span(ng-if="app.import.pdf") .pdf
+          div.flex-col
+            span(ng-if="app.import.ai") .ai
+          div.flex-col
+            span(ng-if="app.import.psd") .psd
+      
+      td(ng-if="isFilterVisible('Export');")
+        div.flex-col
+            span(ng-if="app.export.svg") .svg
+          div.flex-col
+            span(ng-if="app.export.eps") .eps
+          div.flex-col
+            span(ng-if="app.export.pdf") .pdf
+          div.flex-col
+            span(ng-if="app.export.ai") .ai
+          div.flex-col
+            span(ng-if="app.export.psd") .psd
+          div.flex-col
+            div(ng-if="app.export.html" tooltips tooltip-template="HTML")
+              div(ng-include="'img/icons/html.svg'" title="HTML")
+        
+      
