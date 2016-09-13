@@ -28,17 +28,9 @@
   </head>
   <body>
     <header>
-      <div class="newsletter">
-        <div ng-include="'img/icons/email-open.svg'"></div>
-        <p>
-           
-          New! Keep up with industry tools and trends with the UX Tools newsletter. <a href="http://eepurl.com/ce9aV5">Subscribe</a>
-        </p>
-      </div>
       <h1>Uxtools</h1>
       <div class="wrapper top-wrapper">
-        <div class="left"><img id="logo" src="img/uxtools-logo.svg" alt="UX Tools"/></div>
-        <div class="middle">
+        <div class="left"><img id="logo" src="img/uxtools-logo.svg" alt="UX Tools"/>
           <div class="scroll-tabs">
             <ul>
               <li ui-sref-active="active"><a ui-sref="design">Design</a></li>
@@ -48,8 +40,34 @@
             </ul>
           </div>
         </div>
-        <div class="right"><a href="http://www.twitter.com/@_taylorpalmer"> 
-            <div ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter!" class="icon"></div><span>@_taylorpalmer</span></a></div>
+        <div class="right">
+          <ul>
+            <li><a href="http://newsletter.uxtools.co"> 
+                <div ng-include="'img/icons/email.svg'" title="UX Tools Newsletter" class="icon"></div><span>Newsletter</span></a></li>
+            <li><a href="https://medium.com/ux-tools"> 
+                <div ng-include="'img/icons/medium.svg'" title="Follow me on Twitter" class="icon"></div><span>Blog</span></a></li>
+            <li><a href="http://www.twitter.com/@_taylorpalmer"> 
+                <div ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter" class="icon"></div><span>@_taylorpalmer</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="side-menu">
+        <ul>
+          <li>
+            <div ng-include="'img/icons/menu.svg'"></div><span>Menu</span>
+          </li>
+        </ul>
+        <div class="shade"></div>
+        <div id="side-bar">
+          <ul>
+            <li><a href="http://newsletter.uxtools.co"> 
+                <div ng-include="'img/icons/email.svg'" title="UX Tools Newsletter" class="icon"></div><span>Newsletter</span></a></li>
+            <li><a href="http://blog.uxtools.co"> 
+                <div ng-include="'img/icons/medium.svg'" title="Follow me on Twitter" class="icon"></div><span>Blog</span></a></li>
+            <li><a href="http://www.twitter.com/@_taylorpalmer"> 
+                <div ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter" class="icon"></div><span>@_taylorpalmer</span></a></li>
+          </ul>
+        </div>
       </div>
     </header>
     <section>
