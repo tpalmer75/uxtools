@@ -25,63 +25,61 @@ html(ng-app="uxTools")
     link(href='https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed:400,700,400italic' rel='stylesheet' type='text/css')
     link(href="css/style-2.css" rel="stylesheet" type="text/css")
 
-  body
-    header
-      h1 Uxtools
-      .wrapper.top-wrapper
-        .left
-          img#logo(src="img/uxtools-logo.svg" alt="UX Tools")
-          .scroll-tabs
+  body(ng-init="$root.showMenu = false")
+    #page(ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
+      header
+        h1 Uxtools
+        .wrapper.top-wrapper
+          .left
+            img#logo(src="img/uxtools-logo.svg" alt="UX Tools")
+            .scroll-tabs
+              ul
+                li(ui-sref-active="active")
+                  a(ui-sref="design") Design
+                li(ui-sref-active="active")
+                  a(ui-sref="prototyping") Prototyping
+                li(ui-sref-active="active")
+                  a(ui-sref="collaboration") Collaboration
+                li(ui-sref-active="active")
+                  a(ui-sref="monitoring") Monitoring
+          .right
             ul
-              li(ui-sref-active="active")
-                a(ui-sref="design") Design
-              li(ui-sref-active="active")
-                a(ui-sref="prototyping") Prototyping
-              li(ui-sref-active="active")
-                a(ui-sref="collaboration") Collaboration
-              li(ui-sref-active="active")
-                a(ui-sref="monitoring") Monitoring
-        .right
-          ul
-            li
-              a(href="http://newsletter.uxtools.co") 
-                div(class="icon" ng-include="'img/icons/email.svg'" title="UX Tools Newsletter")
-                span Newsletter
-            li
-              a(href="https://medium.com/ux-tools") 
-                div(class="icon" ng-include="'img/icons/medium.svg'" title="Follow me on Twitter")
-                span Blog
-            li
-              a(href="http://www.twitter.com/@_taylorpalmer") 
-                div(class="icon" ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter")
-                span @_taylorpalmer
-
-      #side-menu
-        ul
-          li
-            div(ng-include="'img/icons/menu.svg'")
-            span Menu
-        .shade
-        #side-bar
-          ul
-            li
+              li
                 a(href="http://newsletter.uxtools.co") 
                   div(class="icon" ng-include="'img/icons/email.svg'" title="UX Tools Newsletter")
                   span Newsletter
               li
-                a(href="http://blog.uxtools.co") 
+                a(href="https://blog.uxtools.co") 
                   div(class="icon" ng-include="'img/icons/medium.svg'" title="Follow me on Twitter")
                   span Blog
               li
-                a(href="http://www.twitter.com/@_taylorpalmer") 
+                a(href="https://www.twitter.com/@_taylorpalmer") 
                   div(class="icon" ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter")
                   span @_taylorpalmer
-                
-    section
-      .wrapper.shadow-wrapper(ui-view="")
-        //- injected Angular Views
-        //- div.loading-container Loading...
-                
+          #hamburger(ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();")
+            div(class="icon" ng-include="'img/icons/menu.svg'")
+            span Menu
+                  
+      section
+        .wrapper.shadow-wrapper(ui-view="")
+          //- injected Angular Views
+          //- div.loading-container Loading...
+
+    #sidebar(ng-class="{'show-menu': $root.showMenu}")
+      ul
+        li
+            a(href="http://newsletter.uxtools.co") 
+              div(class="icon" ng-include="'img/icons/email.svg'" title="UX Tools Newsletter")
+              span Newsletter
+          li
+            a(href="https://blog.uxtools.co") 
+              div(class="icon" ng-include="'img/icons/medium.svg'" title="Follow me on Twitter")
+              span Blog
+          li
+            a(href="https://www.twitter.com/@_taylorpalmer") 
+              div(class="icon" ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter")
+              span @_taylorpalmer
+
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
     script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
     script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
