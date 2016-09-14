@@ -180,7 +180,7 @@ angular.module('uxTools.monitoring', [])
         "playbackSpeed": true,
         "taylorChoice": true,
         "pricing": {
-            "free": true,
+            "free": false,
             "subscription": "$39"
         }
         // Can search according the the html element a user clicked

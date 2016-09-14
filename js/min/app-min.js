@@ -2097,7 +2097,7 @@ angular.module('uxTools.monitoring', [])
         "playbackSpeed": true,
         "taylorChoice": true,
         "pricing": {
-            "free": true,
+            "free": false,
             "subscription": "$39"
         }
         // Can search according the the html element a user clicked
@@ -2649,7 +2649,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
 
   $stateProvider
     .state('prototyping', {
-      url: '/',
+      url: '/prototyping',
       templateUrl : '../templates/prototyping.html',
       controller: 'prototypingCtrl'
     })
@@ -2669,7 +2669,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
       controller: 'monitoringCtrl'
     })
     .state('design', {
-      url: '/design',
+      url: '/',
       templateUrl : '../templates/design.html',
       controller: 'designCtrl'
     });

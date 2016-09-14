@@ -16,7 +16,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
 
   $stateProvider
     .state('prototyping', {
-      url: '/',
+      url: '/prototyping',
       templateUrl : '../templates/prototyping.html',
       controller: 'prototypingCtrl'
     })
@@ -36,7 +36,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
       controller: 'monitoringCtrl'
     })
     .state('design', {
-      url: '/design',
+      url: '/',
       templateUrl : '../templates/design.html',
       controller: 'designCtrl'
     });

@@ -11,14 +11,54 @@
 @header-height-lg: 54px; //84 for top banner
 @header-height-md: 72px;
 @header-height-sm: 59px;
+@sidebar-size: 200px;
 
 html, body {
 	height: 100vh;
+	background: @banner;
 }
 
 body {
 	font-family: @font-stack;
 	color: #333;
+}
+
+#page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: white;
+	z-index: 2;
+	transform: translate3d(0,0,0);
+	transition: transform .35s ease-in-out;
+	&.show-menu {
+		transform: translate3d(-@sidebar-size,0,0);
+		box-shadow: 10px 0 30px rgba(0,0,0,.35);
+		transition: box-shadow 0 .35s, transform .35s ease-in-out;
+	}
+}
+
+#hamburger {
+	position: absolute;
+	top: 18px;
+	right: 20px;
+	cursor: pointer;
+	svg, span {
+		vertical-align: middle;
+	}
+	@media all and (min-width: (@large-size+1)) {
+		display: none;
+	}
+	@media all and (max-width: @mid-size) {
+		top: 10px;
+	}
+	@media all and (max-width: @small-size) {
+		font-size: 14px;
+		top: 3px;
+		right: 10px;
+	}
 }
 
 header {
@@ -125,6 +165,8 @@ header {
 #logo {
 	@media all and (max-width: @small-size) {
 		width: 120px;
+		position: relative;
+		top: 2px;
 	}
 }
 
