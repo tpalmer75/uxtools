@@ -67,7 +67,6 @@ angular.module('uxTools.design', [])
         "responsive": true,
         "vector": true,
         "pricing": {
-            "free": true,
             "purchase": "$99"
         }
     }, {
