@@ -1,4 +1,4 @@
-html(ng-app="uxTools")
+html.tools(ng-app="uxTools")
   head
     title Uxtools.co
     meta(name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing.")
@@ -22,39 +22,70 @@ html(ng-app="uxTools")
     meta(name="msapplication-TileColor" content="#ffffff")
     meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
     meta(name="theme-color" content="#ffffff")
-    link(href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet")
     link(href='https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed:400,700,400italic' rel='stylesheet' type='text/css')
-    link(href="css/style-2.2.css" rel="stylesheet" type="text/css")
+    link(href="css/tools.css" rel="stylesheet" type="text/css")
 
-  body
-    section#hero
+  body(ng-init="$root.showMenu = false")
+    #page(ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
       header
-        .left
-          img#logo(src="img/uxtools-logo.svg")
-        .right
-          ul
-            li
-              a(href="/tools") Tools
-            li
-              a(href="https://blog.uxtools.co") Blog
-      .wrapper
-        h1 The ultimate comparison of UX industry tools.
-        p There's a new design tool every week. Someone had to step up and compare them all. Step inside to see how these tools work for you.
-        button See the Tools 
-          include img/icons/arrow-right.svg
-    section.light
-      .wrapper
-        h2 Subscribe to the UX Tools Newsletter
-        p Ever since I created uxtools.co, companies like 
-          a(href="https://adobe") Adobe
-          | , 
-          a(href="https://atomic.io") Atomic
-          | , and 
-          a(href="https://zurb.com") Zurb
-          |  have reached out to show me their latest tools. Don't waste your time comparing the newest tools. Let me do the work for you in one simple, monthly newsletter.
+        h1 Uxtools
+        .wrapper.top-wrapper
+          .left
+            a(href="http://uxtools.co")
+              img#logo(src="img/uxtools-logo.svg" alt="UX Tools")
+            .scroll-tabs
+              ul
+                li(ui-sref-active="active")
+                  a(ui-sref="design") Design
+                li(ui-sref-active="active")
+                  a(ui-sref="prototyping") Prototyping
+                li(ui-sref-active="active")
+                  a(ui-sref="collaboration") Collaboration
+                li(ui-sref-active="active")
+                  a(ui-sref="monitoring") Monitoring
+          .right
+            ul
+              li
+                a(href="http://newsletter.uxtools.co") 
+                  div(class="icon" ng-include="'img/icons/email.svg'" title="UX Tools Newsletter")
+                  span Newsletter
+              li
+                a(href="https://blog.uxtools.co") 
+                  div(class="icon" ng-include="'img/icons/medium.svg'" title="Follow me on Twitter")
+                  span Blog
+              li
+                a(href="https://www.twitter.com/@_taylorpalmer") 
+                  div(class="icon" ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter")
+                  span @_taylorpalmer
+          #hamburger(ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();")
+            div(class="icon" ng-include="'img/icons/menu.svg'")
+            span Menu
+                  
+      section
+        .wrapper.shadow-wrapper(ui-view="")
+          //- injected Angular Views
+          //- div.loading-container Loading...
 
+    #sidebar(ng-class="{'show-menu': $root.showMenu}")
+      ul
+        li
+            a(href="http://newsletter.uxtools.co") 
+              div(class="icon" ng-include="'img/icons/email.svg'" title="UX Tools Newsletter")
+              span Newsletter
+          li
+            a(href="https://blog.uxtools.co") 
+              div(class="icon" ng-include="'img/icons/medium.svg'" title="Follow me on Twitter")
+              span Blog
+          li
+            a(href="https://www.twitter.com/@_taylorpalmer") 
+              div(class="icon" ng-include="'img/icons/twitter.svg'" title="Follow me on Twitter")
+              span @_taylorpalmer
 
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
+    script(src="js/min/app-min.js")
     script(type="text/javascript" id="inspectletjs").
       window.__insp = window.__insp || [];
       __insp.push(['wid', 1656300355]);
