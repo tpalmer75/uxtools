@@ -38,7 +38,7 @@ angular.module('uxTools.monitoring', [])
     var tools = [{
         "name": "Inspectlet",
         "url": "http://www.inspectlet.com/",
-        "image": "img/monitoring/inspectlet.png",
+        "image": "../img/monitoring/inspectlet.png",
         "platforms": {
             "web": true
         },
@@ -58,7 +58,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Lucky Orange",
         "url": "http://www.luckyorange.com/",
-        "image": "img/monitoring/luckyorange.png",
+        "image": "../img/monitoring/luckyorange.png",
         "platforms": {
             "web": true
         },
@@ -82,7 +82,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Fullstory",
         "url": "http://www.fullstory.com/",
-        "image": "img/monitoring/fullstory.png",
+        "image": "../img/monitoring/fullstory.png",
         "platforms": {
             "web": true
         },
@@ -103,7 +103,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Hotjar",
         "url": "https://www.hotjar.com/",
-        "image": "img/monitoring/hotjar.png",
+        "image": "../img/monitoring/hotjar.png",
         "platforms": {
             "web": true
         },
@@ -122,7 +122,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "MouseStats",
         "url": "https://www.mousestats.com/",
-        "image": "img/monitoring/mousestats.png",
+        "image": "../img/monitoring/mousestats.png",
         "platforms": {
             "web": true
         },
@@ -138,7 +138,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "UserTrack",
         "url": "https://www.usertrack.net/",
-        "image": "img/monitoring/usertrack.png",
+        "image": "../img/monitoring/usertrack.png",
         "platforms": {
             "web": true
         },
@@ -153,7 +153,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Zeerat",
         "url": "https://zeerat.com",
-        "image": "img/monitoring/zeerat.png",
+        "image": "../img/monitoring/zeerat.png",
         "platforms": {
             "web": true
         },
@@ -168,7 +168,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Jaco",
         "url": "http://www.getjaco.com/",
-        "image": "img/monitoring/jaco.png",
+        "image": "../img/monitoring/jaco.png",
         "platforms": {
             "web": true
         },

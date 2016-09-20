@@ -1,5 +1,5 @@
 div.filters(title="Filters" ng-click="showFiltersModal('show');")
-  img(src="img/icons/table-edit.svg" tooltip-side="bottom" tooltips tooltip-template="Filters")
+  img(src="../img/icons/table-edit.svg" tooltip-side="bottom" tooltips tooltip-template="Filters")
 
 div.filters-modal(ng-show="modalShowing" ng-click="showFiltersModal('hide')")
   .wrapper
@@ -21,7 +21,7 @@ table(fixed-header-table)
       td
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
           img(ng-src="{{app.image}}")
-        .star(ng-include="'img/icons/star.svg'" ng-if="app.taylorChoice")
+        .star(ng-include="'../img/icons/star.svg'" ng-if="app.taylorChoice")
       td 
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }}
 
@@ -29,37 +29,37 @@ table(fixed-header-table)
         div.flex-wrapper
           div.flex-col
             div(ng-if="app.platforms.web" tooltips tooltip-template="Web")
-              div(ng-include="'img/icons/cloud-outline.svg'" title="Web")
+              div(ng-include="'../img/icons/cloud-outline.svg'" title="Web")
           div.flex-col
             div(ng-if="app.platforms.mac" tooltips tooltip-template="Mac")
-              div(ng-include="'img/icons/apple.svg'" title="Mac")
+              div(ng-include="'../img/icons/apple.svg'" title="Mac")
           div.flex-col
             div(ng-if="app.platforms.windows" tooltips tooltip-template="Windows")  
-              div(ng-include="'img/icons/windows.svg'" title="Windows")
+              div(ng-include="'../img/icons/windows.svg'" title="Windows")
 
       td(ng-if="isFilterVisible('Free');")
-        div(ng-include="'img/icons/check.svg'" ng-if="app.pricing.free")
+        div(ng-include="'../img/icons/check.svg'" ng-if="app.pricing.free")
       td(style="min-width: 100px" ng-if="isFilterVisible('Subscription');")
         span {{app.pricing.subscription}}
       td(style="min-width: 100px" ng-if="isFilterVisible('Purchase');")
         span {{app.pricing.purchase}}
 
       td(ng-if="isFilterVisible('Offline');")
-        div(ng-include="'img/icons/check.svg'" ng-if="app.offline")
+        div(ng-include="'../img/icons/check.svg'" ng-if="app.offline")
       td(ng-if="isFilterVisible('Pen Tool');")
-        div(ng-include="'img/icons/check.svg'" ng-if="app.penTool")
+        div(ng-include="'../img/icons/check.svg'" ng-if="app.penTool")
       td(ng-if="isFilterVisible('Collaborate');")
-        div(ng-include="'img/icons/check.svg'" ng-if="app.collaboration")
+        div(ng-include="'../img/icons/check.svg'" ng-if="app.collaboration")
       td(ng-if="isFilterVisible('Handoff');")
-        div(ng-include="'img/icons/check.svg'" ng-if="app.handoff")
+        div(ng-include="'../img/icons/check.svg'" ng-if="app.handoff")
       td(ng-if="isFilterVisible('Artboards');")
-        div(ng-include="'img/icons/check.svg'" ng-if="app.artboards")
+        div(ng-include="'../img/icons/check.svg'" ng-if="app.artboards")
       td(ng-if="isFilterVisible('Symbols');")
-        div(ng-include="'img/icons/check.svg'" ng-if="app.symbols")
+        div(ng-include="'../img/icons/check.svg'" ng-if="app.symbols")
       td(ng-if="isFilterVisible('Responsive');")
-        div(ng-include="'img/icons/check.svg'" ng-if="app.responsive")
+        div(ng-include="'../img/icons/check.svg'" ng-if="app.responsive")
       td(ng-if="isFilterVisible('Prototyping');")
-        div(ng-include="'img/icons/check.svg'" ng-if="app.prototyping")
+        div(ng-include="'../img/icons/check.svg'" ng-if="app.prototyping")
       td(ng-if="isFilterVisible('Import');")
         div.flex-wrapper
           div.flex-col
@@ -86,6 +86,6 @@ table(fixed-header-table)
             span(ng-if="app.export.psd") .psd
           div.flex-col
             div(ng-if="app.export.html" tooltips tooltip-template="HTML")
-              div(ng-include="'img/icons/html.svg'" title="HTML")
+              div(ng-include="'../img/icons/html.svg'" title="HTML")
         
       
