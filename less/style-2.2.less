@@ -1,0 +1,224 @@
+@import "variables.less";
+@import "reset.less";
+
+body {
+	letter-spacing: .25px;
+}
+
+h1, h2, h3 {
+	font-family: @title-font-stack;
+	line-height: 1.3;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 32px;
+	letter-spacing: 1px;
+	@media all and (max-width: @small-size) {
+		font-size: 24px;
+	}
+}
+h2 {
+	font-size: 24px;
+	letter-spacing: .5px;
+}
+
+p {
+	line-height: 1.6;
+	margin: 20px 0;
+}
+
+a {
+	color: inherit;
+}
+
+body {
+	text-align: center;
+	font-family: @font-stack;
+}
+
+#hero {
+	background-color: @banner;
+	background-image: url('../img/tools-bg.png');
+	background-size: 75%;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: white;
+	padding-bottom: 40px;
+	@media all and (max-width: 1100px) {
+		background-size: cover;
+	}
+	// @media all and (max-width: @mid-size) {
+	// 	background-size: 100%;
+	// }
+	header {
+		display: flex;
+		justify-content: space-between;
+		max-width: 1280px;
+		margin: auto;
+		ul {
+			color: white;
+			display: flex;
+			@media all and (max-width: @small-size) {
+				display: none;
+			}
+			li {
+				margin-left: 40px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				font-size: 18px;
+				a {
+					text-decoration: none;
+					&:hover {
+						border-bottom: 1px solid;
+					}
+				}
+			}
+		}
+	}
+	p {
+		// margin: 40px 0 80px;
+	}
+	button {
+		margin: 20px 0 80px;
+		@media all and (max-width: @small-size) {
+			margin-bottom: 0;
+		}
+	}
+	&.error-404 {
+		min-height: 100vh;
+		.circle {
+			width: 250px;
+			height: 250px;
+			border-radius: 50%;
+			background-image: url('../img/tools-unsplash.jpg');
+			background-size: cover;
+			background-position: center;
+			margin: 30px auto;
+		}
+		h1 {
+			color: lighten(@banner, 10%);
+			font-size: 48px;
+		}
+		background-image: none;
+	}
+}
+
+section {
+	padding: 40px;
+	@media all and (max-width: @small-size) {
+		padding: 20px;
+	}
+	&.light {
+		color: @banner;
+		background: white;
+	}
+}
+
+.wrapper {
+	max-width: 500px;
+	margin: auto;
+	padding: 80px 0;
+	&.wide {
+		max-width: 600px;
+	}
+}
+
+button, input[type="submit"] {
+	appearance: none;
+	background: @blue;
+	color: white;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	border-radius: 999px;
+	font-family: @font-stack;
+	font-size: 18px;
+	height: 48px;
+	padding: 0 24px;
+	box-shadow: 0 0 0 rgba(0,0,0,.5);
+	transition: box-shadow .2s;
+	position: relative;
+	top: 0;
+	svg {
+		margin-left: 5px;
+	}
+	&:hover {
+		box-shadow: 0 5px 15px rgba(0,0,0,.25);
+	}
+	&:focus {
+		box-shadow: 0 5px 15px rgba(0,0,0,.25);
+	}
+	&.right {
+		border-radius: 0 999px 999px 0;
+		@media all and (max-width: @small-size) {
+	    	border-radius: 999px;
+	    	margin-top: 20px;
+	    }
+	}
+}
+
+#mc_embed_signup {
+	margin: 40px auto 0;
+	max-width: 500px;
+}
+
+#mc_embed_signup input.email {
+    font-size: 18px;
+    border: 2px solid #DDD;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 999px 0 0 999px;
+    color: #343434;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0px 0.4em;
+    display: inline-block;
+    margin: 0;
+    width: 350px;
+    vertical-align: top;
+    font-family: @font-stack;
+    text-indent: 10px;
+    height: 48px;
+    margin-right: -6px;
+    color: @banner;
+    outline: none;
+    &:focus {
+    	border: 2px solid @blue;
+    	box-shadow: 0 0 5px @blue;
+    }
+    @media all and (max-width: @mid-size) {
+    	width: 200px;
+    }
+    @media all and (max-width: @small-size) {
+    	width: 100%;
+    	border-radius: 999px;
+    }
+}
+
+#mc_embed_signup .clear {
+    display: inline-block;
+    @media all and (max-width: @small-size) {
+    	display: block;
+    }
+}
+
+// #mc_embed_signup button {
+// 	font-size: 13px;
+//     border: none;
+//     -webkit-border-radius: 3px;
+//     -moz-border-radius: 3px;
+//     border-radius: 3px;
+//     letter-spacing: .03em;
+//     color: #fff;
+//     background-color: #aaa;
+//     box-sizing: border-box;
+//     height: 32px;
+//     line-height: 32px;
+//     padding: 0 18px;
+//     display: inline-block;
+//     margin: 0;
+//     transition: all 0.23s ease-in-out 0s;
+// }
