@@ -85,9 +85,12 @@ section {
 	max-width: 500px;
 	margin: auto;
 	padding: 80px 0;
+	&.wide {
+		max-width: 600px;
+	}
 }
 
-button {
+button, input[type="submit"] {
 	background: @blue;
 	color: white;
 	letter-spacing: 1px;
@@ -99,7 +102,73 @@ button {
 	font-size: 18px;
 	height: 48px;
 	padding: 0 24px;
+	box-shadow: 0 0 0 rgba(0,0,0,.5);
+	transition: box-shadow .2s;
+	position: relative;
+	top: 0;
 	svg {
 		margin-left: 5px;
 	}
+	&:hover {
+		box-shadow: 0 5px 15px rgba(0,0,0,.25);
+	}
+	&:focus {
+		box-shadow: 0 5px 15px rgba(0,0,0,.25);
+	}
+	&.right {
+		border-radius: 0 999px 999px 0;
+	}
 }
+
+#mc_embed_signup {
+	margin-top: 40px;
+}
+
+#mc_embed_signup input.email {
+    font-size: 18px;
+    border: 2px solid #DDD;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 999px 0 0 999px;
+    color: #343434;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0px 0.4em;
+    display: inline-block;
+    margin: 0;
+    width: 350px;
+    vertical-align: top;
+    font-family: @font-stack;
+    text-indent: 10px;
+    height: 48px;
+    margin-right: -6px;
+    color: @banner;
+    outline: none;
+    &:focus {
+    	border: 2px solid @blue;
+    	box-shadow: 0 0 5px @blue;
+    }
+}
+
+#mc_embed_signup .clear {
+    display: inline-block;
+}
+
+// #mc_embed_signup button {
+// 	font-size: 13px;
+//     border: none;
+//     -webkit-border-radius: 3px;
+//     -moz-border-radius: 3px;
+//     border-radius: 3px;
+//     letter-spacing: .03em;
+//     color: #fff;
+//     background-color: #aaa;
+//     box-sizing: border-box;
+//     height: 32px;
+//     line-height: 32px;
+//     padding: 0 18px;
+//     display: inline-block;
+//     margin: 0;
+//     transition: all 0.23s ease-in-out 0s;
+// }
