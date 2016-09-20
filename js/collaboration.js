@@ -38,7 +38,7 @@ angular.module('uxTools.collaboration', [])
     var tools = [{
         "name": "Zeplin",
         "url": "https://zeplin.io/",
-        "image": "img/collaboration/zeplin.png",
+        "image": "../img/collaboration/zeplin.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -70,7 +70,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Avocode",
         "url": "https://avocode.com/",
-        "image": "img/collaboration/avocode.png",
+        "image": "../img/collaboration/avocode.png",
         "platforms": {
             "mac": true,
             "windows": true,
@@ -105,7 +105,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Marketch",
         "url": "https://github.com/tudou527/marketch",
-        "image": "img/collaboration/marketch.png",
+        "image": "../img/collaboration/marketch.png",
         "platforms": {
             "mac": true,
         },
@@ -125,7 +125,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Sketch Measure",
         "url": "https://github.com/utom/sketch-measure",
-        "image": "img/collaboration/sketchmeasure.png",
+        "image": "../img/collaboration/sketchmeasure.png",
         "platforms": {
             "mac": true
         },
@@ -148,7 +148,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Sympli",
         "url": "https://sympli.io/",
-        "image": "img/collaboration/sympli.png",
+        "image": "../img/collaboration/sympli.png",
         "platforms": {
             "web": true
         },
@@ -181,7 +181,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Markly",
         "url": "http://marklyapp.com/",
-        "image": "img/collaboration/markly.png",
+        "image": "../img/collaboration/markly.png",
         "platforms": {
             "mac": true
         },
@@ -202,7 +202,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Red Pen",
         "url": "https://redpen.io/",
-        "image": "img/collaboration/redpen.png",
+        "image": "../img/collaboration/redpen.png",
         "platforms": {
             "web": true,
         },
@@ -219,7 +219,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Specctr",
         "url": "https://specctr.com/cloud/home",
-        "image": "img/collaboration/specctr.png",
+        "image": "../img/collaboration/specctr.png",
         "platforms": {
             "mac": true,
             "windows": true,

@@ -38,7 +38,7 @@ angular.module('uxTools.design', [])
     var tools = [{
         "name": "Sketch",
         "url": "https://www.sketchapp.com/",
-        "image": "img/design/sketch.png",
+        "image": "../img/design/sketch.png",
         "platforms": {
             "mac": true
         },
@@ -72,7 +72,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Figma",
         "url": "https://www.figma.com",
-        "image": "img/design/figma.png",
+        "image": "../img/design/figma.png",
         "platforms": {
             "web": true
         },
@@ -103,7 +103,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Illustrator",
         "url": "http://www.adobe.com/products/illustrator.html",
-        "image": "img/design/illustrator.png",
+        "image": "../img/design/illustrator.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -141,7 +141,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Photoshop",
         "url": "http://www.adobe.com/products/photoshop.html",
-        "image": "img/design/photoshop.png",
+        "image": "../img/design/photoshop.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -176,7 +176,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Affinity Designer",
         "url": "https://affinity.serif.com/en-us/",
-        "image": "img/design/affinity-designer.png",
+        "image": "../img/design/affinity-designer.png",
         "platforms": {
             "mac": true
         },
@@ -212,7 +212,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe XD",
         "url": "http://www.adobe.com/products/experience-design.html",
-        "image": "img/design/adobe-xd.png",
+        "image": "../img/design/adobe-xd.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -246,7 +246,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "UX Pin",
         "url": "https://www.uxpin.com/",
-        "image": "img/design/uxpin.png",
+        "image": "../img/design/uxpin.png",
         "platforms": {
             "web": true
         },
@@ -281,7 +281,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Axure",
         "url": "http://www.axure.com/",
-        "image": "img/design/axure.png",
+        "image": "../img/design/axure.png",
         "platforms": {
             "mac": true,
             "windows": true
