@@ -94,7 +94,6 @@ html.tools, .tools body {
 		}
 		li {
 			height: 30px;
-			// margin-bottom: 5px;
 			padding: 0 10px;
 			margin-right: 5px;
 			display: inline-block;
@@ -175,8 +174,10 @@ html.tools, .tools body {
 	}
 
 	.scroll-tabs {
-		width: 100%;
 		display: inline-block;
+		@media all and (max-width: @mid-size) {
+			width: 100%;
+		}
 		@media all and (max-width: @small-size) {
 			overflow: scroll;
 			font-size: 14px;
