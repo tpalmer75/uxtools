@@ -178,6 +178,7 @@ angular.module('uxTools.collaboration', [])
             "subscription": "$15",
             "purchase": ""
         }
+        // Visual diffs
     }, {
         "name": "Markly",
         "url": "http://marklyapp.com/",
