@@ -850,7 +850,7 @@ angular.module('uxTools.prototyping', [])
     var tools = [{
         "name": "Framer",
         "url": "http://framerjs.com/",
-        "image": "../img/prototyping/framer.png",
+        "image": "../img/logos/framer.png",
         "taylorChoice": true,
         "platforms": {
             "mac": true
@@ -876,7 +876,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Principle",
         "url": "http://principleformac.com/",
-        "image": "../img/prototyping/principle.png",
+        "image": "../img/logos/principle.png",
         "taylorChoice": true,
         "platforms": {
             "mac": true
@@ -899,7 +899,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "UX Pin",
         "url": "https://uxpin.com/",
-        "image": "../img/prototyping/uxpin.png",
+        "image": "../img/logos/uxpin.png",
         "platforms": {
             "web": true
         },
@@ -921,7 +921,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "InVision",
         "url": "https://www.invisionapp.com/",
-        "image": "../img/prototyping/invision.png",
+        "image": "../img/logos/invision.png",
         "platforms": {
             "web": true
         },
@@ -946,7 +946,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Marvel",
         "url": "https://marvelapp.com/",
-        "image": "../img/prototyping/marvel.png",
+        "image": "../img/logos/marvel.png",
         "platforms": {
             "web": true,
             "iOS": true,
@@ -979,7 +979,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Flinto",
         "url": "https://www.flinto.com/mac",
-        "image": "../img/prototyping/flinto.png",
+        "image": "../img/logos/flinto.png",
         "platforms": {
             "web": true,
             "mac": true
@@ -1004,7 +1004,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Flinto Lite",
         "url": "https://www.flinto.com/lite",
-        "image": "../img/prototyping/flinto-lite.png",
+        "image": "../img/logos/flinto-lite.png",
         "platforms": {
             "web": true,
         },
@@ -1026,7 +1026,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Axure",
         "url": "http://www.axure.com/",
-        "image": "../img/prototyping/axure.png",
+        "image": "../img/logos/axure.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -1046,7 +1046,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Balsamiq",
         "url": "https://balsamiq.com/",
-        "image": "../img/prototyping/basalmiq.png",
+        "image": "../img/logos/basalmiq.png",
         "design": true,
         "platforms": {
             "web": true
@@ -1064,7 +1064,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Lucidchart",
         "url": "https://lucidchart.com/",
-        "image": "../img/prototyping/lucidchart.png",
+        "image": "../img/logos/lucidchart.png",
         "design": true,
         "platforms": {
             "web": true
@@ -1081,7 +1081,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Adobe XD",
         "url": "http://www.adobe.com/products/experience-design",
-        "image": "../img/prototyping/adobe-xd.png",
+        "image": "../img/logos/adobe-xd.png",
         "design": true,
         "platforms": {
             "mac": true
@@ -1099,7 +1099,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Craft",
         "url": "https://www.invisionapp.com/craft",
-        "image": "../img/prototyping/craft.png",
+        "image": "../img/logos/craft.png",
         "platforms": {
             "mac": true
         },
@@ -1119,7 +1119,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Pixate",
         "url": "http://www.pixate.com/",
-        "image": "../img/prototyping/pixate.png",
+        "image": "../img/logos/pixate.png",
         "platforms": {
             "mac": true,
         },
@@ -1141,7 +1141,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Origami",
         "url": "https://facebook.github.io/origami/",
-        "image": "../img/prototyping/origami.png",
+        "image": "../img/logos/origami.png",
         "plaforms": {
             "mac": true,
         },
@@ -1162,7 +1162,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Proto.io",
         "url": "https://proto.io/",
-        "image": "../img/prototyping/proto.io.png",
+        "image": "../img/logos/proto.io.png",
         "platforms": {
             "web": true,
         },
@@ -1190,7 +1190,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Moqups",
         "url": "https://moqups.com/",
-        "image": "../img/prototyping/moqups.png",
+        "image": "../img/logos/moqups.png",
         "platforms": {
             "web": true,
         },
@@ -1208,7 +1208,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Atomic.io",
         "url": "https://atomic.io/",
-        "image": "../img/prototyping/atomic.io.png",
+        "image": "../img/logos/atomic.io.png",
         "platforms": {
             "web": true,
         },
@@ -1230,7 +1230,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "CanvasFlip",
         "url": "http://canvasflip.com/",
-        "image": "../img/prototyping/canvasflip.png",
+        "image": "../img/logos/canvasflip.png",
         "platforms": {
             "web": true,
         },
@@ -1261,7 +1261,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "iRise",
         "url": "https://www.irise.com/",
-        "image": "../img/prototyping/irise.png",
+        "image": "../img/logos/irise.png",
         "design": true,
         "platforms": {
             "web": true,
@@ -1286,7 +1286,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Koncept App",
         "url": "https://konceptapp.com/",
-        "image": "../img/prototyping/konceptapp.png",
+        "image": "../img/logos/konceptapp.png",
         "platforms": {
             "web": true
         },
@@ -1306,7 +1306,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Fuse",
         "url": "https://www.fusetools.com/",
-        "image": "../img/prototyping/fuse.png",
+        "image": "../img/logos/fuse.png",
         "platforms": {
             "mac": true,
             "windows": true,
@@ -1331,7 +1331,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "HotGloo",
         "url": "https://www.hotgloo.com/",
-        "image": "../img/prototyping/hotgloo.png",
+        "image": "../img/logos/hotgloo.png",
         "design": true,
         "platforms": {
             "web": true,
@@ -1351,7 +1351,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Webflow",
         "url": "https://webflow.com/",
-        "image": "../img/prototyping/webflow.png",
+        "image": "../img/logos/webflow.png",
         "design": true,
         "platforms": {
             "web": true,
@@ -1372,7 +1372,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Demonstrate",
         "url": "http://nfnlabs.in/demonstrate/",
-        "image": "../img/prototyping/demonstrate.png",
+        "image": "../img/logos/demonstrate.png",
         "platforms": {
             "iOS": true,
         },
@@ -1393,7 +1393,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Prott",
         "url": "https://prottapp.com/",
-        "image": "../img/prototyping/prott.png",
+        "image": "../img/logos/prott.png",
         "platforms": {
             "web": true,
             "mac": true,
@@ -1422,7 +1422,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Justinmind",
         "url": "http://www.justinmind.com/",
-        "image": "../img/prototyping/justinmind.png",
+        "image": "../img/logos/justinmind.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -1445,7 +1445,7 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Notable",
         "url": "http://notable.zurb.com/",
-        "image": "../img/prototyping/notable.png",
+        "image": "../img/logos/notable.png",
         "platforms": {
             "web": true
         },
@@ -1604,7 +1604,7 @@ angular.module('uxTools.collaboration', [])
     var tools = [{
         "name": "Zeplin",
         "url": "https://zeplin.io/",
-        "image": "../img/collaboration/zeplin.png",
+        "image": "../img/logos/zeplin.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -1636,7 +1636,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Avocode",
         "url": "https://avocode.com/",
-        "image": "../img/collaboration/avocode.png",
+        "image": "../img/logos/avocode.png",
         "platforms": {
             "mac": true,
             "windows": true,
@@ -1671,7 +1671,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Marketch",
         "url": "https://github.com/tudou527/marketch",
-        "image": "../img/collaboration/marketch.png",
+        "image": "../img/logos/marketch.png",
         "platforms": {
             "mac": true,
         },
@@ -1691,7 +1691,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Sketch Measure",
         "url": "https://github.com/utom/sketch-measure",
-        "image": "../img/collaboration/sketchmeasure.png",
+        "image": "../img/logos/sketchmeasure.png",
         "platforms": {
             "mac": true
         },
@@ -1714,7 +1714,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Sympli",
         "url": "https://sympli.io/",
-        "image": "../img/collaboration/sympli.png",
+        "image": "../img/logos/sympli.png",
         "platforms": {
             "web": true
         },
@@ -1744,10 +1744,11 @@ angular.module('uxTools.collaboration', [])
             "subscription": "$15",
             "purchase": ""
         }
+        // Visual diffs
     }, {
         "name": "Markly",
         "url": "http://marklyapp.com/",
-        "image": "../img/collaboration/markly.png",
+        "image": "../img/logos/markly.png",
         "platforms": {
             "mac": true
         },
@@ -1768,7 +1769,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Red Pen",
         "url": "https://redpen.io/",
-        "image": "../img/collaboration/redpen.png",
+        "image": "../img/logos/redpen.png",
         "platforms": {
             "web": true,
         },
@@ -1785,7 +1786,7 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Specctr",
         "url": "https://specctr.com/cloud/home",
-        "image": "../img/collaboration/specctr.png",
+        "image": "../img/logos/specctr.png",
         "platforms": {
             "mac": true,
             "windows": true,
@@ -1955,7 +1956,7 @@ angular.module('uxTools.monitoring', [])
     var tools = [{
         "name": "Inspectlet",
         "url": "http://www.inspectlet.com/",
-        "image": "../img/monitoring/inspectlet.png",
+        "image": "../img/logos/inspectlet.png",
         "platforms": {
             "web": true
         },
@@ -1975,7 +1976,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Lucky Orange",
         "url": "http://www.luckyorange.com/",
-        "image": "../img/monitoring/luckyorange.png",
+        "image": "../img/logos/luckyorange.png",
         "platforms": {
             "web": true
         },
@@ -1999,7 +2000,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Fullstory",
         "url": "http://www.fullstory.com/",
-        "image": "../img/monitoring/fullstory.png",
+        "image": "../img/logos/fullstory.png",
         "platforms": {
             "web": true
         },
@@ -2020,7 +2021,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Hotjar",
         "url": "https://www.hotjar.com/",
-        "image": "../img/monitoring/hotjar.png",
+        "image": "../img/logos/hotjar.png",
         "platforms": {
             "web": true
         },
@@ -2039,7 +2040,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "MouseStats",
         "url": "https://www.mousestats.com/",
-        "image": "../img/monitoring/mousestats.png",
+        "image": "../img/logos/mousestats.png",
         "platforms": {
             "web": true
         },
@@ -2055,7 +2056,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "UserTrack",
         "url": "https://www.usertrack.net/",
-        "image": "../img/monitoring/usertrack.png",
+        "image": "../img/logos/usertrack.png",
         "platforms": {
             "web": true
         },
@@ -2070,7 +2071,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Zeerat",
         "url": "https://zeerat.com",
-        "image": "../img/monitoring/zeerat.png",
+        "image": "../img/logos/zeerat.png",
         "platforms": {
             "web": true
         },
@@ -2085,7 +2086,7 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Jaco",
         "url": "http://www.getjaco.com/",
-        "image": "../img/monitoring/jaco.png",
+        "image": "../img/logos/jaco.png",
         "platforms": {
             "web": true
         },
@@ -2179,16 +2180,6 @@ angular.module('uxTools.monitoring', [])
             "show": true,
             "canChange": true,
             "tipText": "Format for<br> downloaded"
-    }, {
-            "title": "Free",
-            "show": true,
-            "canChange": true,
-            "tipText": "Has a free version"
-    }, {
-            "title": "Subscription",
-            "show": true,
-            "canChange": true,
-            "tipText": "Cheapest monthly<br>payment"
     }];
 
     return {
@@ -2245,7 +2236,7 @@ angular.module('uxTools.design', [])
     var tools = [{
         "name": "Sketch",
         "url": "https://www.sketchapp.com/",
-        "image": "../img/design/sketch.png",
+        "image": "../img/logos/sketch.png",
         "platforms": {
             "mac": true
         },
@@ -2279,9 +2270,10 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Figma",
         "url": "https://www.figma.com",
-        "image": "../img/design/figma.png",
+        "image": "../img/logos/figma.png",
         "platforms": {
-            "web": true
+            "web": true,
+            "mac": true
         },
         "import": {
             "svg": true,
@@ -2295,6 +2287,7 @@ angular.module('uxTools.design', [])
             "tiff": true
         },
         "offline": false,
+        "comments": true,
         "penTool": true,
         "collaboration": true,
         "handoff": true,
@@ -2310,7 +2303,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Illustrator",
         "url": "http://www.adobe.com/products/illustrator.html",
-        "image": "../img/design/illustrator.png",
+        "image": "../img/logos/illustrator.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -2348,7 +2341,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Photoshop",
         "url": "http://www.adobe.com/products/photoshop.html",
-        "image": "../img/design/photoshop.png",
+        "image": "../img/logos/photoshop.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -2383,7 +2376,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Affinity Designer",
         "url": "https://affinity.serif.com/en-us/",
-        "image": "../img/design/affinity-designer.png",
+        "image": "../img/logos/affinity-designer.png",
         "platforms": {
             "mac": true
         },
@@ -2419,7 +2412,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe XD",
         "url": "http://www.adobe.com/products/experience-design.html",
-        "image": "../img/design/adobe-xd.png",
+        "image": "../img/logos/adobe-xd.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -2453,7 +2446,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "UX Pin",
         "url": "https://www.uxpin.com/",
-        "image": "../img/design/uxpin.png",
+        "image": "../img/logos/uxpin.png",
         "platforms": {
             "web": true
         },
@@ -2474,6 +2467,7 @@ angular.module('uxTools.design', [])
         "offline": false,
         "penTool": false,
         "collaboration": true,
+        "comments": true,
         "handoff": false,
         "artboards": false,
         "symbols": false,
@@ -2488,7 +2482,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Axure",
         "url": "http://www.axure.com/",
-        "image": "../img/design/axure.png",
+        "image": "../img/logos/axure.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -2519,9 +2513,43 @@ angular.module('uxTools.design', [])
             "subscription": "$29",
             "purchase": "$495"
         }
+    }, {
+        "name": "Atomic.io",
+        "url": "https://atomic.io/",
+        "image": "../img/logos/atomic.io.png",
+        "platforms": {
+            "web": true
+        },
+        "import": {
+            "sketch": true,
+            "svg": true,
+            "png": true,
+            "jpg": true
+        },
+        "export": {
+            "png": true,
+            "jpg": true,
+            "svg": true,
+            "pdf": true,
+            "eps": true,
+            "tiff": true
+        },
+        "offline": false,
+        "penTool": false,
+        "collaboration": true,
+        "comments": true,
+        "handoff": false,
+        "plugins": false,
+        "artboards": false,
+        "symbols": true,
+        "responsive": false,
+        "vector": false,
+        "prototyping": true,
+        "pricing": {
+            "subscription": "$15"
+        }
     }];
 
-    // Atomic.io
     // Balsamiq
     // Flinto
     // Hotgloo
@@ -2579,6 +2607,11 @@ angular.module('uxTools.design', [])
             "show": true,
             "canChange": true,
             "tipText": "Simultaneous editing"
+    },  {
+            "title": "Comments",
+            "show": true,
+            "canChange": true,
+            "tipText": "Others can<br>leave comments"
     }, {
             "title": "Handoff",
             "show": true,
