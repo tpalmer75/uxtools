@@ -38,7 +38,7 @@ angular.module('uxTools.design', [])
     var tools = [{
         "name": "Sketch",
         "url": "https://www.sketchapp.com/",
-        "image": "../img/design/sketch.png",
+        "image": "../img/logos/sketch.png",
         "platforms": {
             "mac": true
         },
@@ -72,9 +72,10 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Figma",
         "url": "https://www.figma.com",
-        "image": "../img/design/figma.png",
+        "image": "../img/logos/figma.png",
         "platforms": {
-            "web": true
+            "web": true,
+            "mac": true
         },
         "import": {
             "svg": true,
@@ -88,6 +89,7 @@ angular.module('uxTools.design', [])
             "tiff": true
         },
         "offline": false,
+        "comments": true,
         "penTool": true,
         "collaboration": true,
         "handoff": true,
@@ -103,7 +105,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Illustrator",
         "url": "http://www.adobe.com/products/illustrator.html",
-        "image": "../img/design/illustrator.png",
+        "image": "../img/logos/illustrator.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -141,7 +143,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Photoshop",
         "url": "http://www.adobe.com/products/photoshop.html",
-        "image": "../img/design/photoshop.png",
+        "image": "../img/logos/photoshop.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -176,7 +178,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Affinity Designer",
         "url": "https://affinity.serif.com/en-us/",
-        "image": "../img/design/affinity-designer.png",
+        "image": "../img/logos/affinity-designer.png",
         "platforms": {
             "mac": true
         },
@@ -212,7 +214,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe XD",
         "url": "http://www.adobe.com/products/experience-design.html",
-        "image": "../img/design/adobe-xd.png",
+        "image": "../img/logos/adobe-xd.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -246,7 +248,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "UX Pin",
         "url": "https://www.uxpin.com/",
-        "image": "../img/design/uxpin.png",
+        "image": "../img/logos/uxpin.png",
         "platforms": {
             "web": true
         },
@@ -267,6 +269,7 @@ angular.module('uxTools.design', [])
         "offline": false,
         "penTool": false,
         "collaboration": true,
+        "comments": true,
         "handoff": false,
         "artboards": false,
         "symbols": false,
@@ -281,7 +284,7 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Axure",
         "url": "http://www.axure.com/",
-        "image": "../img/design/axure.png",
+        "image": "../img/logos/axure.png",
         "platforms": {
             "mac": true,
             "windows": true
@@ -312,9 +315,43 @@ angular.module('uxTools.design', [])
             "subscription": "$29",
             "purchase": "$495"
         }
+    }, {
+        "name": "Atomic.io",
+        "url": "https://atomic.io/",
+        "image": "../img/logos/atomic.io.png",
+        "platforms": {
+            "web": true
+        },
+        "import": {
+            "sketch": true,
+            "svg": true,
+            "png": true,
+            "jpg": true
+        },
+        "export": {
+            "png": true,
+            "jpg": true,
+            "svg": true,
+            "pdf": true,
+            "eps": true,
+            "tiff": true
+        },
+        "offline": false,
+        "penTool": false,
+        "collaboration": true,
+        "comments": true,
+        "handoff": false,
+        "plugins": false,
+        "artboards": false,
+        "symbols": true,
+        "responsive": false,
+        "vector": false,
+        "prototyping": true,
+        "pricing": {
+            "subscription": "$15"
+        }
     }];
 
-    // Atomic.io
     // Balsamiq
     // Flinto
     // Hotgloo
@@ -372,6 +409,11 @@ angular.module('uxTools.design', [])
             "show": true,
             "canChange": true,
             "tipText": "Simultaneous editing"
+    },  {
+            "title": "Comments",
+            "show": true,
+            "canChange": true,
+            "tipText": "Others can<br>leave comments"
     }, {
             "title": "Handoff",
             "show": true,
