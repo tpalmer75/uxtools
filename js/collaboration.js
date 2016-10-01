@@ -38,7 +38,9 @@ angular.module('uxTools.collaboration', [])
     var tools = [{
         "name": "Zeplin",
         "url": "https://zeplin.io/",
-        "image": "../img/logos/zeplin.png",
+        "image": {
+            "background-position": "-500 -500",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -70,7 +72,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Avocode",
         "url": "https://avocode.com/",
-        "image": "../img/logos/avocode.png",
+        "image": {
+            "background-position": "-400 -500",
+        },
         "platforms": {
             "mac": true,
             "windows": true,
@@ -105,7 +109,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Marketch",
         "url": "https://github.com/tudou527/marketch",
-        "image": "../img/logos/marketch.png",
+        "image": {
+            "background-position": "-300 -600",
+        },
         "platforms": {
             "mac": true,
         },
@@ -125,7 +131,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Sketch Measure",
         "url": "https://github.com/utom/sketch-measure",
-        "image": "../img/logos/sketchmeasure.png",
+        "image": {
+            "background-position": "-500 -600",
+        },
         "platforms": {
             "mac": true
         },
@@ -148,7 +156,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Sympli",
         "url": "https://sympli.io/",
-        "image": "../img/logos/sympli.png",
+        "image": {
+            "background-position": "-100 -600",
+        },
         "platforms": {
             "web": true
         },
@@ -182,7 +192,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Markly",
         "url": "http://marklyapp.com/",
-        "image": "../img/logos/markly.png",
+        "image": {
+            "background-position": "0 -600",
+        },
         "platforms": {
             "mac": true
         },
@@ -203,7 +215,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Red Pen",
         "url": "https://redpen.io/",
-        "image": "../img/logos/redpen.png",
+        "image": {
+            "background-position": "-300 -700",
+        },
         "platforms": {
             "web": true,
         },
@@ -220,7 +234,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Specctr",
         "url": "https://specctr.com/cloud/home",
-        "image": "../img/logos/specctr.png",
+        "image": {
+            "background-position": "-400 -600",
+        },
         "platforms": {
             "mac": true,
             "windows": true,
