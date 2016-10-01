@@ -19,27 +19,33 @@ table(fixed-header-table)
     tr(ng-repeat="app in prototypingTools | orderBy:'name'")
       td
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
-          img(ng-src="{{app.image}}")
-        .star(ng-include="'../img/icons/star.svg'" ng-if="app.taylorChoice")
+          img(alt="{{app.name}} Logo" src="../img/blank.png" ng-style="{{app.image}}")
+        .star(ng-if="app.taylorChoice")
+          include ../img/icons/star.svg
       td 
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }}
       td.colspan-3(ng-if="isFilterVisible('Platform');")
         div.flex-wrapper
           div.flex-col
             div(ng-if="app.platforms.web" tooltips tooltip-template="Web")
-              div(ng-include="'../img/icons/cloud-outline.svg'" title="Web")
+              div(title="Web")
+                include ../img/icons/cloud-outline.svg
           div.flex-col
             div(ng-if="app.platforms.mac" tooltips tooltip-template="Mac")
-              div(ng-include="'../img/icons/apple.svg'" title="Mac")
+              div(title="Mac")
+                include ../img/icons/apple.svg
           div.flex-col
             div(ng-if="app.platforms.windows" tooltips tooltip-template="Windows")  
-              div(ng-include="'../img/icons/windows.svg'" title="Windows")
+              div(title="Windows")
+                include ../img/icons/windows.svg
           div.flex-col
             div(ng-if="app.platforms.linux" tooltips tooltip-template="Linux")
-              div(ng-include="'../img/icons/linux.svg'" title="Linux")
+              div(title="Linux")
+                include ../img/icons/linux.svg
 
       td(ng-if="isFilterVisible('Free');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.pricing.free")
+        div(ng-if="app.pricing.free")
+          include ../img/icons/check.svg
       td(style="min-width: 100px" ng-if="isFilterVisible('Subscription');")
         span {{app.pricing.subscription}}
       td(ng-if="isFilterVisible('Purchase');")
@@ -59,41 +65,56 @@ table(fixed-header-table)
           div(tooltips tooltip-template="Indesign")
             img(ng-src="../img/icons/indesign.png" ng-if="app.programs.indesign" title="Indesign")
       td(ng-if="isFilterVisible('Specs');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.specs")
+        div(ng-if="app.specs")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Automatic');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.automatic")
+        div(ng-if="app.automatic")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Assets');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.assets")
+        div(ng-if="app.assets")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Measure');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.measure")
+        div(ng-if="app.measure")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('CSS');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.css")
+        div(ng-if="app.css")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Variables');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.variables")
+        div(ng-if="app.variables")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Guides');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.guides")
+        div(ng-if="app.guides")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Layers');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.layers")
+        div(ng-if="app.layers")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Comments');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.comments")
+        div(ng-if="app.comments")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Revisions');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.revisions")
+        div(ng-if="app.revisions")
+          include ../img/icons/check.svg
       td.colspan-5(ng-if="isFilterVisible('Sharing');")
         div.flex-col
           div(ng-if="app.sharing.web" tooltips tooltip-template="Web")
-            div(ng-include="'../img/icons/cloud-outline.svg'" title="Web")
+            div(title="Web")
+              include ../img/icons/cloud-outline.svg
         div.flex-col
           div(ng-if="app.sharing.html" tooltips tooltip-template="Static HTML file")
-            div(ng-include="'../img/icons/html.svg'" title="HTML")
+            div(title="HTML")
+              include ../img/icons/html.svg
         div.flex-col
           div(ng-if="app.sharing.mac" tooltips tooltip-template="Mac")
-            div(ng-include="'../img/icons/apple.svg'" title="Mac")
+            div(title="Mac")
+              include ../img/icons/apple.svg
         div.flex-col
           div(ng-if="app.sharing.windows" tooltips tooltip-template="Windows")
-            div(ng-include="'../img/icons/windows.svg'" title="Windows")
+            div(title="Windows")
+              include ../img/icons/windows.svg
         div.flex-col
           div(ng-if="app.sharing.linux" tooltips tooltip-template="Linux")
-            div(ng-include="'../img/icons/linux.svg'" title="Linux")
+            div(title="Linux")
+              include ../img/icons/linux.svg
         div.flex-col
           div(ng-if="app.sharing.xcode" tooltips tooltip-template="Xcode")
             img(src="../img/icons/xcode.png" title="Xcode")

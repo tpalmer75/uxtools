@@ -38,7 +38,9 @@ angular.module('uxTools.monitoring', [])
     var tools = [{
         "name": "Inspectlet",
         "url": "http://www.inspectlet.com/",
-        "image": "../img/logos/inspectlet.png",
+        "image": {
+            "background-position": "-100 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -58,7 +60,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Lucky Orange",
         "url": "http://www.luckyorange.com/",
-        "image": "../img/logos/luckyorange.png",
+        "image": {
+            "background-position": "0 -300",
+        },
         "platforms": {
             "web": true
         },
@@ -82,7 +86,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Fullstory",
         "url": "http://www.fullstory.com/",
-        "image": "../img/logos/fullstory.png",
+        "image": {
+            "background-position": "-300 -100",
+        },
         "platforms": {
             "web": true
         },
@@ -103,7 +109,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Hotjar",
         "url": "https://www.hotjar.com/",
-        "image": "../img/logos/hotjar.png",
+        "image": {
+            "background-position": "0 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -122,7 +130,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "MouseStats",
         "url": "https://www.mousestats.com/",
-        "image": "../img/logos/mousestats.png",
+        "image": {
+            "background-position": "-400 -100",
+        },
         "platforms": {
             "web": true
         },
@@ -138,7 +148,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "UserTrack",
         "url": "https://www.usertrack.net/",
-        "image": "../img/logos/usertrack.png",
+        "image": {
+            "background-position": "-200 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -153,7 +165,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Zeerat",
         "url": "https://zeerat.com",
-        "image": "../img/logos/zeerat.png",
+        "image": {
+            "background-position": "-300 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -168,7 +182,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Jaco",
         "url": "http://www.getjaco.com/",
-        "image": "../img/logos/jaco.png",
+        "image": {
+            "background-position": "-400 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -178,7 +194,6 @@ angular.module('uxTools.monitoring', [])
         "console": false,
         "skipInactivity": true,
         "playbackSpeed": true,
-        "taylorChoice": true,
         "pricing": {
             "free": false,
             "subscription": "$39"

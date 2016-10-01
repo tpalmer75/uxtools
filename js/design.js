@@ -38,7 +38,9 @@ angular.module('uxTools.design', [])
     var tools = [{
         "name": "Sketch",
         "url": "https://www.sketchapp.com/",
-        "image": "../img/logos/sketch.png",
+        "image": {
+            "background-position": "-200 0",
+        },
         "platforms": {
             "mac": true
         },
@@ -72,7 +74,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Figma",
         "url": "https://www.figma.com",
-        "image": "../img/logos/figma.png",
+        "image": {
+            "background-position": "-200 -100",
+        },
         "platforms": {
             "web": true,
             "mac": true
@@ -105,7 +109,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Illustrator",
         "url": "http://www.adobe.com/products/illustrator.html",
-        "image": "../img/logos/illustrator.png",
+        "image": {
+            "background-position": "-100 -100",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -143,7 +149,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Photoshop",
         "url": "http://www.adobe.com/products/photoshop.html",
-        "image": "../img/logos/photoshop.png",
+        "image": {
+            "background-position": "-100 0",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -178,7 +186,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Affinity Designer",
         "url": "https://affinity.serif.com/en-us/",
-        "image": "../img/logos/affinity-designer.png",
+        "image": {
+            "background-position": "-400 0",
+        },
         "platforms": {
             "mac": true
         },
@@ -214,7 +224,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe XD",
         "url": "http://www.adobe.com/products/experience-design.html",
-        "image": "../img/logos/adobe-xd.png",
+        "image": {
+            "background-position": "0 0",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -248,7 +260,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "UX Pin",
         "url": "https://www.uxpin.com/",
-        "image": "../img/logos/uxpin.png",
+        "image": {
+            "background-position": "0 -100",
+        },
         "platforms": {
             "web": true
         },
@@ -284,7 +298,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Axure",
         "url": "http://www.axure.com/",
-        "image": "../img/logos/axure.png",
+        "image": {
+            "background-position": "-300 0",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -318,7 +334,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Atomic.io",
         "url": "https://atomic.io/",
-        "image": "../img/logos/atomic.io.png",
+        "image": {
+            "background-position": "-500 -700",
+        },
         "platforms": {
             "web": true
         },
