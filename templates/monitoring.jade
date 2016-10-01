@@ -20,13 +20,15 @@ table(fixed-header-table)
 
       td
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
-          img(ng-src="{{app.image}}")
-        .star(ng-include="'../img/icons/star.svg'" ng-if="app.taylorChoice")
+          img(alt="{{app.name}} Logo" src="../img/blank.png" ng-style="{{app.image}}")
+        .star(ng-if="app.taylorChoice")
+          include ../img/icons/star.svg
       td 
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }}
 
       td(ng-if="isFilterVisible('Free');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.pricing.free")
+        div(ng-if="app.pricing.free")
+          include ../img/icons/check.svg
       td(style="min-width: 100px" ng-if="isFilterVisible('Subscription');")
         span {{app.pricing.subscription}}
       td(style="min-width: 100px" ng-if="isFilterVisible('Purchase');")
@@ -36,26 +38,37 @@ table(fixed-header-table)
         div.flex-wrapper
           div.flex-col
             div(ng-if="app.platforms.web" tooltips tooltip-template="Web")
-              div(ng-include="'../img/icons/cloud-outline.svg'" title="Web")
+              div(title="Web")
+                include ../img/icons/cloud-outline.svg
       td(ng-if="isFilterVisible('Playback');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.playback")
+        div(ng-if="app.playback")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Skip');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.skipInactivity")
+        div(ng-if="app.skipInactivity")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Speed');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.playbackSpeed")
+        div(ng-if="app.playbackSpeed")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Jump Back');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.jumpBack")
+        div(ng-if="app.jumpBack")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Console');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.console")
+        div(ng-if="app.console")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Heatmaps');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.heatmaps")
+        div(ng-if="app.heatmaps")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Location');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.location")
+        div(ng-if="app.location")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Form Stats');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.formAnalytics")
+        div(ng-if="app.formAnalytics")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Polls');")
-        div(ng-include="'../img/icons/check.svg'" ng-if="app.polls")
+        div(ng-if="app.polls")
+          include ../img/icons/check.svg
       td(ng-if="isFilterVisible('Export');")
         div.flex-col
           div(ng-if="app.export.html" tooltips tooltip-template="Static HTML file")
-            div(ng-include="'../img/icons/html.svg'" title="HTML")
+            div(title="HTML")
+              include ../img/icons/html.svg

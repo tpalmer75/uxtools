@@ -850,7 +850,9 @@ angular.module('uxTools.prototyping', [])
     var tools = [{
         "name": "Framer",
         "url": "http://framerjs.com/",
-        "image": "../img/logos/framer.png",
+        "image": {
+            "background-position": "-200 -400",
+        },
         "taylorChoice": true,
         "platforms": {
             "mac": true
@@ -876,8 +878,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Principle",
         "url": "http://principleformac.com/",
-        "image": "../img/logos/principle.png",
-        "taylorChoice": true,
+        "image": {
+            "background-position": "0 -400",
+        },
         "platforms": {
             "mac": true
         },
@@ -899,7 +902,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "UX Pin",
         "url": "https://uxpin.com/",
-        "image": "../img/logos/uxpin.png",
+        "image": {
+            "background-position": "0 -100",
+        },
         "platforms": {
             "web": true
         },
@@ -921,7 +926,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "InVision",
         "url": "https://www.invisionapp.com/",
-        "image": "../img/logos/invision.png",
+        "image": {
+            "background-position": "-300 -400",
+        },
         "platforms": {
             "web": true
         },
@@ -946,7 +953,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Marvel",
         "url": "https://marvelapp.com/",
-        "image": "../img/logos/marvel.png",
+        "image": {
+            "background-position": "-200 -300",
+        },
         "platforms": {
             "web": true,
             "iOS": true,
@@ -979,7 +988,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Flinto",
         "url": "https://www.flinto.com/mac",
-        "image": "../img/logos/flinto.png",
+        "image": {
+            "background-position": "-100 -300",
+        },
         "platforms": {
             "web": true,
             "mac": true
@@ -1004,7 +1015,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Flinto Lite",
         "url": "https://www.flinto.com/lite",
-        "image": "../img/logos/flinto-lite.png",
+        "image": {
+            "background-position": "-400 -400",
+        },
         "platforms": {
             "web": true,
         },
@@ -1026,7 +1039,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Axure",
         "url": "http://www.axure.com/",
-        "image": "../img/logos/axure.png",
+        "image": {
+            "background-position": "-300 0",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -1046,7 +1061,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Balsamiq",
         "url": "https://balsamiq.com/",
-        "image": "../img/logos/basalmiq.png",
+        "image": {
+            "background-position": "-500 -400",
+        },
         "design": true,
         "platforms": {
             "web": true
@@ -1064,7 +1081,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Lucidchart",
         "url": "https://lucidchart.com/",
-        "image": "../img/logos/lucidchart.png",
+        "image": {
+            "background-position": "0 -500",
+        },
         "design": true,
         "platforms": {
             "web": true
@@ -1081,7 +1100,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Adobe XD",
         "url": "http://www.adobe.com/products/experience-design",
-        "image": "../img/logos/adobe-xd.png",
+        "image": {
+            "background-position": "0 0",
+        },
         "design": true,
         "platforms": {
             "mac": true
@@ -1099,7 +1120,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Craft",
         "url": "https://www.invisionapp.com/craft",
-        "image": "../img/logos/craft.png",
+        "image": {
+            "background-position": "-500 -300",
+        },
         "platforms": {
             "mac": true
         },
@@ -1119,7 +1142,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Pixate",
         "url": "http://www.pixate.com/",
-        "image": "../img/logos/pixate.png",
+        "image": {
+            "background-position": "-100 -400",
+        },
         "platforms": {
             "mac": true,
         },
@@ -1141,7 +1166,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Origami",
         "url": "https://facebook.github.io/origami/",
-        "image": "../img/logos/origami.png",
+        "image": {
+            "background-position": "-300 -300",
+        },
         "plaforms": {
             "mac": true,
         },
@@ -1162,7 +1189,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Proto.io",
         "url": "https://proto.io/",
-        "image": "../img/logos/proto.io.png",
+        "image": {
+            "background-position": "-100 -500",
+        },
         "platforms": {
             "web": true,
         },
@@ -1190,7 +1219,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Moqups",
         "url": "https://moqups.com/",
-        "image": "../img/logos/moqups.png",
+        "image": {
+            "background-position": "-400 -300",
+        },
         "platforms": {
             "web": true,
         },
@@ -1208,13 +1239,16 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Atomic.io",
         "url": "https://atomic.io/",
-        "image": "../img/logos/atomic.io.png",
+        "image": {
+            "background-position": "-500 -700",
+        },
         "platforms": {
             "web": true,
         },
         "import": {
             "sketch": true
         },
+        "taylorChoice": true,
         "design": true,
         "micro": true,
         "navigation": true,
@@ -1230,7 +1264,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "CanvasFlip",
         "url": "http://canvasflip.com/",
-        "image": "../img/logos/canvasflip.png",
+        "image": {
+            "background-position": "-500 -200",
+        },
         "platforms": {
             "web": true,
         },
@@ -1261,7 +1297,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "iRise",
         "url": "https://www.irise.com/",
-        "image": "../img/logos/irise.png",
+        "image": {
+            "background-position": "-100 -700",
+        },
         "design": true,
         "platforms": {
             "web": true,
@@ -1286,7 +1324,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Koncept App",
         "url": "https://konceptapp.com/",
-        "image": "../img/logos/konceptapp.png",
+        "image": {
+            "background-position": "-200 -500",
+        },
         "platforms": {
             "web": true
         },
@@ -1306,7 +1346,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Fuse",
         "url": "https://www.fusetools.com/",
-        "image": "../img/logos/fuse.png",
+        "image": {
+            "background-position": "-500 -100",
+        },
         "platforms": {
             "mac": true,
             "windows": true,
@@ -1331,7 +1373,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "HotGloo",
         "url": "https://www.hotgloo.com/",
-        "image": "../img/logos/hotgloo.png",
+        "image": {
+            "background-position": "-200 -600",
+        },
         "design": true,
         "platforms": {
             "web": true,
@@ -1351,7 +1395,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Webflow",
         "url": "https://webflow.com/",
-        "image": "../img/logos/webflow.png",
+        "image": {
+            "background-position": "-200 -700",
+        },
         "design": true,
         "platforms": {
             "web": true,
@@ -1372,7 +1418,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Demonstrate",
         "url": "http://nfnlabs.in/demonstrate/",
-        "image": "../img/logos/demonstrate.png",
+        "image": {
+            "background-position": "-300 -500",
+        },
         "platforms": {
             "iOS": true,
         },
@@ -1393,7 +1441,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Prott",
         "url": "https://prottapp.com/",
-        "image": "../img/logos/prott.png",
+        "image": {
+            "background-position": "-500 0",
+        },
         "platforms": {
             "web": true,
             "mac": true,
@@ -1422,7 +1472,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Justinmind",
         "url": "http://www.justinmind.com/",
-        "image": "../img/logos/justinmind.png",
+        "image": {
+            "background-position": "-400 -700",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -1445,7 +1497,9 @@ angular.module('uxTools.prototyping', [])
     }, {
         "name": "Notable",
         "url": "http://notable.zurb.com/",
-        "image": "../img/logos/notable.png",
+        "image": {
+            "background-position": "-0 -700",
+        },
         "platforms": {
             "web": true
         },
@@ -1604,7 +1658,9 @@ angular.module('uxTools.collaboration', [])
     var tools = [{
         "name": "Zeplin",
         "url": "https://zeplin.io/",
-        "image": "../img/logos/zeplin.png",
+        "image": {
+            "background-position": "-500 -500",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -1636,7 +1692,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Avocode",
         "url": "https://avocode.com/",
-        "image": "../img/logos/avocode.png",
+        "image": {
+            "background-position": "-400 -500",
+        },
         "platforms": {
             "mac": true,
             "windows": true,
@@ -1671,7 +1729,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Marketch",
         "url": "https://github.com/tudou527/marketch",
-        "image": "../img/logos/marketch.png",
+        "image": {
+            "background-position": "-300 -600",
+        },
         "platforms": {
             "mac": true,
         },
@@ -1691,7 +1751,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Sketch Measure",
         "url": "https://github.com/utom/sketch-measure",
-        "image": "../img/logos/sketchmeasure.png",
+        "image": {
+            "background-position": "-500 -600",
+        },
         "platforms": {
             "mac": true
         },
@@ -1714,7 +1776,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Sympli",
         "url": "https://sympli.io/",
-        "image": "../img/logos/sympli.png",
+        "image": {
+            "background-position": "-100 -600",
+        },
         "platforms": {
             "web": true
         },
@@ -1748,7 +1812,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Markly",
         "url": "http://marklyapp.com/",
-        "image": "../img/logos/markly.png",
+        "image": {
+            "background-position": "0 -600",
+        },
         "platforms": {
             "mac": true
         },
@@ -1769,7 +1835,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Red Pen",
         "url": "https://redpen.io/",
-        "image": "../img/logos/redpen.png",
+        "image": {
+            "background-position": "-300 -700",
+        },
         "platforms": {
             "web": true,
         },
@@ -1786,7 +1854,9 @@ angular.module('uxTools.collaboration', [])
     }, {
         "name": "Specctr",
         "url": "https://specctr.com/cloud/home",
-        "image": "../img/logos/specctr.png",
+        "image": {
+            "background-position": "-400 -600",
+        },
         "platforms": {
             "mac": true,
             "windows": true,
@@ -1956,7 +2026,9 @@ angular.module('uxTools.monitoring', [])
     var tools = [{
         "name": "Inspectlet",
         "url": "http://www.inspectlet.com/",
-        "image": "../img/logos/inspectlet.png",
+        "image": {
+            "background-position": "-100 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -1976,7 +2048,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Lucky Orange",
         "url": "http://www.luckyorange.com/",
-        "image": "../img/logos/luckyorange.png",
+        "image": {
+            "background-position": "0 -300",
+        },
         "platforms": {
             "web": true
         },
@@ -2000,7 +2074,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Fullstory",
         "url": "http://www.fullstory.com/",
-        "image": "../img/logos/fullstory.png",
+        "image": {
+            "background-position": "-300 -100",
+        },
         "platforms": {
             "web": true
         },
@@ -2021,7 +2097,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Hotjar",
         "url": "https://www.hotjar.com/",
-        "image": "../img/logos/hotjar.png",
+        "image": {
+            "background-position": "0 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -2040,7 +2118,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "MouseStats",
         "url": "https://www.mousestats.com/",
-        "image": "../img/logos/mousestats.png",
+        "image": {
+            "background-position": "-400 -100",
+        },
         "platforms": {
             "web": true
         },
@@ -2056,7 +2136,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "UserTrack",
         "url": "https://www.usertrack.net/",
-        "image": "../img/logos/usertrack.png",
+        "image": {
+            "background-position": "-200 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -2071,7 +2153,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Zeerat",
         "url": "https://zeerat.com",
-        "image": "../img/logos/zeerat.png",
+        "image": {
+            "background-position": "-300 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -2086,7 +2170,9 @@ angular.module('uxTools.monitoring', [])
     }, {
         "name": "Jaco",
         "url": "http://www.getjaco.com/",
-        "image": "../img/logos/jaco.png",
+        "image": {
+            "background-position": "-400 -200",
+        },
         "platforms": {
             "web": true
         },
@@ -2096,7 +2182,6 @@ angular.module('uxTools.monitoring', [])
         "console": false,
         "skipInactivity": true,
         "playbackSpeed": true,
-        "taylorChoice": true,
         "pricing": {
             "free": false,
             "subscription": "$39"
@@ -2236,7 +2321,9 @@ angular.module('uxTools.design', [])
     var tools = [{
         "name": "Sketch",
         "url": "https://www.sketchapp.com/",
-        "image": "../img/logos/sketch.png",
+        "image": {
+            "background-position": "-200 0",
+        },
         "platforms": {
             "mac": true
         },
@@ -2270,7 +2357,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Figma",
         "url": "https://www.figma.com",
-        "image": "../img/logos/figma.png",
+        "image": {
+            "background-position": "-200 -100",
+        },
         "platforms": {
             "web": true,
             "mac": true
@@ -2303,7 +2392,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Illustrator",
         "url": "http://www.adobe.com/products/illustrator.html",
-        "image": "../img/logos/illustrator.png",
+        "image": {
+            "background-position": "-100 -100",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -2341,7 +2432,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe Photoshop",
         "url": "http://www.adobe.com/products/photoshop.html",
-        "image": "../img/logos/photoshop.png",
+        "image": {
+            "background-position": "-100 0",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -2376,7 +2469,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Affinity Designer",
         "url": "https://affinity.serif.com/en-us/",
-        "image": "../img/logos/affinity-designer.png",
+        "image": {
+            "background-position": "-400 0",
+        },
         "platforms": {
             "mac": true
         },
@@ -2412,7 +2507,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Adobe XD",
         "url": "http://www.adobe.com/products/experience-design.html",
-        "image": "../img/logos/adobe-xd.png",
+        "image": {
+            "background-position": "0 0",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -2446,7 +2543,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "UX Pin",
         "url": "https://www.uxpin.com/",
-        "image": "../img/logos/uxpin.png",
+        "image": {
+            "background-position": "0 -100",
+        },
         "platforms": {
             "web": true
         },
@@ -2482,7 +2581,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Axure",
         "url": "http://www.axure.com/",
-        "image": "../img/logos/axure.png",
+        "image": {
+            "background-position": "-300 0",
+        },
         "platforms": {
             "mac": true,
             "windows": true
@@ -2516,7 +2617,9 @@ angular.module('uxTools.design', [])
     }, {
         "name": "Atomic.io",
         "url": "https://atomic.io/",
-        "image": "../img/logos/atomic.io.png",
+        "image": {
+            "background-position": "-500 -700",
+        },
         "platforms": {
             "web": true
         },
