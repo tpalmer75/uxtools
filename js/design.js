@@ -219,7 +219,7 @@ angular.module('uxTools.design', [])
         "vector": true,
         "pricing": {
             "free": false,
-            "purchase": "$50"
+            "purchase": "$40"
         }
     }, {
         "name": "Adobe XD",
