@@ -214,8 +214,8 @@ angular.module('uxTools.design', [])
         "collaboration": false,
         "handoff": false,
         "artboards": true,
-        "symbols": false, // in beta, coming soon
-        "responsive": false, // in beta, coming soon
+        "symbols": true,
+        "responsive": true, 
         "vector": true,
         "pricing": {
             "free": false,
