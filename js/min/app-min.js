@@ -1513,6 +1513,38 @@ angular.module('uxTools.prototyping', [])
             "subscription": "$20",
             "purchase": ""
         }
+    }, {
+        "name": "ProtoPie",
+        "url": "https://www.protopie.io",
+        "image": {
+            "background-position": "-0 -800",
+        },
+        "platforms": {
+            "mac": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "",
+            "purchase": ""
+        },
+        "design": false,
+        "import": {
+            "sketch": true,
+        },
+        "micro": true,
+        "navigation": true,
+        "transition": true,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "android": true,
+            "iOS": true
+        },
+        "tasks": false,
+        "analytics": false,
+        "heatmaps": false,
+        // "mobileOnly": true,
+        // smartphone sensors
     }];
 
     var filters = [{
