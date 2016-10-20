@@ -106,6 +106,10 @@ table(fixed-header-table)
         div(ng-if="app.code")
           include ../img/icons/check.svg
 
+      td(ng-if="isFilterVisible('Handoff');")
+        div(ng-if="app.handoff")
+          include ../img/icons/check.svg
+
 
       td.colspan-8(ng-if="isFilterVisible('Sharing');")
         div.flex-col

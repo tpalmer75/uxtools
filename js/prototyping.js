@@ -113,7 +113,8 @@ angular.module('uxTools.prototyping', [])
             "free": false,
             "subscription": "$19",
             "purchase": ""
-        }
+        },
+        "handoff": true
     }, {
         "name": "InVision",
         "url": "https://www.invisionapp.com/",
@@ -140,7 +141,8 @@ angular.module('uxTools.prototyping', [])
             "free": true,
             "subscription": "$15",
             "purchase": ""
-        }
+        },
+        "handoff": true
     }, {
         "name": "Marvel",
         "url": "https://marvelapp.com/",
@@ -805,6 +807,11 @@ angular.module('uxTools.prototyping', [])
             "canChange": true,
             "tipText": "Requires knowledge<br>of code"
         }, {
+            "title": "Handoff",
+            "show": true,
+            "canChange": true,
+            "tipText": "Deliver specs<br>for development"
+        }, {
             "title": "Sharing",
             "show": true,
             "canChange": true,
@@ -813,7 +820,7 @@ angular.module('uxTools.prototyping', [])
             "title": "Tasks",
             "show": false,
             "canChange": true,
-            "tipText": ""
+            "tipText": "Give tasks for<br>user testing"
         }, {
             "title": "Analytics",
             "show": false,
