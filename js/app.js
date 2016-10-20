@@ -1,6 +1,5 @@
 /*global angular:true */
 
-// @codekit-prepend "jquery.fixedTblHdrLftCol-min.js"
 // @codekit-prepend "angular-tooltips.js"
 // @codekit-prepend "prototyping.js"
 // @codekit-prepend "collaboration.js"
@@ -45,18 +44,113 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
 .directive('fixedHeaderTable', function($timeout) {
     return {
         restrict: 'A',
-        link: function(scope, element) {
+        link: function(scope, element, attrs) {
+
+            console.log('loaded');
+
             $timeout(function() {
-              $(element).fixedTblHdrLftCol({
-                scroll: {
-                  height: '100%',
-                  width: '100%'
-                }
-              });
+              var allTh = document.querySelectorAll(".th-header");
+              console.log(allTh);
             }, 0);
+
+            
+
+            //documentEl = angular.element(document);
+
+            // var test = element.find('#test');
+            // console.log(test);
+
+            // var allTh = element[0].querySelectorAll(".th-header");
+            // console.log(allTh);
+            // var leftCells = document.querySelectorAll(".leftCell");
+            // console.log(leftCells);
+            // var fromTop = allTh[1].getBoundingClientRect().top;
+
+            // documentEl.bind("scroll",function() {
+
+              // documentScroll = documentEl.scrollTop();
+
+              // console.log('scrolling');
+
+              // var translateCell = "translate("+this.scrollLeft+"px,0) translateZ(-3em)";
+              // // I translate every cell from left column one by one
+              // for( let i=0; i < leftCells.length; i++ ) {
+              //   leftCells[i].style.transform = translateCell;
+              // }
+                    
+              // // the same for each header cell
+              // var translateHead = "translate(0,"+ (documentScroll - fromTop) +"px) translateZ(-1em)";
+
+              // if (documentScroll == 0) {
+              //   for( let i=0; i < allTh.length; i++ ) {
+              //     console.log('here');
+              //     allTh[i].style.transform = "translate(0, 0)";
+              //   }
+              // } else if (documentScroll > fromTop) {
+              //   for( let i=0; i < allTh.length; i++ ) {
+              //     console.log(fromTop, translateHead);
+              //     allTh[i].style.transform = translateHead;
+              //   }
+              // }
+
+            // });
         }
     };
 })
+
+// .directive('fixedHeaderTable', function() {
+//     return {
+//         restrict: 'A',
+//         link: function(scope, element) {
+
+//             console.log('loaded');
+
+//             const allTh = angular.element(document.querySelectorAll(".th-header"));
+//             const leftCells = angular.element(document.querySelectorAll(".leftcell"));
+//             const fromTop = angular.element(allTh[1].getBoundingClientRect().top);
+
+//             element.addEventListener("scroll",function(){
+
+//               const translateCell = "translate("+this.scrollLeft+"px,0) translateZ(-3em)";
+//               // I translate every cell from left column one by one
+//               for( let i=0; i < leftCells.length; i++ ) {
+//                 leftCells[i].style.transform = translateCell;
+//               }
+                    
+//               // the same for each header cell
+//               const translateHead = "translate(0,"+ (this.scrollTop - fromTop) +"px) translateZ(-1em)";
+
+//               if (this.scrollTop == 0) {
+//                 for( let i=0; i < allTh.length; i++ ) {
+//                   allTh[i].style.transform = "translate(0, 0)";
+//                 }
+//               } else if (this.scrollTop > fromTop) {
+//                 for( let i=0; i < allTh.length; i++ ) {
+//                   console.log(fromTop, translateHead);
+//                   allTh[i].style.transform = translateHead;
+//                 }
+//               }
+
+//             });
+//         }
+//     };
+// })
+
+// .directive('fixedHeaderTable', function($timeout) {
+//     return {
+//         restrict: 'A',
+//         link: function(scope, element) {
+//             $timeout(function() {
+//               $(element).fixedTblHdrLftCol({
+//                 scroll: {
+//                   height: '100%',
+//                   width: '100%'
+//                 }
+//               });
+//             }, 0);
+//         }
+//     };
+// })
 
 .config(['tooltipsConfProvider', function configConf(tooltipsConfProvider) {
   tooltipsConfProvider.configure({

@@ -1,5 +1,5 @@
 
-<html ng-app="uxTools" class="tools">
+<html ng-app="uxTools">
   <head>
     <title>Uxtools.co</title>
     <meta name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing."/>
@@ -23,36 +23,39 @@
     <meta name="msapplication-TileColor" content="#ffffff"/>
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
     <meta name="theme-color" content="#ffffff"/>
-    <link href="https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed:400,700,400italic" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet"/>
     <link href="../css/tools.css" rel="stylesheet" type="text/css"/>
   </head>
   <body ng-init="$root.showMenu = false">
     <div id="page" ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false">
       <header>
-        <h1>Uxtools</h1>
-        <div class="wrapper top-wrapper">
-          <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a>
-            <div class="scroll-tabs">
+        <div class="top-bar">
+          <h1>Uxtools</h1>
+          <div class="wrapper top-wrapper">
+            <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
+            <div class="right">
               <ul>
-                <li ui-sref-active="active"><a ui-sref="design">Design</a></li>
-                <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
-                <li ui-sref-active="active"><a ui-sref="collaboration">Collaboration</a></li>
-                <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
+                <li><a href="http://newsletter.uxtools.co"> 
+                    <div ng-include="'../img/icons/email.svg'" title="UX Tools Newsletter" class="icon"></div><span>Newsletter</span></a></li>
+                <li><a href="https://blog.uxtools.co"> 
+                    <div ng-include="'../img/icons/medium.svg'" title="Follow me on Twitter" class="icon"></div><span>Blog</span></a></li>
+                <li><a href="https://www.twitter.com/@_taylorpalmer"> 
+                    <div ng-include="'../img/icons/twitter.svg'" title="Follow me on Twitter" class="icon"></div><span>@_taylorpalmer</span></a></li>
               </ul>
             </div>
+            <div id="hamburger" ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();">
+              <div ng-include="'../img/icons/menu.svg'" class="icon"></div><span>Menu</span>
+            </div>
           </div>
-          <div class="right">
+        </div>
+        <div class="bottom-bar">
+          <div class="scroll-tabs">
             <ul>
-              <li><a href="http://newsletter.uxtools.co"> 
-                  <div ng-include="'../img/icons/email.svg'" title="UX Tools Newsletter" class="icon"></div><span>Newsletter</span></a></li>
-              <li><a href="https://blog.uxtools.co"> 
-                  <div ng-include="'../img/icons/medium.svg'" title="Follow me on Twitter" class="icon"></div><span>Blog</span></a></li>
-              <li><a href="https://www.twitter.com/@_taylorpalmer"> 
-                  <div ng-include="'../img/icons/twitter.svg'" title="Follow me on Twitter" class="icon"></div><span>@_taylorpalmer</span></a></li>
+              <li ui-sref-active="active"><a ui-sref="design">Design</a></li>
+              <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
+              <li ui-sref-active="active"><a ui-sref="collaboration">Collaboration</a></li>
+              <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
             </ul>
-          </div>
-          <div id="hamburger" ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();">
-            <div ng-include="'../img/icons/menu.svg'" class="icon"></div><span>Menu</span>
           </div>
         </div>
       </header>
@@ -71,7 +74,6 @@
             <div ng-include="'../img/icons/twitter.svg'" title="Follow me on Twitter" class="icon"></div><span>@_taylorpalmer</span></a></li>
       </ul>
     </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>

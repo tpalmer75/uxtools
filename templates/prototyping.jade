@@ -1,23 +1,23 @@
-div.filters(title="Filters" ng-click="showFiltersModal('show');")
-  img(src="../img/icons/table-edit.svg" tooltip-side="bottom" tooltips tooltip-template="Filters")
+//- div.filters(title="Filters" ng-click="showFiltersModal('show');")
+//-   img(src="../img/icons/table-edit.svg" tooltip-side="bottom" tooltips tooltip-template="Filters")
 
-div.filters-modal(ng-show="modalShowing" ng-click="showFiltersModal('hide')")
-  .wrapper
-    .modal-wrapper(ng-click="$event.stopPropagation()")
-      ul
-        li(ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange") 
-          input(type="checkbox" ng-model="tempFilters[$index].show")
-          | {{ filter.title }}
-      .button-container
-        button(ng-click="setFilters()") Set Filters
+//- div.filters-modal(ng-show="modalShowing" ng-click="showFiltersModal('hide')")
+//-   .wrapper
+//-     .modal-wrapper(ng-click="$event.stopPropagation()")
+//-       ul
+//-         li(ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange") 
+//-           input(type="checkbox" ng-model="tempFilters[$index].show")
+//-           | {{ filter.title }}
+//-       .button-container
+//-         button(ng-click="setFilters()") Set Filters
 table(fixed-header-table)
-  thead
+  thead#test
     tr
-      th(ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)")
+      th(ng-repeat="filter in filters" class="th-header" ng-if="isFilterVisible(filter.title)")
         span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
   tbody
     tr(ng-repeat="app in prototypingTools | orderBy:['name', orderValue]")
-      td
+      td(class="leftCell")
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
           img(alt="{{app.name}} Logo" src="../img/blank.png" ng-style="{{app.image}}")
         .star(ng-if="app.taylorChoice")
