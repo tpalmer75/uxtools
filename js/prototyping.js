@@ -141,7 +141,8 @@ angular.module('uxTools.prototyping', [])
             "free": true,
             "subscription": "$15",
             "purchase": ""
-        }
+        },
+        "handoff": true
     }, {
         "name": "Marvel",
         "url": "https://marvelapp.com/",

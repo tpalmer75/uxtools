@@ -950,7 +950,8 @@ angular.module('uxTools.prototyping', [])
             "free": true,
             "subscription": "$15",
             "purchase": ""
-        }
+        },
+        "handoff": true
     }, {
         "name": "Marvel",
         "url": "https://marvelapp.com/",
@@ -1712,7 +1713,7 @@ angular.module('uxTools.handoff', [])
         "assets": true,
         "measure": true,
         "variables": true,
-        "guides": true,
+        //"guides": true,
         "comments": true,
         "sharing": {
             "mac": true,
@@ -1747,7 +1748,7 @@ angular.module('uxTools.handoff', [])
         "assets": true,
         "measure": true,
         "variables": true,
-        "guides": true,
+        //"guides": true,
         "layers": true,
         "comments": true,
         "revisions": true,
@@ -1829,7 +1830,7 @@ angular.module('uxTools.handoff', [])
         "assets": true,
         "measure": true,
         "variables": true,
-        "guides": true,
+        //"guides": true,
         "layers": true,
         "comments": true,
         "revisions": true,
@@ -1932,6 +1933,7 @@ angular.module('uxTools.handoff', [])
         "measure": true,
         "comments": true,
         "revisions": false,
+        "layout": true,
         "sharing": {
             "web": true,
         },
@@ -2003,16 +2005,18 @@ angular.module('uxTools.handoff', [])
             "canChange": true,
             "tipText": "Allows custom <br>CSS variables"
     }, {
-            "title": "Guides",
+            "title": "Layout",
             "show": true,
             "canChange": true,
-            "tipText": "Maintains layout guides <br>from design apps"
-    }, {
-            "title": "Layers",
-            "show": false,
-            "canChange": true,
-            "tipText": "App shows layer tree"
-    }, {
+            "tipText": "Retains layout<br>and grid sepcs"
+    },
+    //  {
+    //         "title": "Layers",
+    //         "show": false,
+    //         "canChange": true,
+    //         "tipText": "App shows layer tree"
+    // },
+     {
             "title": "Comments",
             "show": true,
             "canChange": true,
