@@ -2416,6 +2416,7 @@ angular.module('uxTools.design', [])
         "artboards": true,
         "symbols": true,
         "responsive": true,
+        "prototyping": false,
         "vector": true,
         "pricing": {
             "purchase": "$99"
@@ -2445,11 +2446,12 @@ angular.module('uxTools.design', [])
         "comments": true,
         "penTool": true,
         "collaboration": true,
-        "handoff": true,
+        "handoff": false,
         "artboards": true,
         "symbols": false,
         "responsive": true,
         "vector": true,
+        "prototyping": false,
         "pricing": {
             "free": true,
             "subscription": "$--",
@@ -2490,6 +2492,7 @@ angular.module('uxTools.design', [])
         "plugins": true,
         "symbols": true,
         "responsive": true,
+        "prototyping": false,
         "vector": true,
         "pricing": {
             "free": false,
@@ -2527,6 +2530,7 @@ angular.module('uxTools.design', [])
         "artboards": true,
         "symbols": false,
         "responsive": false,
+        "prototyping": false,
         "vector": true,
         "pricing": {
             "free": false,
@@ -2564,7 +2568,8 @@ angular.module('uxTools.design', [])
         "handoff": false,
         "artboards": true,
         "symbols": true,
-        "responsive": true, 
+        "responsive": true,
+        "prototyping": false, 
         "vector": true,
         "pricing": {
             "free": false,
