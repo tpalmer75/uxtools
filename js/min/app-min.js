@@ -2838,14 +2838,42 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
 
             console.log('loaded');
 
+            documentEl = angular.element(document);
+
             $timeout(function() {
-              var allTh = document.querySelectorAll(".th-header");
-              console.log(allTh);
+
+              var allTh = document.getElementById("test");
+              var fromTop = allTh.getBoundingClientRect().top;
+
+              documentEl.bind("scroll", function() {
+                console.log('scrolling');
+
+                //var allTh = document.querySelectorAll(".th-header");
+                
+                
+
+                documentScroll = document.body.scrollTop;
+                console.log(documentScroll);
+
+                var translateHead = "translate(0,"+ (documentScroll - fromTop) +"px) translateZ(-1em)";           
+
+                if (documentScroll == 0) {
+              //   for( let i=0; i < allTh.length; i++ ) {
+              //     // console.log('here');
+                  allTh.style.transform = "translate(0, 0)";
+              //   }
+              } else if (documentScroll > fromTop) {
+                //for( let i=0; i < allTh.length; i++ ) {
+                  // console.log(fromTop, translateHead);
+                  allTh.style.transform = translateHead;
+                //}
+              }
+              });
             }, 0);
 
             
 
-            //documentEl = angular.element(document);
+            // documentEl = angular.element(document);
 
             // var test = element.find('#test');
             // console.log(test);
@@ -2860,7 +2888,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
 
               // documentScroll = documentEl.scrollTop();
 
-              // console.log('scrolling');
+              
 
               // var translateCell = "translate("+this.scrollLeft+"px,0) translateZ(-3em)";
               // // I translate every cell from left column one by one
@@ -2871,17 +2899,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
               // // the same for each header cell
               // var translateHead = "translate(0,"+ (documentScroll - fromTop) +"px) translateZ(-1em)";
 
-              // if (documentScroll == 0) {
-              //   for( let i=0; i < allTh.length; i++ ) {
-              //     console.log('here');
-              //     allTh[i].style.transform = "translate(0, 0)";
-              //   }
-              // } else if (documentScroll > fromTop) {
-              //   for( let i=0; i < allTh.length; i++ ) {
-              //     console.log(fromTop, translateHead);
-              //     allTh[i].style.transform = translateHead;
-              //   }
-              // }
+              
 
             // });
         }
