@@ -54,6 +54,8 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
 
               var allTh = document.getElementById("test");
               var fromTop = allTh.getBoundingClientRect().top;
+              var tableContainer = document.getElementById("table-container");
+              var leftCells = document.querySelectorAll(".leftCell");
 
               documentEl.bind("scroll", function() {
                 console.log('scrolling');
@@ -62,23 +64,29 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
                 
                 
 
-                documentScroll = document.body.scrollTop;
-                console.log(documentScroll);
+                documentScrollY = document.body.scrollTop;
+                documentScrollX = document.body.scrollLeft;
+                console.log(documentScrollY);
 
-                var translateHead = "translate(0,"+ (documentScroll - fromTop) +"px) translateZ(-1em)";           
+                var translateHead = "translate(0,"+ (documentScrollY - fromTop) +"px) translateZ(-1em)";           
 
-                if (documentScroll == 0) {
-              //   for( let i=0; i < allTh.length; i++ ) {
-              //     // console.log('here');
+                if (documentScrollY == 0) {
                   allTh.style.transform = "translate(0, 0)";
-              //   }
-              } else if (documentScroll > fromTop) {
-                //for( let i=0; i < allTh.length; i++ ) {
-                  // console.log(fromTop, translateHead);
+                  fromTop = allTh.getBoundingClientRect().top;
+              } else if (documentScrollY > fromTop) {
                   allTh.style.transform = translateHead;
-                //}
               }
+
+              var translateCell = "translate("+documentScrollX+"px,0) translateZ(-3em)";
+
+              for( let i=0; i < leftCells.length; i++ ) {
+                leftCells[i].style.transform = translateCell;
+                document.getElementById("main-header").style.transform = translateCell;
+              }
+
               });
+
+
             }, 0);
 
             

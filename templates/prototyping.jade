@@ -10,7 +10,7 @@
 //-           | {{ filter.title }}
 //-       .button-container
 //-         button(ng-click="setFilters()") Set Filters
-table(fixed-header-table)
+table(fixed-header-table fixed-column-table)
   thead#test
     tr
       th(ng-repeat="filter in filters" class="th-header" ng-if="isFilterVisible(filter.title)")

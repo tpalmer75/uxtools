@@ -27,10 +27,10 @@ html(ng-app="uxTools")
 
   body(ng-init="$root.showMenu = false")
     #page(ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
-      header
+      header#main-header
         .top-bar
           h1 Uxtools
-          .wrapper.top-wrapper
+          .wrapper
             .left
               a(href="/")
                 img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
@@ -38,23 +38,24 @@ html(ng-app="uxTools")
               ul
                 li
                   a(href="http://newsletter.uxtools.co") 
-                    div(class="icon" ng-include="'../img/icons/email.svg'" title="UX Tools Newsletter")
+                    div(class="icon" title="UX Tools Newsletter")
                     span Tools
-                li
-                  a(href="/library") 
-                    div(class="icon" ng-include="'../img/icons/medium.svg'" title="Follow me on Twitter")
-                    span Library
+                //- li
+                //-   a(href="/library") 
+                //-     div(class="icon" title="Follow me on Twitter")
+                //-     span Library
                 li
                   a(href="https://blog.uxtools.co") 
-                    div(class="icon" ng-include="'../img/icons/medium.svg'" title="UX Tools Blog")
+                    div(class="icon" title="UX Tools Blog")
                     span Blog
                 li
                   a(href="http://newsletter.uxtools.co")
-                    div(class="icon" ng-include="'../img/icons/email.svg'" title="UX Tools Newsletter")
-                    button Subscribe
+                    button
+                      //- include ../img/icons/email.svg
+                      | Subscribe
             #hamburger(ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();")
               .icon
-                include ../img/icon/menu.svg
+                include ../img/icons/menu.svg
               span Menu
         .bottom-bar
           .scroll-tabs
@@ -69,7 +70,7 @@ html(ng-app="uxTools")
                 a(ui-sref="monitoring") Monitoring
                   
       section
-        .wrapper.shadow-wrapper(ui-view="")
+        div(ui-view="")
           //- injected Angular Views
           //- div.loading-container Loading...
 
