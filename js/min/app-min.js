@@ -2841,48 +2841,51 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
             documentEl = angular.element(document);
 
             $timeout(function() {
+              var fixedHeaders = document.querySelectorAll("th"),
+                  fromTop = fixedHeaders[0].getBoundingClientRect().top,
+                  fixedCols = document.querySelectorAll(".fixed-col"),
+                  mainHeader = document.getElementById("mainHeader");
+                  latestKnownScrollX = 0,
+                  latestKnownScrollY = 0,
+                  ticking = false;
 
-              var allTh = document.getElementById("test");
-              var fromTop = allTh.getBoundingClientRect().top;
-              var tableContainer = document.getElementById("table-container");
-              var leftCells = document.querySelectorAll(".leftCell");
-              var latestKnownScrollX = 0;
-              var latestKnownScrollY = 0;
-              var ticking = false;
+              console.log(fromTop);
 
               var onScroll = function() {
-                //console.log("scrolling");
                 latestKnownScrollX = document.body.scrollLeft;
                 latestKnownScrollY = document.body.scrollTop;
                 requestTick();
               }
-
+              // Check for paint
               function requestTick() {
                 if (!ticking) {
                   requestAnimationFrame(update);
                 }
                 ticking = true;
               }
-
+              // Functions for scroll
               function update() {
                 ticking = false;
-                var currentScrollY = latestKnownScrollY;
-                var currentScrollX = latestKnownScrollX;
-
-                var translateHead = "translate(0,"+ (currentScrollY - fromTop) +"px) translateZ(-1em)";           
+                var currentScrollY = latestKnownScrollY,
+                    currentScrollX = latestKnownScrollX,
+                    scrollHeader = currentScrollY - fromTop + "px",
+                    scrollCol = currentScrollX + "px";
 
                 if (currentScrollY == 0) {
-                  allTh.style.transform = "translate(0, 0)";
-                  fromTop = allTh.getBoundingClientRect().top;
+                  for( let i=0; i < fixedHeaders.length; i++ ) {
+                    fixedHeaders[i].style.top = "0";
+                  }
                 } else if (currentScrollY > fromTop) {
-                    allTh.style.transform = translateHead;
+                  
+                  for( let i=0; i < fixedHeaders.length; i++ ) {
+                    fixedHeaders[i].style.top = scrollHeader;
+                  }
                 }
 
-                var translateCell = "translate("+currentScrollX+"px,0) translateZ(-3em)";
+                
 
-                for( let i=0; i < leftCells.length; i++ ) {
-                  leftCells[i].style.transform = translateCell;
-                  document.getElementById("main-header").style.transform = translateCell;
+                for( let i=0; i < fixedCols.length; i++ ) {
+                  fixedCols[i].style.left = scrollCol;
                 }
 
               }

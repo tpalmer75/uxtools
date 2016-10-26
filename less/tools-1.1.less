@@ -10,7 +10,6 @@ body{
 
 #page {
 	position: relative;
-	//background: white;
 	z-index: 2;
 	transform: translate3d(0,0,0);
 	transition: transform .35s ease-in-out;
@@ -38,15 +37,9 @@ body{
 }
 
 header {
-	//height: @header-height-lg;
-	//position: absolute;
-	//top: 0;
-	//height: 64px;
 	width: 100%;
 	color: white;
 	line-height: 1.2;
-	//padding: 16px 20px 0;
-	//padding: 0 20px;
 	z-index: 2;
 	background: @blue-primary;
 	a {
@@ -111,6 +104,7 @@ header {
 }
 
 #logo {
+	width: 150px;
 	@media all and (max-width: @small-size) {
 		width: 120px;
 	}
@@ -122,10 +116,8 @@ h1 {
 }
 
 .wrapper {
-	//max-width: 1280px;
 	display: flex;
 	justify-content: space-between;
-	// align-items: center;
 	margin: auto;
 	flex-wrap: wrap;
 	padding: 0 20px;
@@ -153,7 +145,6 @@ h1 {
 	li {
 		font-size: 16px;
 		height: 48px;
-		//border-bottom: 4px solid white;
 		padding-top: 12px;
 		@media all and (max-width: @small-size) {
 			height: 40px;
@@ -162,30 +153,8 @@ h1 {
 }
 
 section {
-	//height: 100%;
-	//padding: (@header-height-lg + 10px) 20px 20px;
 	position: relative;
-	// &:before {
-	// 	height: 140px + @header-height-lg;
-	// 	background: @blue-primary;
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	width: 100%;
-	// 	content: '';
-	// 	box-shadow: 0 2px 24px rgba(0,0,0,.35);
-	// 	@media all and (max-width: @mid-size) {
-	// 		display: none;
-	// 	}
-	// }
-	// @media all and (max-width: @mid-size) {
-	// 	padding: @header-height-md 0 0;
-	// }
-	// @media all and (max-width: @small-size) {
-	// 	padding-top: @header-height-sm;
-	// }
 	.wrapper {
-		//height: 100%;
 		position: relative;
 		background: white;
 	}
@@ -260,6 +229,8 @@ table {
 			max-width: 50px;
 			padding: 0;
 			text-align: center;
+			position: relative;
+			z-index: 2;
 			img {
 				width: 36px;
 				margin: 8px;
@@ -271,6 +242,8 @@ table {
 	th {
 		background: #f0f0f0;
 		border-bottom: 1px solid #ddd;
+		position: relative;
+		z-index: 3;
 		//padding-top: 15px;
 		&:first-of-type {
 			width: 50px;
@@ -278,23 +251,17 @@ table {
 		}
 	}
 
-	thead {
-		position: relative;
-		z-index: 10;
-	}
-
-	thead tr {
-		background: #ddd;
-		td:first-of-type {
-			margin: 0;
-		}
-	}
+	// thead tr {
+	// 	background: #ddd;
+	// 	td:first-of-type {
+	// 		margin: 0;
+	// 	}
+	// }
 
 	tbody tr {
 		td {
 			background: white;
 			border-right: 1px solid #eee;
-			//border-bottom: 1px solid #ddd;
 		}
 		&:nth-of-type(even) {
 			td {
@@ -344,14 +311,6 @@ table {
 		width: 30px;
 		text-align: center;
 	}
-	// .pricing {
-	// 	.col {
-	// 		margin-right: 5px;
-	// 	}
-	// 	* {
-	// 		vertical-align: middle;
-	// 	}
-	// }
 }
 
 .zero-state {
