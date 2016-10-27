@@ -40,7 +40,8 @@ header {
 	width: 100%;
 	color: white;
 	line-height: 1.2;
-	z-index: 2;
+	position: fixed;
+	top: 0;
 	background: @blue-primary;
 	a {
 		color: white;
@@ -249,6 +250,11 @@ table {
 			width: 50px;
 			height: 51px;
 		}
+	}
+
+	thead {
+		position: fixed;
+		top: 0;
 	}
 
 	// thead tr {

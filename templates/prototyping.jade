@@ -10,8 +10,8 @@
 //-           | {{ filter.title }}
 //-       .button-container
 //-         button(ng-click="setFilters()") Set Filters
-table(fixed-header-table fixed-column-table)
-  thead#test
+table#scroll-table(fixed-table)
+  thead#fixed-header
     tr
       th(ng-repeat="filter in filters" class="fixed-header" ng-if="isFilterVisible(filter.title)")
         span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}

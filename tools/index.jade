@@ -26,53 +26,53 @@ html(ng-app="uxTools")
     link(href="../css/tools-1.1.css" rel="stylesheet" type="text/css")
 
   body(ng-init="$root.showMenu = false")
-    #page(ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
-      header#main-header
-        .top-bar
-          h1 Uxtools
-          .wrapper
-            .left
-              a(href="/")
-                img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
-            .right
-              ul
-                li
-                  a(href="http://newsletter.uxtools.co") 
-                    div(class="icon" title="UX Tools Newsletter")
-                    span Tools
-                //- li
-                //-   a(href="/library") 
-                //-     div(class="icon" title="Follow me on Twitter")
-                //-     span Library
-                li
-                  a(href="https://blog.uxtools.co") 
-                    div(class="icon" title="UX Tools Blog")
-                    span Blog
-                li
-                  a(href="http://newsletter.uxtools.co")
-                    button
-                      //- include ../img/icons/email.svg
-                      | Subscribe
-            #hamburger(ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();")
-              .icon
-                include ../img/icons/menu.svg
-              span Menu
-        .bottom-bar
-          .scroll-tabs
+    //- #page(ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
+    header#main-header
+      .top-bar
+        h1 Uxtools
+        .wrapper
+          .left
+            a(href="/")
+              img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
+          .right
             ul
-              li(ui-sref-active="active")
-                a(ui-sref="design") Design
-              li(ui-sref-active="active")
-                a(ui-sref="prototyping") Prototyping
-              li(ui-sref-active="active")
-                a(ui-sref="collaboration") Collaboration
-              li(ui-sref-active="active")
-                a(ui-sref="monitoring") Monitoring
-                  
-      section
-        div(ui-view="")
-          //- injected Angular Views
-          //- div.loading-container Loading...
+              li
+                a(href="http://newsletter.uxtools.co") 
+                  div(class="icon" title="UX Tools Newsletter")
+                  span Tools
+              //- li
+              //-   a(href="/library") 
+              //-     div(class="icon" title="Follow me on Twitter")
+              //-     span Library
+              li
+                a(href="https://blog.uxtools.co") 
+                  div(class="icon" title="UX Tools Blog")
+                  span Blog
+              li
+                a(href="http://newsletter.uxtools.co")
+                  button
+                    //- include ../img/icons/email.svg
+                    | Subscribe
+          #hamburger(ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();")
+            .icon
+              include ../img/icons/menu.svg
+            span Menu
+      .bottom-bar
+        .scroll-tabs
+          ul
+            li(ui-sref-active="active")
+              a(ui-sref="design") Design
+            li(ui-sref-active="active")
+              a(ui-sref="prototyping") Prototyping
+            li(ui-sref-active="active")
+              a(ui-sref="collaboration") Collaboration
+            li(ui-sref-active="active")
+              a(ui-sref="monitoring") Monitoring
+                
+    section
+      div(ui-view="")
+        //- injected Angular Views
+        //- div.loading-container Loading...
 
     #sidebar(ng-class="{'show-menu': $root.showMenu}")
       ul

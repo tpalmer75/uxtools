@@ -1,6 +1,6 @@
 
-<table fixed-header-table="fixed-header-table" fixed-column-table="fixed-column-table">
-  <thead id="test">
+<table id="scroll-table" fixed-table="fixed-table">
+  <thead id="fixed-header">
     <tr>
       <th ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)" class="fixed-header"><span tooltips="tooltips" tooltip-side="bottom" tooltip-template="{{filter.tipText}}">{{ filter.title }}</span></th>
     </tr>

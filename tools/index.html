@@ -27,45 +27,43 @@
     <link href="../css/tools-1.1.css" rel="stylesheet" type="text/css"/>
   </head>
   <body ng-init="$root.showMenu = false">
-    <div id="page" ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false">
-      <header id="main-header">
-        <div class="top-bar">
-          <h1>Uxtools</h1>
-          <div class="wrapper">
-            <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
-            <div class="right">
-              <ul>
-                <li><a href="http://newsletter.uxtools.co"> 
-                    <div title="UX Tools Newsletter" class="icon"></div><span>Tools</span></a></li>
-                <li><a href="https://blog.uxtools.co"> 
-                    <div title="UX Tools Blog" class="icon"></div><span>Blog</span></a></li>
-                <li><a href="http://newsletter.uxtools.co">
-                    <button>Subscribe
-                    </button></a></li>
-              </ul>
-            </div>
-            <div id="hamburger" ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();">
-              <div class="icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
-              </div><span>Menu</span>
-            </div>
-          </div>
-        </div>
-        <div class="bottom-bar">
-          <div class="scroll-tabs">
+    <header id="main-header">
+      <div class="top-bar">
+        <h1>Uxtools</h1>
+        <div class="wrapper">
+          <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
+          <div class="right">
             <ul>
-              <li ui-sref-active="active"><a ui-sref="design">Design</a></li>
-              <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
-              <li ui-sref-active="active"><a ui-sref="collaboration">Collaboration</a></li>
-              <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
+              <li><a href="http://newsletter.uxtools.co"> 
+                  <div title="UX Tools Newsletter" class="icon"></div><span>Tools</span></a></li>
+              <li><a href="https://blog.uxtools.co"> 
+                  <div title="UX Tools Blog" class="icon"></div><span>Blog</span></a></li>
+              <li><a href="http://newsletter.uxtools.co">
+                  <button>Subscribe
+                  </button></a></li>
             </ul>
           </div>
+          <div id="hamburger" ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();">
+            <div class="icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+            </div><span>Menu</span>
+          </div>
         </div>
-      </header>
-      <section>
-        <div ui-view="">
+      </div>
+      <div class="bottom-bar">
+        <div class="scroll-tabs">
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="design">Design</a></li>
+            <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
+            <li ui-sref-active="active"><a ui-sref="collaboration">Collaboration</a></li>
+            <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
+          </ul>
         </div>
-      </section>
-    </div>
+      </div>
+    </header>
+    <section>
+      <div ui-view="">
+      </div>
+    </section>
     <div id="sidebar" ng-class="{'show-menu': $root.showMenu}">
       <ul>
         <li><a href="http://newsletter.uxtools.co"> 
