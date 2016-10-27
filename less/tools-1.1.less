@@ -221,7 +221,7 @@ table {
 	}
 	td {
 		min-width: 80px;
-		&:first-of-type {
+		&.fixed-col {
 			min-width: 0;
 			width: 50px;
 			border-top: none;
@@ -230,7 +230,8 @@ table {
 			max-width: 50px;
 			padding: 0;
 			text-align: center;
-			position: relative;
+			position: fixed;
+			left: 0;
 			z-index: 2;
 			img {
 				width: 36px;
@@ -245,7 +246,6 @@ table {
 		border-bottom: 1px solid #ddd;
 		position: relative;
 		z-index: 3;
-		//padding-top: 15px;
 		&:first-of-type {
 			width: 50px;
 			height: 51px;
@@ -254,6 +254,7 @@ table {
 
 	thead {
 		position: fixed;
+		z-index: 3;
 		top: 0;
 	}
 
