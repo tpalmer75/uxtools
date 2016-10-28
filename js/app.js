@@ -46,42 +46,36 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
         restrict: 'A',
         link: function(scope, element, attrs) {
 
-            var documentEl = angular.element(document);
-
             $timeout(function() {
               // var runSetup = function() {
-                var fixedHeaders = document.querySelectorAll("th");
-                var fixedCols = document.querySelectorAll(".fixed-col");
-                var fixedColHeight = fixedCols[0].clientHeight;
-                var mainHeader = document.getElementById("main-header");
-                var latestKnownScrollX = 0;
-                var latestKnownScrollY = 0;
-                var ticking = false;
-                var headerHeight = mainHeader.clientHeight;
-                var fixedHeader = document.getElementById("fixed-header");
-                var fixedHeaderHeight = fixedHeader.clientHeight;
-                var table = document.getElementById("scroll-table");
+              var fixedHeaders = document.querySelectorAll("th");
+              var fixedCols = document.querySelectorAll(".fixed-col");
+              var fixedColHeight = fixedCols[0].clientHeight;
+              var mainHeader = document.getElementById("main-header");
+              var latestKnownScrollX = 0;
+              var latestKnownScrollY = 0;
+              var ticking = false;
+              var headerHeight = mainHeader.clientHeight;
+              var fixedHeader = document.getElementById("fixed-header");
+              var fixedHeaderHeight = fixedHeader.clientHeight;
+              var columns = document.querySelectorAll("tr:first-of-type td");
+              var table = document.getElementById("scroll-table");
 
-                table.style.margin = (headerHeight + fixedHeader.clientHeight) + "px 0 0 0";
-                fixedHeader.style.top = headerHeight + "px";
-                for( var i=0; i < fixedCols.length; i++ ) {
-                  fixedCols[i].style.top = headerHeight + fixedHeaderHeight + (fixedColHeight*i) + "px";
-                }
-              // } 
+              table.style.margin = (headerHeight + fixedHeader.clientHeight) + "px 0 0 0";
+              fixedHeader.style.top = headerHeight + "px";
 
-              // runSetup();
-              // mainHeader = document.getElementById("main-header");
-              // fixedCols = document.querySelectorAll(".fixed-col");
-              // fixedHeader = document.getElementById("fixed-header");
-              // fixedHeaderHeight = fixedHeader.clientHeight;
-              // fixedColHeight = fixedCols[0].clientHeight;
+              for (var i=0; i < columns.length; i++) {
+                var newWidth = columns[i].offsetWidth;
+                console.log(newWidth);
+                fixedHeaders[i].style.minWidth = newWidth;
+              }
               
               var onScroll = function() {
                 latestKnownScrollX = document.body.scrollLeft;
                 latestKnownScrollY = document.body.scrollTop;
                 requestTick();
-              }
-              // Check for paint
+              };
+
               function requestTick() {
                 if (!ticking) {
                   requestAnimationFrame(update);
@@ -89,18 +83,10 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
                 ticking = true;
               }
 
-
-
-
-              // Functions for scroll
               var update = function() {
-                console.log("scrolling");
                 ticking = false;
-                var currentScrollY = latestKnownScrollY,
-                    currentScrollX = latestKnownScrollX,
-                     
-                    //scrollHeader = currentScrollY - fromTop + "px",
-                    scrollCol = currentScrollX + "px";
+                var currentScrollY = latestKnownScrollY;
+                var currentScrollX = latestKnownScrollX;
 
                 if (currentScrollY > headerHeight) {
                   fixedHeader.style.top = 0;
@@ -108,18 +94,22 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
                   fixedHeader.style.top = headerHeight - currentScrollY;
                   mainHeader.style.top = -currentScrollY;
                 }
+
                 fixedHeader.style.left = -currentScrollX;
 
-                for ( var i=0; i < fixedCols.length; i++ ) {
-                  console.log(headerHeight + fixedHeaderHeight + currentScrollY + (fixedColHeight*i) + "px");
-                  fixedCols[i].style.top = headerHeight + fixedHeaderHeight - currentScrollY + (fixedColHeight*i) + "px";
+                if (currentScrollX > 0) {
+                  for ( var i=0; i < fixedCols.length; i++ ) {
+                    fixedCols[i].style.position = "fixed";
+                    fixedCols[i].style.top = headerHeight + fixedHeaderHeight - currentScrollY + (fixedColHeight*i) - 1 + "px";
+                  }
+                } else {
+                  for ( var i=0; i < fixedCols.length; i++ ) {
+                    fixedCols[i].style.position = "absolute";
+                    fixedCols[i].style.top = "";
+                  }
                 }
 
               };
-
-
-
-
 
               angular.element($window).bind("scroll", onScroll);
               //angular.element($window).bind("resize", runSetup);

@@ -3,9 +3,10 @@
 @import "angular-tooltips.less";
 @import "sidebar.less";
 
-body{
+body {
 	font-family: @font-stack;
 	color: #333;
+	overflow: scroll;
 }
 
 #page {
@@ -230,7 +231,8 @@ table {
 			max-width: 50px;
 			padding: 0;
 			text-align: center;
-			position: fixed;
+			//position: fixed;
+			position: absolute;
 			left: 0;
 			z-index: 2;
 			img {
@@ -240,6 +242,9 @@ table {
 				background-size: 536px;
 			}
 		}
+		&.name-col {
+			padding-left: 55px;
+		}
 	}
 	th {
 		background: #f0f0f0;
@@ -247,8 +252,9 @@ table {
 		position: relative;
 		z-index: 3;
 		&:first-of-type {
-			width: 50px;
-			height: 51px;
+			// width: 50px;
+			// height: 51px;
+			min-width: 0 !important;
 		}
 	}
 
@@ -266,6 +272,7 @@ table {
 	// }
 
 	tbody tr {
+		position: relative;
 		td {
 			background: white;
 			border-right: 1px solid #eee;

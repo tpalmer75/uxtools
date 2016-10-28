@@ -23,7 +23,7 @@ table#scroll-table(fixed-table)
         .star(ng-if="app.taylorChoice")
           include ../img/icons/star.svg
 
-      td 
+      td.name-col
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }} {{orderValue}}
 
 

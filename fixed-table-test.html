@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8")>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: blue;
+    width: 100%;
+  }
+  th {
+    height: 100px;
+    min-width: 100px;
+    background: #999;
+    color: white;
+    position: relative;
+    z-index: 10;
+  }
+  td {
+      background-color: white;
+      min-width: 100px;
+      height: 100px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+  }
+  .fixed-col {
+    z-index: 5;
+  }
+  body, html {
+    margin: 0;
+  }
+  thead {
+    position: fixed;
+  }
+  header {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background: blue;
+    color: white;
+    width: 100vw;
+  }
+  table {
+    table-layout: fixed;
+  }
+</style>
+
+</head>
+<body>
+<header id="main-header">
+<h1>I'm supposed to be fixed</h1><h2>Why am I not fixed?</h2>
+</header>
+<div id="wrap">
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+</div>
+<table id="table">
+<!-- <thead id="fixed-header">
+  <tr>
+  <th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th><th>Test</th>
+  </tr>
+</thead> -->
+  <!-- <tr>
+    <td class="fixed-col">Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td>
+  </tr> -->
+</table>
+<p style="width: 1000px;">Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+</body>
+<!-- <script>
+    var fixedHeaders = document.querySelectorAll("th"),
+        fixedCols = document.querySelectorAll(".fixed-col"),
+        fromTop = fixedHeaders[0].getBoundingClientRect().top,
+        latestKnownScrollX = 0,
+        latestKnownScrollY = 0,
+        ticking = false,
+        fromTop = fixedHeaders[0].getBoundingClientRect().top,
+        mainHeader = document.getElementById("main-header"),
+        headerHeight = mainHeader.clientHeight,
+        fixedHeader = document.getElementById("fixed-header");
+        table = document.getElementById("table");
+
+    table.style.margin = (headerHeight + fixedHeader.clientHeight) + "px 0 0 0";
+    fixedHeader.style.top = headerHeight + "px";
+
+    var onScroll = function() {
+      latestKnownScrollX = document.body.scrollLeft;
+      latestKnownScrollY = document.body.scrollTop;
+      requestTick();
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(update);
+      }
+      ticking = true;
+    }
+
+    var update = function() {
+      console.log('scrolling');
+      ticking = false;
+      var currentScrollY = latestKnownScrollY;
+      var currentScrollX = latestKnownScrollX;
+
+      var scrollHeader = (currentScrollY) +"px"; 
+
+      var scrollCol = currentScrollX + "px";
+
+      if (currentScrollY > headerHeight) {
+        fixedHeader.style.top = 0;
+      } else {
+        fixedHeader.style.top = headerHeight - currentScrollY;
+        mainHeader.style.top = -currentScrollY;
+      }
+      console.log(currentScrollY);
+      fixedHeader.style.left = -currentScrollX;
+
+      // for( let i=0; i < fixedCols.length; i++ ) {
+      //   fixedCols[i].style.left = scrollCol;
+      // }
+
+    };
+
+  window.addEventListener("scroll", onScroll);
+</script> -->
+</html>
