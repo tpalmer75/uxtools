@@ -2856,7 +2856,6 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
 
               for (var i=0; i < columns.length; i++) {
                 var newWidth = columns[i].offsetWidth;
-                console.log(newWidth);
                 fixedHeaders[i].style.minWidth = newWidth;
               }
               
@@ -2877,12 +2876,13 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
                 ticking = false;
                 var currentScrollY = latestKnownScrollY;
                 var currentScrollX = latestKnownScrollX;
-
+                console.log(headerHeight);
                 if (currentScrollY > headerHeight) {
-                  fixedHeader.style.top = 0;
+                  fixedHeader.style.top = currentScrollY;
+
                 } else {
-                  fixedHeader.style.top = headerHeight - currentScrollY;
-                  mainHeader.style.top = -currentScrollY;
+                  fixedHeader.style.top = headerHeight;
+                  //mainHeader.style.top = -(currentScrollY/2);
                 }
 
                 fixedHeader.style.left = -currentScrollX;
