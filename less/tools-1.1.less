@@ -6,6 +6,14 @@
 body {
 	font-family: @font-stack;
 	color: #333;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+body, html {
+	height: 100%;
+	width: 100%;
 }
 
 // #page {
@@ -40,8 +48,8 @@ header {
 	width: 100%;
 	color: white;
 	line-height: 1.2;
-	position: absolute;
-	top: 0;
+	//position: absolute;
+	//top: 0;
 	background: @blue-primary;
 	a {
 		color: white;
@@ -140,7 +148,7 @@ h1 {
 	}
 	ul {
 		@media all and (max-width: @small-size) {
-			min-width: 380px;
+			min-width: 410px;
 		}
 	}
 	li {
@@ -155,6 +163,13 @@ h1 {
 
 section {
 	//position: relative;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin-top: 50px;
+	overflow: auto;
+	//overflow-x: scroll;
+	//-webkit-overflow-scrolling: touch;
 	.wrapper {
 		//position: relative;
 		background: white;
@@ -199,7 +214,6 @@ button, input[type="submit"] {
 }
 
 table {
-	width: 100%;
 	@media all and (max-width: @small-size) {
 		font-size: 14px;
 	}
@@ -258,7 +272,7 @@ table {
 	}
 
 	thead {
-		position: absolute;
+		position: fixed;
 		z-index: 3;
 		top: 0;
 	}
@@ -269,7 +283,6 @@ table {
 	// 		margin: 0;
 	// 	}
 	// }
-
 	tbody tr {
 		position: relative;
 		td {

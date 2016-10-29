@@ -2838,9 +2838,10 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
 
             $timeout(function() {
               // var runSetup = function() {
+              var scrollElement = document.getElementById("scroll-element");
               var fixedHeaders = document.querySelectorAll("th");
               var fixedCols = document.querySelectorAll(".fixed-col");
-              var fixedColHeight = fixedCols[0].clientHeight;
+              var fixedColHeight = fixedCols[1].clientHeight;
               var mainHeader = document.getElementById("main-header");
               var latestKnownScrollX = 0;
               var latestKnownScrollY = 0;
@@ -2851,7 +2852,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
               var columns = document.querySelectorAll("tr:first-of-type td");
               var table = document.getElementById("scroll-table");
 
-              table.style.margin = (headerHeight + fixedHeader.clientHeight) + "px 0 0 0";
+              //table.style.marginTop = fixedHeader.clientHeight;
               fixedHeader.style.top = headerHeight + "px";
 
               for (var i=0; i < columns.length; i++) {
@@ -2860,8 +2861,8 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
               }
               
               var onScroll = function() {
-                latestKnownScrollX = document.body.scrollLeft;
-                latestKnownScrollY = document.body.scrollTop;
+                latestKnownScrollX = scrollElement.scrollLeft;
+                latestKnownScrollY = scrollElement.scrollTop;
                 requestTick();
               };
 
@@ -2876,21 +2877,23 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
                 ticking = false;
                 var currentScrollY = latestKnownScrollY;
                 var currentScrollX = latestKnownScrollX;
-                console.log(headerHeight);
-                if (currentScrollY > headerHeight) {
-                  fixedHeader.style.top = currentScrollY;
-
-                } else {
-                  fixedHeader.style.top = headerHeight;
-                  //mainHeader.style.top = -(currentScrollY/2);
-                }
 
                 fixedHeader.style.left = -currentScrollX;
+
+                if (currentScrollY <= headerHeight) {
+                  mainHeader.style.marginTop = -currentScrollY;
+                  fixedHeader.style.top = headerHeight - currentScrollY;
+                } else {
+                  mainHeader.style.marginTop = -headerHeight;
+                  fixedHeader.style.top = 0;
+                }
 
                 if (currentScrollX > 0) {
                   for ( var i=0; i < fixedCols.length; i++ ) {
                     fixedCols[i].style.position = "fixed";
-                    fixedCols[i].style.top = headerHeight + fixedHeaderHeight - currentScrollY + (fixedColHeight*i) - 1 + "px";
+                    //fixedCols[i].style.top = headerHeight + fixedHeaderHeight - currentScrollY + (fixedColHeight*i) - 1 + "px";
+                    fixedCols[i].style.top = parseInt(fixedHeader.style.top) + fixedHeaderHeight - currentScrollY + (fixedColHeight*i) - 1;
+                    //console.log(fixedHeader.style.top);
                   }
                 } else {
                   for ( var i=0; i < fixedCols.length; i++ ) {
@@ -2901,7 +2904,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
 
               };
 
-              angular.element($window).bind("scroll", onScroll);
+              angular.element(scrollElement).bind("scroll", onScroll);
               //angular.element($window).bind("resize", runSetup);
 
             }, 0);
