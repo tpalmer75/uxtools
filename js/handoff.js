@@ -1,9 +1,9 @@
-angular.module('uxTools.collaboration', [])
+angular.module('uxTools.handoff', [])
 
-.controller('collaborationCtrl', function($scope, $state, collaborationFactory) {
+.controller('handoffCtrl', function($scope, $state, handoffFactory) {
 
-  $scope.prototypingTools = collaborationFactory.tools();
-  $scope.filters = collaborationFactory.filters();
+  $scope.handoffTools = handoffFactory.tools();
+  $scope.filters = handoffFactory.filters();
   // Copy filters so ngModel doesn't reflect while changing
   $scope.tempFilters = angular.copy($scope.filters);
 
@@ -26,14 +26,14 @@ angular.module('uxTools.collaboration', [])
   };
 
   $scope.setFilters = function() {
-    collaborationFactory.setFilters($scope.tempFilters);
+    handoffFactory.setFilters($scope.tempFilters);
     $state.reload();
     $scope.showFiltersModal = false;
   };
 
 })
 
-.factory('collaborationFactory', function() {
+.factory('handoffFactory', function() {
 
     var tools = [{
         "name": "Zeplin",

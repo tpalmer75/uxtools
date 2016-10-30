@@ -247,6 +247,12 @@ table {
 	th {
 		position: relative;
 		z-index: 3;
+		&:first-of-type {
+			display: none;
+		}
+		&:nth-of-type(2) {
+			padding-left: 50px;
+		}
 	}
 
 	thead {

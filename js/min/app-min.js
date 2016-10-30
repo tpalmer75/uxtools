@@ -1640,12 +1640,12 @@ angular.module('uxTools.prototyping', [])
 
 });
 
-angular.module('uxTools.collaboration', [])
+angular.module('uxTools.handoff', [])
 
-.controller('collaborationCtrl', function($scope, $state, collaborationFactory) {
+.controller('handoffCtrl', function($scope, $state, handoffFactory) {
 
-  $scope.prototypingTools = collaborationFactory.tools();
-  $scope.filters = collaborationFactory.filters();
+  $scope.handoffTools = handoffFactory.tools();
+  $scope.filters = handoffFactory.filters();
   // Copy filters so ngModel doesn't reflect while changing
   $scope.tempFilters = angular.copy($scope.filters);
 
@@ -1668,14 +1668,14 @@ angular.module('uxTools.collaboration', [])
   };
 
   $scope.setFilters = function() {
-    collaborationFactory.setFilters($scope.tempFilters);
+    handoffFactory.setFilters($scope.tempFilters);
     $state.reload();
     $scope.showFiltersModal = false;
   };
 
 })
 
-.factory('collaborationFactory', function() {
+.factory('handoffFactory', function() {
 
     var tools = [{
         "name": "Zeplin",
@@ -2792,12 +2792,12 @@ angular.module('uxTools.design', [])
 
 // @codekit-prepend "angular-tooltips.js"
 // @codekit-prepend "prototyping.js"
-// @codekit-prepend "collaboration.js"
+// @codekit-prepend "handoff.js"
 // @codekit-prepend "monitoring.js"
 // @codekit-prepend "design.js"
 
 
-angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxTools.collaboration', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
+angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxTools.handoff', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -2812,12 +2812,12 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
     .state('hand-off', {
       url: '/hand-off',
       templateUrl : '../templates/hand-off.html',
-      controller: 'collaborationCtrl'
+      controller: 'handoffCtrl'
     })
-    .state('collaboration', {
-      url: '/collaboration',
-      templateUrl : '../templates/collaboration.html',
-      controller: 'collaborationCtrl'
+    .state('handoff', {
+      url: '/handoff',
+      templateUrl : '../templates/handoff.html',
+      controller: 'handoffCtrl'
     })
     .state('monitoring', {
       url: '/monitoring',

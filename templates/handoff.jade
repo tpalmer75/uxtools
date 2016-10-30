@@ -18,7 +18,7 @@ table#scroll-table(fixed-table)
       th(ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)")
         span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
   tbody
-    tr(ng-repeat="app in prototypingTools | orderBy:'name'")
+    tr(ng-repeat="app in handoffTools | orderBy:'name'")
       td(class="fixed-col")
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
           img(alt="{{app.name}} Logo" src="../img/blank.png" ng-style="{{app.image}}")

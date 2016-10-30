@@ -2,12 +2,12 @@
 
 // @codekit-prepend "angular-tooltips.js"
 // @codekit-prepend "prototyping.js"
-// @codekit-prepend "collaboration.js"
+// @codekit-prepend "handoff.js"
 // @codekit-prepend "monitoring.js"
 // @codekit-prepend "design.js"
 
 
-angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxTools.collaboration', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
+angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxTools.handoff', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -22,12 +22,12 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
     .state('hand-off', {
       url: '/hand-off',
       templateUrl : '../templates/hand-off.html',
-      controller: 'collaborationCtrl'
+      controller: 'handoffCtrl'
     })
-    .state('collaboration', {
-      url: '/collaboration',
-      templateUrl : '../templates/collaboration.html',
-      controller: 'collaborationCtrl'
+    .state('handoff', {
+      url: '/handoff',
+      templateUrl : '../templates/handoff.html',
+      controller: 'handoffCtrl'
     })
     .state('monitoring', {
       url: '/monitoring',
