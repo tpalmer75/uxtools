@@ -79,7 +79,7 @@ footer {
 			}
 			li {
 				margin-left: 40px;
-				text-transform: uppercase;
+				//text-transform: uppercase;
 				letter-spacing: 2px;
 				font-size: 18px;
 				a {
@@ -125,7 +125,7 @@ section {
 		padding: 20px;
 	}
 	&.light {
-		color: @blue-primary;
+		color: #555;
 		background: white;
 	}
 	&.gray {
@@ -147,10 +147,10 @@ section {
 
 button, input[type="submit"] {
 	appearance: none;
-	background: @blue;
-	color: white;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+	background: white;
+	color: @blue-primary;
+	//letter-spacing: 1px;
+	//text-transform: uppercase;
 	border: none;
 	outline: none;
 	border-radius: 999px;
@@ -164,6 +164,9 @@ button, input[type="submit"] {
 	top: 0;
 	svg {
 		margin-left: 5px;
+		path {
+			fill: @blue-primary;
+		}
 	}
 	&:hover {
 		box-shadow: 0 5px 15px rgba(0,0,0,.25);
@@ -177,6 +180,10 @@ button, input[type="submit"] {
 	    	border-radius: 999px;
 	    	margin-top: 20px;
 	    }
+	}
+	&.blue {
+		background: @blue-primary;
+		color: white;
 	}
 }
 

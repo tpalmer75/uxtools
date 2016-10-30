@@ -16,19 +16,9 @@ body, html {
 	width: 100%;
 }
 
-// #page {
-// 	position: relative;
-// 	z-index: 2;
-// 	transform: translate3d(0,0,0);
-// 	transition: transform .35s ease-in-out;
-// 	&.show-menu {
-// 		transform: translate3d(-@sidebar-size,0,0);
-// 		box-shadow: 10px 0 30px rgba(0,0,0,.35);
-// 		transition: box-shadow 0 .35s, transform .35s ease-in-out;
-// 	}
-// }
 
 #hamburger {
+	visibility: hidden;
 	display: flex;
 	align-items: center;
 	height: 48px;
@@ -48,8 +38,6 @@ header {
 	width: 100%;
 	color: white;
 	line-height: 1.2;
-	//position: absolute;
-	//top: 0;
 	background: @blue-primary;
 	a {
 		color: white;
@@ -82,7 +70,7 @@ header {
 			color: fade(white, 75%);
 		}
 		&.active {
-			border-bottom: 3px solid white; //#FEC00A;
+			border-bottom: 4px solid white;
 			a {
 				color: white;
 			}
@@ -93,7 +81,6 @@ header {
 	}
 	.right {
 		text-align: right;
-		//width: 360px;
 		li a {
 			color: white;
 		}
@@ -157,21 +144,18 @@ h1 {
 		padding-top: 12px;
 		@media all and (max-width: @small-size) {
 			height: 40px;
+			padding-top: 9px;
 		}
 	}
 }
 
 section {
-	//position: relative;
 	position: relative;
 	width: 100%;
 	height: 100%;
 	margin-top: 50px;
 	overflow: auto;
-	//overflow-x: scroll;
-	//-webkit-overflow-scrolling: touch;
 	.wrapper {
-		//position: relative;
 		background: white;
 	}
 	.shadow-wrapper {
@@ -214,6 +198,8 @@ button, input[type="submit"] {
 }
 
 table {
+	width: 100%;
+	margin-bottom: 50px;
 	@media all and (max-width: @small-size) {
 		font-size: 14px;
 	}
@@ -225,7 +211,6 @@ table {
 		height: 50px;
 		vertical-align: middle;
 		text-align: left;
-		//border-right: 1px solid #ddd;
 		padding: 0 5px;
 		white-space: nowrap;
 		cursor: default;
@@ -244,10 +229,10 @@ table {
 			max-width: 50px;
 			padding: 0;
 			text-align: center;
-			//position: fixed;
 			position: absolute;
 			left: 0;
 			z-index: 2;
+			transition: box-shadow .2s;
 			img {
 				width: 36px;
 				margin: 8px;
@@ -260,29 +245,18 @@ table {
 		}
 	}
 	th {
-		background: #f0f0f0;
-		border-bottom: 1px solid #ddd;
 		position: relative;
 		z-index: 3;
-		&:first-of-type {
-			// width: 50px;
-			// height: 51px;
-			min-width: 0 !important;
-		}
 	}
 
 	thead {
-		position: fixed;
+		position: absolute; // to keep it hidden while loading
+		border-bottom: 1px solid #ddd;
 		z-index: 3;
 		top: 0;
+		background: #f0f0f0;
 	}
 
-	// thead tr {
-	// 	background: #ddd;
-	// 	td:first-of-type {
-	// 		margin: 0;
-	// 	}
-	// }
 	tbody tr {
 		position: relative;
 		td {
@@ -356,94 +330,113 @@ table {
 	}
 }
 
-.filters-modal {
-	position: fixed;
+#loading-screen {
+	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
 	height: 100%;
-	padding: 20px;
-	background: fade(black, 10%);
-	z-index: 2;
-	opacity: 1;
-	transition: opacity .2s;
-	.wrapper {
-		background: none;
-
+	width: 100%;
+	z-index: 5;
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #999;
+	flex-direction: column;
+	svg {
+		margin-bottom: 20px;
 	}
-	.modal-wrapper{
-		position: absolute;
-		top: 86px;
-		left: 14px;
-		padding: 16px 20px;
-		background: white;
-		max-width: 500px;
-		z-index: 2;
-		box-shadow: 0 10px 24px fade(black, 30%);
-		transition: all .2s ease-in-out;
-	}
-	ul {
-		columns: 100px 2;
-		li {
-			line-height: 32px;
-		}
-		input {
-			margin-right: 10px;
-		}
-	}
-	button {
-		appearance: none;
-		background: none;
-		cursor: pointer;
-		color: @blue-primary;
-		outline: none;
-		box-shadow: none;
-		font-family: @font-stack;
-		font-size: 16px;
-		border: 0;
-		margin-top: 10px;
-		height: 32px;
-	}
-	.button-container {
-		text-align: center;
-		clear: both;
-	}
-	&.ng-hide {
-			opacity: 0;
-			.modal-wrapper {
-				transform: translateY(-10px);
-			}
-		}
-	@media all and (max-width: @small-size) {
-		background: fade(black, 50%);
-		.wrapper {
-			display: flex;
-			flex-direction: column-reverse;
-			align-items: flex-end;
-		}
-		.modal-wrapper {
-			position: absolute;
-			transform: translateY(0);
-			top: auto;
-			bottom: 0;
-			left: auto;
-			width: 100%;
-			background: white;
-			box-shadow: 0 10px 48px fade(black, 30%);
-			padding: 20px;
-		}
-		&.ng-hide {
-			opacity: 0;
-			.modal-wrapper {
-				transform: translateY(100px);
-			}
-		}
-	}
-	@media all and (max-width: @mid-size) {
-		padding: 0;
-	}
-	
 }
+
+
+// .filters-modal {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	padding: 20px;
+// 	background: fade(black, 10%);
+// 	z-index: 2;
+// 	opacity: 1;
+// 	transition: opacity .2s;
+// 	.wrapper {
+// 		background: none;
+
+// 	}
+// 	.modal-wrapper{
+// 		position: absolute;
+// 		top: 86px;
+// 		left: 14px;
+// 		padding: 16px 20px;
+// 		background: white;
+// 		max-width: 500px;
+// 		z-index: 2;
+// 		box-shadow: 0 10px 24px fade(black, 30%);
+// 		transition: all .2s ease-in-out;
+// 	}
+// 	ul {
+// 		columns: 100px 2;
+// 		li {
+// 			line-height: 32px;
+// 		}
+// 		input {
+// 			margin-right: 10px;
+// 		}
+// 	}
+// 	button {
+// 		appearance: none;
+// 		background: none;
+// 		cursor: pointer;
+// 		color: @blue-primary;
+// 		outline: none;
+// 		box-shadow: none;
+// 		font-family: @font-stack;
+// 		font-size: 16px;
+// 		border: 0;
+// 		margin-top: 10px;
+// 		height: 32px;
+// 	}
+// 	.button-container {
+// 		text-align: center;
+// 		clear: both;
+// 	}
+// 	&.ng-hide {
+// 			opacity: 0;
+// 			.modal-wrapper {
+// 				transform: translateY(-10px);
+// 			}
+// 		}
+// 	@media all and (max-width: @small-size) {
+// 		background: fade(black, 50%);
+// 		.wrapper {
+// 			display: flex;
+// 			flex-direction: column-reverse;
+// 			align-items: flex-end;
+// 		}
+// 		.modal-wrapper {
+// 			position: absolute;
+// 			transform: translateY(0);
+// 			top: auto;
+// 			bottom: 0;
+// 			left: auto;
+// 			width: 100%;
+// 			background: white;
+// 			box-shadow: 0 10px 48px fade(black, 30%);
+// 			padding: 20px;
+// 		}
+// 		&.ng-hide {
+// 			opacity: 0;
+// 			.modal-wrapper {
+// 				transform: translateY(100px);
+// 			}
+// 		}
+// 	}
+// 	@media all and (max-width: @mid-size) {
+// 		padding: 0;
+// 	}
+	
+// }
 
 .star {
     position: absolute;

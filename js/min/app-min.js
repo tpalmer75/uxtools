@@ -2837,7 +2837,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
         link: function(scope, element, attrs) {
 
             $timeout(function() {
-              // var runSetup = function() {
+
               var scrollElement = document.getElementById("scroll-element");
               var fixedHeaders = document.querySelectorAll("th");
               var fixedCols = document.querySelectorAll(".fixed-col");
@@ -2852,7 +2852,7 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
               var columns = document.querySelectorAll("tr:first-of-type td");
               var table = document.getElementById("scroll-table");
 
-              //table.style.marginTop = fixedHeader.clientHeight;
+              fixedHeader.style.position = "fixed"; // to keep it hidden while loading
               fixedHeader.style.top = headerHeight + "px";
 
               for (var i=0; i < columns.length; i++) {
@@ -2883,29 +2883,37 @@ angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxT
                 if (currentScrollY <= headerHeight) {
                   mainHeader.style.marginTop = -currentScrollY;
                   fixedHeader.style.top = headerHeight - currentScrollY;
+                  fixedHeader.style.boxShadow = "";
                 } else {
                   mainHeader.style.marginTop = -headerHeight;
                   fixedHeader.style.top = 0;
+                  fixedHeader.style.boxShadow = "2px 2px 10px rgba(0,0,0,.15)";
                 }
 
                 if (currentScrollX > 0) {
                   for ( var i=0; i < fixedCols.length; i++ ) {
                     fixedCols[i].style.position = "fixed";
-                    //fixedCols[i].style.top = headerHeight + fixedHeaderHeight - currentScrollY + (fixedColHeight*i) - 1 + "px";
-                    fixedCols[i].style.top = parseInt(fixedHeader.style.top) + fixedHeaderHeight - currentScrollY + (fixedColHeight*i) - 1;
-                    //console.log(fixedHeader.style.top);
+                    fixedCols[i].style.top = parseInt(fixedHeader.style.top) + fixedHeaderHeight - currentScrollY + (fixedColHeight*i);
+                    fixedCols[i].style.boxShadow = "2px 0 5px rgba(0,0,0,.1)";
                   }
                 } else {
                   for ( var i=0; i < fixedCols.length; i++ ) {
                     fixedCols[i].style.position = "absolute";
                     fixedCols[i].style.top = "";
+                    fixedCols[i].style.boxShadow = "";
                   }
                 }
 
               };
 
+              loadingScreen = document.getElementById("loading-screen");
+              loadingScreen.style.display = "none";
+
               angular.element(scrollElement).bind("scroll", onScroll);
-              //angular.element($window).bind("resize", runSetup);
+              angular.element($window).bind("resize", function() {
+                headerHeight = mainHeader.clientHeight;
+                fixedHeader.style.top = headerHeight + "px";
+              });
 
             }, 0);
 
