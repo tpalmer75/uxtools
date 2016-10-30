@@ -2,7 +2,7 @@ angular.module('uxTools.handoff', [])
 
 .controller('handoffCtrl', function($scope, $state, handoffFactory) {
 
-  $scope.handoffTools = handoffFactory.tools();
+  $scope.prototypingTools = handoffFactory.tools();
   $scope.filters = handoffFactory.filters();
   // Copy filters so ngModel doesn't reflect while changing
   $scope.tempFilters = angular.copy($scope.filters);
@@ -365,3 +365,4 @@ angular.module('uxTools.handoff', [])
     };
 
 });
+

@@ -1,5 +1,6 @@
-@import "variables.less";
 @import "reset.less";
+@import "variables.less";
+
 
 body {
 	letter-spacing: .25px;
@@ -52,7 +53,7 @@ footer {
 }
 
 #hero {
-	background-color: @banner;
+	background-color: @blue-primary;
 	background-image: url('../img/tools-bg.png');
 	background-size: 75%;
 	background-position: center;
@@ -78,7 +79,7 @@ footer {
 			}
 			li {
 				margin-left: 40px;
-				text-transform: uppercase;
+				//text-transform: uppercase;
 				letter-spacing: 2px;
 				font-size: 18px;
 				a {
@@ -111,7 +112,7 @@ footer {
 			margin: 30px auto;
 		}
 		h1 {
-			color: lighten(@banner, 10%);
+			color: lighten(@blue-primary, 10%);
 			font-size: 48px;
 		}
 		background-image: none;
@@ -124,7 +125,7 @@ section {
 		padding: 20px;
 	}
 	&.light {
-		color: @banner;
+		color: #555;
 		background: white;
 	}
 	&.gray {
@@ -146,10 +147,10 @@ section {
 
 button, input[type="submit"] {
 	appearance: none;
-	background: @blue;
-	color: white;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+	background: white;
+	color: @blue-primary;
+	//letter-spacing: 1px;
+	//text-transform: uppercase;
 	border: none;
 	outline: none;
 	border-radius: 999px;
@@ -163,6 +164,9 @@ button, input[type="submit"] {
 	top: 0;
 	svg {
 		margin-left: 5px;
+		path {
+			fill: @blue-primary;
+		}
 	}
 	&:hover {
 		box-shadow: 0 5px 15px rgba(0,0,0,.25);
@@ -176,6 +180,10 @@ button, input[type="submit"] {
 	    	border-radius: 999px;
 	    	margin-top: 20px;
 	    }
+	}
+	&.blue {
+		background: @blue-primary;
+		color: white;
 	}
 }
 
@@ -203,7 +211,7 @@ button, input[type="submit"] {
     text-indent: 10px;
     height: 48px;
     margin-right: -6px;
-    color: @banner;
+    color: @blue-primary;
     outline: none;
     &:focus {
     	border: 2px solid @blue;

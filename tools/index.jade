@@ -1,10 +1,11 @@
-html.tools(ng-app="uxTools")
+
+html(ng-app="uxTools")
   head
     title Uxtools.co
-    meta(name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, handoff, monitoring and testing.")
+    meta(name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing.")
     meta(name="ROBOTS" content="INDEX, FOLLOW")
     meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
     link(rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png")
     link(rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png")
     link(rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png")
@@ -22,66 +23,74 @@ html.tools(ng-app="uxTools")
     meta(name="msapplication-TileColor" content="#ffffff")
     meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
     meta(name="theme-color" content="#ffffff")
-    link(href='https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed:400,700,400italic' rel='stylesheet' type='text/css')
-    link(href="../css/tools.css" rel="stylesheet" type="text/css")
+    link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
+    link(href="../css/tools-1.1.css" rel="stylesheet" type="text/css")
 
   body(ng-init="$root.showMenu = false")
-    #page(ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
-      header
+    //- #page(ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
+    header#main-header
+      .top-bar
         h1 Uxtools
-        .wrapper.top-wrapper
+        .wrapper
           .left
             a(href="/")
               img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
-            .scroll-tabs
-              ul
-                li(ui-sref-active="active")
-                  a(ui-sref="design") Design
-                li(ui-sref-active="active")
-                  a(ui-sref="prototyping") Prototyping
-                li(ui-sref-active="active")
-                  a(ui-sref="handoff") Handoff
-                li(ui-sref-active="active")
-                  a(ui-sref="monitoring") Monitoring
           .right
             ul
               li
-                a(href="http://newsletter.uxtools.co") 
-                  div(class="icon" ng-include="'../img/icons/email.svg'" title="UX Tools Newsletter")
-                  span Newsletter
+                a(href="/tools") 
+                  div(class="icon" title="UX Tools Newsletter")
+                  span Tools
+              //- li
+              //-   a(href="/library") 
+              //-     div(class="icon" title="Follow me on Twitter")
+              //-     span Library
               li
                 a(href="https://blog.uxtools.co") 
-                  div(class="icon" ng-include="'../img/icons/medium.svg'" title="Follow me on Twitter")
+                  div(class="icon" title="UX Tools Blog")
                   span Blog
               li
-                a(href="https://www.twitter.com/@_taylorpalmer") 
-                  div(class="icon" ng-include="'../img/icons/twitter.svg'" title="Follow me on Twitter")
-                  span @_taylorpalmer
+                a(href="http://newsletter.uxtools.co")
+                  button
+                    //- include ../img/icons/email.svg
+                    | Subscribe
           #hamburger(ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();")
-            div(class="icon" ng-include="'../img/icons/menu.svg'")
+            .icon
+              include ../img/icons/menu.svg
             span Menu
-                  
-      section
-        .wrapper.shadow-wrapper(ui-view="")
-          //- injected Angular Views
-          //- div.loading-container Loading...
+      .bottom-bar
+        .scroll-tabs
+          ul
+            li(ui-sref-active="active")
+              a(ui-sref="design") Design
+            li(ui-sref-active="active")
+              a(ui-sref="prototyping") Prototyping
+            li(ui-sref-active="active")
+              a(ui-sref="handoff") Handoff
+            li(ui-sref-active="active")
+              a(ui-sref="monitoring") Monitoring
+                
+    section#scroll-element
+      div(ui-view="")
+        //- injected Angular Views
+        //- div.loading-container Loading...
 
-    #sidebar(ng-class="{'show-menu': $root.showMenu}")
-      ul
-        li
-            a(href="http://newsletter.uxtools.co") 
-              div(class="icon" ng-include="'../img/icons/email.svg'" title="UX Tools Newsletter")
-              span Newsletter
-          li
-            a(href="https://blog.uxtools.co") 
-              div(class="icon" ng-include="'../img/icons/medium.svg'" title="Follow me on Twitter")
-              span Blog
-          li
-            a(href="https://www.twitter.com/@_taylorpalmer") 
-              div(class="icon" ng-include="'../img/icons/twitter.svg'" title="Follow me on Twitter")
-              span @_taylorpalmer
+    //- #sidebar(ng-class="{'show-menu': $root.showMenu}")
+    //-   ul
+    //-     li
+    //-         a(href="http://newsletter.uxtools.co") 
+    //-           div(class="icon" ng-include="'../img/icons/email.svg'" title="UX Tools Newsletter")
+    //-           span Newsletter
+    //-       li
+    //-         a(href="https://blog.uxtools.co") 
+    //-           div(class="icon" ng-include="'../img/icons/medium.svg'" title="Follow me on Twitter")
+    //-           span Blog
+    //-       li
+    //-         a(href="https://www.twitter.com/@_taylorpalmer") 
+    //-           div(class="icon" ng-include="'../img/icons/twitter.svg'" title="Follow me on Twitter")
+    //-           span @_taylorpalmer
 
-    script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+    //- script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
     script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
     script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
