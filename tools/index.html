@@ -1,11 +1,11 @@
 
-<html ng-app="uxTools" class="tools">
+<html ng-app="uxTools">
   <head>
     <title>Uxtools.co</title>
-    <meta name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, handoff, monitoring and testing."/>
+    <meta name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing."/>
     <meta name="ROBOTS" content="INDEX, FOLLOW"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png"/>
@@ -23,55 +23,47 @@
     <meta name="msapplication-TileColor" content="#ffffff"/>
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
     <meta name="theme-color" content="#ffffff"/>
-    <link href="https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed:400,700,400italic" rel="stylesheet" type="text/css"/>
-    <link href="../css/tools.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet"/>
+    <link href="../css/tools-1.1.css" rel="stylesheet" type="text/css"/>
   </head>
   <body ng-init="$root.showMenu = false">
-    <div id="page" ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false">
-      <header>
+    <header id="main-header">
+      <div class="top-bar">
         <h1>Uxtools</h1>
-        <div class="wrapper top-wrapper">
-          <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a>
-            <div class="scroll-tabs">
-              <ul>
-                <li ui-sref-active="active"><a ui-sref="design">Design</a></li>
-                <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
-                <li ui-sref-active="active"><a ui-sref="handoff">Handoff</a></li>
-                <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
-              </ul>
-            </div>
-          </div>
+        <div class="wrapper">
+          <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
           <div class="right">
             <ul>
-              <li><a href="http://newsletter.uxtools.co"> 
-                  <div ng-include="'../img/icons/email.svg'" title="UX Tools Newsletter" class="icon"></div><span>Newsletter</span></a></li>
+              <li><a href="/tools"> 
+                  <div title="UX Tools Newsletter" class="icon"></div><span>Tools</span></a></li>
               <li><a href="https://blog.uxtools.co"> 
-                  <div ng-include="'../img/icons/medium.svg'" title="Follow me on Twitter" class="icon"></div><span>Blog</span></a></li>
-              <li><a href="https://www.twitter.com/@_taylorpalmer"> 
-                  <div ng-include="'../img/icons/twitter.svg'" title="Follow me on Twitter" class="icon"></div><span>@_taylorpalmer</span></a></li>
+                  <div title="UX Tools Blog" class="icon"></div><span>Blog</span></a></li>
+              <li><a href="http://newsletter.uxtools.co">
+                  <button>Subscribe
+                  </button></a></li>
             </ul>
           </div>
           <div id="hamburger" ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();">
-            <div ng-include="'../img/icons/menu.svg'" class="icon"></div><span>Menu</span>
+            <div class="icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+            </div><span>Menu</span>
           </div>
         </div>
-      </header>
-      <section>
-        <div ui-view="" class="wrapper shadow-wrapper">
+      </div>
+      <div class="bottom-bar">
+        <div class="scroll-tabs">
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="design">Design</a></li>
+            <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
+            <li ui-sref-active="active"><a ui-sref="handoff">Handoff</a></li>
+            <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
+          </ul>
         </div>
-      </section>
-    </div>
-    <div id="sidebar" ng-class="{'show-menu': $root.showMenu}">
-      <ul>
-        <li><a href="http://newsletter.uxtools.co"> 
-            <div ng-include="'../img/icons/email.svg'" title="UX Tools Newsletter" class="icon"></div><span>Newsletter</span></a></li>
-        <li><a href="https://blog.uxtools.co"> 
-            <div ng-include="'../img/icons/medium.svg'" title="Follow me on Twitter" class="icon"></div><span>Blog</span></a></li>
-        <li><a href="https://www.twitter.com/@_taylorpalmer"> 
-            <div ng-include="'../img/icons/twitter.svg'" title="Follow me on Twitter" class="icon"></div><span>@_taylorpalmer</span></a></li>
-      </ul>
-    </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+      </div>
+    </header>
+    <section id="scroll-element">
+      <div ui-view="">
+      </div>
+    </section>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>

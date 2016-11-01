@@ -1,29 +1,31 @@
-div.filters(title="Filters" ng-click="showFiltersModal('show');")
-  img(src="../img/icons/table-edit.svg" tooltip-side="bottom" tooltips tooltip-template="Filters")
+//- div.filters(title="Filters" ng-click="showFiltersModal('show');")
+//-   img(src="../img/icons/table-edit.svg" tooltip-side="bottom" tooltips tooltip-template="Filters")
 
-div.filters-modal(ng-show="modalShowing" ng-click="showFiltersModal('hide')")
-  .wrapper
-    .modal-wrapper(ng-click="$event.stopPropagation()")
-      ul
-        li(ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange") 
-          input(type="checkbox" ng-model="tempFilters[$index].show")
-          | {{ filter.title }}
-      .button-container
-        button(ng-click="setFilters()") Set Filters
-table(fixed-header-table)
-  thead
+//- div.filters-modal(ng-show="modalShowing" ng-click="showFiltersModal('hide')")
+//-   .wrapper
+//-     .modal-wrapper(ng-click="$event.stopPropagation()")
+//-       ul
+//-         li(ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange") 
+//-           input(type="checkbox" ng-model="tempFilters[$index].show")
+//-           | {{ filter.title }}
+//-       .button-container
+//-         button(ng-click="setFilters()") Set Filters
+div#loading-screen
+  h4 Loading...
+table#scroll-table(fixed-table)
+  thead#fixed-header
     tr
-      th(ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)")
+      th(ng-repeat="filter in filters" class="fixed-header" ng-if="isFilterVisible(filter.title)")
         span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
   tbody
     tr(ng-repeat="app in prototypingTools | orderBy:['name', orderValue]")
-      td
+      td(class="fixed-col")
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
           img(alt="{{app.name}} Logo" src="../img/blank.png" ng-style="{{app.image}}")
-        .star(ng-if="app.taylorChoice")
-          include ../img/icons/star.svg
+        //- .star(ng-if="app.taylorChoice")
+        //-   include ../img/icons/star.svg
 
-      td 
+      td.name-col
         a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }} {{orderValue}}
 
 
@@ -104,10 +106,6 @@ table(fixed-header-table)
 
       td(ng-if="isFilterVisible('Code');")
         div(ng-if="app.code")
-          include ../img/icons/check.svg
-
-      td(ng-if="isFilterVisible('Handoff');")
-        div(ng-if="app.handoff")
           include ../img/icons/check.svg
 
 
