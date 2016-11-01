@@ -50,7 +50,8 @@ angular.module('uxTools.prototyping', [])
         },
         "import": {
             "photoshop": true,
-            "sketch": true
+            "sketch": true,
+            "figma": true,
         },
         "micro": true,
         "navigation": true,
@@ -109,6 +110,7 @@ angular.module('uxTools.prototyping', [])
         "sharing": {
             "web": true,
         },
+        "handoff": true,
         "pricing": {
             "free": false,
             "subscription": "$19",
@@ -136,6 +138,7 @@ angular.module('uxTools.prototyping', [])
             "html": true
         },
         "fixedHeader": true,
+        "handoff": true,
         "pricing": {
             "free": true,
             "subscription": "$15",
@@ -360,7 +363,7 @@ angular.module('uxTools.prototyping', [])
         "image": {
             "background-position": "-300 -300",
         },
-        "plaforms": {
+        "platforms": {
             "mac": true,
         },
         "import": {
@@ -734,8 +737,8 @@ angular.module('uxTools.prototyping', [])
         "tasks": false,
         "analytics": false,
         "heatmaps": false,
+        "sensors": true
         // "mobileOnly": true,
-        // smartphone sensors
     }];
 
     var filters = [{
@@ -810,20 +813,30 @@ angular.module('uxTools.prototyping', [])
             "canChange": true,
             "tipText": "How others can<br>use the prototype"
         }, {
+            "title": "Handoff",
+            "show": true,
+            "canChange": true,
+            "tipText": "Automatic specs<br>for developers"
+        }, {
             "title": "Tasks",
-            "show": false,
+            "show": true,
             "canChange": true,
             "tipText": ""
         }, {
             "title": "Analytics",
-            "show": false,
+            "show": true,
             "canChange": true,
-            "tipText": "App can track events"
+            "tipText": "Can track events<br>when testing"
         }, {
             "title": "Heatmap",
-            "show": false,
+            "show": true,
             "canChange": true,
-            "tipText": "App generates heatmaps<br>from user testing"
+            "tipText": "Generates heatmaps<br>from user testing"
+        }, {
+            "title": "Sensors",
+            "show": true,
+            "canChange": true,
+            "tipText": "Utilizes device sensors"
         }
     ];
 
