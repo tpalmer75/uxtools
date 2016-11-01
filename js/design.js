@@ -9,6 +9,9 @@ angular.module('uxTools.design', [])
 
   $scope.modalShowing = false;
 
+  $scope.sortType = 'name';
+  $scope.sortReverse = false;
+
   $scope.showFiltersModal = function(command) {
     if (command === 'show') {
       $scope.modalShowing = true;

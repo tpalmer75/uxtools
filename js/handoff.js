@@ -258,6 +258,29 @@ angular.module('uxTools.handoff', [])
             "subscription": "$9",
             "purchase": ""
         }
+    }, {
+        "name": "UX Pin",
+        "url": "https://www.uxpin.com/",
+        "image": {
+            "background-position": "0 -100",
+        },
+        "platforms": {
+            "web": true
+        },
+        "programs": {
+            "sketch": true,
+        },
+        "specs": true,
+        "measure": true,
+        "comments": true,
+        "revisions": false,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$20"
+        }
     }];
 
     var filters = [

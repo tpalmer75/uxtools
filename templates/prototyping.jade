@@ -147,6 +147,10 @@ table#scroll-table(fixed-table)
             div(title="HTML")
               include ../img/icons/html.svg
 
+      td(ng-if="isFilterVisible('Handoff');")
+        div(ng-if="app.handoff")
+          include ../img/icons/check.svg
+
       td(ng-if="isFilterVisible('Tasks');")
         div(ng-if="app.tasks")
           include ../img/icons/check.svg
@@ -161,3 +165,6 @@ table#scroll-table(fixed-table)
         div(ng-if="app.heatmap")
           include ../img/icons/check.svg
 
+      td(ng-if="isFilterVisible('Sensors');")
+        div(ng-if="app.sensors")
+          include ../img/icons/check.svg

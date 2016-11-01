@@ -7,7 +7,7 @@
 // @codekit-prepend "design.js"
 
 
-angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxTools.handoff', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
+angular.module('uxTools', ['ui.router', 'uxTools.prototyping', 'uxTools.handoff', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 

@@ -849,7 +849,8 @@ angular.module('uxTools.prototyping', [])
         },
         "import": {
             "photoshop": true,
-            "sketch": true
+            "sketch": true,
+            "figma": true,
         },
         "micro": true,
         "navigation": true,
@@ -908,6 +909,7 @@ angular.module('uxTools.prototyping', [])
         "sharing": {
             "web": true,
         },
+        "handoff": true,
         "pricing": {
             "free": false,
             "subscription": "$19",
@@ -935,6 +937,7 @@ angular.module('uxTools.prototyping', [])
             "html": true
         },
         "fixedHeader": true,
+        "handoff": true,
         "pricing": {
             "free": true,
             "subscription": "$15",
@@ -1159,7 +1162,7 @@ angular.module('uxTools.prototyping', [])
         "image": {
             "background-position": "-300 -300",
         },
-        "plaforms": {
+        "platforms": {
             "mac": true,
         },
         "import": {
@@ -1533,8 +1536,8 @@ angular.module('uxTools.prototyping', [])
         "tasks": false,
         "analytics": false,
         "heatmaps": false,
+        "sensors": true
         // "mobileOnly": true,
-        // smartphone sensors
     }];
 
     var filters = [{
@@ -1609,20 +1612,30 @@ angular.module('uxTools.prototyping', [])
             "canChange": true,
             "tipText": "How others can<br>use the prototype"
         }, {
+            "title": "Handoff",
+            "show": true,
+            "canChange": true,
+            "tipText": "Automatic specs<br>for developers"
+        }, {
             "title": "Tasks",
-            "show": false,
+            "show": true,
             "canChange": true,
             "tipText": ""
         }, {
             "title": "Analytics",
-            "show": false,
+            "show": true,
             "canChange": true,
-            "tipText": "App can track events"
+            "tipText": "Can track events<br>when testing"
         }, {
             "title": "Heatmap",
-            "show": false,
+            "show": true,
             "canChange": true,
-            "tipText": "App generates heatmaps<br>from user testing"
+            "tipText": "Generates heatmaps<br>from user testing"
+        }, {
+            "title": "Sensors",
+            "show": true,
+            "canChange": true,
+            "tipText": "Utilizes device sensors"
         }
     ];
 
@@ -1899,6 +1912,29 @@ angular.module('uxTools.handoff', [])
             "free": true,
             "subscription": "$9",
             "purchase": ""
+        }
+    }, {
+        "name": "UX Pin",
+        "url": "https://www.uxpin.com/",
+        "image": {
+            "background-position": "0 -100",
+        },
+        "platforms": {
+            "web": true
+        },
+        "programs": {
+            "sketch": true,
+        },
+        "specs": true,
+        "measure": true,
+        "comments": true,
+        "revisions": false,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$20"
         }
     }];
 
@@ -2313,6 +2349,9 @@ angular.module('uxTools.design', [])
   $scope.tempFilters = angular.copy($scope.filters);
 
   $scope.modalShowing = false;
+
+  $scope.sortType = 'name';
+  $scope.sortReverse = false;
 
   $scope.showFiltersModal = function(command) {
     if (command === 'show') {
@@ -2797,7 +2836,7 @@ angular.module('uxTools.design', [])
 // @codekit-prepend "design.js"
 
 
-angular.module('uxTools', ['ui.router', 'ngAnimate', 'uxTools.prototyping', 'uxTools.handoff', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
+angular.module('uxTools', ['ui.router', 'uxTools.prototyping', 'uxTools.handoff', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
