@@ -1145,6 +1145,7 @@ angular.module('uxTools.prototyping', [])
             "sketch": true,
         },
         "micro": true,
+        "data": true,
         "sharing": {
             "iOS": true
         },
