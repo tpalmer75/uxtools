@@ -54,8 +54,8 @@ angular.module('uxTools.prototyping', [])
             "figma": true,
         },
         "micro": true,
-        "navigation": true,
-        "transition": true,
+        "navigation": false,
+        "transition": false,
         "data": true,
         "code": true,
         "sharing": {
@@ -80,8 +80,8 @@ angular.module('uxTools.prototyping', [])
             "sketch": true
         },
         "micro": true,
-        "navigation": true,
-        "transition": true,
+        "navigation": false,
+        "transition": false,
         "sharing": {
             "iOS": true,
             "mac": true
@@ -334,30 +334,6 @@ angular.module('uxTools.prototyping', [])
             "purchase": ""
         }
     }, {
-        "name": "Pixate",
-        "url": "http://www.pixate.com/",
-        "image": {
-            "background-position": "-100 -400",
-        },
-        "platforms": {
-            "mac": true,
-        },
-        "import": {
-            "sketch": true
-        },
-        "micro": true,
-        "navigation": true,
-        "transition": true,
-        "sharing": {
-            "iOS": true,
-            "android": true
-        },
-        "pricing": {
-            "free": true,
-            "subscription": "$5",
-            "purchase": ""
-        }
-    }, {
         "name": "Origami",
         "url": "https://facebook.github.io/origami/",
         "image": {
@@ -370,8 +346,6 @@ angular.module('uxTools.prototyping', [])
             "sketch": true,
         },
         "micro": true,
-        "navigation": true,
-        "transition": true,
         "sharing": {
             "iOS": true
         },
@@ -398,7 +372,7 @@ angular.module('uxTools.prototyping', [])
         "design": true,
         "micro": true,
         "navigation": true,
-        "transition": true,
+        "transition": true, // technically allows for both screen and state transition
         "sharing": {
             "iOS": true,
             "android": true,
@@ -446,7 +420,7 @@ angular.module('uxTools.prototyping', [])
         "design": true,
         "micro": true,
         "navigation": true,
-        "transition": true,
+        "transitions": false,
         "sharing": {
             "web": true,
         },
@@ -598,7 +572,7 @@ angular.module('uxTools.prototyping', [])
         },
         "navigation": true,
         "micro": true,
-        "transition": true,
+        "transition": false,
         "data": true,
         "sharing": {
             "web": true,
@@ -785,14 +759,7 @@ angular.module('uxTools.prototyping', [])
             "show": true,
             "canChange": true,
             "tipText": "Individual animations<br>& micro-interactions"
-        },
-        // {
-        //     "title": "Navigation",
-        //     "show": true,
-        //     "canChange": true,
-        //     "tipText": ""
-        // }, 
-        {
+        }, {
             "title": "Transitions",
             "show": true,
             "canChange": true,
