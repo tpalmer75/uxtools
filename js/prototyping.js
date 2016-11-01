@@ -334,7 +334,7 @@ angular.module('uxTools.prototyping', [])
             "purchase": ""
         }
     }, {
-        "name": "Origami",
+        "name": "Origami Studio",
         "url": "https://facebook.github.io/origami/",
         "image": {
             "background-position": "-300 -300",
