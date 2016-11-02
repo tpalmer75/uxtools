@@ -24,13 +24,13 @@ html(ng-app="uxTools")
     meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
     meta(name="theme-color" content="#ffffff")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
-    link(href="../css/tools-1.1.css" rel="stylesheet" type="text/css")
+    link(href="../css/tools-1.2.css" rel="stylesheet" type="text/css")
 
   body(ng-init="$root.showMenu = false")
     //- #page(ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
     header#main-header
       .top-bar
-        h1 Uxtools
+        h1 UX Tools
         .wrapper
           .left
             a(href="/")
@@ -51,9 +51,9 @@ html(ng-app="uxTools")
                   span Blog
               li
                 a(href="http://newsletter.uxtools.co")
-                  button
+                  button.small
                     //- include ../img/icons/email.svg
-                    | Subscribe
+                    | Newsletter
           #hamburger(ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();")
             .icon
               include ../img/icons/menu.svg

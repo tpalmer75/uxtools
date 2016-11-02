@@ -1,7 +1,8 @@
 @import "variables.less";
 @import "reset.less";
 @import "angular-tooltips.less";
-@import "sidebar.less";
+@import "header.less";
+@import "common.less";
 
 body {
 	font-family: @font-stack;
@@ -14,97 +15,6 @@ body {
 body, html {
 	height: 100%;
 	width: 100%;
-}
-
-
-#hamburger {
-	visibility: hidden;
-	display: flex;
-	align-items: center;
-	height: 48px;
-	cursor: pointer;
-	svg, span {
-		vertical-align: middle;
-	}
-	@media all and (min-width: (@mid-size+1)) {
-		display: none;
-	}
-	@media all and (max-width: @small-size) {
-		font-size: 14px;
-	}
-}
-
-header {
-	width: 100%;
-	color: white;
-	line-height: 1.2;
-	background: @blue-primary;
-	flex-shrink: 0;
-	a {
-		color: white;
-		text-decoration: none;
-	}
-	.icon {
-		display: inline-block;
-		vertical-align: middle;
-		margin-right: 8px;
-		svg {
-			fill: white;
-		}
-	}
-	.wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	li {
-		height: 64px;
-		margin-right: 5px;
-		display: inline-block;
-		border-bottom: 4px solid transparent;
-		padding-top: 16px;
-		padding-left: 10px;
-		padding-right: 10px;
-		transition: border .2s;
-		font-size: 18px;
-		a {
-			color: fade(white, 75%);
-		}
-		&.active {
-			border-bottom: 4px solid white;
-			a {
-				color: white;
-			}
-		}
-		@media all and (max-width: @small-size) {
-			padding: 8px;
-		}
-	}
-	.right {
-		text-align: right;
-		li a {
-			color: white;
-		}
-		svg {
-			position: relative;
-			top: -2px;
-		}
-	}
-	.bottom-bar {
-		background: @blue-alternate;
-	}
-	@media all and (max-width: @mid-size) {
-		.right {
-			display: none;
-		}
-	}
-}
-
-#logo {
-	width: 150px;
-	@media all and (max-width: @small-size) {
-		width: 120px;
-	}
 }
 
 h1 {
@@ -161,32 +71,6 @@ section {
 	}
 	.shadow-wrapper {
 		box-shadow: 0 20px 56px rgba(0,0,0,.35);
-	}
-}
-
-button, input[type="submit"] {
-	appearance: none;
-	background: white;
-	color: @blue-alternate;
-	border: none;
-	outline: none;
-	border-radius: 999px;
-	font-family: @font-stack;
-	font-size: 16px;
-	height: 32px;
-	padding: 0 24px;
-	box-shadow: 0 0 0 rgba(0,0,0,.5);
-	transition: box-shadow .2s;
-	svg {
-		margin-right: 5px;
-		vertical-align: middle;
-		fill: @blue-primary;
-	}
-	&:hover {
-		box-shadow: 0 5px 15px rgba(0,0,0,.25);
-	}
-	&:focus {
-		box-shadow: 0 5px 15px rgba(0,0,0,.25);
 	}
 }
 

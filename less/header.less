@@ -1,0 +1,93 @@
+#logo {
+	width: 150px;
+	@media all and (max-width: @small-size) {
+		width: 120px;
+	}
+}
+
+#main-header {
+	width: 100%;
+	color: white;
+	line-height: 1.2;
+	background: @blue-primary;
+	flex-shrink: 0;
+	a {
+		color: white;
+		text-decoration: none;
+	}
+	.icon {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 8px;
+		svg {
+			fill: white;
+		}
+	}
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 0 20px;
+	}
+	li {
+		height: 64px;
+		margin-right: 5px;
+		display: inline-block;
+		border-bottom: 4px solid transparent;
+		padding-top: 16px;
+		padding-left: 10px;
+		padding-right: 10px;
+		transition: border .2s;
+		font-size: 18px;
+		&:last-of-type {
+			padding-right: 0;
+		}
+		a {
+			color: fade(white, 75%);
+		}
+		&.active {
+			border-bottom: 4px solid white;
+			a {
+				color: white;
+			}
+		}
+		@media all and (max-width: @small-size) {
+			padding: 8px;
+		}
+	}
+	.right {
+		text-align: right;
+		li a {
+			color: white;
+		}
+		svg {
+			position: relative;
+			top: -2px;
+		}
+	}
+	.bottom-bar {
+		background: @blue-alternate;
+	}
+	@media all and (max-width: @mid-size) {
+		.right {
+			display: none;
+		}
+	}
+}
+#hamburger {
+	visibility: hidden;
+	display: flex;
+	align-items: center;
+	height: 48px;
+	cursor: pointer;
+	svg, span {
+		vertical-align: middle;
+	}
+	@media all and (min-width: (@mid-size+1)) {
+		display: none;
+	}
+	@media all and (max-width: @small-size) {
+		font-size: 14px;
+	}
+}
