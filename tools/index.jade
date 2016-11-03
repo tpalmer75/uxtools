@@ -24,7 +24,11 @@ html(ng-app="uxTools")
     meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
     meta(name="theme-color" content="#ffffff")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
+<<<<<<< HEAD
     link(href="../css/tools.css?version=1.1" rel="stylesheet" type="text/css")
+=======
+    link(href="../css/tools.css?version=1.2" rel="stylesheet" type="text/css")
+>>>>>>> gh-pages
 
   body(ng-init="$root.showMenu = false" ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
     header#main-header
@@ -90,7 +94,6 @@ html(ng-app="uxTools")
     section#scroll-element
       div(ui-view="")
         //- injected Angular Views
-        //- div.loading-container Loading...
 
     
 
