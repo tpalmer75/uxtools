@@ -24,36 +24,43 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
     <meta name="theme-color" content="#ffffff"/>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <link href="../css/tools-1.3.css" rel="stylesheet" type="text/css"/>
-=======
-    <link href="../css/tools-1.1.css" rel="stylesheet" type="text/css"/>
->>>>>>> parent of f1442af... Cache buster
-=======
-    <link href="../css/tools-1.1.css" rel="stylesheet" type="text/css"/>
->>>>>>> parent of f1442af... Cache buster
+    <link href="../css/tools.css?version=1.1" rel="stylesheet" type="text/css"/>
   </head>
-  <body ng-init="$root.showMenu = false">
+  <body ng-init="$root.showMenu = false" ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false">
     <header id="main-header">
       <div class="top-bar">
-        <h1>UX Tools</h1>
+        <h1 class="screen-reader">UX Tools</h1>
         <div class="wrapper">
           <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
           <div class="right">
             <ul>
               <li><a href="/tools"> 
                   <div title="UX Tools Newsletter" class="icon"></div><span>Tools</span></a></li>
+              <li><a href="/library"> 
+                  <div title="Follow me on Twitter" class="icon"></div><span>Library</span></a></li>
               <li><a href="https://blog.uxtools.co"> 
                   <div title="UX Tools Blog" class="icon"></div><span>Blog</span></a></li>
               <li><a href="http://newsletter.uxtools.co">
-                  <button class="small">Newsletter
-                  </button></a></li>
+                  <button class="small">Newsletter</button></a></li>
             </ul>
           </div>
           <div id="hamburger" ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();">
             <div class="icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
             </div><span>Menu</span>
+          </div>
+          <div id="sidebar" ng-class="{'show-menu': $root.showMenu}">
+            <div class="container">
+              <ul>
+                <li><a href="/tools"> 
+                    <div title="UX Tools Newsletter" class="icon"></div><span>Tools</span></a></li>
+                <li><a href="/library"> 
+                    <div title="Follow me on Twitter" class="icon"></div><span>Library</span></a></li>
+                <li><a href="https://blog.uxtools.co"> 
+                    <div title="UX Tools Blog" class="icon"></div><span>Blog</span></a></li>
+                <li><a href="http://newsletter.uxtools.co">
+                    <button class="small">Newsletter</button></a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -70,6 +77,8 @@
     </header>
     <section id="scroll-element">
       <div ui-view="">
+        
+        
       </div>
     </section>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
