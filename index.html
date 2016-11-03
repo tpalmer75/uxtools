@@ -48,6 +48,19 @@
           </div>
         </div>
       </div>
+      <div id="sidebar">
+        <div id="shade" class="shade">
+          <div class="container">
+            <ul>
+              <li><a href="/tools"> <span>Tools</span></a></li>
+              <li><a href="https://blog.uxtools.co"> <span>Blog</span></a></li>
+              <li><a href="http://newsletter.uxtools.co"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg><span>Newsletter</span></a></li>
+            </ul>
+            <div id="close" class="close"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <section>
       <div class="wrapper">
@@ -113,10 +126,22 @@
     <script type="text/javascript">
       var hamburger = document.getElementById("hamburger");
       var sidebar = document.getElementById("sidebar");
+      var shade = document.getElementById("shade");
+      var close = document.getElementById("close");
+      
       hamburger.addEventListener("click", function() {
         sidebar.classList.add("show-menu");
-        console.log('click');
-      })
+      }, false);
+      
+      shade.addEventListener("click", function() {
+        sidebar.classList.remove("show-menu");
+      }, false);
+      
+      close.addEventListener("click", function() {
+        sidebar.classList.remove("show-menu");
+      }, false);
+      
+      
     </script>
     <script type="text/javascript" id="inspectletjs">
       window.__insp = window.__insp || [];

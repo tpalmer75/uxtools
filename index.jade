@@ -55,24 +55,25 @@ html(ng-app="uxTools")
             .icon
               include img/icons/menu.svg
             span Menu
-      //- #sidebar
-      //-   .shade
-      //-     .container
-      //-       ul
-      //-         li
-      //-           a(href="/tools") 
-      //-             span Tools
-      //-         li
-      //-           a(href="/library") 
-      //-             div(class="icon" title="Follow me on Twitter")
-      //-             span Library
-      //-         li
-      //-           a(href="https://blog.uxtools.co") 
-      //-             span Blog
-      //-         li.blue
-      //-           a(href="http://newsletter.uxtools.co")
-      //-             include img/icons/email.svg
-      //-             span Newsletter
+      #sidebar
+        #shade.shade
+          .container
+            ul
+              li
+                a(href="/tools") 
+                  span Tools
+              //- li
+              //-   a(href="/library") 
+              //-     span Library
+              li
+                a(href="https://blog.uxtools.co") 
+                  span Blog
+              li
+                a(href="http://newsletter.uxtools.co")
+                  include img/icons/email.svg
+                  span Newsletter
+            #close.close
+              include img/icons/close.svg
     section
       .wrapper
         .columns.reverse
@@ -137,12 +138,25 @@ html(ng-app="uxTools")
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
     script(src="js/medium.js" type="text/javascript")
     script(type="text/javascript").
+      
       var hamburger = document.getElementById("hamburger");
       var sidebar = document.getElementById("sidebar");
+      var shade = document.getElementById("shade");
+      var close = document.getElementById("close");
+
       hamburger.addEventListener("click", function() {
         sidebar.classList.add("show-menu");
-        console.log('click');
-      })
+      }, false);
+
+      shade.addEventListener("click", function() {
+        sidebar.classList.remove("show-menu");
+      }, false);
+
+      close.addEventListener("click", function() {
+        sidebar.classList.remove("show-menu");
+      }, false);
+
+
     script(type="text/javascript" id="inspectletjs").
       window.__insp = window.__insp || [];
       __insp.push(['wid', 1656300355]);

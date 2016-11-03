@@ -110,7 +110,6 @@
 	}
 }
 #hamburger {
-	visibility: hidden;
 	display: flex;
 	align-items: center;
 	height: 48px;
@@ -130,9 +129,11 @@
 		.shade {
 			right: 0;
 			opacity: 1;
+			background: rgba(0,0,0,.25);
+			transition: background .35s ease-in-out;
 		}
 		.container {
-			transform: translateX(-200px);
+			transform: translateX(-250px);
 		}
 	}
 	.shade {
@@ -142,19 +143,21 @@
 		right: -100vh;
 		width: 100vh;
 		height: 100vh;
-		background: rgba(0,0,0,.25);
+		background: rgba(0,0,0,0);
 		z-index: 2;
+		transition: right .01s .35s, opacity .01s .35s, background .35s ease-in-out;
+
 	}
 	.container {
 		padding-top: 5px;
-		width: 200px;
+		width: 250px;
 		height: 100vh;
-		background: white;
+		background: @blue-primary;
 		position: fixed;
 		top: 0;
-		right: -200px;
+		right: -250px;
 		box-shadow: -5px 0px 20px rgba(0,0,0,.25);
-		transition: transform .2s;
+		transition: transform .35s ease-in-out;
 	}
 	li {
 		display: block;
@@ -162,11 +165,20 @@
 		font-size: 16px;
 		height: auto;
 		a {
-			color: #555;
+			color: white;
 		}
-		svg {
-			vertical-align: middle;
-			margin-right: 5px;
+	}
+	svg {
+		vertical-align: middle;
+		margin-right: 5px;
+		path {
+			fill: white;
 		}
+	}
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 16px;
 	}
 }
