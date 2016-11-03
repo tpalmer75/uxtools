@@ -40,10 +40,10 @@ html(ng-app="uxTools")
                 a(href="/tools") 
                   div(class="icon" title="UX Tools Newsletter")
                   span Tools
-              li
-                a(href="/library") 
-                  div(class="icon" title="Follow me on Twitter")
-                  span Library
+              //- li
+              //-   a(href="/library") 
+              //-     div(class="icon" title="Follow me on Twitter")
+              //-     span Library
               li
                 a(href="https://blog.uxtools.co") 
                   div(class="icon" title="UX Tools Blog")
@@ -56,25 +56,6 @@ html(ng-app="uxTools")
             .icon
               include ../img/icons/menu.svg
             span Menu
-          #sidebar(ng-class="{'show-menu': $root.showMenu}")
-            .container
-              ul
-                li
-                  a(href="/tools") 
-                    div(class="icon" title="UX Tools Newsletter")
-                    span Tools
-                li
-                  a(href="/library") 
-                    div(class="icon" title="Follow me on Twitter")
-                    span Library
-                li
-                  a(href="https://blog.uxtools.co") 
-                    div(class="icon" title="UX Tools Blog")
-                    span Blog
-                li
-                  a(href="http://newsletter.uxtools.co")
-                    button.small
-                      | Newsletter
       .bottom-bar
         .scroll-tabs
           ul
