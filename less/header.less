@@ -82,6 +82,32 @@
 			display: none;
 		}
 	}
+	.scroll-tabs {
+		padding-left: 10px;
+		display: inline-block;
+		@media all and (max-width: @mid-size) {
+			width: 100%;
+		}
+		@media all and (max-width: @small-size) {
+			overflow: scroll;
+			font-size: 14px;
+			padding: 0 10px;
+		}
+		ul {
+			@media all and (max-width: @small-size) {
+				min-width: 410px;
+			}
+		}
+		li {
+			font-size: 16px;
+			height: 48px;
+			padding-top: 12px;
+			@media all and (max-width: @small-size) {
+				height: 40px;
+				padding-top: 9px;
+			}
+		}
+	}
 }
 #hamburger {
 	visibility: hidden;
