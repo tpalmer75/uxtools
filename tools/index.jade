@@ -26,7 +26,7 @@ html(ng-app="uxTools")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
     link(href="../css/tools.css?version=1.2" rel="stylesheet" type="text/css")
 
-  body(ng-init="$root.showMenu = false" ng-class="{'show-menu': $root.showMenu}" ng-click="$root.showMenu = false")
+  body(ng-init="$root.showMenu = false")
     header#main-header
       .top-bar
         h1.screen-reader UX Tools
@@ -42,20 +42,37 @@ html(ng-app="uxTools")
                   span Tools
               //- li
               //-   a(href="/library") 
-              //-     div(class="icon" title="Follow me on Twitter")
               //-     span Library
               li
                 a(href="https://blog.uxtools.co") 
-                  div(class="icon" title="UX Tools Blog")
                   span Blog
               li
                 a(href="http://newsletter.uxtools.co")
                   button.small
                     | Newsletter
-          #hamburger(ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();")
+          #hamburger(ng-click="$root.showMenu = true")
             .icon
               include ../img/icons/menu.svg
             span Menu
+      #sidebar(ng-class="{'show-menu': $root.showMenu}")
+        #shade.shade(ng-click="$root.showMenu = false")
+          .container
+            ul
+              li
+                a(href="/tools") 
+                  span Tools
+              //- li
+              //-   a(href="/library") 
+              //-     span Library
+              li
+                a(href="https://blog.uxtools.co") 
+                  span Blog
+              li
+                a(href="http://newsletter.uxtools.co")
+                  include ../img/icons/email.svg
+                  span Newsletter
+            #close.close(ng-click="$root.showMenu = false")
+              include ../img/icons/close.svg
       .bottom-bar
         .scroll-tabs
           ul
