@@ -23,7 +23,7 @@ html(ng-app="uxTools")
     meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
     meta(name="theme-color" content="#ffffff")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Poppins:600" rel="stylesheet")
-    link(href="css/style-2.3.css" rel="stylesheet" type="text/css")
+    link(href="css/style.css?version=1.1" rel="stylesheet" type="text/css")
 
   body
     header#main-header
@@ -39,10 +39,10 @@ html(ng-app="uxTools")
                 a(href="/tools") 
                   div(class="icon" title="UX Tools Newsletter")
                   span Tools
-              //- li
-              //-   a(href="/library") 
-              //-     div(class="icon" title="Follow me on Twitter")
-              //-     span Library
+              li
+                a(href="/library") 
+                  div(class="icon" title="Follow me on Twitter")
+                  span Library
               li
                 a(href="https://blog.uxtools.co") 
                   div(class="icon" title="UX Tools Blog")
@@ -50,12 +50,29 @@ html(ng-app="uxTools")
               li
                 a(href="http://newsletter.uxtools.co")
                   button.small
-                    //- include ../img/icons/email.svg
                     | Newsletter
-          #hamburger(ng-click="$root.showMenu = !$root.showMenu; $event.stopPropagation();")
+          #hamburger
             .icon
               include img/icons/menu.svg
             span Menu
+      #sidebar
+        .shade
+          .container
+            ul
+              li
+                a(href="/tools") 
+                  span Tools
+              //- li
+              //-   a(href="/library") 
+              //-     div(class="icon" title="Follow me on Twitter")
+              //-     span Library
+              li
+                a(href="https://blog.uxtools.co") 
+                  span Blog
+              li.blue
+                a(href="http://newsletter.uxtools.co")
+                  include img/icons/email.svg
+                  span Newsletter
     section
       .wrapper
         .columns.reverse
@@ -118,7 +135,14 @@ html(ng-app="uxTools")
 
 
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
-    script(src="js/medium.js" type="text/javascript" )
+    script(src="js/medium.js" type="text/javascript")
+    script(type="text/javascript").
+      var hamburger = document.getElementById("hamburger");
+      var sidebar = document.getElementById("sidebar");
+      hamburger.addEventListener("click", function() {
+        sidebar.classList.add("show-menu");
+        console.log('click');
+      })
     script(type="text/javascript" id="inspectletjs").
       window.__insp = window.__insp || [];
       __insp.push(['wid', 1656300355]);

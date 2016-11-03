@@ -10,7 +10,6 @@ $(function(){
         },
         success: function(xml){
             values = xml.responseData.feed.entries;
-            console.log(values);
             
             var output = '<ul>';
             for (var i = 0; i < 3; i++) {
