@@ -74,13 +74,13 @@ html(ng-app="uxTools")
     section
       .wrapper
         .columns.reverse
-          div.content
+          .content
             h2 The ultimate comparison of UX industry tools.
             p There's a new design tool every week. What's the difference? See how these design, prototyping, collaboration, and monitoring tools work for you.
             a(href="/tools" target="_blank")
               button.blue See the Tools 
                include img/icons/arrow-right.svg
-          div.content
+          .content
             a(href="/tools" target="_blank")
               .landing-image
                 img(src="img/landing-image-logos.png" alt="App Logos")
@@ -90,9 +90,20 @@ html(ng-app="uxTools")
       .wrapper
         .columns
           .content
-            .landing-image
-              a(href="http://newsletter.uxtools.co" title="UX Tools Newsletter")
-                img.illustration(alt="illustration" src="img/illustration/toolbox-inbox.svg")
+            a(href="http://newsletter.uxtools.co" target="_blank")
+              .landing-image
+                img(src="img/landing-image-books.png" alt="App Logos")
+                img.shadow-image(src="img/bottom-shadow.png")
+          .content
+            h2 The ultimate list of UX industry books.
+            p What's everyone reading these days? It’s hard to know where to start in a big industry like UX design. See the most popular and recommended books in the industry.
+            a(href="http://newsletter.uxtools.co" target="_blank")
+              button.blue Coming Soon. Get Notified
+               include img/icons/arrow-right.svg
+
+    section
+      .wrapper
+        .columns.reverse
           .content
             h2 Straight from my toolbox to your inbox.
             p Companies like 
@@ -114,9 +125,13 @@ html(ng-app="uxTools")
                     input(type='text', name='b_56c88bcfa8f1dc80f5c401b3a_218467b99e', tabindex='-1', value='')  
                   input#mc-embedded-subscribe.right.blue(type='submit', value='Subscribe', name='subscribe')
               //- End mc_embed_signup
+          .content
+            .landing-image
+              a(href="http://newsletter.uxtools.co" title="UX Tools Newsletter")
+                img.illustration(alt="illustration" src="img/illustration/toolbox-inbox.svg")
     section
       .wrapper.extra-wide
-        h3 From the UX Tools Blog
+        h2(style="text-align: center;") From the UX Tools Blog
         #medium
           ul
             li
