@@ -20,8 +20,16 @@ button, input[type="submit"] {
 	top: 0;
 	svg {
 		margin-left: 5px;
+		vertical-align: middle;
+		position: relative;
+		top: -2px;
 		path {
 			fill: @blue-primary;
+		}
+	}
+	&.icon-left {
+		svg {
+			margin: 0 5px 0 0;
 		}
 	}
 	&:hover {
