@@ -6,7 +6,7 @@ $(function(){
         dataType: 'json',
         error: function(){
             console.log('Unable to load feed, Incorrect path or invalid feed');
-            $('#medium').html("<p class='error'>Well, this is embarassing. Looks like something went wrong.</p>")
+            $('#medium').html("<p class='error' style='text-align: center'>Well, this is embarassing. Looks like something went wrong.</p>")
         },
         success: function(xml){
             values = xml.responseData.feed.entries;

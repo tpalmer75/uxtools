@@ -1,8 +1,8 @@
 
-<html ng-app="uxTools">
+<html ng-app="uxLibrary">
   <head>
-    <title>Uxtools.co – UX Tools</title>
-    <meta name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing."/>
+    <title>Uxtools.co – The UX Library</title>
+    <meta name="description" content="Browse the most recommended books in the UX industry, all compiled into one simple library."/>
     <meta name="ROBOTS" content="INDEX, FOLLOW"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
@@ -24,12 +24,12 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
     <meta name="theme-color" content="#ffffff"/>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet"/>
-    <link href="../css/tools.css?version=1.4" rel="stylesheet" type="text/css"/>
+    <link href="/css/library.css" rel="stylesheet" type="text/css"/>
   </head>
   <body ng-init="$root.showMenu = false">
     <header id="main-header">
       <div class="top-bar">
-        <h1 class="screen-reader">UX Tools</h1>
+        <h1 class="screen-reader">UX Library</h1>
         <div class="wrapper">
           <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
           <div class="right">
@@ -65,25 +65,26 @@
         </div>
       </div>
       <div class="bottom-bar">
-        <div class="scroll-tabs">
-          <ul>
-            <li ui-sref-active="active"><a ui-sref="design">Design</a></li>
-            <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
-            <li ui-sref-active="active"><a ui-sref="handoff">Handoff</a></li>
-            <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
-          </ul>
-        </div>
+        <input id="search" placeholder="Search..." ng-model="searchTerm"/>
+        <select><span>What happens</span>
+          <option>Popularity</option>
+          <option>Title</option>
+          <option>Release Date</option>
+        </select>
       </div>
     </header>
-    <section id="scroll-element">
-      <div ui-view="">
-        
-        
+    <section id="scroll-element" ng-controller="booksCtrl">
+      <div ng-repeat="book in books | filter: searchTerm">
+        <h4>{{ book.title }}</h4>
+        <h6>{{ book.author }}</h6><img alt="{{book.title}} Logo" src="../img/blank.png" ng-style="{{app.image}}"/>
+        <p ng-repeat="recommendation in book.recommendations">{{ bookLists[recommendation].name }}</p>
+      </div>
+      <div>
+        <h4>{{ recommendations[asdf].name }}</h4>
       </div>
     </section>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
-    <script src="../js/min/tools-min.js"></script>
+    <script src="../js/angular-offline.js"></script>
+    <script src="../js/library.js"></script>
     <script type="text/javascript" id="inspectletjs">
       window.__insp = window.__insp || [];
       __insp.push(['wid', 1656300355]);

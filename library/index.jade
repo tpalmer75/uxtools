@@ -1,8 +1,7 @@
-
-html(ng-app="uxTools")
+html(ng-app="uxLibrary")
   head
-    title Uxtools.co – UX Tools
-    meta(name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing.")
+    title Uxtools.co – The UX Library
+    meta(name="description" content="Browse the most recommended books in the UX industry, all compiled into one simple library.")
     meta(name="ROBOTS" content="INDEX, FOLLOW")
     meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
@@ -24,12 +23,12 @@ html(ng-app="uxTools")
     meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
     meta(name="theme-color" content="#ffffff")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
-    link(href="../css/tools.css?version=1.4" rel="stylesheet" type="text/css")
+    link(href="/css/library.css" rel="stylesheet" type="text/css")
 
   body(ng-init="$root.showMenu = false")
     header#main-header
       .top-bar
-        h1.screen-reader UX Tools
+        h1.screen-reader UX Library
         .wrapper
           .left
             a(href="/")
@@ -80,27 +79,30 @@ html(ng-app="uxTools")
             #close.close(ng-click="$root.showMenu = false")
               include ../img/icons/close.svg
       .bottom-bar
-        .scroll-tabs
-          ul
-            li(ui-sref-active="active")
-              a(ui-sref="design") Design
-            li(ui-sref-active="active")
-              a(ui-sref="prototyping") Prototyping
-            li(ui-sref-active="active")
-              a(ui-sref="handoff") Handoff
-            li(ui-sref-active="active")
-              a(ui-sref="monitoring") Monitoring
+        input#search(placeholder="Search..." ng-model="searchTerm")
+        select
+          span What happens
+          option Popularity
+          option Title
+          option Release Date
                 
-    section#scroll-element
-      div(ui-view="")
-        //- injected Angular Views
+    section#scroll-element(ng-controller="booksCtrl")
+      div(ng-repeat="book in books | filter: searchTerm")
+        h4 {{ book.title }}
+        h6 {{ book.author }}
+        img(alt="{{book.title}} Logo" src="../img/blank.png" ng-style="{{app.image}}")
+        p(ng-repeat="recommendation in book.recommendations")
+          | {{ bookLists[recommendation].name }}
+      div
+        h4 {{ recommendations[asdf].name }}
 
     
 
-    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
+    //- script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
+    script(src="../js/angular-offline.js")
     //- script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
-    script(src="../js/min/tools-min.js")
+    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
+    script(src="../js/library.js")
     script(type="text/javascript" id="inspectletjs").
       window.__insp = window.__insp || [];
       __insp.push(['wid', 1656300355]);
