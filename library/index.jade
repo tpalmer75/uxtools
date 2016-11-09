@@ -81,20 +81,18 @@ html(ng-app="uxLibrary")
       .bottom-bar
         input#search(placeholder="Search..." ng-model="searchTerm")
         select
-          span What happens
           option Popularity
           option Title
           option Release Date
                 
-    section#scroll-element(ng-controller="booksCtrl")
-      div(ng-repeat="book in books | filter: searchTerm")
-        h4 {{ book.title }}
-        h6 {{ book.author }}
-        img(alt="{{book.title}} Logo" src="../img/blank.png" ng-style="{{app.image}}")
-        p(ng-repeat="recommendation in book.recommendations")
-          | {{ bookLists[recommendation].name }}
-      div
-        h4 {{ recommendations[asdf].name }}
+    section(ng-controller="booksCtrl")
+      ul#books
+        li(ng-repeat="book in books | filter: searchTerm")
+          h4 {{ book.title }}
+          h6 {{ book.author }}
+          img.cover(alt="{{book.title}} Logo" src="../img/blank.png" ng-style="{{app.image}}")
+          p(ng-repeat="recommendation in book.recommendations")
+            | {{ bookLists[recommendation].name }}
 
     
 

@@ -66,22 +66,21 @@
       </div>
       <div class="bottom-bar">
         <input id="search" placeholder="Search..." ng-model="searchTerm"/>
-        <select><span>What happens</span>
+        <select>
           <option>Popularity</option>
           <option>Title</option>
           <option>Release Date</option>
         </select>
       </div>
     </header>
-    <section id="scroll-element" ng-controller="booksCtrl">
-      <div ng-repeat="book in books | filter: searchTerm">
-        <h4>{{ book.title }}</h4>
-        <h6>{{ book.author }}</h6><img alt="{{book.title}} Logo" src="../img/blank.png" ng-style="{{app.image}}"/>
-        <p ng-repeat="recommendation in book.recommendations">{{ bookLists[recommendation].name }}</p>
-      </div>
-      <div>
-        <h4>{{ recommendations[asdf].name }}</h4>
-      </div>
+    <section ng-controller="booksCtrl">
+      <ul id="books">
+        <li ng-repeat="book in books | filter: searchTerm">
+          <h4>{{ book.title }}</h4>
+          <h6>{{ book.author }}</h6><img alt="{{book.title}} Logo" src="../img/blank.png" ng-style="{{app.image}}" class="cover"/>
+          <p ng-repeat="recommendation in book.recommendations">{{ bookLists[recommendation].name }}</p>
+        </li>
+      </ul>
     </section>
     <script src="../js/angular-offline.js"></script>
     <script src="../js/library.js"></script>

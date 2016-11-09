@@ -2,3 +2,24 @@
 @import "variables.less";
 @import "header.less";
 @import "common.less";
+
+h3 {
+	font-family: @title-font-stack;
+}
+section {
+	background: #f0f0f0;
+}
+
+#books {
+	display: flex;
+	li {
+		background: white;
+		box-shadow: 0 2px 5px rgba(0,0,0,.5);
+	}
+}
+.cover {
+	width: 40px;
+	height: 200px;
+	background: url('../img/book-sprites.png') no-repeat;
+	background-size: 532%;
+}
