@@ -41,12 +41,12 @@ table#scroll-table(fixed-table)
               div(title="Windows")
                 include ../img/icons/windows.svg
 
-      td(style="text-align: right;" ng-if="isFilterVisible('Free');")
+      td(ng-if="isFilterVisible('Free');")
         div(ng-if="app.pricing.free")
           include ../img/icons/check.svg
-      td(style="min-width: 100px; text-align:right;" ng-if="isFilterVisible('Subscription');")
+      td(style="min-width: 100px;" ng-if="isFilterVisible('Subscription');")
         span {{app.pricing.subscription}}
-      td(style="min-width: 100px; text-align: right;" ng-if="isFilterVisible('Purchase');")
+      td(style="min-width: 100px;" ng-if="isFilterVisible('Purchase');")
         span {{app.pricing.purchase}}
 
       td(ng-if="isFilterVisible('Offline');")
