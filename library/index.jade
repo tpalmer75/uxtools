@@ -84,15 +84,27 @@ html(ng-app="uxLibrary")
           option Popularity
           option Title
           option Release Date
+
+
+
                 
     section(ng-controller="booksCtrl")
       ul#books
-        li(ng-repeat="book in books | filter: searchTerm")
-          h4 {{ book.title }}
-          h6 {{ book.author }}
-          img.cover(alt="{{book.title}} Logo" src="../img/blank.png" ng-style="{{app.image}}")
-          p(ng-repeat="recommendation in book.recommendations")
-            | {{ bookLists[recommendation].name }}
+        li(ng-repeat="book in books | filter: tagFilter | filter: searchTerm")
+          img.cover(
+            alt="{{book.title}} Logo" 
+            src="../img/blank.png" 
+            ng-style="{{app.image}}")
+          .book-info
+            h4.title {{ book.title }}
+            h5
+              em by 
+              | {{ book.author }}
+            ul.tags
+              li(ng-repeat="tag in book.tags") {{ tag }}
+            p(ng-repeat="recommendation in book.recommendations")
+              | {{ bookLists[recommendation].name }}
+
 
     
 

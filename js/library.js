@@ -4,7 +4,10 @@ angular.module('uxLibrary', [])
 
   $scope.books = booksFactory.books();
   $scope.bookLists = booksFactory.bookLists();
-  $scope.asdf = "camilla";
+
+  // $scope.tagFilter = {
+  //   tags: "UX Basics"
+  // };
 
 })
 
@@ -12,12 +15,13 @@ angular.module('uxLibrary', [])
 
     var books = [{
         title: "Don't Make Me Think",
+        link: "",
         author: "Steve Krug",
         releaseDate: "Fake Date 01 Nov 2016",
-        tags: {
-        	uxBasics: true
-        },
-        "image": {
+        tags: [
+            "UX Basics"
+        ],
+        image: {
             "background-position": "0 0",
         },
         recommendations: [
@@ -31,7 +35,18 @@ angular.module('uxLibrary', [])
         tags: {
         	uxBasics: true
         },
-        "image": {
+        image: {
+            "background-position": "0 0",
+        },
+    }, {
+        title: "Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+        author: "Luke Wroblewski",
+        releaseDate: "Fake Date 01 Nov 2016",
+        tags: [
+            "UX Basics",
+            "Typography"
+        ],
+        image: {
             "background-position": "0 0",
         },
     }];

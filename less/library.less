@@ -3,23 +3,74 @@
 @import "header.less";
 @import "common.less";
 
-h3 {
-	font-family: @title-font-stack;
-}
-section {
-	background: #f0f0f0;
+body {
+	background: #F1F1F1;
 }
 
 #books {
 	display: flex;
-	li {
+	margin: auto;
+	flex-wrap: wrap;
+	padding: 10px;
+	> li {
+		width: 450px;
+		max-width: 100%;
+		flex: 0 0 auto;
+		margin: 20px 10px 10px;
 		background: white;
-		box-shadow: 0 2px 5px rgba(0,0,0,.5);
+		//box-shadow: 0 2px 5px rgba(0,0,0,.5);
+		display: flex;
+		.book-info {
+			//flex: 1 0 auto;
+			padding: 20px 0;
+		}
+		.title {
+			font-family: @title-font-stack;
+			font-weight: bold;
+			text-decoration: underline;
+			margin-bottom: 10px;
+		}
+		h5 {
+			font-size: 14px;
+			em {
+				color: #999;
+				font-style: italic;
+			}
+		}
+		// .image-container {
+		// 	max-width: 140px;
+		// 	width: 100%;
+		// 	height: 0;
+		// 	padding-bottom: 110%;
+		// }
+
+		.cover {
+			//max-width: 140px;
+			//width: 100%;
+			flex: 0 0 140px;
+			width: 140px;
+			height: 0;
+			padding-bottom: 45%;
+			// position: relative;
+			// top: -10px;
+			margin: -10px 20px 0;
+			background: url('../img/book-sprites.png') no-repeat;
+			background-size: 532%;
+		}
 	}
-}
-.cover {
-	width: 40px;
-	height: 200px;
-	background: url('../img/book-sprites.png') no-repeat;
-	background-size: 532%;
+	.tags {
+		margin-top: 10px;
+		li {
+			background: #f1f1f1;
+			border-radius: 999px;
+			padding: 5px 10px;
+			display: inline-block;
+			text-transform: uppercase;
+			letter-spacing: .75px;
+			font-size: 12px;
+			//font-weight: bold;
+			color: #777;
+			margin: 0 5px 5px 0;
+		}
+	}
 }

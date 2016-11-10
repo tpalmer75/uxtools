@@ -75,10 +75,15 @@
     </header>
     <section ng-controller="booksCtrl">
       <ul id="books">
-        <li ng-repeat="book in books | filter: searchTerm">
-          <h4>{{ book.title }}</h4>
-          <h6>{{ book.author }}</h6><img alt="{{book.title}} Logo" src="../img/blank.png" ng-style="{{app.image}}" class="cover"/>
-          <p ng-repeat="recommendation in book.recommendations">{{ bookLists[recommendation].name }}</p>
+        <li ng-repeat="book in books | filter: tagFilter | filter: searchTerm"><img alt="{{book.title}} Logo" src="../img/blank.png" ng-style="{{app.image}}" class="cover"/>
+          <div class="book-info">
+            <h4 class="title">{{ book.title }}</h4>
+            <h5><em>by </em>{{ book.author }}</h5>
+            <ul class="tags">
+              <li ng-repeat="tag in book.tags">{{ tag }}</li>
+            </ul>
+            <p ng-repeat="recommendation in book.recommendations">{{ bookLists[recommendation].name }}</p>
+          </div>
         </li>
       </ul>
     </section>
