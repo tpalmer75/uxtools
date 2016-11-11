@@ -10,8 +10,7 @@
   </thead>
   <tbody>
     <tr ng-repeat="app in prototypingTools | orderBy:['name', orderValue]">
-      <td class="fixed-col"><a ng-href="{{app.url}}" title="{{app.url}}" target="_blank"><img alt="{{app.name}} Logo" src="../img/blank.png" ng-style="{{app.image}}"/></a>
-      </td>
+      <td class="fixed-col"><a ng-href="{{app.url}}" title="{{app.url}}" target="_blank"><img alt="{{app.name}} Logo" src="../img/blank.png" ng-style="{{app.image}}"/></a></td>
       <td class="name-col"><a ng-href="{{app.url}}" title="{{app.url}}" target="_blank">{{ app.name }} {{orderValue}}</a></td>
       <td ng-if="isFilterVisible('Platform');" class="colspan-5">
         <div class="flex-wrapper">

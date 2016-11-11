@@ -25,7 +25,7 @@ html(ng-app="uxLibrary")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
     link(href="/css/library.css" rel="stylesheet" type="text/css")
 
-  body(ng-init="$root.showMenu = false")
+  body(ng-init="$root.showMenu = false" ng-controller="booksCtrl")
     header#main-header
       .top-bar
         h1.screen-reader UX Library
@@ -79,31 +79,36 @@ html(ng-app="uxLibrary")
             #close.close(ng-click="$root.showMenu = false")
               include ../img/icons/close.svg
       .bottom-bar
-        input#search(placeholder="Search..." ng-model="searchTerm")
-        select
-          option Popularity
-          option Title
-          option Release Date
-
-
-
+        #search
+          input(placeholder="Search..." ng-model="searchTerm")
+          include ../img/icons/magnify.svg
+        #filters
+          select
+            option Popularity
+            option Title
+            option Release Date
+          select(name="categoryFilter" ng-model="categoryData.categoryModel.tags")
+            option(ng-repeat="option in categoryData.categoryOptions" value="{{option.value}}") {{option.name}}
                 
-    section(ng-controller="booksCtrl")
+    section
       ul#books
-        li(ng-repeat="book in books | filter: tagFilter | filter: searchTerm")
-          img.cover(
-            alt="{{book.title}} Logo" 
-            src="../img/blank.png" 
-            ng-style="{{app.image}}")
+        li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm")
+          .image-container
+            a(href="{{book.url}}/?ref=uxtools.co" target="_blank" title="{{book.title}}")
+              img.cover(
+                alt="{{book.title}}" 
+                ng-src="../img/book-covers/{{book.image}}")
           .book-info
-            h4.title {{ book.title }}
+            a(href="{{book.url}}/?ref=uxtools.co" target="_blank" title="{{book.title}}")
+              h4.title {{ book.title }}
             h5
               em by 
               | {{ book.author }}
             ul.tags
-              li(ng-repeat="tag in book.tags") {{ tag }}
-            p(ng-repeat="recommendation in book.recommendations")
-              | {{ bookLists[recommendation].name }}
+              li(ng-repeat="tag in book.tags" ng-click="categoryData.categoryModel.tags = tag") {{ tag }}
+            ul.recommendations
+              li(ng-repeat="recommendation in book.recommendations | limitTo: 5") 
+                img(src="../img/blank.png" ng-style="{{bookLists[recommendation].image}}")
 
 
     
