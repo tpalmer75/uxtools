@@ -79,36 +79,40 @@ html(ng-app="uxLibrary")
             #close.close(ng-click="$root.showMenu = false")
               include ../img/icons/close.svg
       .bottom-bar
-        #search
-          input(placeholder="Search..." ng-model="searchTerm")
-          include ../img/icons/magnify.svg
-        #filters
-          select
-            option Popularity
-            option Title
-            option Release Date
-          select(name="categoryFilter" ng-model="categoryData.categoryModel.tags")
-            option(ng-repeat="option in categoryData.categoryOptions" value="{{option.value}}") {{option.name}}
+        .wrapper
+          #search
+            input(placeholder="Search..." ng-model="searchTerm")
+            include ../img/icons/magnify.svg
+          #filters
+            select
+              option Popularity
+              option Title
+              option Release Date
+            select(name="categoryFilter" ng-model="categoryData.categoryModel.tags")
+              option(ng-repeat="option in categoryData.categoryOptions" value="{{option.value}}") {{option.name}}
                 
     section
-      ul#books
-        li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm")
-          .image-container
-            a(href="{{book.url}}/?ref=uxtools.co" target="_blank" title="{{book.title}}")
-              img.cover(
-                alt="{{book.title}}" 
-                ng-src="../img/book-covers/{{book.image}}")
-          .book-info
-            a(href="{{book.url}}/?ref=uxtools.co" target="_blank" title="{{book.title}}")
-              h4.title {{ book.title }}
-            h5
-              em by 
-              | {{ book.author }}
-            ul.tags
-              li(ng-repeat="tag in book.tags" ng-click="categoryData.categoryModel.tags = tag") {{ tag }}
-            ul.recommendations
-              li(ng-repeat="recommendation in book.recommendations | limitTo: 5") 
-                img(src="../img/blank.png" ng-style="{{bookLists[recommendation].image}}")
+      .wrapper
+        ul#books
+          li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true")
+            .image-container
+              a(href="{{book.url}}" target="_blank" title="{{book.title}}")
+                img.cover(
+                  alt="{{book.title}}" 
+                  ng-src="../img/book-covers/{{book.image}}")
+            .book-info
+              a(href="{{book.url}}" target="_blank" title="{{book.title}}")
+                h4.title {{ book.title | limitTo: 60 }}{{ book.title.length > 60 ? '...' : ''}}
+              h5
+                em by 
+                | {{ book.author }}
+              ul.tags
+                li(ng-repeat="tag in book.tags" ng-click="categoryData.categoryModel.tags = tag") {{ tag }}
+              ul.recommendations
+                li(ng-repeat="list in book.recommendations | limitTo: 5 | orderBy: random") 
+                  img(ng-src="../img/book-recommendations/{{bookLists[list].image}}")
+          li(style="opacity: 0; height: 0;")
+          li(style="opacity: 0; height: 0;")
 
 
     
