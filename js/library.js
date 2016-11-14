@@ -36,7 +36,7 @@ angular.module('uxLibrary', [])
         ],
         image: "krug.png",
         recommendations: [
-            "002","003","004"
+            "002","003","004","005"
         ]
     }, {
         title: "Mobile First",
@@ -59,8 +59,7 @@ angular.module('uxLibrary', [])
             "Usability"
         ],
         recommendations: [
-            "001",
-            "003"
+            "001","003","005"
         ],
         image: "norman.png",
     }, {
@@ -86,7 +85,7 @@ angular.module('uxLibrary', [])
             "General UX"
         ],
         recommendations: [
-            "001","004"
+            "001","004","005"
         ],
         image: "garrett.png",
     }, {
@@ -268,7 +267,7 @@ angular.module('uxLibrary', [])
             "Research"
         ],
         recommendations: [
-            "003"
+            "003","005"
         ],
         image: "hall.jpg",
     }, {
@@ -313,10 +312,10 @@ angular.module('uxLibrary', [])
         url: "http://amzn.to/2fLWHsI",
         releaseDate: "Fake Date 01 Nov 2016",
         tags: [
-            "Communication"
+            "Communication", "Career"
         ],
         recommendations: [
-            "003"
+            "003","005"
         ],
         image: "monteiro.jpg",
     }, {
@@ -367,6 +366,54 @@ angular.module('uxLibrary', [])
             "004"
         ],
         image: "albert.jpg",
+    }, {
+        title: "Web Form Design: Filling in the Blanks",
+        author: "Luke Wroblewski",
+        url: "http://amzn.to/2exyVEt",
+        releaseDate: "2008-05-02",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "005"
+        ],
+        image: "wroblewski-2.jpg",
+    }, {
+        title: "Designing for the Digital Age",
+        author: "Kim Goodwin, Alan Cooper",
+        url: "http://amzn.to/2eT6bkW",
+        releaseDate: "2009-03-03",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "005"
+        ],
+        image: "goodwin.jpg",
+    }, {
+        title: "Universal Principles of Design, Revised and Updated: 125 Ways to Enhance Usability, Influence Perception, Increase Appeal, Make Better Design Decisions, and Teach through Design",
+        author: "William Lidwell, Kritina Holden, Jill Butler",
+        url: "http://amzn.to/2eTakp9",
+        releaseDate: "2010-01-01",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "005"
+        ],
+        image: "lidwell.jpg",
+    }, {
+        title: "The War of Art: Break Through the Blocks and Win Your Inner Creative Battles",
+        author: "Steven Pressfield",
+        url: "http://amzn.to/2exJLdN",
+        releaseDate: "2010-01-01",
+        tags: [
+            "Creativity"
+        ],
+        recommendations: [
+            "005"
+        ],
+        image: "pressfield.jpg",
     }];
 
     var bookLists = {
@@ -389,6 +436,11 @@ angular.module('uxLibrary', [])
             name: 'Uxdesign.cc – "The Essential Reading List"',
             url: "https://uxdesign.cc/ux-books-on-user-research-strategy-2c8eeef820a8",
             image: "uxdesigncc.jpg"
+        },
+        "005": {
+            name: "UX Beginner Reading List",
+            url: "http://www.uxbeginner.com/ux-beginner-reading-list/",
+            image: "ux-beginner.png"
         }
     };
 

@@ -109,8 +109,13 @@ html(ng-app="uxLibrary")
               ul.tags
                 li(ng-repeat="tag in book.tags" ng-click="categoryData.categoryModel.tags = tag") {{ tag }}
               ul.recommendations
+                li
+                  include ../img/icons/bookmark.svg
+                li.count {{book.recommendations.length}}
+                //-li.separator
                 li(ng-repeat="list in book.recommendations | limitTo: 5 | orderBy: random") 
                   img(ng-src="../img/book-recommendations/{{bookLists[list].image}}")
+                //-li.view-all View all
           li(style="opacity: 0; height: 0;")
           li(style="opacity: 0; height: 0;")
 
