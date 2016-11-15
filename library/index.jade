@@ -84,10 +84,10 @@ html(ng-app="uxLibrary")
             input(placeholder="Search..." ng-model="searchTerm")
             include ../img/icons/magnify.svg
           #filters
-            select
-              option Popularity
-              option Title
-              option Release Date
+            //- select
+            //-   option Popularity
+            //-   option Title
+            //-   option Release Date
             select(name="categoryFilter" ng-model="categoryData.categoryModel.tags")
               option(ng-repeat="option in categoryData.categoryOptions" value="{{option.value}}") {{option.name}}
                 
@@ -113,7 +113,7 @@ html(ng-app="uxLibrary")
                   include ../img/icons/bookmark.svg
                 li.count {{book.recommendations.length}}
                 //-li.separator
-                li(ng-repeat="list in book.recommendations | limitTo: 5 | orderBy: random") 
+                li(ng-repeat="list in book.recommendations | orderBy: random(book.recommendations.length)") 
                   img(ng-src="../img/book-recommendations/{{bookLists[list].image}}")
                 //-li.view-all View all
           li(style="opacity: 0; height: 0;")
