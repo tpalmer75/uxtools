@@ -81,18 +81,28 @@ html(ng-app="uxLibrary")
       .bottom-bar
         .wrapper
           #search
-            input(placeholder="Search..." ng-model="searchTerm")
+            input(
+              placeholder="Search..." 
+              ng-model="searchTerm"
+              ng-change="categoryData.categoryModel.tags=''")
             include ../img/icons/magnify.svg
           #filters
             //- select
             //-   option Popularity
             //-   option Title
             //-   option Release Date
-            select(name="categoryFilter" ng-model="categoryData.categoryModel.tags")
-              option(ng-repeat="option in categoryData.categoryOptions" value="{{option.value}}") {{option.name}}
+            .select-wrapper
+              include ../img/icons/menu-down.svg
+              select(name="categoryFilter" ng-model="categoryData.categoryModel.tags")
+                option(ng-repeat="option in categoryData.categoryOptions" value="{{option.value}}") {{option.name}}
                 
     section
       .wrapper
+        .filter-wrapper(ng-show="categoryData.categoryModel.tags || searchTerm")
+          .filter-growl 
+            span Only showing books marked as "{{categoryData.categoryModel.tags}}"
+            div(ng-click="categoryData.categoryModel.tags=''")
+              include ../img/icons/close.svg
         ul#books
           li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true")
             .image-container
@@ -124,7 +134,7 @@ html(ng-app="uxLibrary")
 
     //- script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
     script(src="../js/angular-offline.js")
-    //- script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
     //- script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
     script(src="../js/library.js")
     script(type="text/javascript" id="inspectletjs").

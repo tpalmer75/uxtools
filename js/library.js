@@ -1,33 +1,36 @@
-angular.module('uxLibrary', [])
+angular.module('uxLibrary', ['ngAnimate'])
 
 .controller('booksCtrl', function($scope, booksFactory) {
 
   $scope.books = booksFactory.books();
   $scope.bookLists = booksFactory.bookLists();
 
-  var i = 0;
+  // var i = 0;
 
-  $scope.random = function() { // causes infinite rootScope loop
-        if (i<6) {
-            i++;
-            return 0.5 - Math.random();    
-        } else {
-            return;
-        }
+  // $scope.random = function() { // causes infinite rootScope loop
+  //       if (i<6) {
+  //           i++;
+  //           return 0.5 - Math.random();    
+  //       } else {
+  //           return;
+  //       }
         
-    };
+  //   };
 
   $scope.categoryData = {
     categoryModel: {
         tags: ""
     },
     categoryOptions: [
-        {name: "All", value: ""},
+        {name: "All Categories", value: ""},
         {name: "General UX", value: "General UX"},
         {name: "Typography", value: "Typography"},
         {name: "Mobile & Responsive", value: "Mobile & Responsive"},
         {name: "Usability", value: "Usability"},
-        {name: "Info Architecture", value: "Info Architecture"}
+        {name: "Info Architecture", value: "Info Architecture"},
+        {name: "Agile", value: "Agile"},
+        {name: "Interaction Design", value: "Interaction Design"},
+        {name: "Data & Analytics", value: "Data & Analytics"},
     ]
   };
 })
@@ -43,7 +46,7 @@ angular.module('uxLibrary', [])
         ],
         image: "krug.png",
         recommendations: [
-            "002","003","004","005","006","007"
+            "002","003","004","005","006","007","009"
         ]
     }, {
         title: "Mobile First",
@@ -138,7 +141,7 @@ angular.module('uxLibrary', [])
         author: "Stephen Anderson",
         url: "http://amzn.to/2fLQyMP",
         tags: [
-            "General UX", "Usability"
+            "General UX", "Interaction Design"
         ],
         recommendations: [
             "001","007"
@@ -229,7 +232,7 @@ angular.module('uxLibrary', [])
             "Agile", "General UX"
         ],
         recommendations: [
-            "002","003","006","008"
+            "002","003","006","008","009"
         ],
         image: "gothelf.jpg",
     }, {
@@ -322,15 +325,15 @@ angular.module('uxLibrary', [])
         image: "resmini.jpg",
     }, {
         title: "Information Architecture for the World Wide Web: Designing Large-Scale Web Sites",
-        author: "Peter Morville",
-        url: "http://amzn.to/2fM16vG",
+        author: "Louis Rosenfeld, Peter Morville, Jorge Arango",
+        url: "http://amzn.to/2geruTZ",
         tags: [
             "Info Architecture"
         ],
         recommendations: [
-            "004"
+            "004","009"
         ],
-        image: "morville.jpg",
+        image: "rosenfeld.jpg",
     }, {
         title: "Measuring the User Experience, Second Edition: Collecting, Analyzing, and Presenting Usability Metrics",
         author: "William Albert, Thomas Tullis",
@@ -372,7 +375,7 @@ angular.module('uxLibrary', [])
             "General UX"
         ],
         recommendations: [
-            "005","006"
+            "005","006","009"
         ],
         image: "lidwell.jpg",
     }, {
@@ -490,7 +493,7 @@ angular.module('uxLibrary', [])
         author: "Giles Colborne",
         url: "http://amzn.to/2eZa4YQ",
         tags: [
-            "Usability"
+            "Usability", "Interaction Design"
         ],
         recommendations: [
             "007"
@@ -523,7 +526,7 @@ angular.module('uxLibrary', [])
         author: "Bill Scott",
         url: "http://amzn.to/2fSPGd2",
         tags: [
-            "General UX"
+            "General UX", "Interaction Design"
         ],
         recommendations: [
             "007"
@@ -636,7 +639,7 @@ angular.module('uxLibrary', [])
             "Career","Creativity"
         ],
         recommendations: [
-            "008"
+            "008","009"
         ],
         image: "gray.jpg",
     }, {
@@ -672,6 +675,138 @@ angular.module('uxLibrary', [])
             "009"
         ],
         image: "quesenbery.jpg",
+    }, {
+        title: "This is Service Design Thinking: Basics, Tools, Cases",
+        author: "Marc Stickdorn, Jakob Schenider",
+        url: "http://amzn.to/2fVUlLh",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "stickdorn.jpg",
+    }, {
+        title: "Interviewing Users: How to Uncover Compelling Insights",
+        author: "Steve Portigal",
+        url: "hhttp://amzn.to/2eYwBBS",
+        tags: [
+            "Research"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "portigal.jpg",
+    }, {
+        title: "See What I Mean: How to Use Comics to Communicate Ideas",
+        author: "Kevin Cheng",
+        url: "http://amzn.to/2gelxGt",
+        tags: [
+            "Communication"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "cheng.jpg",
+    }, {
+        title: "Understanding Comics: The Invisible Art",
+        author: "Scott McCloud",
+        url: "http://amzn.to/2feP6CZ",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "mccloud.jpg",
+    }, {
+        title: "Elements of Design: Rowena Reed Kostellow and the Structure of Visual Relationships",
+        author: "Gail Greet Hannah",
+        url: "http://amzn.to/2gf5HdZ",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "hannah.jpg",
+    }, {
+        title: "Computers as Theatre",
+        author: "Brenda Laurel",
+        url: "http://amzn.to/2gehVVb",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "laurel.jpg",
+    }, {
+        title: "Digital Ground: Architecture, Pervasive Computing, and Environmental Knowing",
+        author: "Malcolm McCullough",
+        url: "http://amzn.to/2fUfW3j",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "mcculough.jpg",
+    }, {
+        title: "Where the Action Is: The Foundations of Embodied Interaction",
+        author: "Paul Dourish",
+        url: "http://amzn.to/2geqvD9",
+        tags: [
+            "General UX", "Interaction Design"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "dourish.jpg",
+    }, {
+        title: "Observing the User Experience: A Practitioner's Guide to User Research",
+        author: "Elizabeth Goodman, Mike Kuniavsky, Andrea Moed",
+        url: "http://amzn.to/2fePuBn",
+        tags: [
+            "Research"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "kuniavsky.jpg",
+    }, {
+        title: "Rapid Viz: A New Method for the Rapid Visualization of Ideas",
+        author: "Kurt Hanks, Larry Belliston",
+        url: "http://amzn.to/2gf7pMi",
+        tags: [
+            "Data & Analytics"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "hanks.jpg",
+    }, {
+        title: "Information Anxiety 2",
+        author: "Richard Wurman",
+        url: "http://amzn.to/2gf5dV7",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "009"
+        ],
+        image: "wurman.jpg",
+    }, {
+        title: "Information Dashboard Design: Displaying Data for At-a-Glance Monitoring",
+        author: "Stephen Few",
+        url: "http://amzn.to/2fUlniH",
+        tags: [
+            "Data & Analytics"
+        ],
+        recommendations: [
+            "009","010"
+        ],
+        image: "few.jpg",
     }];
 
     var bookLists = {
@@ -724,10 +859,16 @@ angular.module('uxLibrary', [])
             image: "uxforthemasses.jpg"
         },
         "009": {
-            name: "My “X Reading List — 2015",
+            name: "My UX Reading List — 2015",
             owner: "Dave Malouf",
             url: "https://medium.com/swlh/my-ux-reading-list-2015-b048be1a74fa",
             image: "malouf.jpg"
+        },
+        "010": {
+            name: "10 Must-Read UX Books",
+            owner: "Creative Market",
+            url: "https://creativemarket.com/blog/10-must-read-ux-books",
+            image: "creativemarket.jpg"
         }
     };
 
