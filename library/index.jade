@@ -25,7 +25,7 @@ html(ng-app="uxLibrary")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
     link(href="/css/library.css" rel="stylesheet" type="text/css")
 
-  body(ng-init="$root.showMenu = false" ng-controller="booksCtrl")
+  body(ng-init="$root.showMenu = false" ng-controller="booksCtrl" ng-class="{'show-modal':showModal}")
     header#main-header
       .top-bar
         h1.screen-reader UX Library
@@ -91,7 +91,7 @@ html(ng-app="uxLibrary")
             //-   option Popularity
             //-   option Title
             //-   option Release Date
-            {{counter}}
+            {{showModal}}
             .select-wrapper
               include ../img/icons/menu-down.svg
               select(name="categoryFilter" ng-model="categoryData.categoryModel.tags" ng-change="change()")
@@ -105,7 +105,7 @@ html(ng-app="uxLibrary")
             span Only showing "{{categoryData.categoryModel.tags}}{{searchTerm}}"
             //-div(ng-click="categoryData.categoryModel.tags=''")
               include ../img/icons/close.svg
-            span.close(ng-click="categoryData.categoryModel.tags=''") Dismiss
+            span.close(ng-click="clearAll()") Dismiss
         ul#books
           li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true")
             .image-container
@@ -121,7 +121,7 @@ html(ng-app="uxLibrary")
                 | {{ book.author }}
               ul.tags
                 li(ng-repeat="tag in book.tags" ng-click="categoryData.categoryModel.tags = tag") {{ tag }}
-              ul.recommendations
+              ul.recommendations(ng-click="$parent.showModal=true")
                 li
                   include ../img/icons/bookmark.svg
                 li.count {{book.recommendations.length}}
@@ -132,7 +132,15 @@ html(ng-app="uxLibrary")
           li(style="opacity: 0; height: 0;")
           li(style="opacity: 0; height: 0;")
 
-
+    #modal-wrapper(ng-show="showModal" class="ng-hide")
+      .shade(ng-click="showModal=false")
+        .container(ng-click="$event.stopPropagation();")
+          .title Hello world!
+          .close(ng-click="showModal=false") Close
+          .scroll-area
+            li List
+            li List
+            li List
     
 
     //- script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")

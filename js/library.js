@@ -1,5 +1,5 @@
-//angular.module('uxLibrary', ['ngAnimate'])
-angular.module('uxLibrary', [])
+angular.module('uxLibrary', ['ngAnimate'])
+
 
 .controller('booksCtrl', function($scope, booksFactory, $window) {
 
@@ -18,9 +18,15 @@ angular.module('uxLibrary', [])
         
   //   };
 
+  $scope.showModal = false;
+
+  $scope.clearAll = function() {
+    $scope.categoryData.categoryModel.tags='';
+    $scope.searchTerm='';
+    };
+
   $scope.$watch('categoryData.categoryModel.tags', function() {
     window.scrollTo(0,0);
-    console.log("here");
   });
 
   $scope.categoryData = {
