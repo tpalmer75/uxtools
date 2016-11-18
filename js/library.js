@@ -1,6 +1,7 @@
-angular.module('uxLibrary', ['ngAnimate'])
+//angular.module('uxLibrary', ['ngAnimate'])
+angular.module('uxLibrary', [])
 
-.controller('booksCtrl', function($scope, booksFactory) {
+.controller('booksCtrl', function($scope, booksFactory, $window) {
 
   $scope.books = booksFactory.books();
   $scope.bookLists = booksFactory.bookLists();
@@ -17,12 +18,16 @@ angular.module('uxLibrary', ['ngAnimate'])
         
   //   };
 
+  $scope.$watch('categoryData.categoryModel.tags', function() {
+    window.scrollTo(0,0);
+    console.log("here");
+  });
+
   $scope.categoryData = {
     categoryModel: {
         tags: ""
     },
     categoryOptions: [
-        {name: "All Categories", value: ""},
         {name: "General UX", value: "General UX"},
         {name: "Typography", value: "Typography"},
         {name: "Mobile & Responsive", value: "Mobile & Responsive"},
@@ -31,8 +36,27 @@ angular.module('uxLibrary', ['ngAnimate'])
         {name: "Agile", value: "Agile"},
         {name: "Interaction Design", value: "Interaction Design"},
         {name: "Data & Analytics", value: "Data & Analytics"},
+        {name: "Communication", value: "Communication"},
+        {name: "Career", value: "Career"},
     ]
   };
+})
+
+.directive('scrollToTop', function($window) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function(scope, element, attrs, ngModelCtrl) {
+            // console.log('fired 1');
+            // scope.updateModel = function() {
+            //     $window.pageYOffset = "0"; 
+            //     console.log('fired 2');   
+            // }
+            angular.element(element).bind("click", function() {
+                console.log('click');
+            });
+        }
+    };
 })
 
 .factory('booksFactory', function() {
@@ -46,7 +70,7 @@ angular.module('uxLibrary', ['ngAnimate'])
         ],
         image: "krug.png",
         recommendations: [
-            "002","003","004","005","006","007","009"
+            "002","003","004","005","006","007","009","010","011"
         ]
     }, {
         title: "Mobile First",
@@ -155,7 +179,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Communication"
         ],
         recommendations: [
-            "001","003","004"
+            "001","003","004","010","011"
         ],
         image: "weinschenk.png",
     }, {
@@ -232,7 +256,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Agile", "General UX"
         ],
         recommendations: [
-            "002","003","006","008","009"
+            "002","003","006","008","009","010"
         ],
         image: "gothelf.jpg",
     }, {
@@ -243,7 +267,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Research","Usability"
         ],
         recommendations: [
-            "003","007"
+            "003","007","010"
         ],
         image: "krug-2.jpg",
     }, {
@@ -339,10 +363,10 @@ angular.module('uxLibrary', ['ngAnimate'])
         author: "William Albert, Thomas Tullis",
         url: "http://amzn.to/2fM16vG",
         tags: [
-            "Data & Analytics"
+            "Data & Analytics","Research"
         ],
         recommendations: [
-            "004"
+            "004","011"
         ],
         image: "albert.jpg",
     }, {
@@ -408,7 +432,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "006","007"
+            "006","007","010","011"
         ],
         image: "allen.jpg",
     }, {
@@ -419,7 +443,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX", "Research"
         ],
         recommendations: [
-            "006"
+            "006","010"
         ],
         image: "buley.jpg",
     }, {
@@ -628,7 +652,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "008","009"
+            "008","009","010"
         ],
         image: "polaine.jpg",
     }, {
@@ -804,9 +828,42 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Data & Analytics"
         ],
         recommendations: [
-            "009","010"
+            "009",
         ],
         image: "few.jpg",
+    }, {
+        title: "Usable Usablity: Simple Steps for Making Stuff Better",
+        author: "Erc Reiss",
+        url: "http://amzn.to/2f7qmM3",
+        tags: [
+            "Usability"
+        ],
+        recommendations: [
+            "010","011"
+        ],
+        image: "reiss.jpg",
+    }, {
+        title: "Quantifying the User Experience: Practical Statistics for User Research",
+        author: "Jeff Sauro, James R. Lewis",
+        url: "http://amzn.to/2gnkZ0a",
+        tags: [
+            "Research","Data & Analytics"
+        ],
+        recommendations: [
+            "010"
+        ],
+        image: "sauro.jpg",
+    }, {
+        title: "Mobile Usability",
+        author: "Jakob Nielsen, Raluca Budiu",
+        url: "http://amzn.to/2gqmtHZ",
+        tags: [
+            "Mobile & Repsonsive","Usability"
+        ],
+        recommendations: [
+            "010"
+        ],
+        image: "nielsen-2.jpg",
     }];
 
     var bookLists = {
@@ -869,6 +926,12 @@ angular.module('uxLibrary', ['ngAnimate'])
             owner: "Creative Market",
             url: "https://creativemarket.com/blog/10-must-read-ux-books",
             image: "creativemarket.jpg"
+        },
+        "011": {
+            name: "Essential Reading: 5 Must-Read User Experience Design Books",
+            owner: "General Assembly",
+            url: "https://generalassemb.ly/blog/top-user-experience-design-books/",
+            image: "generalassembly.png"
         }
     };
 

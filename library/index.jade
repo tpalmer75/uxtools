@@ -91,18 +91,21 @@ html(ng-app="uxLibrary")
             //-   option Popularity
             //-   option Title
             //-   option Release Date
+            {{counter}}
             .select-wrapper
               include ../img/icons/menu-down.svg
-              select(name="categoryFilter" ng-model="categoryData.categoryModel.tags")
-                option(ng-repeat="option in categoryData.categoryOptions" value="{{option.value}}") {{option.name}}
+              select(name="categoryFilter" ng-model="categoryData.categoryModel.tags" ng-change="change()")
+                option(value="") All Categories
+                option(ng-repeat="option in categoryData.categoryOptions | orderBy: 'name'" value="{{option.value}}") {{option.name}}
                 
     section
       .wrapper
         .filter-wrapper(ng-show="categoryData.categoryModel.tags || searchTerm")
           .filter-growl 
-            span Only showing books marked as "{{categoryData.categoryModel.tags}}"
-            div(ng-click="categoryData.categoryModel.tags=''")
+            span Only showing "{{categoryData.categoryModel.tags}}{{searchTerm}}"
+            //-div(ng-click="categoryData.categoryModel.tags=''")
               include ../img/icons/close.svg
+            span.close(ng-click="categoryData.categoryModel.tags=''") Dismiss
         ul#books
           li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true")
             .image-container

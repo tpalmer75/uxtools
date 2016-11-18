@@ -25,6 +25,9 @@ a {
 		right: 5px;
 		fill: white;
 	}
+	@media all and (max-width: @small-size) {
+		display: none;
+	}
 }
 select {
 	-moz-appearance: none;
@@ -184,7 +187,7 @@ select {
 	    margin: 5px 0 10px;
 	    padding: 8px 0;
 	    position: relative;
-	    width: 300px;
+	    width: 250px;
 	    max-width: 100%;
 	    z-index: 2;
 		&::-webkit-input-placeholder {
@@ -199,6 +202,9 @@ select {
 		&:-ms-input-placeholder {
 			color: fade(white, 50%);
 		}
+		@media all and (max-width: @small-size) {
+			width: 100%;
+		}
 	}
 	svg {
 		fill: white;
@@ -206,18 +212,16 @@ select {
 		top: 10px;
 		right: 5px;
 	}
+	@media all and (max-width: @small-size) {
+		width: 100%;
+	}
 }
 
 .filter-wrapper {
-	//display: flex;
-	//justify-content: center;
-	//text-align: center;
-	margin: 0 20px;
+	margin: 10px;
 	max-height: 50px;
 	opacity: 1;
-	margin-top: 10px;
 	transition: all .2s ease-in-out;
-	//overflow: hidden;
 	&.ng-hide {
 		max-height: 0;
 		opacity: 0;
@@ -229,29 +233,24 @@ select {
 	}
 }
 .filter-growl {
-	background: #26A69A;
 	font-size: 14px;
 	color: white;
-	//width: 100%;
-	//text-align: center;
-	//margin: 0 20px;
-	max-width: 500px;
-	display: flex;
-	justify-content: space-between;
+	text-align: center;
+	color: #999;
 	margin: auto;
-	padding: 5px 5px 5px 15px;
 	border-radius: 999px;
-	//position: relative;
-	//top: 10px;
-	align-items: center;
-	//box-shadow: 0 10px 20px rgba(0,0,0,.15);
 	transition: box-shadow .2s;
 	svg {
 		fill: white;
 		margin-left: 10px;
 		margin-right: 2px;
 	}
-	&:hover {
-		box-shadow: 0 5px 15px rgba(0,0,0,.25);
+	.close {
+		text-decoration: underline;
+		margin-left: 10px;
+		cursor: pointer;
+		&:hover {
+			color: #555;
+		}
 	}
 }
