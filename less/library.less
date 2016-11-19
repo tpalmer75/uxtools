@@ -66,12 +66,12 @@ select {
 	}
 	> li {
 		width: 32%;
-		margin-bottom: 2%;
+		margin-bottom: 20px;
 		background: white;
 		display: flex;
 		@media all and (max-width: 1199px) {
 			width: 49%;
-			margin-bottom: 3%;
+			margin-bottom: 20px;
 		}
 		@media all and (max-width: 766px) {
 			width: 100%;
@@ -146,11 +146,14 @@ select {
 	}
 	.recommendations {
 		margin-top: 5px;
+		height: 24px;
+		overflow: hidden;
 		li {
 			display: inline-block;
 			//color: @blue-alternate;
 			//font-weight: bold;
 			vertical-align: middle;
+			cursor: pointer;
 		}
 		.count {
 			margin-right: 10px;
@@ -259,6 +262,21 @@ select {
 }
 
 #modal-wrapper {
+	opacity: 1;
+	transition: opacity .2s;
+	&.ng-hide {
+		display: none;
+		opacity: 0;
+		.container {
+			transform: scale(.95);
+			@media all and (max-width: 550px) {
+				transform: translateY(100%);
+			}
+		}
+	}
+	&.ng-animate {
+		display: flex;
+	}
 	.shade {
 		position: fixed;
 		top:0;
@@ -270,8 +288,8 @@ select {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		&.ng-hide {
-			display: none;
+		@media all and (max-width: 550px), all and (max-height: 500px) {
+			align-items: flex-end;
 		}
 	}
 	.container {
@@ -279,5 +297,66 @@ select {
 		width: 500px;
 		height: 75%;
 		max-height: 700px;
+		display: flex;
+		flex-direction: column;
+		transform: scale(1);
+		transition: transform .2s ease-in-out;
+		@media all and (max-width: 550px), all and (max-height: 500px) {
+			width: 100%;
+			height: 80%;
+			max-height: none;
+			transform: translateY(0);
+		}
+		h6 {
+			text-transform: uppercase;
+			color: #a9a9a9;
+			letter-spacing: 1px;
+			font-weight: bold;
+			font-size: 12px;
+		}
+		header {
+			display: flex;
+			justify-content: space-between;
+			padding: 20px;
+			border-bottom: 1px solid #eee;
+			flex: 1 0 auto;
+			align-items: center;
+			h4 {
+				font-family: @title-font-stack;
+				font-weight: bold;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 5px 0;
+			}
+			.title {
+				flex: 0 1 auto;
+				overflow: hidden;
+				padding-right: 10px;
+			}
+		}
+		.scroll-area {
+			overflow-y: scroll;
+			height: 100%;
+			flex: 0 1 auto;
+			-webkit-overflow-scrolling: touch;
+			padding: 10px 0;
+		}
+		li {
+			padding: 10px 20px;
+			a {
+				display: flex;
+			}
+			img {
+				width: 36px;
+				height: 36px;
+				border-radius: 999px;
+				margin-right: 10px;
+				flex-shrink: 0;
+			}
+			h5 {
+				margin-bottom: 5px;
+			}
+		}
 	}
 }

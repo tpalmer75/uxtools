@@ -1,4 +1,5 @@
 angular.module('uxLibrary', ['ngAnimate'])
+//angular.module('uxLibrary', [])
 
 
 .controller('booksCtrl', function($scope, booksFactory, $window) {
@@ -6,19 +7,20 @@ angular.module('uxLibrary', ['ngAnimate'])
   $scope.books = booksFactory.books();
   $scope.bookLists = booksFactory.bookLists();
 
-  // var i = 0;
-
   // $scope.random = function() { // causes infinite rootScope loop
-  //       if (i<6) {
-  //           i++;
-  //           return 0.5 - Math.random();    
-  //       } else {
-  //           return;
-  //       }
+  //   return 0.5 - Math.random();    
         
   //   };
 
   $scope.showModal = false;
+  $scope.modalBookTitle = '';
+  // have to keep this as a stand alone array or Angular won't update scope
+  $scope.modalBookRecommendations = [];
+
+  $scope.setModalData = function(book) {
+    $scope.modalBookTitle = book.title;
+    $scope.modalBookRecommendations = book.recommendations;
+  }
 
   $scope.clearAll = function() {
     $scope.categoryData.categoryModel.tags='';

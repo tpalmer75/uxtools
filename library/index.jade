@@ -87,11 +87,6 @@ html(ng-app="uxLibrary")
               ng-change="categoryData.categoryModel.tags=''")
             include ../img/icons/magnify.svg
           #filters
-            //- select
-            //-   option Popularity
-            //-   option Title
-            //-   option Release Date
-            {{showModal}}
             .select-wrapper
               include ../img/icons/menu-down.svg
               select(name="categoryFilter" ng-model="categoryData.categoryModel.tags" ng-change="change()")
@@ -103,11 +98,9 @@ html(ng-app="uxLibrary")
         .filter-wrapper(ng-show="categoryData.categoryModel.tags || searchTerm")
           .filter-growl 
             span Only showing "{{categoryData.categoryModel.tags}}{{searchTerm}}"
-            //-div(ng-click="categoryData.categoryModel.tags=''")
-              include ../img/icons/close.svg
             span.close(ng-click="clearAll()") Dismiss
         ul#books
-          li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true")
+          li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true track by $index")
             .image-container
               a(href="{{book.url}}" target="_blank" title="{{book.title}}")
                 img.cover(
@@ -120,31 +113,39 @@ html(ng-app="uxLibrary")
                 em by 
                 | {{ book.author }}
               ul.tags
-                li(ng-repeat="tag in book.tags" ng-click="categoryData.categoryModel.tags = tag") {{ tag }}
-              ul.recommendations(ng-click="$parent.showModal=true")
+                li(ng-repeat="tag in book.tags track by $index" ng-click="clearAll(); categoryData.categoryModel.tags = tag") {{ tag }}
+              ul.recommendations(ng-click="$parent.showModal=true; setModalData(book)")
                 li
                   include ../img/icons/bookmark.svg
                 li.count {{book.recommendations.length}}
-                //-li.separator
-                li(ng-repeat="list in book.recommendations | orderBy: random(book.recommendations.length)") 
+                li(ng-repeat="list in book.recommendations track by $index") 
                   img(ng-src="../img/book-recommendations/{{bookLists[list].image}}")
-                //-li.view-all View all
           li(style="opacity: 0; height: 0;")
           li(style="opacity: 0; height: 0;")
 
     #modal-wrapper(ng-show="showModal" class="ng-hide")
       .shade(ng-click="showModal=false")
         .container(ng-click="$event.stopPropagation();")
-          .title Hello world!
-          .close(ng-click="showModal=false") Close
+          header
+            .title 
+              h6 {{currentRecommendations.recommendations.length}} Recommendation
+                span(ng-hide="currentRecommendations.recommendations.length = 1") s
+                |  for 
+              h4 {{modalBookTitle}}
+            .close(ng-click="showModal=false")
+              include ../img/icons/close.svg
           .scroll-area
-            li List
-            li List
-            li List
+            ul
+              li(ng-repeat="list in modalBookRecommendations track by $index")
+                a(ng-href="{{bookLists[list].url}}?ref=uxtools.co")
+                  img(ng-src="../img/book-recommendations/{{bookLists[list].image}}")
+                  .content
+                    h5 {{bookLists[list].name}}
+                    h6 {{bookLists[list].owner}}
     
 
-    //- script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
-    script(src="../js/angular-offline.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
+    //-script(src="../js/angular-offline.js")
     script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
     //- script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
     script(src="../js/library.js")

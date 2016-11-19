@@ -69,7 +69,7 @@
           <div id="search">
             <input placeholder="Search..." ng-model="searchTerm" ng-change="categoryData.categoryModel.tags=''"/><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
           </div>
-          <div id="filters">{{showModal}}
+          <div id="filters">
             <div class="select-wrapper"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg>
               <select name="categoryFilter" ng-model="categoryData.categoryModel.tags" ng-change="change()">
                 <option value="">All Categories</option>
@@ -83,23 +83,22 @@
     <section>
       <div class="wrapper">
         <div ng-show="categoryData.categoryModel.tags || searchTerm" class="filter-wrapper">
-          <div class="filter-growl"> <span>Only showing "{{categoryData.categoryModel.tags}}{{searchTerm}}"</span><span ng-click="clearAll()" class="close">Dismiss</span>
-          </div>
+          <div class="filter-growl"> <span>Only showing "{{categoryData.categoryModel.tags}}{{searchTerm}}"</span><span ng-click="clearAll()" class="close">Dismiss</span></div>
         </div>
         <ul id="books">
-          <li ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true">
+          <li ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true track by $index">
             <div class="image-container"><a href="{{book.url}}" target="_blank" title="{{book.title}}"><img alt="{{book.title}}" ng-src="../img/book-covers/{{book.image}}" class="cover"/></a></div>
             <div class="book-info"><a href="{{book.url}}" target="_blank" title="{{book.title}}">
                 <h4 class="title">{{ book.title | limitTo: 60 }}{{ book.title.length > 60 ? '...' : ''}}</h4></a>
               <h5><em>by </em>{{ book.author }}</h5>
               <ul class="tags">
-                <li ng-repeat="tag in book.tags" ng-click="categoryData.categoryModel.tags = tag">{{ tag }}</li>
+                <li ng-repeat="tag in book.tags track by $index" ng-click="clearAll(); categoryData.categoryModel.tags = tag">{{ tag }}</li>
               </ul>
-              <ul ng-click="$parent.showModal=true" class="recommendations">
+              <ul ng-click="$parent.showModal=true; setModalData(book)" class="recommendations">
                 <li><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,3H7A2,2 0 0,0 5,5V21L12,18L19,21V5C19,3.89 18.1,3 17,3Z" /></svg>
                 </li>
                 <li class="count">{{book.recommendations.length}}</li>
-                <li ng-repeat="list in book.recommendations | orderBy: random(book.recommendations.length)"> <img ng-src="../img/book-recommendations/{{bookLists[list].image}}"/></li>
+                <li ng-repeat="list in book.recommendations track by $index"> <img ng-src="../img/book-recommendations/{{bookLists[list].image}}"/></li>
               </ul>
             </div>
           </li>
@@ -111,17 +110,27 @@
     <div id="modal-wrapper" ng-show="showModal" class="ng-hide">
       <div ng-click="showModal=false" class="shade">
         <div ng-click="$event.stopPropagation();" class="container">
-          <div class="title">Hello world!</div>
-          <div ng-click="showModal=false" class="close">Close</div>
+          <header>
+            <div class="title"> 
+              <h6>{{currentRecommendations.recommendations.length}} Recommendation<span ng-hide="currentRecommendations.recommendations.length = 1">s</span> for </h6>
+              <h4>{{modalBookTitle}}</h4>
+            </div>
+            <div ng-click="showModal=false" class="close"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+            </div>
+          </header>
           <div class="scroll-area">
-            <li>List</li>
-            <li>List</li>
-            <li>List</li>
+            <ul>
+              <li ng-repeat="list in modalBookRecommendations track by $index"><a ng-href="{{bookLists[list].url}}?ref=uxtools.co"><img ng-src="../img/book-recommendations/{{bookLists[list].image}}"/>
+                  <div class="content">
+                    <h5>{{bookLists[list].name}}</h5>
+                    <h6>{{bookLists[list].owner}}</h6>
+                  </div></a></li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-    <script src="../js/angular-offline.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
     <script src="../js/library.js"></script>
     <script type="text/javascript" id="inspectletjs">
