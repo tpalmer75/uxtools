@@ -128,8 +128,8 @@ html(ng-app="uxLibrary")
         .container(ng-click="$event.stopPropagation();")
           header
             .title 
-              h6 {{currentRecommendations.recommendations.length}} Recommendation
-                span(ng-hide="currentRecommendations.recommendations.length = 1") s
+              h6 {{modalBookRecommendations.length}} Recommendation
+                span(ng-hide="test.length = 1") s
                 |  for 
               h4 {{modalBookTitle}}
             .close(ng-click="showModal=false")
@@ -137,7 +137,7 @@ html(ng-app="uxLibrary")
           .scroll-area
             ul
               li(ng-repeat="list in modalBookRecommendations track by $index")
-                a(ng-href="{{bookLists[list].url}}?ref=uxtools.co")
+                a(target="_blank" ng-href="{{bookLists[list].url}}?ref=uxtools.co")
                   img(ng-src="../img/book-recommendations/{{bookLists[list].image}}")
                   .content
                     h5 {{bookLists[list].name}}

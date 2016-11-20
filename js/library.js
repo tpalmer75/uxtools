@@ -46,6 +46,10 @@ angular.module('uxLibrary', ['ngAnimate'])
         {name: "Data & Analytics", value: "Data & Analytics"},
         {name: "Communication", value: "Communication"},
         {name: "Career", value: "Career"},
+        {name: "Creativity", value: "Creativity"},
+        {name: "Branding", value: "Branding"},
+        {name: "Visual Design", value: "Visual Design"},
+        {name: "Psychology", value: "Psychology"},
     ]
   };
 })
@@ -78,7 +82,7 @@ angular.module('uxLibrary', ['ngAnimate'])
         ],
         image: "krug.png",
         recommendations: [
-            "002","003","004","005","006","007","009","010","011"
+            "002","003","004","005","006","007","009","010","011","012","013"
         ]
     }, {
         title: "Mobile First",
@@ -99,7 +103,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Usability"
         ],
         recommendations: [
-            "001","003","005","006","009"
+            "001","003","005","006","009","012"
         ],
         image: "norman.png",
     }, {
@@ -136,14 +140,14 @@ angular.module('uxLibrary', ['ngAnimate'])
         ],
         image: "merholz.png",
     }, {
-        title: "A Practical Guide to Info Architecture",
+        title: "A Practical Guide to Information Architecture",
         author: "Donna Spencer",
         url: "http://amzn.to/2eTajEK",
         tags: [
             "Info Architecture"
         ],
         recommendations: [
-            "001",
+            "001","013"
         ],
         image: "spencer.png",
     }, {
@@ -220,7 +224,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Interaction Design"
         ],
         recommendations: [
-            "002","004","008","009"
+            "002","004","008","009","012"
         ],
         image: "saffer.jpg",
     }, {
@@ -264,7 +268,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Agile", "General UX"
         ],
         recommendations: [
-            "002","003","006","008","009","010"
+            "002","003","006","008","009","010","013"
         ],
         image: "gothelf.jpg",
     }, {
@@ -305,10 +309,10 @@ angular.module('uxLibrary', ['ngAnimate'])
         author: "Ellen Lupton",
         url: "http://amzn.to/2fM0Exi",
         tags: [
-            "Typography"
+            "Typography", "Visual Design"
         ],
         recommendations: [
-            "003"
+            "003","012"
         ],
         image: "lupton.jpg",
     }, {
@@ -407,7 +411,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "005","006","009"
+            "005","006","009","012"
         ],
         image: "lidwell.jpg",
     }, {
@@ -440,7 +444,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "006","007","010","011"
+            "006","007","010","011","013"
         ],
         image: "allen.jpg",
     }, {
@@ -836,7 +840,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Data & Analytics"
         ],
         recommendations: [
-            "009",
+            "009","012"
         ],
         image: "few.jpg",
     }, {
@@ -847,7 +851,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Usability"
         ],
         recommendations: [
-            "010","011"
+            "010","011","013"
         ],
         image: "reiss.jpg",
     }, {
@@ -869,9 +873,152 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Mobile & Repsonsive","Usability"
         ],
         recommendations: [
-            "010"
+            "010","013"
         ],
         image: "nielsen-2.jpg",
+    }, {
+        title: "A Pattern Language for Web Usability",
+        author: "Ian Graham",
+        url: "http://amzn.to/2eSloHD",
+        tags: [
+            "Usability"
+        ],
+        recommendations: [
+            "012"
+        ],
+        image: "graham.jpg",
+    }, {
+        title: "The Laws of Simplicity (Simplicity: Design, Technology, Business, Life)",
+        author: "Joan Maeda",
+        url: "http://amzn.to/2fQ1f1Z",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "012"
+        ],
+        image: "maeda.jpg",
+    }, {
+        title: "Mental Models",
+        author: "Indie Young",
+        url: "http://amzn.to/2fQ5drn",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "012"
+        ],
+        image: "young.jpg",
+    }, {
+        title: "Designing Interactions",
+        author: "Bill Moggridge",
+        url: "http://amzn.to/2g8HRhg",
+        tags: [
+            "Interaction Design"
+        ],
+        recommendations: [
+            "012","013"
+        ],
+        image: "moggridge.jpg",
+    }, {
+        title: "Visualization Analysis and Design",
+        author: "Tamara Munzner",
+        url: "http://amzn.to/2gvJGJ4",
+        tags: [
+            "Data & Analytics"
+        ],
+        recommendations: [
+            "012"
+        ],
+        image: "munzner.jpg",
+    }, {
+        title: "Six Thinking Hats",
+        author: "Edward de Bono",
+        url: "http://amzn.to/2fbSv4C",
+        tags: [
+            "Career", "Creativity"
+        ],
+        recommendations: [
+            "012"
+        ],
+        image: "bono.jpg",
+    }, {
+        title: "History of Modern Design",
+        author: "David Raizman",
+        url: "http://amzn.to/2g5QiIU",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "012"
+        ],
+        image: "raizman.jpg",
+    }, {
+        title: "Designing Brand Identity: An Essential Guide for the Whole Branding Team",
+        author: "Alina Wheeler",
+        url: "http://amzn.to/2g5QiIU",
+        tags: [
+            "Branding", "Visual Design"
+        ],
+        recommendations: [
+            "012","013"
+        ],
+        image: "wheeler.jpg",
+    }, {
+        title: "Just My Type: A Book About Fonts",
+        author: "Simon Garfield",
+        url: "http://amzn.to/2g5QiIU",
+        tags: [
+            "Typography", "Visual Design"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "garfield.jpg",
+    }, {
+        title: "The Icon Handbook",
+        author: "Jon Hicks",
+        url: "http://iconhandbook.co.uk/?ref=uxtools.co",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "hicks.jpg",
+    }, {
+        title: "Forms that Work: Designing Web Forms for Usability",
+        author: "Caroline Jarrett, Gerry Gaffney, Steve Krug",
+        url: "http://amzn.to/2ffsnt4",
+        tags: [
+            "Usability"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "jarrett.jpg",
+    }, {
+        title: "Above the Fold, Revised Edition",
+        author: "Brian D. Miller",
+        url: "http://amzn.to/2fQ7LWr",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "miller.jpg",
+    }, {
+        title: "Hooked: How to Build Habit-Forming Products",
+        author: "Nir Eyal",
+        url: "http://amzn.to/2gvSw9t",
+        tags: [
+            "Psychology"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "eyal.jpg",
     }];
 
     var bookLists = {
@@ -940,6 +1087,18 @@ angular.module('uxLibrary', ['ngAnimate'])
             owner: "General Assembly",
             url: "https://generalassemb.ly/blog/top-user-experience-design-books/",
             image: "generalassembly.png"
+        },
+        "012": {
+            name: "7 Books Every UX Designer Should Read",
+            owner: "Prototypr.io",
+            url: "https://blog.prototypr.io/7-books-every-ux-designer-should-read-adf1ed4e68ae",
+            image: "prototypr.png"
+        },
+        "013": {
+            name: "The best UX Books",
+            owner: "Springboard",
+            url: "https://www.springboard.com/blog/ux-23-best-ux-books/",
+            image: "springboard.png"
         }
     };
 
