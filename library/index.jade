@@ -128,7 +128,9 @@ html(ng-app="uxLibrary")
         .container(ng-click="$event.stopPropagation();")
           header
             .title 
-              h6 {{modalBookRecommendations.length}} Recommendations for 
+              h6 {{modalBookRecommendations.length}} Recommendation
+                span(ng-hide="modalBookRecommendations.length == 1") s
+                |  for 
               h4 {{modalBookTitle}}
             .close(ng-click="showModal=false")
               include ../img/icons/close.svg
