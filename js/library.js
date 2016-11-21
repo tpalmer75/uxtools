@@ -191,7 +191,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Communication"
         ],
         recommendations: [
-            "001","003","004","010","011"
+            "001","003","004","010","011", "013"
         ],
         image: "weinschenk.png",
     }, {
@@ -378,7 +378,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Data & Analytics","Research"
         ],
         recommendations: [
-            "004","011"
+            "004","011","013"
         ],
         image: "albert.jpg",
     }, {
@@ -1019,6 +1019,83 @@ angular.module('uxLibrary', ['ngAnimate'])
             "013"
         ],
         image: "eyal.jpg",
+    }, {
+        title: "Predictably Irrational, Revised and Expanded Edition: The Hidden Forces That Shape Our Decisions",
+        author: "Dan Ariely",
+        url: "http://amzn.to/2fQ9KKf",
+        tags: [
+            "Psychology"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "ariely.jpg",
+    }, {
+        title: "Thinking, Fast and Slow",
+        author: "Daniel Kahneman",
+        url: "http://amzn.to/2fbVH05",
+        tags: [
+            "Psychology"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "kahneman.jpg",
+    }, {
+        title: "Designing for Emotion",
+        author: "Aaron Walter",
+        url: "http://amzn.to/2fbVQRb",
+        tags: [
+            "Psychology"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "walter.jpg",
+    }, {
+        title: "Interviewing Users: How to Uncover Compelling Insights",
+        author: "Steve Portigal",
+        url: "http://amzn.to/2fbXCSe",
+        tags: [
+            "Research"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "portigal.jpg",
+    }, {
+        title: "The Complete Guide to Writing Questionnaires: How to Get Better Information for Better Decisions",
+        author: "David F. Harris",
+        url: "http://amzn.to/2g8NRXm",
+        tags: [
+            "Research"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "harris.jpg",
+    }, {
+        title: "A Beginner's Guide to Careers in UX Design",
+        author: "Springboard",
+        url: "https://www.springboard.com/resources/guide-to-ux-jobs/?ref=uxtools.co",
+        tags: [
+            "Career", "General UX"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "springboard.jpg",
+    }, {
+        title: "Remote: Office Not Required",
+        author: "Jason Fried",
+        url: "http://amzn.to/2gvUIxU",
+        tags: [
+            "Career", "General UX"
+        ],
+        recommendations: [
+            "013"
+        ],
+        image: "fried.jpg",
     }];
 
     var bookLists = {
