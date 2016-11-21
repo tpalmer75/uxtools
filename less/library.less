@@ -1,0 +1,362 @@
+@import "reset.less";
+@import "variables.less";
+@import "header.less";
+@import "common.less";
+
+body {
+	background: #F1F1F1;
+	&.show-modal {
+		overflow: hidden;
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.wrapper {
+	max-width: 1600px;
+	margin: auto;
+}
+
+.select-wrapper {
+	position: relative;
+	svg {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		fill: white;
+	}
+	@media all and (max-width: @small-size) {
+		display: none;
+	}
+}
+select {
+	-moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 1px;
+    cursor: default;
+    color: white;
+    display: inline-block;
+    font-family: @font-stack;
+    font-size: 16px;
+    font-weight: 400;
+    //margin-top: 10px;
+    padding: 5px 16px 8px 0;
+    position: relative;
+    width: 200px;
+    //vertical-align: top;
+    //width: 100%;
+    //z-index: 2;
+}
+
+#books {
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	flex-wrap: wrap;
+	padding: 30px 20px 0;
+	@media all and (max-width: 766px) {
+		padding: 0;
+	}
+	> li {
+		width: 32%;
+		margin-bottom: 20px;
+		background: white;
+		display: flex;
+		@media all and (max-width: 1199px) {
+			width: 49%;
+			margin-bottom: 20px;
+		}
+		@media all and (max-width: 766px) {
+			width: 100%;
+			margin: 0;
+			border-bottom: 1px solid #eee;
+			padding: 10px 0;
+		}
+		.book-info {
+			padding: 20px 10px 10px 0;
+		}
+		.title {
+			font-family: @title-font-stack;
+			font-weight: bold;
+			margin-bottom: 10px;
+			line-height: 1.2;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		h5 {
+			font-size: 14px;
+			em {
+				color: #999;
+				font-style: italic;
+			}
+		}
+	}
+	.image-container {
+		width: 140px;
+		height: 180px;
+		flex: 0 0 auto;
+		text-align: center;
+		margin: -10px 20px 20px;
+		@media all and (max-width: 766px) {
+			margin-top: 10px;
+		}
+		@media all and (max-width: 499px) {
+			width: 80px;
+			height: 100px;
+			margin: 10px;
+		}
+		img {
+			//width: 100%;
+			//height: auto;
+			max-width: 100%;
+			max-height: 100%;
+			box-shadow: 0 2px 5px fade(black, 10%);
+			transition: transform .2s;
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+	.tags {
+		margin-top: 10px;
+		li {
+			background: #f1f1f1;
+			border-radius: 999px;
+			padding: 5px 10px;
+			display: inline-block;
+			text-transform: uppercase;
+			letter-spacing: .75px;
+			font-size: 12px;
+			color: #777;
+			margin: 0 5px 5px 0;
+			cursor: pointer;
+			transition: background .2s;
+			&:hover {
+				background: #ddd;
+			}
+		}
+	}
+	.recommendations {
+		margin-top: 5px;
+		height: 24px;
+		overflow: hidden;
+		li {
+			display: inline-block;
+			//color: @blue-alternate;
+			//font-weight: bold;
+			vertical-align: middle;
+			cursor: pointer;
+		}
+		.count {
+			margin-right: 10px;
+		}
+		img {
+			width: 24px;
+			background-size: 500px;
+			border-radius: 50%;
+			margin-right: 5px;
+		}
+		svg {
+			fill: @blue-primary;
+		}
+		.view-all {
+			color: #999;
+			text-decoration: underline;
+			font-size: 14px;
+		}
+	}
+}
+
+.bottom-bar {
+	display: flex;
+	justify-content: space-between;
+}
+
+#search {
+	position: relative;
+	input {
+		font-family: @font-stack;
+		background-color: transparent;
+	    border: 0;
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+	    border-radius: 0;
+	    color: white;
+	    font-size: 16px;
+	    margin: 5px 0 10px;
+	    padding: 8px 0;
+	    position: relative;
+	    width: 250px;
+	    max-width: 100%;
+	    z-index: 2;
+		&::-webkit-input-placeholder {
+			color: fade(white, 50%);
+		}
+		&:-moz-placeholder {
+			color: fade(white, 50%);
+		}
+		&::-moz-placeholder {
+			color: fade(white, 50%);
+		}
+		&:-ms-input-placeholder {
+			color: fade(white, 50%);
+		}
+		@media all and (max-width: @small-size) {
+			width: 100%;
+		}
+	}
+	svg {
+		fill: white;
+		position: absolute;
+		top: 10px;
+		right: 5px;
+	}
+	@media all and (max-width: @small-size) {
+		width: 100%;
+	}
+}
+
+.filter-wrapper {
+	margin: 10px;
+	max-height: 50px;
+	opacity: 1;
+	transition: all .2s ease-in-out;
+	&.ng-hide {
+		max-height: 0;
+		opacity: 0;
+		margin-top: 0;
+		overflow: hidden;
+	}
+	&.ng-animate {
+		overflow: visible;
+	}
+}
+.filter-growl {
+	font-size: 14px;
+	color: white;
+	text-align: center;
+	color: #999;
+	margin: auto;
+	border-radius: 999px;
+	transition: box-shadow .2s;
+	svg {
+		fill: white;
+		margin-left: 10px;
+		margin-right: 2px;
+	}
+	.close {
+		text-decoration: underline;
+		margin-left: 10px;
+		cursor: pointer;
+		&:hover {
+			color: #555;
+		}
+	}
+}
+
+#modal-wrapper {
+	opacity: 1;
+	transition: opacity .2s;
+	&.ng-hide {
+		display: none;
+		opacity: 0;
+		.container {
+			transform: scale(.95);
+			@media all and (max-width: 550px) {
+				transform: translateY(100%);
+			}
+		}
+	}
+	&.ng-animate {
+		display: flex;
+	}
+	.shade {
+		position: fixed;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: fade(black, 50%);
+		z-index: 3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media all and (max-width: 550px), all and (max-height: 500px) {
+			align-items: flex-end;
+		}
+	}
+	.container {
+		background: white;
+		width: 500px;
+		height: 75%;
+		max-height: 700px;
+		display: flex;
+		flex-direction: column;
+		transform: scale(1);
+		transition: transform .2s ease-in-out;
+		@media all and (max-width: 550px), all and (max-height: 500px) {
+			width: 100%;
+			height: 80%;
+			max-height: none;
+			transform: translateY(0);
+		}
+		h6 {
+			text-transform: uppercase;
+			color: #a9a9a9;
+			letter-spacing: 1px;
+			font-weight: bold;
+			font-size: 12px;
+		}
+		header {
+			display: flex;
+			justify-content: space-between;
+			padding: 20px;
+			border-bottom: 1px solid #eee;
+			flex: 1 0 auto;
+			align-items: center;
+			h4 {
+				font-family: @title-font-stack;
+				font-weight: bold;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 5px 0;
+			}
+			.title {
+				flex: 0 1 auto;
+				overflow: hidden;
+				padding-right: 10px;
+			}
+		}
+		.scroll-area {
+			overflow-y: scroll;
+			height: 100%;
+			flex: 0 1 auto;
+			-webkit-overflow-scrolling: touch;
+			padding: 10px 0;
+		}
+		li {
+			padding: 10px 20px;
+			a {
+				display: flex;
+			}
+			img {
+				width: 36px;
+				height: 36px;
+				border-radius: 999px;
+				margin-right: 10px;
+				flex-shrink: 0;
+			}
+			h5 {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
