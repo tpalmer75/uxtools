@@ -132,14 +132,6 @@ table#scroll-table(fixed-table)
             div(title="Windows")
               include ../img/icons/windows.svg
         div.flex-col
-          div(ng-if="app.sharing.appleWatch" tooltips tooltip-template="Apple Watch")
-            div(title="Apple Watch")
-              include ../img/icons/watch.svg
-        div.flex-col
-          div(ng-if="app.sharing.appleTv" tooltips tooltip-template="Apple TV")
-            div(title="Apple TV")
-              include ../img/icons/appletv.svg
-        div.flex-col
           div(ng-if="app.sharing.pdf" tooltips tooltip-template="PDF")
             div(title="PDF")
               include ../img/icons/file-pdf-box.svg
@@ -147,6 +139,14 @@ table#scroll-table(fixed-table)
           div(ng-if="app.sharing.html" tooltips tooltip-template="HTML")
             div(title="HTML")
               include ../img/icons/html.svg
+        div.flex-col
+          div(ng-if="app.sharing.appleWatch" tooltips tooltip-template="Apple Watch")
+            div(title="Apple Watch")
+              include ../img/icons/watch.svg
+        div.flex-col
+          div(ng-if="app.sharing.appleTv" tooltips tooltip-template="Apple TV")
+            div(title="Apple TV")
+              include ../img/icons/appletv.svg
 
       td(ng-if="isFilterVisible('Handoff');")
         div(ng-if="app.handoff")
