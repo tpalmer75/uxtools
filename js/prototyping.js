@@ -714,6 +714,39 @@ angular.module('uxTools.prototyping', [])
         "heatmaps": false,
         "sensors": true
         // "mobileOnly": true,
+    }, {
+        "name": "Mockplus",
+        "url": "https://www.mockplus.com/",
+        "image": {
+            "background-position": "-100 -800",
+        },
+        "platforms": {
+            "mac": true,
+            "windows": true,
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$29",
+            "purchase": ""
+        },
+        "design": true,
+        "import": {},
+        "micro": true,
+        "navigation": true,
+        "transition": true,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "html": true,
+            "web": true,
+            "android": true,
+            "iOS": true
+        },
+        "tasks": false,
+        "analytics": false,
+        "heatmaps": false,
+        "sensors": false
+        // "mobileOnly": null,
     }];
 
     var filters = [{
