@@ -10,20 +10,16 @@ $(function(){
         },
         success: function(xml){
             values = xml.responseData.feed.entries;
-
-            console.log(values);
-            
             var output = '<ul>';
 
-            var total = 3;
-
+            var total = 0;
 
             for (var i = 0; i < values.length; i++) {
                 var mediumArticle = values[i];
                 
                 if( mediumArticle["link"].indexOf('uxtools') >= 0 && total < 3){
                    output += '<li><div class="image-container"' + mediumArticle["content"]+ '</div><a href="' + mediumArticle["link"] + '"><h4>' + mediumArticle["title"].replace("in UX Tools", "").replace(/"/g, "") + '</h4></a></li>';
-                   total++;
+                   total ++;
                 }
                
             }
