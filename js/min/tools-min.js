@@ -1515,7 +1515,7 @@ angular.module('uxTools.prototyping', [])
         // "mobileOnly": true,
     }, {
         "name": "Mockplus",
-        "url": "https://www.mockplus.com/",
+        "url": "https://goo.gl/uBdBne",
         "image": {
             "background-position": "-100 -800",
         },
