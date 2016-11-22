@@ -83,7 +83,7 @@ angular.module('uxLibrary', ['ngAnimate'])
         ],
         image: "krug.png",
         recommendations: [
-            "015","002","014","003","004","005","006","007","009","010","011","012","013"
+            "015","016","002","014","003","004","005","006","007","009","010","011","012","013"
         ]
     }, {
         title: "Mobile First",
@@ -104,7 +104,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Usability"
         ],
         recommendations: [
-            "015","001","003","005","014","006","009","012"
+            "015","016","001","003","005","014","006","009","012"
         ],
         image: "norman.png",
     }, {
@@ -258,7 +258,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Process"
         ],
         recommendations: [
-            "002","003","007","015","009"
+            "016","002","003","007","015","009"
         ],
         image: "buxton.jpg",
     }, {
@@ -368,7 +368,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Info Architecture"
         ],
         recommendations: [
-            "015","004","009","014"
+            "015","016","004","009","014"
         ],
         image: "rosenfeld.jpg",
     }, {
@@ -709,7 +709,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "009"
+            "009","016"
         ],
         image: "quesenbery.jpg",
     }, {
@@ -742,7 +742,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Communication"
         ],
         recommendations: [
-            "009"
+            "016","009"
         ],
         image: "cheng.jpg",
     }, {
@@ -863,7 +863,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Research","Data & Analytics"
         ],
         recommendations: [
-            "010"
+            "016","010"
         ],
         image: "sauro.jpg",
     }, {
@@ -1061,7 +1061,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Research"
         ],
         recommendations: [
-            "013"
+            "016","013"
         ],
         image: "portigal.jpg",
     }, {
@@ -1138,7 +1138,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "015"
+            "015","016"
         ],
         image: "tidwell.jpg",
     }, {
@@ -1196,6 +1196,38 @@ angular.module('uxLibrary', ['ngAnimate'])
             "015"
         ],
         image: "casey.jpg",
+    }, {
+        title: "Content Strategy for Mobile",
+        author: "Karen McGrane",
+        url: "http://amzn.to/2gGla86",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "016"
+        ],
+        image: "mcgrane.jpg",
+    }, {
+        title: "Content Strategy at Work: Real-world Stories to Strengthen Every Interactive Project",
+        author: "Margot Bloomstein",
+        url: "http://amzn.to/2gckli3",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "016"
+        ],
+        image: "bloomstein.jpg",
+    }, {
+        title: "Design for a Perfect Screen",
+        author: "Tal Florentin",
+        url: "http://lp2.webydo.com/design-for-a-perfect-screen-ebook.html?ref=uxtools.co",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+        ],
+        image: "florentin.jpg",
     }];
 
     var bookLists = {
@@ -1288,6 +1320,12 @@ angular.module('uxLibrary', ['ngAnimate'])
             owner: "Whitney Hess",
             url: "https://whitneyhess.com/blog/2009/06/30/so-you-wanna-be-a-user-experience-designer-step-1-resources/",
             image: "whitneyhess.jpg"
+        },
+        "016": {
+            name: "Recommended Books for the UX Beginner’s Library",
+            owner: "UX Booth",
+            url: "http://www.uxbooth.com/articles/2016-user-experience-recommended-books/",
+            image: "uxbooth.png"
         }
     };
 
