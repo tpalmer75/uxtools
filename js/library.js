@@ -50,6 +50,7 @@ angular.module('uxLibrary', ['ngAnimate'])
         {name: "Branding", value: "Branding"},
         {name: "Visual Design", value: "Visual Design"},
         {name: "Psychology", value: "Psychology"},
+        {name: "Writing", value: "Writing"},
     ]
   };
 })
@@ -82,7 +83,7 @@ angular.module('uxLibrary', ['ngAnimate'])
         ],
         image: "krug.png",
         recommendations: [
-            "002","003","004","005","006","007","009","010","011","012","013"
+            "015","002","014","003","004","005","006","007","009","010","011","012","013"
         ]
     }, {
         title: "Mobile First",
@@ -103,7 +104,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Usability"
         ],
         recommendations: [
-            "001","003","005","006","009","012"
+            "015","001","003","005","014","006","009","012"
         ],
         image: "norman.png",
     }, {
@@ -114,7 +115,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Usability"
         ],
         recommendations: [
-            "001","002","003","009"
+            "015","001","002","003","009"
         ],
         image: "cooper.png",
     }, {
@@ -125,7 +126,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "001","004","005","006","007"
+            "015","001","004","005","006","007"
         ],
         image: "garrett.png",
     }, {
@@ -136,7 +137,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "001",
+            "015","001"
         ],
         image: "merholz.png",
     }, {
@@ -158,7 +159,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Communication"
         ],
         recommendations: [
-            "001",
+            "015","001"
         ],
         image: "brown.png",
     }, {
@@ -213,7 +214,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX", "Usability"
         ],
         recommendations: [
-            "002","009"
+            "002","009","015"
         ],
         image: "norman-2.jpg",
     }, {
@@ -257,7 +258,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Process"
         ],
         recommendations: [
-            "002","003","007","009"
+            "002","003","007","015","009"
         ],
         image: "buxton.jpg",
     }, {
@@ -323,7 +324,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Usability"
         ],
         recommendations: [
-            "003"
+            "003","015"
         ],
         image: "cooper-2.jpg",
     }, {
@@ -360,14 +361,14 @@ angular.module('uxLibrary', ['ngAnimate'])
         ],
         image: "resmini.jpg",
     }, {
-        title: "Information Architecture for the World Wide Web: Designing Large-Scale Web Sites",
+        title: "Information Architecture: For the Web and Beyond",
         author: "Louis Rosenfeld, Peter Morville, Jorge Arango",
         url: "http://amzn.to/2geruTZ",
         tags: [
             "Info Architecture"
         ],
         recommendations: [
-            "004","009"
+            "015","004","009","014"
         ],
         image: "rosenfeld.jpg",
     }, {
@@ -389,7 +390,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "005"
+            "015","005"
         ],
         image: "wroblewski-2.jpg",
     }, {
@@ -477,7 +478,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "006", "007"
+            "006", "007","014"
         ],
         image: "unger.jpg",
     }, {
@@ -576,7 +577,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Research", "Usability"
         ],
         recommendations: [
-            "007"
+            "015","007"
         ],
         image: "rubin.jpg",
     }, {
@@ -697,7 +698,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "009"
+            "009","014"
         ],
         image: "covert.jpg",
     }, {
@@ -807,7 +808,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Research"
         ],
         recommendations: [
-            "009"
+            "015","009"
         ],
         image: "kuniavsky.jpg",
     }, {
@@ -1096,6 +1097,105 @@ angular.module('uxLibrary', ['ngAnimate'])
             "013"
         ],
         image: "fried.jpg",
+    }, {
+        title: "Letting Go of the Words, Second Edition: Writing Web Content that Works",
+        author: "Janice Redish",
+        url: "http://amzn.to/2gElggf",
+        tags: [
+            "Writing"
+        ],
+        recommendations: [
+            "014"
+        ],
+        image: "redish.jpg",
+    }, {
+        title: "Getting Started in UX: The Complete Guide to Launching a Career in User Experience Design",
+        author: "Matthew Magain, Luke Chambers",
+        url: "http://amzn.to/2fm7RXx",
+        tags: [
+            "General UX", "Career"
+        ],
+        recommendations: [
+            "014"
+        ],
+        image: "magain.jpg",
+    }, {
+        title: "Designing for the Social Web",
+        author: "Joshua Porter",
+        url: "http://amzn.to/2fXg8jb",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "015"
+        ],
+        image: "porter.jpg",
+    }, {
+        title: "Designing Interfaces",
+        author: "Jenifer Tidwell",
+        url: "http://amzn.to/2fm5XX7",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "015"
+        ],
+        image: "tidwell.jpg",
+    }, {
+        title: "Designing Visual Interfaces: Communication Oriented Techniques",
+        author: "Kevin Mullet, Darrell Sano",
+        url: "http://amzn.to/2fjTq2Z",
+        tags: [
+            "General UX", "Communication"
+        ],
+        recommendations: [
+            "015"
+        ],
+        image: "mullet.jpg",
+    }, {
+        title: "Information Architecture: Blueprints for the Web",
+        author: "Christina Wodtke, Austin Govella",
+        url: "http://amzn.to/2fjRJTd",
+        tags: [
+            "Info Architecture"
+        ],
+        recommendations: [
+            "015"
+        ],
+        image: "wodtke.jpg",
+    }, {
+        title: "Designing Web Navigation: Optimizing the User Experience",
+        author: "James Kalbach, Aaron Gustagson",
+        url: "http://amzn.to/2fMBZft",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "015"
+        ],
+        image: "kalbach.jpg",
+    }, {
+        title: "Usability Engineering",
+        author: "Jakob Nielsen",
+        url: "http://amzn.to/2gEmzff",
+        tags: [
+            "Usability"
+        ],
+        recommendations: [
+            "015"
+        ],
+        image: "nielsen-3.jpg",
+    }, {
+        title: "Set Phasers on Stun: And Other True Tales of Design, Technology, and Human Error",
+        author: "S. M. Casey, Steven Caset",
+        url: "http://amzn.to/2gwSvS6",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "015"
+        ],
+        image: "casey.jpg",
     }];
 
     var bookLists = {
@@ -1176,6 +1276,18 @@ angular.module('uxLibrary', ['ngAnimate'])
             owner: "Springboard",
             url: "https://www.springboard.com/blog/ux-23-best-ux-books/",
             image: "springboard.png"
+        },
+        "014": {
+            name: "UX Resources for Beginners",
+            owner: "Jessica Ivins",
+            url: "http://jessicaivins.net/ux-resources-for-beginners/",
+            image: "jessicaivins.jpg"
+        },
+        "015": {
+            name: "So you wanna be a user experience designer — Step 1: Resources",
+            owner: "Whitney Hess",
+            url: "https://whitneyhess.com/blog/2009/06/30/so-you-wanna-be-a-user-experience-designer-step-1-resources/",
+            image: "whitneyhess.jpg"
         }
     };
 
