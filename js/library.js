@@ -1085,7 +1085,7 @@ angular.module('uxLibrary', ['ngAnimate'])
         recommendations: [
             "013"
         ],
-        image: "springboard.jpg",
+        image: "springboard.png",
     }, {
         title: "Remote: Office Not Required",
         author: "Jason Fried",
