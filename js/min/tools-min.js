@@ -1459,7 +1459,7 @@ angular.module('uxTools.prototyping', [])
         "responsive": true,
         "pricing": {
             "free": false,
-            "subscription": "$19",
+            "subscription": "$29",
             "purchase": "$495"
         }
     }, {
@@ -1936,6 +1936,29 @@ angular.module('uxTools.handoff', [])
         "pricing": {
             "free": false,
             "subscription": "$20"
+        }
+    }, {
+        "name": "InVision",
+        "url": "https://www.invisionapp.com/",
+        "image": {
+            "background-position": "-300 -400",
+        },
+        "platforms": {
+            "web": true
+        },
+        "programs": {
+            "sketch": true,
+        },
+        "specs": true,
+        "measure": true,
+        "comments": true,
+        "revisions": false,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$15"
         }
     }];
 
