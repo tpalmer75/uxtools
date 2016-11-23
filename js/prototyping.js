@@ -660,7 +660,7 @@ angular.module('uxTools.prototyping', [])
         "responsive": true,
         "pricing": {
             "free": false,
-            "subscription": "$19",
+            "subscription": "$29",
             "purchase": "$495"
         }
     }, {

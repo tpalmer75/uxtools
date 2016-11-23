@@ -281,6 +281,29 @@ angular.module('uxTools.handoff', [])
             "free": false,
             "subscription": "$20"
         }
+    }, {
+        "name": "InVision",
+        "url": "https://www.invisionapp.com/",
+        "image": {
+            "background-position": "-300 -400",
+        },
+        "platforms": {
+            "web": true
+        },
+        "programs": {
+            "sketch": true,
+        },
+        "specs": true,
+        "measure": true,
+        "comments": true,
+        "revisions": false,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$15"
+        }
     }];
 
     var filters = [
