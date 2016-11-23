@@ -747,6 +747,70 @@ angular.module('uxTools.prototyping', [])
         "heatmaps": false,
         "sensors": false
         // "mobileOnly": null,
+    }, {
+        "name": "Pidoco",
+        "url": "https://pidoco.com/",
+        "image": {
+            "background-position": "-200 -800",
+        },
+        "platforms": {
+            "web": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$12",
+            "purchase": ""
+        },
+        "design": false,
+        "import": {},
+        "micro": false,
+        "navigation": true,
+        "transition": true,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "html": true,
+            "web": true,
+        },
+        "tasks": false,
+        "analytics": false,
+        "heatmaps": false,
+        "sensors": false
+        // "mobileOnly": null,
+    }, {
+        "name": "AppCooker",
+        "url": "http://www.appcooker.com/",
+        "image": {
+            "background-position": "-300 -800",
+        },
+        "platforms": {
+            "web": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$29"
+        },
+        "design": true,
+        "import": {
+            "dropbox": true,
+            "drive": true,
+            "icloud": true
+        },
+        "micro": false,
+        "navigation": true,
+        "transition": true,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "iOS": true,
+        },
+        "handoff": false,
+        "tasks": false,
+        "analytics": false,
+        "heatmaps": false,
+        "sensors": false
+        // "mobileOnly": null,
     }];
 
     var filters = [{
