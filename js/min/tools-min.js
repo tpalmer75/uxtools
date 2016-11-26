@@ -1560,9 +1560,9 @@ angular.module('uxTools.prototyping', [])
             "subscription": "$12",
             "purchase": ""
         },
-        "design": false,
+        "design": true,
         "import": {},
-        "micro": false,
+        "micro": true,
         "navigation": true,
         "transition": true,
         "data": false,
@@ -1570,6 +1570,9 @@ angular.module('uxTools.prototyping', [])
         "sharing": {
             "html": true,
             "web": true,
+            "iOS": true,
+            "android": true,
+            "pdf": true
         },
         "tasks": false,
         "analytics": false,
@@ -1583,7 +1586,7 @@ angular.module('uxTools.prototyping', [])
             "background-position": "-300 -800",
         },
         "platforms": {
-            "web": true
+            "iOS": true
         },
         "pricing": {
             "free": false,
@@ -1603,6 +1606,7 @@ angular.module('uxTools.prototyping', [])
         "code": false,
         "sharing": {
             "iOS": true,
+            "pdf": true
         },
         "handoff": false,
         "tasks": false,
