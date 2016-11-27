@@ -83,7 +83,7 @@ angular.module('uxLibrary', ['ngAnimate'])
         ],
         image: "krug.png",
         recommendations: [
-            "015","016","002","014","003","004","005","006","007","009","010","011","012","013"
+            "015","016","017","002","014","003","004","005","006","007","009","010","011","012","013"
         ]
     }, {
         title: "Mobile First",
@@ -192,7 +192,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Communication"
         ],
         recommendations: [
-            "001","003","004","010","011", "013"
+            "017","001","003","004","010","011", "013"
         ],
         image: "weinschenk.png",
     }, {
@@ -280,7 +280,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Research","Usability"
         ],
         recommendations: [
-            "003","007","010"
+            "017","003","007","010"
         ],
         image: "krug-2.jpg",
     }, {
@@ -379,7 +379,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Data & Analytics","Research"
         ],
         recommendations: [
-            "004","011","013"
+            "017","004","011","013"
         ],
         image: "albert.jpg",
     }, {
@@ -445,7 +445,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "General UX"
         ],
         recommendations: [
-            "006","007","010","011","013"
+            "017","006","007","010","011","013"
         ],
         image: "allen.jpg",
     }, {
@@ -852,7 +852,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Usability"
         ],
         recommendations: [
-            "010","011","013"
+            "017","010","011","013"
         ],
         image: "reiss.jpg",
     }, {
@@ -863,7 +863,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Research","Data & Analytics"
         ],
         recommendations: [
-            "016","010"
+            "017","016","010"
         ],
         image: "sauro.jpg",
     }, {
@@ -995,7 +995,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Usability"
         ],
         recommendations: [
-            "013"
+            "013","017"
         ],
         image: "jarrett.jpg",
     }, {
@@ -1228,6 +1228,39 @@ angular.module('uxLibrary', ['ngAnimate'])
         recommendations: [
         ],
         image: "florentin.jpg",
+    }, {
+        title: "Communicating the User Experience: A Practical Guide for Creating Useful UX Documentation",
+        author: "Richard Caddick, Steve Cable",
+        url: "http://amzn.to/2fAsa0j",
+        tags: [
+            "General UX","Communication"
+        ],
+        recommendations: [
+            "017"
+        ],
+        image: "caddick.jpg",
+    }, {
+        title: "Client Centric Web Design",
+        author: "Paul Boag",
+        url: "http://amzn.to/2g57e5m",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "017"
+        ],
+        image: "boag.jpg",
+    }, {
+        title: "Card Sorting",
+        author: "Donna Spencer",
+        url: "http://amzn.to/2fAxIbm",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "017"
+        ],
+        image: "spencer.jpg",
     }];
 
     var bookLists = {
@@ -1326,6 +1359,13 @@ angular.module('uxLibrary', ['ngAnimate'])
             owner: "UX Booth",
             url: "http://www.uxbooth.com/articles/2016-user-experience-recommended-books/",
             image: "uxbooth.png"
+        }
+        ,
+        "017": {
+            name: "Top 10 Best Usability, and UX Books You Should Read",
+            owner: "Susan Weinschenk",
+            url: "https://www.blog.theteamw.com/2013/01/23/top-10-best-usability-ux-and-design-books-you-should-read/",
+            image: "weinschenk.jpg"
         }
     };
 
