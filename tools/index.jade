@@ -38,7 +38,6 @@ html(ng-app="uxTools")
             ul
               li
                 a(href="/tools") 
-                  div(class="icon" title="UX Tools Newsletter")
                   span Tools
               li
                 a(href="/library") 
@@ -52,7 +51,7 @@ html(ng-app="uxTools")
               li
                 a(href="http://newsletter.uxtools.co")
                   button.small
-                    | Newsletter
+                    | Subscribe
           #hamburger(ng-click="$root.showMenu = true")
             .icon
               include ../img/icons/menu.svg
@@ -76,7 +75,7 @@ html(ng-app="uxTools")
               li
                 a(href="http://newsletter.uxtools.co")
                   include ../img/icons/email.svg
-                  span Newsletter
+                  span Subscribe
             #close.close(ng-click="$root.showMenu = false")
               include ../img/icons/close.svg
       .bottom-bar
