@@ -1279,7 +1279,7 @@ angular.module('uxLibrary', ['ngAnimate'])
         "003": {
             name: "UX Tools Book Survey",
             owner: "Uxtools.co",
-            url: "uxtools.co",
+            url: "https://blog.uxtools.co/ux-books-survey-results-a-reading-list-d19e8f518026",
             image: "uxtools.png"
         },
         "004": {
