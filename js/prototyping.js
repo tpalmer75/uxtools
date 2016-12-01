@@ -54,8 +54,8 @@ angular.module('uxTools.prototyping', [])
             "figma": true,
         },
         "micro": true,
-        "navigation": false,
-        "transition": false,
+        "navigation": true,
+        "transition": true,
         "data": true,
         "code": true,
         "sharing": {
