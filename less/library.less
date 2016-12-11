@@ -68,7 +68,13 @@ select {
 		width: 32%;
 		margin-bottom: 20px;
 		background: white;
+		box-shadow: 0 2px 5px rgba(0,0,0,.15);
+		flex-direction: column;
+		justify-content: space-between;
 		display: flex;
+		.book-wrapper {
+			display: flex;
+		}
 		@media all and (max-width: 1199px) {
 			width: 49%;
 			margin-bottom: 20px;
@@ -100,8 +106,8 @@ select {
 		}
 	}
 	.image-container {
-		width: 140px;
-		height: 180px;
+		width: 80px;
+		height: 100px;
 		flex: 0 0 auto;
 		text-align: center;
 		margin: -10px 20px 20px;
@@ -144,16 +150,37 @@ select {
 			}
 		}
 	}
+	.recommendation-wrapper {
+		padding: 10px;
+		border-top: 1px solid #ddd;
+		background: #F8F8F8;
+		transition: background .2s;
+		cursor: pointer;
+		&:hover {
+			background: #f1f1f1;
+		}
+		@media all and (max-width: 766px) {
+			background: none;
+			border-top: none;
+			margin-left: 10px;
+			&:hover {
+				background: none;
+			}
+		}
+		@media all and (max-width: 499px) {
+			margin-left: 0;
+		}
+	}
 	.recommendations {
-		margin-top: 5px;
 		height: 24px;
 		overflow: hidden;
+		width: 100%;
 		li {
 			display: inline-block;
 			//color: @blue-alternate;
 			//font-weight: bold;
 			vertical-align: middle;
-			cursor: pointer;
+			// cursor: pointer;
 		}
 		.count {
 			margin-right: 10px;
