@@ -104,7 +104,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Usability"
         ],
         recommendations: [
-            "015","016","001","003","005","014","006","009","012"
+            "015","018","016","001","003","005","014","006","009","012",
         ],
         image: "norman.png",
     }, {
@@ -654,7 +654,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Creativity"
         ],
         recommendations: [
-            "008"
+            "008","018"
         ],
         image: "catmull.jpg",
     }, {
@@ -1039,7 +1039,7 @@ angular.module('uxLibrary', ['ngAnimate'])
             "Psychology"
         ],
         recommendations: [
-            "013"
+            "018", "013"
         ],
         image: "kahneman.jpg",
     }, {
@@ -1261,6 +1261,314 @@ angular.module('uxLibrary', ['ngAnimate'])
             "017"
         ],
         image: "spencer.jpg",
+    }, {
+        title: "The Vignelli Canon",
+        author: "Massimo Vignelli",
+        url: "http://amzn.to/2h727jO",
+        tags: [
+            "Visual Design", "Typography"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "Vignelli.jpg",
+    }, {
+        title: "The Vignelli Canon",
+        author: "Massimo Vignelli",
+        url: "http://amzn.to/2h727jO",
+        tags: [
+            "Visual Design", "Typography"
+        ],
+        recommendations: [
+            "018", "019"
+        ],
+        image: "Vignelli.jpg",
+    }, {
+        title: "Atomic Design",
+        author: "Brad Frost",
+        url: "http://shop.bradfrost.com/collections/frontpage/products/atomic-design",
+        tags: [
+            "Interaction Design"
+        ],
+        recommendations: [
+            "019"
+        ],
+        image: "frost.png",
+    }, {
+        title: "Less But Better",
+        author: "Dieter Rams",
+        url: "http://amzn.to/2hjvEqw",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "rams.jpg",
+    }, {
+        title: "Less But Better",
+        author: "Dieter Rams",
+        url: "http://amzn.to/2hjvEqw",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "rams.jpg",
+    }, {
+        title: "Thoughts on Design",
+        author: "Paul Rand",
+        url: "http://amzn.to/2gxbmLq",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "rand.jpg",
+    }, {
+        title: "Grid Systems in Graphic Design: A Visual Communication Manual for Graphic Designers, Typographers and Three Dimensional Designers",
+        author: "Josef Müller-Brockmann",
+        url: "http://amzn.to/2gq2OYk",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "muller.jpg",
+    }, {
+        title: "Interaction of Color",
+        author: "Josef Albers",
+        url: "http://amzn.to/2gq6Dga",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "albers.jpg",
+    }, {
+        title: "A5/05: Lufthansa and Graphic Design: Visual History of an Airplane",
+        author: "Jens Müller",
+        url: "http://amzn.to/2hjvbVc",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "muller-2.jpg",
+    }, {
+        title: "The Graphic Artist and His Design Problems",
+        author: "Josef Müller-Brockmann",
+        url: "http://amzn.to/2hjAjJ3",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "muller-3.jpg",
+    }, {
+        title: "The Visual Display of Quantitative Information",
+        author: "Edward Tufte",
+        url: "http://amzn.to/2hjB3Og",
+        tags: [
+            "Visual Design", "Data & Analytics"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "tufte.jpg",
+    }, {
+        title: "The Art of Looking Sideways",
+        author: "Alan Fletcher",
+        url: "http://amzn.to/2hjBto5",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "fletcher.jpg",
+    }, {
+        title: "The Laws of Simplicity: Design, Technology, Business, Life",
+        author: "Joan Maeda",
+        url: "http://amzn.to/2hjzMGU",
+        tags: [
+            "General UX", "Usability"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "maeda-2.jpg",
+    }, {
+        title: "The Elements of Color: A Treatise on the Color System of Johannes Itten Based on His Book the Art of Colo",
+        author: "Johannes Itten",
+        url: "http://amzn.to/2hjDGzK",
+        tags: [
+            "General UX", "Usability"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "itten.jpg",
+    }, {
+        title: "Tokujin Yoshioka",
+        author: "Tokujin Yoshioka",
+        url: "http://amzn.to/2gN5nQf",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "yoshioka.jpg",
+    }, {
+        title: "Where Good Ideas Come From: The Natural History of Innovation",
+        author: "Steve Johnson",
+        url: "http://amzn.to/2hglJkW",
+        tags: [
+            "Creativity"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "johnson.jpg",
+    }, {
+        title: "Change by Design: How Design Thinking Transforms Organizations and Inspires Innovation",
+        author: "Tim Brown",
+        url: "http://amzn.to/2hjysnx",
+        tags: [
+            "Creativity"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "brown.jpg",
+    }, {
+        title: "The Monocle Guide to Better Living",
+        author: "Andrew Tuck",
+        url: "http://amzn.to/2gn4WuS",
+        tags: [
+            "Creativity", "Career"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "tuck.jpg",
+    }, {
+        title: "Living with Complexity",
+        author: "Donald A. Norman",
+        url: "http://amzn.to/2hgrLSE",
+        tags: [
+            "Usability", "General UX"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "norman-3.jpg",
+    }, {
+        title: "The Paradox of Choice: Why More Is Less",
+        author: "Barry Schwartz",
+        url: "http://amzn.to/2haRr5R",
+        tags: [
+            "Usability", "General UX"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "schwartz.jpg",
+    }, {
+        title: "Paul Rand: Conversations with Students",
+        author: "Michael Kroeger",
+        url: "http://amzn.to/2haRvm7",
+        tags: [
+            "Visual Design", "Career"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "kroeger.jpg",
+    }, {
+        title: "An Alphabetical Book About Nokia Pure",
+        author: "AApo Bovellan, Chris Merrick",
+        url: "http://amzn.to/2gN0NBM",
+        tags: [
+            "Typography"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "bovellan.jpg",
+    }, {
+        title: "The Geometry of Type: The Anatomy of 100 Essential Typefaces",
+        author: "Stephen Coles",
+        url: "http://amzn.to/2hjxwiZ",
+        tags: [
+            "Typography", "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "coles.jpg",
+    }, {
+        title: "Information is Beautiful",
+        author: "David McCandless",
+        url: "http://amzn.to/2gn58KY",
+        tags: [
+            "Data & Analytics"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "mccandless.jpg",
+    }, {
+        title: "Information is Beautiful",
+        author: "David McCandless",
+        url: "http://amzn.to/2gn58KY",
+        tags: [
+            "Data & Analytics", "Communication"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "mccandless.jpg",
+    }, {
+        title: "Steve Jobs",
+        author: "Walter Isaacson",
+        url: "http://amzn.to/2hjBQP9",
+        tags: [
+            "Creativity", "Career"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "isaacson.jpg",
+    }, {
+        title: "Ronan and Erwan Bouroullec",
+        author: "Ronan Bouroullec, Erwan Bouroullec, Anniina Koivu",
+        url: "http://amzn.to/2haSsL7",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "bouroullec.jpg",
+    }, {
+        title: "Ronan and Erwan Bouroullec",
+        author: "Ronan Bouroullec, Erwan Bouroullec, Anniina Koivu",
+        url: "http://amzn.to/2haSsL7",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "018"
+        ],
+        image: "bouroullec.jpg",
     }];
 
     var bookLists = {
@@ -1359,13 +1667,24 @@ angular.module('uxLibrary', ['ngAnimate'])
             owner: "UX Booth",
             url: "http://www.uxbooth.com/articles/2016-user-experience-recommended-books/",
             image: "uxbooth.png"
-        }
-        ,
+        },
         "017": {
             name: "Top 10 Best Usability, and UX Books You Should Read",
             owner: "Susan Weinschenk",
             url: "https://www.blog.theteamw.com/2013/01/23/top-10-best-usability-ux-and-design-books-you-should-read/",
             image: "weinschenk.jpg"
+        },
+        "018": {
+            name: "Great Books for Designers to Read in 2016",
+            owner: "Pttrns",
+            url: "https://blog.pttrns.com/great-books-for-designers-to-read-in-2016-d2ebea3763f4",
+            image: "pttrns.png"
+        },
+        "019": {
+            name: "The Most Interesting UX eBooks Published in 2016",
+            owner: "Webydo.",
+            url: "https://cmd-t.webydo.com/the-most-interesting-ux-ebooks-published-in-2016-d369bc4c3b10",
+            image: "webydo.png"
         }
     };
 
