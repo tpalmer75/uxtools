@@ -100,20 +100,22 @@ html(ng-app="uxLibrary")
             span.close(ng-click="clearAll()") Dismiss
         ul#books
           li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true track by $index")
-            .image-container
-              a(href="{{book.url}}" target="_blank" title="{{book.title}}")
-                img.cover(
-                  alt="{{book.title}}" 
-                  ng-src="../img/book-covers/{{book.image}}")
-            .book-info
-              a(href="{{book.url}}" target="_blank" title="{{book.title}}")
-                h4.title {{ book.title | limitTo: 60 }}{{ book.title.length > 60 ? '...' : ''}}
-              h5
-                em by 
-                | {{ book.author }}
-              ul.tags
-                li(ng-repeat="tag in book.tags track by $index" ng-click="clearAll(); categoryData.categoryModel.tags = tag") {{ tag }}
-              ul.recommendations(ng-click="$parent.showModal=true; setModalData(book)")
+            .book-wrapper
+              .image-container
+                a(href="{{book.url}}" target="_blank" title="{{book.title}}")
+                  img.cover(
+                    alt="{{book.title}}" 
+                    ng-src="../img/book-covers/{{book.image}}")
+              .book-info
+                a(href="{{book.url}}" target="_blank" title="{{book.title}}")
+                  h4.title {{ book.title | limitTo: 60 }}{{ book.title.length > 60 ? '...' : ''}}
+                h5
+                  em by 
+                  | {{ book.author }}
+                ul.tags
+                  li(ng-repeat="tag in book.tags track by $index" ng-click="clearAll(); categoryData.categoryModel.tags = tag") {{ tag }}
+            .recommendation-wrapper
+              ul.recommendations(ng-click="$parent.showModal=true; setModalData(book); __insp.push(['tagSession', 'viewed recommendations']);console.log('clicked')")
                 li
                   include ../img/icons/bookmark.svg
                 li.count {{book.recommendations.length}}
