@@ -113,7 +113,7 @@ angular.module('uxTools.prototyping', [])
         "handoff": true,
         "pricing": {
             "free": false,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": ""
         }
     }, {
@@ -141,7 +141,7 @@ angular.module('uxTools.prototyping', [])
         "handoff": true,
         "pricing": {
             "free": true,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -176,7 +176,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$12",
+            "subscription": "$12+",
             "purchase": ""
         }
     }, {
@@ -227,7 +227,7 @@ angular.module('uxTools.prototyping', [])
         "fixedHeader": true,
         "pricing": {
             "free": false,
-            "subscription": "$20",
+            "subscription": "$20+",
             "purchase": ""
         }
     }, {
@@ -249,7 +249,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$29",
+            "subscription": "$29+",
             "purchase": "$495"
         }
     }, {
@@ -269,7 +269,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$12",
+            "subscription": "$12+",
             "purchase": "$89"
         }
     }, {
@@ -288,7 +288,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$5",
+            "subscription": "$5+",
             "purchase": ""
         }
     }, {
@@ -308,7 +308,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": ""
         }
     }, {
@@ -382,7 +382,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$24",
+            "subscription": "$24+",
             "purchase": ""
         }
     }, {
@@ -402,7 +402,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": ""
         }
     }, {
@@ -427,7 +427,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -457,7 +457,7 @@ angular.module('uxTools.prototyping', [])
         "heatmap": true,
         "pricing": {
             "free": true,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": ""
         }
         // fixed header
@@ -487,7 +487,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$29",
+            "subscription": "$29+",
             "purchase": ""
         }
     }, {
@@ -509,7 +509,7 @@ angular.module('uxTools.prototyping', [])
         "analytics": true,
         "pricing": {
             "free": false,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -558,7 +558,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -581,7 +581,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$16",
+            "subscription": "$16+",
             "purchase": null
         }
     }, {
@@ -635,7 +635,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": null
         }
     }, {
@@ -660,7 +660,7 @@ angular.module('uxTools.prototyping', [])
         "responsive": true,
         "pricing": {
             "free": false,
-            "subscription": "$29",
+            "subscription": "$29+",
             "purchase": "$495"
         }
     }, {
@@ -679,7 +679,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$20",
+            "subscription": "$20+",
             "purchase": ""
         }
     }, {
@@ -726,7 +726,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$29",
+            "subscription": "$29+",
             "purchase": ""
         },
         "design": true,
@@ -758,7 +758,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$12",
+            "subscription": "$12+",
             "purchase": ""
         },
         "design": true,

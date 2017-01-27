@@ -912,7 +912,7 @@ angular.module('uxTools.prototyping', [])
         "handoff": true,
         "pricing": {
             "free": false,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": ""
         }
     }, {
@@ -940,7 +940,7 @@ angular.module('uxTools.prototyping', [])
         "handoff": true,
         "pricing": {
             "free": true,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -975,7 +975,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$12",
+            "subscription": "$12+",
             "purchase": ""
         }
     }, {
@@ -1026,7 +1026,7 @@ angular.module('uxTools.prototyping', [])
         "fixedHeader": true,
         "pricing": {
             "free": false,
-            "subscription": "$20",
+            "subscription": "$20+",
             "purchase": ""
         }
     }, {
@@ -1048,7 +1048,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$29",
+            "subscription": "$29+",
             "purchase": "$495"
         }
     }, {
@@ -1068,7 +1068,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$12",
+            "subscription": "$12+",
             "purchase": "$89"
         }
     }, {
@@ -1087,7 +1087,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$5",
+            "subscription": "$5+",
             "purchase": ""
         }
     }, {
@@ -1107,7 +1107,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": ""
         }
     }, {
@@ -1181,7 +1181,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$24",
+            "subscription": "$24+",
             "purchase": ""
         }
     }, {
@@ -1201,7 +1201,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": ""
         }
     }, {
@@ -1226,7 +1226,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -1256,7 +1256,7 @@ angular.module('uxTools.prototyping', [])
         "heatmap": true,
         "pricing": {
             "free": true,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": ""
         }
         // fixed header
@@ -1286,7 +1286,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$29",
+            "subscription": "$29+",
             "purchase": ""
         }
     }, {
@@ -1308,7 +1308,7 @@ angular.module('uxTools.prototyping', [])
         "analytics": true,
         "pricing": {
             "free": false,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -1357,7 +1357,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -1380,7 +1380,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$16",
+            "subscription": "$16+",
             "purchase": null
         }
     }, {
@@ -1434,7 +1434,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$19",
+            "subscription": "$19+",
             "purchase": null
         }
     }, {
@@ -1459,7 +1459,7 @@ angular.module('uxTools.prototyping', [])
         "responsive": true,
         "pricing": {
             "free": false,
-            "subscription": "$29",
+            "subscription": "$29+",
             "purchase": "$495"
         }
     }, {
@@ -1478,7 +1478,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$20",
+            "subscription": "$20+",
             "purchase": ""
         }
     }, {
@@ -1525,7 +1525,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$29",
+            "subscription": "$29+",
             "purchase": ""
         },
         "design": true,
@@ -1557,7 +1557,7 @@ angular.module('uxTools.prototyping', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$12",
+            "subscription": "$12+",
             "purchase": ""
         },
         "design": true,
@@ -1790,7 +1790,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -1827,7 +1827,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$7",
+            "subscription": "$7+",
             "purchase": ""
         }
     }, {
@@ -1909,7 +1909,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
         // Visual diffs
@@ -1952,7 +1952,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$20",
+            "subscription": "$20+",
             "purchase": ""
         }
     }, {
@@ -1979,7 +1979,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$9",
+            "subscription": "$9+",
             "purchase": ""
         }
     }, {
@@ -2003,7 +2003,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$20"
+            "subscription": "$20+"
         }
     }, {
         "name": "InVision",
@@ -2026,7 +2026,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$15"
+            "subscription": "$15+"
         }
     }];
 
@@ -2193,7 +2193,7 @@ angular.module('uxTools.monitoring', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$39"
+            "subscription": "$39+"
         }
     }, {
         "name": "Lucky Orange",
@@ -2215,7 +2215,7 @@ angular.module('uxTools.monitoring', [])
         "playbackSpeed": true,
         "pricing": {
             "free": false,
-            "subscription": "$10"
+            "subscription": "$10+"
         }
         // can watch live sessions
         // can show trending referrers
@@ -2240,7 +2240,7 @@ angular.module('uxTools.monitoring', [])
         "taylorChoice": true,
         "pricing": {
             "free": false,
-            "subscription": "$199"
+            "subscription": "$199+"
         }
         // Can search according the the html element a user clicked
         // can watch live sessions
@@ -2262,7 +2262,7 @@ angular.module('uxTools.monitoring', [])
         "skipInactivity": true,
         "pricing": {
             "free": false,
-            "subscription": "$29"
+            "subscription": "$29+"
         }
         // host custom surveys like Qualtrics
     }, {
@@ -2281,7 +2281,7 @@ angular.module('uxTools.monitoring', [])
         "skipInactivity": true,
         "pricing": {
             "free": false,
-            "subscription": "$29"
+            "subscription": "$29+"
         }
     }, {
         "name": "UserTrack",
@@ -2315,7 +2315,7 @@ angular.module('uxTools.monitoring', [])
         "formAnalytics": true,
         "pricing": {
             "free": false,
-            "subscription": "$40"
+            "subscription": "$40+"
         }
     }, {
         "name": "Jaco",
@@ -2334,7 +2334,29 @@ angular.module('uxTools.monitoring', [])
         "playbackSpeed": true,
         "pricing": {
             "free": false,
-            "subscription": "$39"
+            "subscription": "$39+"
+        }
+        // Can search according the the html element a user clicked
+        // can watch live sessions
+    }, {
+        "name": "Smartlook",
+        "url": "https://www.smartlook.com/",
+        "image": {
+            "background-position": "-400 -800",
+        },
+        "platforms": {
+            "web": true
+        },
+        "playback": true,
+        "tags": false,
+        "location": true,
+        "console": false,
+        "skipInactivity": true,
+        "playbackSpeed": true,
+        "jumpBack": true,
+        "pricing": {
+            "free": true,
+            "subscription": "$16+"
         }
         // Can search according the the html element a user clicked
         // can watch live sessions

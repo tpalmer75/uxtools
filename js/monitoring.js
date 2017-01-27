@@ -55,7 +55,7 @@ angular.module('uxTools.monitoring', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$39"
+            "subscription": "$39+"
         }
     }, {
         "name": "Lucky Orange",
@@ -77,7 +77,7 @@ angular.module('uxTools.monitoring', [])
         "playbackSpeed": true,
         "pricing": {
             "free": false,
-            "subscription": "$10"
+            "subscription": "$10+"
         }
         // can watch live sessions
         // can show trending referrers
@@ -102,7 +102,7 @@ angular.module('uxTools.monitoring', [])
         "taylorChoice": true,
         "pricing": {
             "free": false,
-            "subscription": "$199"
+            "subscription": "$199+"
         }
         // Can search according the the html element a user clicked
         // can watch live sessions
@@ -124,7 +124,7 @@ angular.module('uxTools.monitoring', [])
         "skipInactivity": true,
         "pricing": {
             "free": false,
-            "subscription": "$29"
+            "subscription": "$29+"
         }
         // host custom surveys like Qualtrics
     }, {
@@ -143,7 +143,7 @@ angular.module('uxTools.monitoring', [])
         "skipInactivity": true,
         "pricing": {
             "free": false,
-            "subscription": "$29"
+            "subscription": "$29+"
         }
     }, {
         "name": "UserTrack",
@@ -177,7 +177,7 @@ angular.module('uxTools.monitoring', [])
         "formAnalytics": true,
         "pricing": {
             "free": false,
-            "subscription": "$40"
+            "subscription": "$40+"
         }
     }, {
         "name": "Jaco",
@@ -196,7 +196,29 @@ angular.module('uxTools.monitoring', [])
         "playbackSpeed": true,
         "pricing": {
             "free": false,
-            "subscription": "$39"
+            "subscription": "$39+"
+        }
+        // Can search according the the html element a user clicked
+        // can watch live sessions
+    }, {
+        "name": "Smartlook",
+        "url": "https://www.smartlook.com/",
+        "image": {
+            "background-position": "-400 -800",
+        },
+        "platforms": {
+            "web": true
+        },
+        "playback": true,
+        "tags": false,
+        "location": true,
+        "console": false,
+        "skipInactivity": true,
+        "playbackSpeed": true,
+        "jumpBack": true,
+        "pricing": {
+            "free": true,
+            "subscription": "$16+"
         }
         // Can search according the the html element a user clicked
         // can watch live sessions

@@ -66,7 +66,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
     }, {
@@ -103,7 +103,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$7",
+            "subscription": "$7+",
             "purchase": ""
         }
     }, {
@@ -185,7 +185,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$15",
+            "subscription": "$15+",
             "purchase": ""
         }
         // Visual diffs
@@ -228,7 +228,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$20",
+            "subscription": "$20+",
             "purchase": ""
         }
     }, {
@@ -255,7 +255,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": true,
-            "subscription": "$9",
+            "subscription": "$9+",
             "purchase": ""
         }
     }, {
@@ -279,7 +279,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$20"
+            "subscription": "$20+"
         }
     }, {
         "name": "InVision",
@@ -302,7 +302,7 @@ angular.module('uxTools.handoff', [])
         },
         "pricing": {
             "free": false,
-            "subscription": "$15"
+            "subscription": "$15+"
         }
     }];
 
