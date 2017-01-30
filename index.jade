@@ -136,17 +136,17 @@ html(ng-app="uxTools")
             .landing-image
               a(href="http://newsletter.uxtools.co" title="UX Tools Newsletter")
                 img.illustration(alt="illustration" src="img/illustration/toolbox-inbox.svg")
-    //- section
-    //-   .wrapper.extra-wide
-    //-     h2(style="text-align: center;") From the UX Tools Blog
-    //-     #medium
-    //-       ul
-    //-         li
-    //-           .image-container.loading
-    //-         li
-    //-           .image-container.loading
-    //-         li
-    //-           .image-container.loading
+    section
+      .wrapper.extra-wide
+        h2(style="text-align: center;") From the UX Tools Blog
+        #medium
+          ul
+            li
+              .image-container.loading
+            li
+              .image-container.loading
+            li
+              .image-container.loading
     footer
       p Made by 
         a(href="https://twitter.com/@_taylorpalmer") Taylor Palmer
@@ -155,7 +155,7 @@ html(ng-app="uxTools")
 
 
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
-    //- script(src="js/medium.js?ver=1.1" type="text/javascript")
+    script(src="js/medium.js?ver=1.1" type="text/javascript")
     script(type="text/javascript").
       
       var hamburger = document.getElementById("hamburger");
@@ -175,14 +175,7 @@ html(ng-app="uxTools")
         sidebar.classList.remove("show-menu");
       }, false);
 
-
-    //- script(type="text/javascript" id="inspectletjs").
-    //-   window.__insp = window.__insp || [];
-    //-   __insp.push(['wid', 1656300355]);
-    //-   (function() {
-    //-   function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-    //-   setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
-    //-   })();
+    script(type="text/javascript" src="https://rss2json.com/gfapi.js")
     script.
       window['_fs_debug'] = false;
       window['_fs_host'] = 'www.fullstory.com';
