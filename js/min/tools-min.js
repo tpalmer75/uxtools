@@ -1614,6 +1614,38 @@ angular.module('uxTools.prototyping', [])
         "heatmaps": false,
         "sensors": false
         // "mobileOnly": null,
+    }, {
+        "name": "TestLab",
+        "url": "http://testlab.io",
+        "image": {
+            "background-position": "-500 -800",
+        },
+        "platforms": {
+            "web": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$42+",
+            "purchase": ""
+        },
+        "design": false,
+        "import": {
+        },
+        "micro": false,
+        "navigation": true,
+        "transition": true,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "iOS": true,
+            "Android": true
+        },
+        "handoff": false,
+        "tasks": true,
+        "analytics": true,
+        "heatmaps": true,
+        "sensors": false
+        // "mobileOnly": null,
     }];
 
     var filters = [{
