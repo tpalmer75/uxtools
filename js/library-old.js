@@ -1,6 +1,80 @@
-// @codekit-prepend "_bundle/lodash-4.17.4.js"
+angular.module('uxLibrary', ['ngAnimate'])
+//angular.module('uxLibrary', [])
 
-var books = [{
+
+.controller('booksCtrl', function($scope, booksFactory, $window) {
+
+  $scope.books = booksFactory.books();
+  $scope.bookLists = booksFactory.bookLists();
+
+  // $scope.random = function() { // causes infinite rootScope loop
+  //   return 0.5 - Math.random();    
+        
+  //   };
+
+  $scope.showModal = false;
+  $scope.modalBookTitle = '';
+  // have to keep this as a stand alone array or Angular won't update scope
+  $scope.modalBookRecommendations = [];
+
+  $scope.setModalData = function(book) {
+    $scope.modalBookTitle = book.title;
+    $scope.modalBookRecommendations = book.recommendations;
+  }
+
+  $scope.clearAll = function() {
+    $scope.categoryData.categoryModel.tags='';
+    $scope.searchTerm='';
+    };
+
+  $scope.$watch('categoryData.categoryModel.tags', function() {
+    window.scrollTo(0,0);
+  });
+
+  $scope.categoryData = {
+    categoryModel: {
+        tags: ""
+    },
+    categoryOptions: [
+        {name: "General UX", value: "General UX"},
+        {name: "Typography", value: "Typography"},
+        {name: "Mobile & Responsive", value: "Mobile & Responsive"},
+        {name: "Usability", value: "Usability"},
+        {name: "Info Architecture", value: "Info Architecture"},
+        {name: "Agile", value: "Agile"},
+        {name: "Interaction Design", value: "Interaction Design"},
+        {name: "Data & Analytics", value: "Data & Analytics"},
+        {name: "Communication", value: "Communication"},
+        {name: "Career", value: "Career"},
+        {name: "Creativity", value: "Creativity"},
+        {name: "Branding", value: "Branding"},
+        {name: "Visual Design", value: "Visual Design"},
+        {name: "Psychology", value: "Psychology"},
+        {name: "Writing", value: "Writing"},
+    ]
+  };
+})
+
+.directive('scrollToTop', function($window) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function(scope, element, attrs, ngModelCtrl) {
+            // console.log('fired 1');
+            // scope.updateModel = function() {
+            //     $window.pageYOffset = "0"; 
+            //     console.log('fired 2');   
+            // }
+            angular.element(element).bind("click", function() {
+                console.log('click');
+            });
+        }
+    };
+})
+
+.factory('booksFactory', function() {
+
+    var books = [{
         title: "Don't Make Me Think",
         author: "Steve Krug",
         url: "http://amzn.to/2eOJgqS",
@@ -1498,18 +1572,18 @@ var books = [{
     }];
 
     var bookLists = {
-        "001": {
-            name: "The Only UX Reading List Ever",
+    	"001": {
+    		name: "The Only UX Reading List Ever",
             owner: "Simon Pan",
             url: "https://medium.com/interactive-mind/the-only-ux-reading-list-ever-d420edb3f4ff",
             image: "simon-pan.jpg"
-        },
-        "002": {
-            name: "User Experience Design — Best sources to learn UX",
+    	},
+    	"002": {
+    		name: "User Experience Design — Best sources to learn UX",
             owner: "Order Group",
             url: "https://blog.prototypr.io/user-experience-design-best-sources-to-learn-ux-c67bf80484ce",
             image: "order-group.png"
-        },
+    	},
         "003": {
             name: "UX Tools Book Survey",
             owner: "Uxtools.co",
@@ -1614,67 +1688,13 @@ var books = [{
         }
     };
 
-var library = new Vue({
-    el: '#library',
-
-
-    methods: {
-        clearAll: function() {
-            this.categoryData.categoryModel.tags='';
-            this.searchTerm='';
+    return {
+        books: function() {
+            return books;
         },
-        setModalData: function(book) {
-            this.modalBookTitle = book.title;
-            this.modalBookRecommendations = book.recommendations;
-        },
-        shortenedTitle: function(string) {
-            return _.truncate(string, {length: 60});
+        bookLists: function() {
+        	return bookLists;
         }
-    },
+    };
 
-
-    data: {
-        message: 'Hello Vue!',
-        showMenu: false,
-        showModal: false,
-        modalBookTitle: '',
-        modalBookRecommendations: [],
-        searchTerm: '',
-        categoryData: {
-            categoryModel: {
-                tags: ""
-            },
-            categoryOptions: [
-                {name: "General UX", value: "General UX"},
-                {name: "Typography", value: "Typography"},
-                {name: "Mobile & Responsive", value: "Mobile & Responsive"},
-                {name: "Usability", value: "Usability"},
-                {name: "Info Architecture", value: "Info Architecture"},
-                {name: "Agile", value: "Agile"},
-                {name: "Interaction Design", value: "Interaction Design"},
-                {name: "Data & Analytics", value: "Data & Analytics"},
-                {name: "Communication", value: "Communication"},
-                {name: "Career", value: "Career"},
-                {name: "Creativity", value: "Creativity"},
-                {name: "Branding", value: "Branding"},
-                {name: "Visual Design", value: "Visual Design"},
-                {name: "Psychology", value: "Psychology"},
-                {name: "Writing", value: "Writing"},
-            ]
-          },
-        books: books,
-        bookLists: bookLists
-
-    },
-    computed: {
-        orderedCategoryOptions: function() {
-            return _.orderBy(this.categoryData.categoryOptions, 'name');
-        },
-        shortenedBookTitles: function(string) {
-            return _.truncate(string);
-            //return 'foo';
-        }
-    }
 });
-
-
