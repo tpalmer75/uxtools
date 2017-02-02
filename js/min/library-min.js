@@ -17083,8 +17083,6 @@
   }
 }.call(this));
 
-// @codekit-prepend "_bundle/lodash-4.17.4.js"
-
 var books = [{
         title: "Don't Make Me Think",
         author: "Steve Krug",
@@ -18699,6 +18697,9 @@ var books = [{
         }
     };
 
+// @codekit-prepend "_bundle/lodash-4.17.4.js"
+// @codekit-prepend "_bundle/library-data.js"
+
 var library = new Vue({
     el: '#library',
 
@@ -18755,9 +18756,17 @@ var library = new Vue({
         orderedCategoryOptions: function() {
             return _.orderBy(this.categoryData.categoryOptions, 'name');
         },
+        orderedBooks: function() {
+            return _.orderBy(this.books, 'recommendations.length', 'desc')
+        },
+        filteredBooks: function() {
+            var searchTerm = this.searchTerm
+            return this.books.filter(function(book) {
+                return book.title.toLowerCase().indexOf(searchTerm) !== -1 || book.title.indexOf(searchTerm) !== -1 || book.author.toLowerCase().indexOf(searchTerm) !== -1 || book.author.indexOf(searchTerm) !== -1
+            })
+        },
         shortenedBookTitles: function(string) {
             return _.truncate(string);
-            //return 'foo';
         }
     }
 });
