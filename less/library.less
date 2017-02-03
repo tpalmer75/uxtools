@@ -258,15 +258,17 @@ select {
 	margin: 10px;
 	max-height: 50px;
 	opacity: 1;
-	transition: all .2s ease-in-out;
-	&.ng-hide {
+	transition: all .1s ease-in-out;
+	&.slide-down-enter, &.slide-down-leave-to {
 		max-height: 0;
 		opacity: 0;
 		margin-top: 0;
 		overflow: hidden;
 	}
-	&.ng-animate {
-		overflow: visible;
+	&.slide-down-enter-to, &.slide-down-leave {
+		max-height: 50px;
+		opacity: 1;
+		margin-top: 10px;
 	}
 }
 .filter-growl {
@@ -297,8 +299,8 @@ select {
 	display: flex;
 	position: relative; // to prevent header clipping
 	z-index: 3; 	    // to prevent header clipping
-	transition: all .2s;// to make vuejs animations wait
-	&.grow-enter {
+	transition: all .2s;//to make vuejs animations work
+	&.grow-enter, &.grow-leave-to {
 		.container {
 			opacity: 0;
 			transform: scale(.95);
@@ -310,7 +312,7 @@ select {
 			opacity: 0;
 		}
 	}
-	&.grow-enter-to {
+	&.grow-enter-to, &.grow-leave {
 		.shade {
 			opacity: 1;
 		}
@@ -320,30 +322,6 @@ select {
 			@media all and (max-width: 550px) {
 				transform: translateY(0);
 			}
-		}
-	}
-	&.grow-leave {
-		.container {
-			opacity: 1;
-			transform: scale(1);
-			@media all and (max-width: 550px) {
-				transform: translateY(0);
-			}
-		}
-		.shade {
-			opacity: 1;
-		}
-	}
-	&.grow-leave-to {
-		.container {
-			opacity: 0;
-			transform: scale(.95);
-			@media all and (max-width: 550px) {
-				transform: translateY(100%);
-			}
-		}
-		.shade {
-			opacity: 0;
 		}
 	}
 	.shade {

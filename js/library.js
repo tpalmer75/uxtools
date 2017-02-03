@@ -1,3 +1,5 @@
+// @FOR DEV codekit-prepend "_dev/vue-2.1.10.js"
+// @codekit-prepend "_bundle/vue-2.1.10.min.js"
 // @codekit-prepend "_bundle/lodash-4.17.4.js"
 // @codekit-prepend "_bundle/library-data.js"
 
@@ -16,10 +18,11 @@ var library = new Vue({
         },
         shortenedTitle: function(string) {
             return _.truncate(string, {length: 60});
+        },
+        scrollToTop: function() {
+            window.scrollTo(0,0);
         }
     },
-
-
     data: {
         message: 'Hello Vue!',
         showMenu: false,
