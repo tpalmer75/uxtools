@@ -294,24 +294,57 @@ select {
 
 #modal-wrapper {
 	opacity: 1;
-	transition: opacity .2s;
+	display: flex;
 	position: relative; // to prevent header clipping
 	z-index: 3; 	    // to prevent header clipping
-	&.ng-hide {
-		display: none;
-		opacity: 0;
+	transition: all .2s;// to make vuejs animations wait
+	&.grow-enter {
 		.container {
+			opacity: 0;
 			transform: scale(.95);
 			@media all and (max-width: 550px) {
 				transform: translateY(100%);
 			}
 		}
+		.shade {
+			opacity: 0;
+		}
 	}
-	&.grow-enter-active {
-		transition: 5s;
+	&.grow-enter-to {
+		.shade {
+			opacity: 1;
+		}
+		.container {			
+			opacity: 1;
+			transform: scale(1);
+			@media all and (max-width: 550px) {
+				transform: translateY(0);
+			}
+		}
 	}
-	&.ng-animate {
-		display: flex;
+	&.grow-leave {
+		.container {
+			opacity: 1;
+			transform: scale(1);
+			@media all and (max-width: 550px) {
+				transform: translateY(0);
+			}
+		}
+		.shade {
+			opacity: 1;
+		}
+	}
+	&.grow-leave-to {
+		.container {
+			opacity: 0;
+			transform: scale(.95);
+			@media all and (max-width: 550px) {
+				transform: translateY(100%);
+			}
+		}
+		.shade {
+			opacity: 0;
+		}
 	}
 	.shade {
 		position: fixed;
@@ -324,6 +357,7 @@ select {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: opacity .2s ease-in-out;
 		@media all and (max-width: 550px), all and (max-height: 500px) {
 			align-items: flex-end;
 		}
@@ -336,7 +370,7 @@ select {
 		display: flex;
 		flex-direction: column;
 		transform: scale(1);
-		transition: transform .2s ease-in-out;
+		transition: transform .2s ease-in-out, opacity .2s ease-in-out;
 		@media all and (max-width: 550px), all and (max-height: 500px) {
 			width: 100%;
 			height: 80%;
@@ -380,6 +414,8 @@ select {
 		}
 		li {
 			padding: 10px 20px;
+			background: white;
+			transition: background .1s;
 			a {
 				display: flex;
 			}
@@ -392,6 +428,9 @@ select {
 			}
 			h5 {
 				margin-bottom: 5px;
+			}
+			&:hover {
+				background: #f0f0f0;
 			}
 		}
 	}

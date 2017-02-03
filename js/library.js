@@ -48,6 +48,7 @@ var library = new Vue({
                 {name: "Psychology", value: "Psychology"},
                 {name: "Writing", value: "Writing"},
                 {name: "Research", value: "Research"},
+                {name: "Process", value: "Process"}
             ]
           },
         books: books,

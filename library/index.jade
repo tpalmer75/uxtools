@@ -85,7 +85,6 @@ html
                   placeholder="Search..." 
                   v-model="searchTerm" v-on:change="categoryData.categoryModel.tags=''")
                 include ../img/icons/magnify.svg
-                //- ng-change="categoryData.categoryModel.tags=''"
               #filters
                 .select-wrapper
                   include ../img/icons/menu-down.svg
@@ -95,12 +94,12 @@ html
                   
         section
           .wrapper
+            //- Could you get this to animate just using a variable and a class?
             .filter-wrapper(v-show="computedTags || searchTerm")
               .filter-growl 
                 span Only showing "{{computedTags}}{{searchTerm}}"
                 span.close(@click="clearAll()") Dismiss
             ul#books
-              //- li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true track by $index")
               li(v-for="book in filteredBooks")
                 .book-wrapper
                   .image-container
