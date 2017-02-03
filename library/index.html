@@ -1,5 +1,5 @@
 
-<html ng-app="uxLibrary">
+<html>
   <head>
     <title>Uxtools.co – The UX Library</title>
     <meta name="description" content="Browse the most recommended books in the UX industry, all compiled into one simple library."/>
@@ -25,117 +25,123 @@
     <meta name="theme-color" content="#ffffff"/>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet"/>
     <link href="/css/library.css?ver=1.3" rel="stylesheet" type="text/css"/>
-  </head>
-  <body ng-init="$root.showMenu = false" ng-controller="booksCtrl" ng-class="{'show-modal':showModal}">
-    <header id="main-header">
-      <div class="top-bar">
-        <h1 class="screen-reader">UX Library</h1>
-        <div class="wrapper">
-          <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
-          <div class="right">
-            <ul>
-              <li><a href="/tools"> <span>Tools</span></a></li>
-              <li><a href="/library"> <span>Library</span></a></li>
-              <li><a href="https://blog.uxtools.co"> <span>Blog</span></a></li>
-              <li><a href="/about.html"> <span>About</span></a></li>
-              <li><a href="http://newsletter.uxtools.co">
-                  <button class="small">Subscribe</button></a></li>
-            </ul>
-          </div>
-          <div id="hamburger" ng-click="$root.showMenu = true">
-            <div class="icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
-            </div><span>Menu</span>
-          </div>
-        </div>
-      </div>
-      <div id="sidebar" ng-class="{'show-menu': $root.showMenu}">
-        <div id="shade" ng-click="$root.showMenu = false" class="shade">
-          <div class="container">
-            <ul>
-              <li><a href="/tools"> <span>Tools</span></a></li>
-              <li><a href="/library"> <span>Library</span></a></li>
-              <li><a href="https://blog.uxtools.co"> <span>Blog</span></a></li>
-              <li><a href="/about.html"> <span>About</span></a></li>
-              <li><a href="http://newsletter.uxtools.co"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg><span>Subscribe</span></a></li>
-            </ul>
-            <div id="close" ng-click="$root.showMenu = false" class="close"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bottom-bar">
-        <div class="wrapper">
-          <div id="search">
-            <input placeholder="Search..." ng-model="searchTerm" ng-change="categoryData.categoryModel.tags=''"/><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-          </div>
-          <div id="filters">
-            <div class="select-wrapper"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg>
-              <select name="categoryFilter" ng-model="categoryData.categoryModel.tags" ng-change="change()">
-                <option value="">All Categories</option>
-                <option ng-repeat="option in categoryData.categoryOptions | orderBy: 'name'" value="{{option.value}}">{{option.name}}</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <section>
-      <div class="wrapper">
-        <div ng-show="categoryData.categoryModel.tags || searchTerm" class="filter-wrapper">
-          <div class="filter-growl"> <span>Only showing "{{categoryData.categoryModel.tags}}{{searchTerm}}"</span><span ng-click="clearAll()" class="close">Dismiss</span></div>
-        </div>
-        <ul id="books">
-          <li ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true track by $index">
-            <div class="book-wrapper">
-              <div class="image-container"><a href="{{book.url}}" target="_blank" title="{{book.title}}"><img alt="{{book.title}}" ng-src="../img/book-covers/{{book.image}}" class="cover"/></a></div>
-              <div class="book-info"><a href="{{book.url}}" target="_blank" title="{{book.title}}">
-                  <h4 class="title">{{ book.title | limitTo: 60 }}{{ book.title.length > 60 ? '...' : ''}}</h4></a>
-                <h5><em>by </em>{{ book.author }}</h5>
-                <ul class="tags">
-                  <li ng-repeat="tag in book.tags track by $index" ng-click="clearAll(); categoryData.categoryModel.tags = tag">{{ tag }}</li>
+    <body>
+      <div id="library" v-bind:class="{'show-modal':showModal}">
+        <header id="main-header">
+          <div class="top-bar">
+            <h1 class="screen-reader">UX Library</h1>
+            <div class="wrapper">
+              <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
+              <div class="right">
+                <ul>
+                  <li><a href="/tools"> <span>Tools</span></a></li>
+                  <li><a href="/library"> <span>Library</span></a></li>
+                  <li><a href="https://blog.uxtools.co"> <span>Blog</span></a></li>
+                  <li><a href="/about.html"> <span>About</span></a></li>
+                  <li><a href="http://newsletter.uxtools.co">
+                      <button class="small">Subscribe</button></a></li>
                 </ul>
               </div>
+              <div id="hamburger" @click="showMenu = true">
+                <div class="icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+                </div><span>Menu</span>
+              </div>
             </div>
-            <div class="recommendation-wrapper">
-              <ul ng-click="$parent.showModal=true; setModalData(book); __insp.push(['tagSession', 'viewed recommendations']);console.log('clicked')" class="recommendations">
-                <li><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,3H7A2,2 0 0,0 5,5V21L12,18L19,21V5C19,3.89 18.1,3 17,3Z" /></svg>
-                </li>
-                <li class="count">{{book.recommendations.length}}</li>
-                <li ng-repeat="list in book.recommendations track by $index"> <img ng-src="../img/book-recommendations/{{bookLists[list].image}}"/></li>
-              </ul>
+          </div>
+          <div id="sidebar" v-bind:class="{'show-menu': showMenu}">
+            <div id="shade" @click="showMenu = false" class="shade">
+              <div class="container">
+                <ul>
+                  <li><a href="/tools"> <span>Tools</span></a></li>
+                  <li><a href="/library"> <span>Library</span></a></li>
+                  <li><a href="https://blog.uxtools.co"> <span>Blog</span></a></li>
+                  <li><a href="/about.html"> <span>About</span></a></li>
+                  <li><a href="http://newsletter.uxtools.co"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg><span>Subscribe</span></a></li>
+                </ul>
+                <div id="close" ng-click="$root.showMenu = false" class="close"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+                </div>
+              </div>
             </div>
-          </li>
-          <li style="opacity: 0; height: 0;"></li>
-          <li style="opacity: 0; height: 0;"></li>
-        </ul>
-      </div>
-    </section>
-    <div id="modal-wrapper" ng-show="showModal" class="ng-hide">
-      <div ng-click="showModal=false" class="shade">
-        <div ng-click="$event.stopPropagation();" class="container">
-          <header>
-            <div class="title"> 
-              <h6>{{modalBookRecommendations.length}} Recommendation<span ng-hide="modalBookRecommendations.length == 1">s</span> for </h6>
-              <h4>{{modalBookTitle}}</h4>
+          </div>
+          <div class="bottom-bar">
+            <div class="wrapper">
+              <div id="search">
+                <input placeholder="Search..." v-model="searchTerm" v-on:change="categoryData.categoryModel.tags=''"/><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+              </div>
+              <div id="filters">
+                <div class="select-wrapper"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg>
+                  <select name="categoryFilter" v-model="categoryData.categoryModel.tags">
+                    <option value="">All Categories</option>
+                    <option v-for="option in orderedCategoryOptions" v-bind:value="option.value">{{option.name}}</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div ng-click="showModal=false" class="close"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
-            </div>
-          </header>
-          <div class="scroll-area">
-            <ul>
-              <li ng-repeat="list in modalBookRecommendations track by $index"><a target="_blank" ng-href="{{bookLists[list].url}}?ref=uxtools.co"><img ng-src="../img/book-recommendations/{{bookLists[list].image}}"/>
-                  <div class="content">
-                    <h5>{{bookLists[list].name}}</h5>
-                    <h6>{{bookLists[list].owner}}</h6>
-                  </div></a></li>
+          </div>
+        </header>
+        <section>
+          <div class="wrapper">
+            <transition name="slide-down">
+              <div v-show="computedTags || searchTerm" v-bind:class="{'showing': computedTags || searchTerm}" class="filter-wrapper">
+                <div class="filter-growl"> <span>Only showing "{{computedTags}}{{searchTerm}}"</span><span @click="clearAll()" class="close">Dismiss</span></div>
+              </div>
+            </transition>
+            <ul id="books">
+              <li v-for="book in filteredBooks">
+                <div class="book-wrapper">
+                  <div class="image-container"><a v-bind:href="book.url" target="_blank" v-bind:title="book.title"></a><img v-bind:alt="book.title" v-bind:src="'../img/book-covers/' + book.image" class="cover"/></div>
+                  <div class="book-info"><a v-bind:href="book.url" target="_blank" v-bind:title="book.title">
+                      <h4 class="title">{{ shortenedTitle(book.title) }}</h4></a>
+                    <h5><em>by </em>{{ book.author }}</h5>
+                    <ul class="tags">
+                      <li v-for="tag in book.tags" @click="clearAll(); scrollToTop(); categoryData.categoryModel.tags = tag">{{ tag }}</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="recommendation-wrapper">
+                  <ul @click="showModal=true; setModalData(book);" class="recommendations">
+                    <li><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,3H7A2,2 0 0,0 5,5V21L12,18L19,21V5C19,3.89 18.1,3 17,3Z" /></svg>
+                    </li>
+                    <li class="count">{{book.recommendations.length}}</li>
+                    <li v-for="list in book.recommendations"> <img v-bind:src="'../img/book-recommendations/' + bookLists[list].image"/></li>
+                  </ul>
+                </div>
+              </li>
+              <li style="opacity: 0; height: 0;"></li>
+              <li style="opacity: 0; height: 0;"></li>
             </ul>
           </div>
-        </div>
+        </section>
+        <transition name="grow">
+          <div id="modal-wrapper" v-show="showModal" style="display: none;">
+            <div @click="showModal=false" class="shade">
+              <div ng-click="$event.stopPropagation();" class="container">
+                <header>
+                  <div class="title"> 
+                    <h6>{{modalBookRecommendations.length}} Recommendation<span v-show="modalBookRecommendations.length !== 1">
+                        s
+                         for </span></h6>
+                    <h4>{{modalBookTitle}}</h4>
+                  </div>
+                  <div ng-click="showModal=false" class="close"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+                  </div>
+                </header>
+                <div class="scroll-area">
+                  <ul>
+                    <li v-for="list in modalBookRecommendations"><a target="_blank" v-bind:href="bookLists[list].url + '?ref=uxtools.co'"><img v-bind:src="'../img/book-recommendations/' +bookLists[list].image"/>
+                        <div class="content">
+                          <h5>{{bookLists[list].name}}</h5>
+                          <h6>{{bookLists[list].owner}}</h6>
+                        </div></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
       </div>
-    </div>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
-    <script src="../js/library.js?ver=1.2"></script>
+    </body>
+    <script src="../js/min/library-min.js?ver=1.3"></script>
     <script>
       window['_fs_debug'] = false;
       window['_fs_host'] = 'www.fullstory.com';
@@ -161,5 +167,5 @@
       ga('create', 'UA-78846271-1', 'auto');
       ga('send', 'pageview');
     </script>
-  </body>
+  </head>
 </html>

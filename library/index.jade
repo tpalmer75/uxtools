@@ -1,4 +1,4 @@
-html(ng-app="uxLibrary")
+html
   head
     title Uxtools.co – The UX Library
     meta(name="description" content="Browse the most recommended books in the UX industry, all compiled into one simple library.")
@@ -25,138 +25,126 @@ html(ng-app="uxLibrary")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
     link(href="/css/library.css?ver=1.3" rel="stylesheet" type="text/css")
 
-  body(ng-init="$root.showMenu = false" ng-controller="booksCtrl" ng-class="{'show-modal':showModal}")
-    header#main-header
-      .top-bar
-        h1.screen-reader UX Library
-        .wrapper
-          .left
-            a(href="/")
-              img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
-          .right
-            ul
-              li
-                a(href="/tools") 
-                  span Tools
-              li
-                a(href="/library") 
-                  span Library
-              li
-                a(href="https://blog.uxtools.co") 
-                  span Blog
-              li
-                a(href="/about.html") 
-                  span About
-              li
-                a(href="http://newsletter.uxtools.co")
-                  button.small
-                    | Subscribe
-          #hamburger(ng-click="$root.showMenu = true")
-            .icon
-              include ../img/icons/menu.svg
-            span Menu
-      #sidebar(ng-class="{'show-menu': $root.showMenu}")
-        #shade.shade(ng-click="$root.showMenu = false")
-          .container
-            ul
-              li
-                a(href="/tools") 
-                  span Tools
-              li
-                a(href="/library") 
-                  span Library
-              li
-                a(href="https://blog.uxtools.co") 
-                  span Blog
-              li
-                a(href="/about.html") 
-                  span About
-              li
-                a(href="http://newsletter.uxtools.co")
-                  include ../img/icons/email.svg
-                  span Subscribe
-            #close.close(ng-click="$root.showMenu = false")
-              include ../img/icons/close.svg
-      .bottom-bar
-        .wrapper
-          #search
-            input(
-              placeholder="Search..." 
-              ng-model="searchTerm"
-              ng-change="categoryData.categoryModel.tags=''")
-            include ../img/icons/magnify.svg
-          #filters
-            .select-wrapper
-              include ../img/icons/menu-down.svg
-              select(name="categoryFilter" ng-model="categoryData.categoryModel.tags" ng-change="change()")
-                option(value="") All Categories
-                option(ng-repeat="option in categoryData.categoryOptions | orderBy: 'name'" value="{{option.value}}") {{option.name}}
-                
-    section
-      .wrapper
-        .filter-wrapper(ng-show="categoryData.categoryModel.tags || searchTerm")
-          .filter-growl 
-            span Only showing "{{categoryData.categoryModel.tags}}{{searchTerm}}"
-            span.close(ng-click="clearAll()") Dismiss
-        ul#books
-          li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true track by $index")
-            .book-wrapper
-              .image-container
-                a(href="{{book.url}}" target="_blank" title="{{book.title}}")
-                  img.cover(
-                    alt="{{book.title}}" 
-                    ng-src="../img/book-covers/{{book.image}}")
-              .book-info
-                a(href="{{book.url}}" target="_blank" title="{{book.title}}")
-                  h4.title {{ book.title | limitTo: 60 }}{{ book.title.length > 60 ? '...' : ''}}
-                h5
-                  em by 
-                  | {{ book.author }}
-                ul.tags
-                  li(ng-repeat="tag in book.tags track by $index" ng-click="clearAll(); categoryData.categoryModel.tags = tag") {{ tag }}
-            .recommendation-wrapper
-              ul.recommendations(ng-click="$parent.showModal=true; setModalData(book); __insp.push(['tagSession', 'viewed recommendations']);console.log('clicked')")
-                li
-                  include ../img/icons/bookmark.svg
-                li.count {{book.recommendations.length}}
-                li(ng-repeat="list in book.recommendations track by $index") 
-                  img(ng-src="../img/book-recommendations/{{bookLists[list].image}}")
-          li(style="opacity: 0; height: 0;")
-          li(style="opacity: 0; height: 0;")
-
-    #modal-wrapper(ng-show="showModal" class="ng-hide")
-      .shade(ng-click="showModal=false")
-        .container(ng-click="$event.stopPropagation();")
-          header
-            .title 
-              h6 {{modalBookRecommendations.length}} Recommendation
-                span(ng-hide="modalBookRecommendations.length == 1") s
-                |  for 
-              h4 {{modalBookTitle}}
-            .close(ng-click="showModal=false")
-              include ../img/icons/close.svg
-          .scroll-area
-            ul
-              li(ng-repeat="list in modalBookRecommendations track by $index")
-                a(target="_blank" ng-href="{{bookLists[list].url}}?ref=uxtools.co")
-                  img(ng-src="../img/book-recommendations/{{bookLists[list].image}}")
-                  .content
-                    h5 {{bookLists[list].name}}
-                    h6 {{bookLists[list].owner}}
-    
-
-    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
-    //-script(src="../js/angular-offline.js")
-    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
-    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
-    script(src="../js/library.js?ver=1.2")
-    //- script(type="text/javascript" id="inspectletjs").
-    //-   window.__insp = window.__insp || [];
-    //-   __insp.push(['wid', 1656300355]);
-    //-   (function() {
-    //-   function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-    //-   setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
-    //-   })();
+    body
+      #library(v-bind:class="{'show-modal':showModal}")
+        header#main-header
+          .top-bar
+            h1.screen-reader UX Library
+            .wrapper
+              .left
+                a(href="/")
+                  img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
+              .right
+                ul
+                  li
+                    a(href="/tools") 
+                      span Tools
+                  li
+                    a(href="/library") 
+                      span Library
+                  li
+                    a(href="https://blog.uxtools.co") 
+                      span Blog
+                  li
+                    a(href="/about.html") 
+                      span About
+                  li
+                    a(href="http://newsletter.uxtools.co")
+                      button.small
+                        | Subscribe
+              #hamburger(@click="showMenu = true")
+                .icon
+                  include ../img/icons/menu.svg
+                span Menu
+          #sidebar(v-bind:class="{'show-menu': showMenu}")
+            #shade.shade(@click="showMenu = false")
+              .container
+                ul
+                  li
+                    a(href="/tools") 
+                      span Tools
+                  li
+                    a(href="/library") 
+                      span Library
+                  li
+                    a(href="https://blog.uxtools.co") 
+                      span Blog
+                  li
+                    a(href="/about.html") 
+                      span About
+                  li
+                    a(href="http://newsletter.uxtools.co")
+                      include ../img/icons/email.svg
+                      span Subscribe
+                #close.close(ng-click="$root.showMenu = false")
+                  include ../img/icons/close.svg
+          .bottom-bar
+            .wrapper
+              #search
+                input(
+                  placeholder="Search..." 
+                  v-model="searchTerm" v-on:change="categoryData.categoryModel.tags=''")
+                include ../img/icons/magnify.svg
+              #filters
+                .select-wrapper
+                  include ../img/icons/menu-down.svg
+                  select(name="categoryFilter" v-model="categoryData.categoryModel.tags")
+                    option(value="") All Categories
+                    option(v-for="option in orderedCategoryOptions" v-bind:value="option.value") {{option.name}}
+                  
+        section
+          .wrapper
+            transition(name="slide-down")
+              .filter-wrapper(v-show="computedTags || searchTerm" v-bind:class="{'showing': computedTags || searchTerm}")
+                .filter-growl 
+                  span Only showing "{{computedTags}}{{searchTerm}}"
+                  span.close(@click="clearAll()") Dismiss
+            ul#books
+              li(v-for="book in filteredBooks")
+                .book-wrapper
+                  .image-container
+                    a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
+                    img.cover(
+                       v-bind:alt="book.title" 
+                       v-bind:src="'../img/book-covers/' + book.image")
+                  .book-info
+                    a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
+                      h4.title {{ shortenedTitle(book.title) }}
+                    h5
+                      em by 
+                      | {{ book.author }}
+                    ul.tags
+                      li(v-for="tag in book.tags" @click="clearAll(); scrollToTop(); categoryData.categoryModel.tags = tag") {{ tag }}
+                .recommendation-wrapper
+                  ul.recommendations(@click="showModal=true; setModalData(book);")
+                    li
+                      include ../img/icons/bookmark.svg
+                    li.count {{book.recommendations.length}}
+                    li(v-for="list in book.recommendations") 
+                      img(v-bind:src="'../img/book-recommendations/' + bookLists[list].image")
+              li(style="opacity: 0; height: 0;")
+              li(style="opacity: 0; height: 0;")
+        transition(name="grow")
+          #modal-wrapper(v-show="showModal" style="display: none;")
+            .shade(@click="showModal=false")
+              .container(ng-click="$event.stopPropagation();")
+                header
+                  .title 
+                    h6 {{modalBookRecommendations.length}} Recommendation
+                      span(v-show="modalBookRecommendations.length !== 1") s
+                        |  for 
+                    h4 {{modalBookTitle}}
+                  .close(ng-click="showModal=false")
+                    include ../img/icons/close.svg
+                .scroll-area
+                  ul
+                    li(v-for="list in modalBookRecommendations")
+                      a(target="_blank" v-bind:href="bookLists[list].url + '?ref=uxtools.co'")
+                        img(v-bind:src="'../img/book-recommendations/' +bookLists[list].image")
+                        .content
+                          h5 {{bookLists[list].name}}
+                          h6 {{bookLists[list].owner}}
+    script(src="../js/min/library-min.js?ver=1.3")
     script.
       window['_fs_debug'] = false;
       window['_fs_host'] = 'www.fullstory.com';
