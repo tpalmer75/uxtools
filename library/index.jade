@@ -95,9 +95,9 @@ html
                   
         section
           .wrapper
-            .filter-wrapper(v-show="categoryData.categoryModel.tags || searchTerm")
+            .filter-wrapper(v-show="computedTags || searchTerm")
               .filter-growl 
-                span Only showing "{{categoryData.categoryModel.tags}}{{searchTerm}}"
+                span Only showing "{{computedTags}}{{searchTerm}}"
                 span.close(@click="clearAll()") Dismiss
             ul#books
               //- li(ng-repeat="book in books | filter: categoryData.categoryModel.tags | filter: searchTerm | orderBy: 'recommendations.length' : true track by $index")
@@ -125,26 +125,26 @@ html
                       img(v-bind:src="'../img/book-recommendations/' + bookLists[list].image")
               li(style="opacity: 0; height: 0;")
               li(style="opacity: 0; height: 0;")
-
-        #modal-wrapper(v-show="showModal" style="display: none;")
-          .shade(@click="showModal=false")
-            .container(ng-click="$event.stopPropagation();")
-              header
-                .title 
-                  h6 {{modalBookRecommendations.length}} Recommendation
-                    span(v-show="modalBookRecommendations.length !== 1") s
-                      |  for 
-                  h4 {{modalBookTitle}}
-    //-           .close(ng-click="showModal=false")
-    //-             include ../img/icons/close.svg
-    //-         .scroll-area
-    //-           ul
-    //-             li(ng-repeat="list in modalBookRecommendations track by $index")
-    //-               a(target="_blank" ng-href="{{bookLists[list].url}}?ref=uxtools.co")
-    //-                 img(ng-src="../img/book-recommendations/{{bookLists[list].image}}")
-    //-                 .content
-    //-                   h5 {{bookLists[list].name}}
-    //-                   h6 {{bookLists[list].owner}}
+        transition(name="grow")
+          #modal-wrapper(v-show="showModal" style="display: none;")
+            .shade(@click="showModal=false")
+              .container(ng-click="$event.stopPropagation();")
+                header
+                  .title 
+                    h6 {{modalBookRecommendations.length}} Recommendation
+                      span(v-show="modalBookRecommendations.length !== 1") s
+                        |  for 
+                    h4 {{modalBookTitle}}
+                  .close(ng-click="showModal=false")
+                    include ../img/icons/close.svg
+                .scroll-area
+                  ul
+                    li(v-for="list in modalBookRecommendations")
+                      a(target="_blank" v-bind:href="bookLists[list].url + '?ref=uxtools.co'")
+                        img(v-bind:src="'../img/book-recommendations/' +bookLists[list].image")
+                        .content
+                          h5 {{bookLists[list].name}}
+                          h6 {{bookLists[list].owner}}
 
 
 

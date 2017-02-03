@@ -1193,17 +1193,6 @@ var books = [{
             "Visual Design", "Typography"
         ],
         recommendations: [
-            "018"
-        ],
-        image: "Vignelli.jpg",
-    }, {
-        title: "The Vignelli Canon",
-        author: "Massimo Vignelli",
-        url: "http://amzn.to/2h727jO",
-        tags: [
-            "Visual Design", "Typography"
-        ],
-        recommendations: [
             "018", "019"
         ],
         image: "Vignelli.jpg",
@@ -1218,17 +1207,6 @@ var books = [{
             "019"
         ],
         image: "frost.png",
-    }, {
-        title: "Less But Better",
-        author: "Dieter Rams",
-        url: "http://amzn.to/2hjvEqw",
-        tags: [
-            "Visual Design"
-        ],
-        recommendations: [
-            "018"
-        ],
-        image: "rams.jpg",
     }, {
         title: "Less But Better",
         author: "Dieter Rams",
@@ -1443,17 +1421,6 @@ var books = [{
         author: "David McCandless",
         url: "http://amzn.to/2gn58KY",
         tags: [
-            "Data & Analytics"
-        ],
-        recommendations: [
-            "018"
-        ],
-        image: "mccandless.jpg",
-    }, {
-        title: "Information is Beautiful",
-        author: "David McCandless",
-        url: "http://amzn.to/2gn58KY",
-        tags: [
             "Data & Analytics", "Communication"
         ],
         recommendations: [
@@ -1471,17 +1438,6 @@ var books = [{
             "018"
         ],
         image: "isaacson.jpg",
-    }, {
-        title: "Ronan and Erwan Bouroullec",
-        author: "Ronan Bouroullec, Erwan Bouroullec, Anniina Koivu",
-        url: "http://amzn.to/2haSsL7",
-        tags: [
-            "Visual Design"
-        ],
-        recommendations: [
-            "018"
-        ],
-        image: "bouroullec.jpg",
     }, {
         title: "Ronan and Erwan Bouroullec",
         author: "Ronan Bouroullec, Erwan Bouroullec, Anniina Koivu",

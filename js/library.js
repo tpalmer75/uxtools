@@ -47,6 +47,7 @@ var library = new Vue({
                 {name: "Visual Design", value: "Visual Design"},
                 {name: "Psychology", value: "Psychology"},
                 {name: "Writing", value: "Writing"},
+                {name: "Research", value: "Research"},
             ]
           },
         books: books,
@@ -60,16 +61,40 @@ var library = new Vue({
         orderedBooks: function() {
             return _.orderBy(this.books, 'recommendations.length', 'desc')
         },
+        computedTags: function() {
+            if (this.searchTerm) {
+                this.categoryData.categoryModel.tags = '';
+                return '';
+            } else {
+                return this.categoryData.categoryModel.tags;
+            }
+        },
         filteredBooks: function() {
-            var searchTerm = this.searchTerm
-            return this.books.filter(function(book) {
-                return book.title.toLowerCase().indexOf(searchTerm) !== -1 || book.title.indexOf(searchTerm) !== -1 || book.author.toLowerCase().indexOf(searchTerm) !== -1 || book.author.indexOf(searchTerm) !== -1
-            })
+            var searchTerm = this.searchTerm.toLowerCase();
+            var currentTag = this.computedTags;
+
+            // If the user is searching
+            if (searchTerm !== '') {
+                return this.orderedBooks.filter(function(book) {
+                    return book.title.toLowerCase().indexOf(searchTerm) !== -1 || book.author.toLowerCase().indexOf(searchTerm) !== -1
+                })
+            // Else use tags
+            } else {
+                return this.orderedBooks.filter(function(book) {
+                    var hasTag = false;
+                    book.tags.forEach(function(tag) {
+                        if (tag.indexOf(currentTag)>=0) {
+                            hasTag = true;
+                            return
+                        }
+
+                    })
+                    return hasTag
+                })
+            }
         },
         shortenedBookTitles: function(string) {
             return _.truncate(string);
-        }
+        },
     }
 });
-
-

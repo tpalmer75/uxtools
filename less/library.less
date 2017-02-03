@@ -8,6 +8,7 @@ body {
 }
 
 #library {
+	height: 100%;
 	&.show-modal {
 		overflow: hidden;
 	}
@@ -305,6 +306,9 @@ select {
 				transform: translateY(100%);
 			}
 		}
+	}
+	&.grow-enter-active {
+		transition: 5s;
 	}
 	&.ng-animate {
 		display: flex;

@@ -18278,17 +18278,6 @@ var books = [{
             "Visual Design", "Typography"
         ],
         recommendations: [
-            "018"
-        ],
-        image: "Vignelli.jpg",
-    }, {
-        title: "The Vignelli Canon",
-        author: "Massimo Vignelli",
-        url: "http://amzn.to/2h727jO",
-        tags: [
-            "Visual Design", "Typography"
-        ],
-        recommendations: [
             "018", "019"
         ],
         image: "Vignelli.jpg",
@@ -18303,17 +18292,6 @@ var books = [{
             "019"
         ],
         image: "frost.png",
-    }, {
-        title: "Less But Better",
-        author: "Dieter Rams",
-        url: "http://amzn.to/2hjvEqw",
-        tags: [
-            "Visual Design"
-        ],
-        recommendations: [
-            "018"
-        ],
-        image: "rams.jpg",
     }, {
         title: "Less But Better",
         author: "Dieter Rams",
@@ -18528,17 +18506,6 @@ var books = [{
         author: "David McCandless",
         url: "http://amzn.to/2gn58KY",
         tags: [
-            "Data & Analytics"
-        ],
-        recommendations: [
-            "018"
-        ],
-        image: "mccandless.jpg",
-    }, {
-        title: "Information is Beautiful",
-        author: "David McCandless",
-        url: "http://amzn.to/2gn58KY",
-        tags: [
             "Data & Analytics", "Communication"
         ],
         recommendations: [
@@ -18556,17 +18523,6 @@ var books = [{
             "018"
         ],
         image: "isaacson.jpg",
-    }, {
-        title: "Ronan and Erwan Bouroullec",
-        author: "Ronan Bouroullec, Erwan Bouroullec, Anniina Koivu",
-        url: "http://amzn.to/2haSsL7",
-        tags: [
-            "Visual Design"
-        ],
-        recommendations: [
-            "018"
-        ],
-        image: "bouroullec.jpg",
     }, {
         title: "Ronan and Erwan Bouroullec",
         author: "Ronan Bouroullec, Erwan Bouroullec, Anniina Koivu",
@@ -18746,6 +18702,7 @@ var library = new Vue({
                 {name: "Visual Design", value: "Visual Design"},
                 {name: "Psychology", value: "Psychology"},
                 {name: "Writing", value: "Writing"},
+                {name: "Research", value: "Research"},
             ]
           },
         books: books,
@@ -18759,18 +18716,42 @@ var library = new Vue({
         orderedBooks: function() {
             return _.orderBy(this.books, 'recommendations.length', 'desc')
         },
+        computedTags: function() {
+            if (this.searchTerm) {
+                this.categoryData.categoryModel.tags = '';
+                return '';
+            } else {
+                return this.categoryData.categoryModel.tags;
+            }
+        },
         filteredBooks: function() {
-            var searchTerm = this.searchTerm
-            return this.books.filter(function(book) {
-                return book.title.toLowerCase().indexOf(searchTerm) !== -1 || book.title.indexOf(searchTerm) !== -1 || book.author.toLowerCase().indexOf(searchTerm) !== -1 || book.author.indexOf(searchTerm) !== -1
-            })
+            var searchTerm = this.searchTerm.toLowerCase();
+            var currentTag = this.computedTags;
+
+            // If the user is searching
+            if (searchTerm !== '') {
+                return this.orderedBooks.filter(function(book) {
+                    return book.title.toLowerCase().indexOf(searchTerm) !== -1 || book.author.toLowerCase().indexOf(searchTerm) !== -1
+                })
+            // Else use tags
+            } else {
+                return this.orderedBooks.filter(function(book) {
+                    var hasTag = false;
+                    book.tags.forEach(function(tag) {
+                        if (tag.indexOf(currentTag)>=0) {
+                            hasTag = true;
+                            return
+                        }
+
+                    })
+                    return hasTag
+                })
+            }
         },
         shortenedBookTitles: function(string) {
             return _.truncate(string);
-        }
+        },
     }
 });
-
-
 
 
