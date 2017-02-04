@@ -92,7 +92,7 @@ html
                     option(value="") All Categories
                     option(v-for="option in orderedCategoryOptions" v-bind:value="option.value") {{option.name}}
                   
-        section
+        section(v-cloak)
           .wrapper
             transition(name="slide-down")
               .filter-wrapper(v-show="computedTags || searchTerm" v-bind:class="{'showing': computedTags || searchTerm}")
