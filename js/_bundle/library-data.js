@@ -1195,7 +1195,7 @@ var books = [{
         recommendations: [
             "018", "019"
         ],
-        image: "Vignelli.jpg",
+        image: "vignelli.jpg",
     }, {
         title: "Atomic Design",
         author: "Brad Frost",
