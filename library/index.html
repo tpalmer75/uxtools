@@ -89,7 +89,8 @@
             <ul id="books">
               <li v-for="book in filteredBooks">
                 <div class="book-wrapper">
-                  <div class="image-container"><a v-bind:href="book.url" target="_blank" v-bind:title="book.title"></a><img v-bind:alt="book.title" v-bind:src="'../img/book-covers/' + book.image" class="cover"/></div>
+                  <div class="image-container"><a v-bind:href="book.url" target="_blank" v-bind:title="book.title"></a><img v-bind:alt="book.title" v-bind:src="'../img/book-covers/' + book.image" class="cover"/>
+                  </div>
                   <div class="book-info"><a v-bind:href="book.url" target="_blank" v-bind:title="book.title">
                       <h4 class="title">{{ shortenedTitle(book.title) }}</h4></a>
                     <h5><em>by </em>{{ book.author }}</h5>

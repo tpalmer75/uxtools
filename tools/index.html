@@ -26,63 +26,69 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet"/>
     <link href="../css/tools.css?version=1.5" rel="stylesheet" type="text/css"/>
   </head>
-  <body ng-init="$root.showMenu = false">
-    <header id="main-header">
-      <div class="top-bar">
-        <h1 class="screen-reader">UX Tools</h1>
-        <div class="wrapper">
-          <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
-          <div class="right">
-            <ul>
-              <li><a href="/tools"> <span>Tools</span></a></li>
-              <li><a href="/library"> <span>Library</span></a></li>
-              <li><a href="https://blog.uxtools.co"> <span>Blog</span></a></li>
-              <li><a href="/about.html"> <span>About</span></a></li>
-              <li><a href="http://newsletter.uxtools.co">
-                  <button class="small">Subscribe</button></a></li>
-            </ul>
-          </div>
-          <div id="hamburger" ng-click="$root.showMenu = true">
-            <div class="icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
-            </div><span>Menu</span>
-          </div>
-        </div>
-      </div>
-      <div id="sidebar" ng-class="{'show-menu': $root.showMenu}">
-        <div id="shade" ng-click="$root.showMenu = false" class="shade">
-          <div class="container">
-            <ul>
-              <li><a href="/tools"> <span>Tools</span></a></li>
-              <li><a href="/library"> <span>Library</span></a></li>
-              <li><a href="https://blog.uxtools.co"> <span>Blog</span></a></li>
-              <li><a href="/about.html"> <span>About</span></a></li>
-              <li><a href="http://newsletter.uxtools.co"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg><span>Subscribe</span></a></li>
-            </ul>
-            <div id="close" ng-click="$root.showMenu = false" class="close"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+  <body>
+    <div id="tools" v-bind:class="{ 'show-menu': showMenu }">
+      <header id="main-header">
+        <div class="top-bar">
+          <h1 class="screen-reader">UX Tools</h1>
+          <div class="wrapper">
+            <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
+            <div class="right">
+              <ul>
+                <li><a href="/tools"> <span>Tools</span></a></li>
+                <li><a href="/library"> <span>Library</span></a></li>
+                <li><a href="https://blog.uxtools.co"> <span>Blog</span></a></li>
+                <li><a href="/about.html"> <span>About</span></a></li>
+                <li><a href="http://newsletter.uxtools.co">
+                    <button class="small">Subscribe</button></a></li>
+              </ul>
+            </div>
+            <div id="hamburger" @click="showMenu = true">
+              <div class="icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+              </div><span>Menu</span>
             </div>
           </div>
         </div>
-      </div>
-      <div class="bottom-bar">
-        <div class="scroll-tabs">
-          <ul>
-            <li ui-sref-active="active"><a ui-sref="design">Design</a></li>
-            <li ui-sref-active="active"><a ui-sref="prototyping">Prototyping</a></li>
-            <li ui-sref-active="active"><a ui-sref="handoff">Handoff</a></li>
-            <li ui-sref-active="active"><a ui-sref="monitoring">Monitoring</a></li>
-          </ul>
+        <div id="sidebar" v-bind:class="{'show-menu': showMenu}">
+          <div id="shade" @click="showMenu = false" class="shade">
+            <div class="container">
+              <ul>
+                <li><a href="/tools"> <span>Tools</span></a></li>
+                <li><a href="/library"> <span>Library</span></a></li>
+                <li><a href="https://blog.uxtools.co"> <span>Blog</span></a></li>
+                <li><a href="/about.html"> <span>About</span></a></li>
+                <li><a href="http://newsletter.uxtools.co"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg><span>Subscribe</span></a></li>
+              </ul>
+              <div id="close" @click="showMenu = false" class="close"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
-    <section id="scroll-element">
-      <div ui-view="">
-        
-        
-      </div>
-    </section>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
-    <script src="../js/min/tools-min.js?ver=1.1"></script>
+        <div class="bottom-bar">
+          <div class="scroll-tabs">
+            <ul>
+              <li>
+                <router-link to="foo">Design</router-link>
+              </li>
+              <li>
+                <router-link to="bar">Prototyping</router-link>
+              </li>
+              <li>
+                <router-link to="handoff">Handoff</router-link>
+              </li>
+              <li>
+                <router-link to="monitoring">Monitoring</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section id="scroll-element">
+        <router-view>
+        </router-view>
+      </section>
+    </div>
+    <script src="../js/min/tools-min.js?ver=1.2"></script>
     <script>
       window['_fs_debug'] = false;
       window['_fs_host'] = 'www.fullstory.com';
@@ -107,6 +113,16 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-78846271-1', 'auto');
       ga('send', 'pageview');
+      
+      
+      
+      
+      
+      
+      
+      
     </script>
   </body>
 </html>
+
+
