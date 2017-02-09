@@ -83,7 +83,7 @@ html(ng-app="uxTools")
           .scroll-tabs
             ul
               li
-                router-link(to="foo") Design
+                router-link(to="design") Design
               li
                 router-link(to="bar") Prototyping
               li
@@ -95,6 +95,7 @@ html(ng-app="uxTools")
         router-view
           //- injected Vues
 
+    include ../templates/design.html
     script(src="../js/min/tools-min.js?ver=1.2")
     script.
       window['_fs_debug'] = false;

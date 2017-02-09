@@ -68,7 +68,7 @@
           <div class="scroll-tabs">
             <ul>
               <li>
-                <router-link to="foo">Design</router-link>
+                <router-link to="design">Design</router-link>
               </li>
               <li>
                 <router-link to="bar">Prototyping</router-link>
@@ -88,6 +88,21 @@
         </router-view>
       </section>
     </div>
+<script type="text/x-template" id="design-tools">
+  <table id="scroll-table">
+    <thead id="fixed-header">
+      <tr>
+        <th v-for="column in designData.columns" class="fixed-header"><span>{{ column.title }}</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="app in designData.tools">
+        <td class="fixed-col"><a v-bind:href="app.url" v-bind:title="app.url" target="_blank"><img v-bind:alt="app.name + 'Logo'" src="../img/blank.png" v-bind:style="app.image"/></a></td>
+        <td class="name-col"><a v-bind:href="app.url" v-bind:title="app.url" target="_blank">{{ app.name }}</a></td>
+      </tr>
+    </tbody>
+  </table>
+</script>
     <script src="../js/min/tools-min.js?ver=1.2"></script>
     <script>
       window['_fs_debug'] = false;
