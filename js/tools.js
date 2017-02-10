@@ -1,9 +1,17 @@
+// @codekit-prepend "_bundle/tether-1.4.0.js"
+// @codekit-prepend "_bundle/tether-drop-.1.4.1.js"
+// @codekit-prepend "_bundle/tether-tooltip-1.1.0.js"
+// @codekit-prepend "_bundle/v-tooltip@1.1.2.js"
+
 // @codekit-prepend "_dev/vue-2.1.10.js"
 // @NOT YET codekit-prepend "_bundle/vue-2.1.10.min.js"
 // @codekit-prepend "_bundle/vue-router-2.2.0.js"
+
 // @codekit-prepend "_bundle/data-design.js"
 
 console.log(designData);
+
+Vue.use(VTooltip);
 
 const designComp = {
 	template: '#design-tools',

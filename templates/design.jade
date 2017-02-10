@@ -14,13 +14,12 @@ script(type="text/x-template" id="design-tools")
 						img(v-bind:alt="app.name + 'Logo'" src="../img/blank.png" v-bind:style="app.image")
 				td(class="name-col")
 					a(v-bind:href="app.url" v-bind:title="app.url" target="_blank") {{ app.name }}
-
-		//-     td(ng-if="isFilterVisible('Platform');")
-		//-       div.flex-wrapper
-		//-         div.flex-col
-		//-           div(ng-if="app.platforms.web" tooltips tooltip-template="Web")
-		//-             div(title="Web")
-		//-               include ../img/icons/cloud-outline.svg
+				td
+					div.flex-wrapper
+						div.flex-col
+							div(v-if="app.platforms.web" v-tooltip="'Web'")
+								div(title="Web")
+									include ../img/icons/cloud-outline.svg
 		//-         div.flex-col
 		//-           div(ng-if="app.platforms.mac" tooltips tooltip-template="Mac")
 		//-             div(title="Mac")
