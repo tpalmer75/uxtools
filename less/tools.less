@@ -221,4 +221,32 @@ table {
     }
 }
 
+.tooltip {
+  display: none;
+  opacity: 0;
+  transition: opacity .15s;
+  pointer-events: none;
+  padding: 4px;
+  z-index: 10;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.2;
 
+  .tooltip-content {
+    background: fade(#333, 90%);
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px 4px;
+  }
+
+  &.tooltip-open-transitionend {
+    display: block;
+  }
+
+  &.tooltip-after-open {
+    opacity: 1;
+  }
+  &.tooltip-attached-bottom {
+  	//top: 100px;
+  }
+}

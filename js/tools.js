@@ -11,7 +11,7 @@
 
 console.log(designData);
 
-Vue.use(VTooltip);
+Vue.use(VTooltip, {to:'#scroll-table'});
 
 const designComp = {
 	template: '#design-tools',

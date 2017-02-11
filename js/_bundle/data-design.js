@@ -3,7 +3,8 @@ const designData = {
     {
             "title": "",
             "show": true,
-            "canChange": false
+            "canChange": false,
+            "tipText": ""
     }, {
             "title": "Name",
             "show": true,
