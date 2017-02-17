@@ -4,8 +4,8 @@
 // @codekit-prepend "_bundle/v-tooltip@1.1.2.js"
 // @not "_bundle/vue-tooltip@0.1.0.js"
 
-// @codekit-prepend "_dev/vue-2.1.10.js"
-// @NOT YET codekit-prepend "_bundle/vue-2.1.10.min.js"
+// @for dev "_dev/vue-2.1.10.js"
+// @codekit-prepend "_bundle/vue-2.1.10.min.js"
 // @codekit-prepend "_bundle/vue-router-2.2.0.js"
 
 // @codekit-prepend "_bundle/lodash-4.17.4.js"
@@ -33,6 +33,21 @@ Vue.directive('scrolltable', {
 		  var columns = document.querySelectorAll("tr:first-of-type td");
 		  var table = document.getElementById("scroll-table");
 
+
+		  console.log("scrollElement", scrollElement)
+		  console.log("fixedHeaders", fixedHeaders)
+		  console.log("fixedCols", fixedCols)
+		  console.log("fixedColHeight", fixedColHeight)
+		  console.log("mainHeader", mainHeader)
+		  console.log("latestKnownScrollX", latestKnownScrollX)
+		  console.log("latestKnownScrollY", latestKnownScrollY)
+		  console.log("ticking", ticking)
+		  console.log("headerHeight", headerHeight)
+		  console.log("fixedHeader", fixedHeader)
+		  console.log("fixedHeaderHeight", fixedHeaderHeight)
+		  console.log("columns", columns)
+		  console.log("table", table)
+
 		  fixedHeader.style.position = "fixed"; // to keep it hidden while loading
 		  fixedHeader.style.top = headerHeight + "px";
 
@@ -44,6 +59,7 @@ Vue.directive('scrolltable', {
 		  var onScroll = function() {
 				latestKnownScrollX = scrollElement.scrollLeft;
 				latestKnownScrollY = scrollElement.scrollTop;
+				//console.log(latestKnownScrollX, latestKnownScrollY)
 				requestTick();
 		  };
 

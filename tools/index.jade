@@ -79,17 +79,21 @@ html(ng-app="uxTools")
                     span Subscribe
               #close.close(@click="showMenu = false")
                 include ../img/icons/close.svg
-        .bottom-bar(v-cloak)
+        .bottom-bar
           .scroll-tabs
             ul
               li
-                router-link(to="design") Design
+                router-link(to="design")
+                  span Design
               li
-                router-link(to="prototyping") Prototyping
+                router-link(to="prototyping")
+                  span Prototyping
               li
-                router-link(to="handoff") Handoff
+                router-link(to="handoff")
+                  span Handoff
               li
-                router-link(to="monitoring") Monitoring
+                router-link(to="monitoring")
+                  span Monitoring
                   
       section#scroll-element
         router-view
