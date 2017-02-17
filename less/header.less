@@ -31,37 +31,36 @@
 		padding: 0 20px;
 	}
 	li {
-		height: 64px;
-		margin-right: 5px;
+		// height: 64px;
+		// margin-right: 5px;
+		// display: inline-block;
+		// border-bottom: 4px solid transparent;
+		// padding-top: 16px;
+		// padding-left: 10px;
+		// padding-right: 10px;
+		// transition: border .2s;
+		// font-size: 18px;
 		display: inline-block;
-		border-bottom: 4px solid transparent;
-		padding-top: 16px;
-		padding-left: 10px;
-		padding-right: 10px;
-		transition: border .2s;
-		font-size: 18px;
 		&:last-of-type {
 			padding-right: 0;
 		}
-		a {
-			color: fade(white, 75%);
+		span {
+			height: 56px;
+			margin-right: 10px;
+			display: inline-block;
+			border-bottom: 4px solid transparent;
+			padding-top: 16px;
+			padding-left: 10px;
+			padding-right: 10px;
+			transition: border .2s;
+			font-size: 18px;
+			color: white;
 		}
-		&.active {
-			border-bottom: 4px solid white;
-			a {
+		a.router-link-active {
+			span {
+				border-bottom: 4px solid white;
 				color: white;
 			}
-		}
-		&.blue {
-			a {
-				color: @blue-alternate;
-			}
-			svg path {
-				fill: @blue-alternate;
-			}
-		}
-		@media all and (max-width: @small-size) {
-			padding: 8px;
 		}
 	}
 	.right {
@@ -78,6 +77,10 @@
 		background: @blue-alternate;
 		position: relative;
 		z-index: 3;
+		span {
+			color: fade(white, 75%);
+			margin-right: 5px;
+		}
 	}
 	@media all and (max-width: @mid-size) {
 		.right {
@@ -86,14 +89,14 @@
 	}
 	.scroll-tabs {
 		padding-left: 10px;
-		display: inline-block;
+		//display: inline-block;
 		@media all and (max-width: @mid-size) {
 			width: 100%;
 		}
 		@media all and (max-width: @small-size) {
 			overflow: scroll;
 			font-size: 14px;
-			padding: 0 10px;
+			//padding: 0 10px;
 		}
 		ul {
 			@media all and (max-width: @small-size) {
@@ -101,12 +104,14 @@
 			}
 		}
 		li {
-			font-size: 16px;
-			height: 48px;
-			padding-top: 12px;
-			@media all and (max-width: @small-size) {
-				height: 40px;
-				padding-top: 9px;
+			span {
+				font-size: 16px;
+				height: 48px;
+				padding-top: 10px;	
+				@media all and (max-width: @small-size) {
+					height: 40px;
+					//padding-top: 9px;
+				}
 			}
 		}
 	}
@@ -163,11 +168,20 @@
 	}
 	li {
 		display: block;
-		padding: 10px 20px;
-		font-size: 16px;
+		//padding: 10px 20px;
+		//font-size: 16px;
 		height: auto;
+		// span {
+		// 	color: white;
+		// }
 		a {
-			color: white;
+			padding: 10px 20px 0;
+			display: inline-block;
+		}
+		span {
+			font-size: 16px;
+			padding: 0;
+			height: 40px;
 		}
 	}
 	svg {

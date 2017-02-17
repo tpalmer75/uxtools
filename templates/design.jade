@@ -1,108 +1,90 @@
-//- div.filters(title="Filters" ng-click="showFiltersModal('show');")
-//-   img(src="../img/icons/table-edit.svg" tooltip-side="bottom" tooltips tooltip-template="Filters")
-
-//- div.filters-modal(ng-show="modalShowing" ng-click="showFiltersModal('hide')")
-//-   .wrapper
-//-     .modal-wrapper(ng-click="$event.stopPropagation()")
-//-       ul
-//-         li(ng-repeat="filter in tempFilters" ng-if="tempFilters[$index].canChange") 
-//-           input(type="checkbox" ng-model="tempFilters[$index].show")
-//-           | {{ filter.title }}
-//-       .button-container
-//-         button(ng-click="setFilters()") Set Filters
-div#loading-screen
-  h4 Loading...
-table#scroll-table(fixed-table)
-  thead#fixed-header
-    tr
-      th(ng-repeat="filter in filters" class="fixed-header" ng-if="isFilterVisible(filter.title)")
-        span(tooltips tooltip-side="bottom" tooltip-template="{{filter.tipText}}") {{ filter.title }}
-  tbody
-    tr(ng-repeat="app in designTools | orderBy:sortType:sortReverse")
-
-      td(class="fixed-col")
-        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank")
-          img(alt="{{app.name}} Logo" src="../img/blank.png" ng-style="{{app.image}}")
-      td(class="name-col")
-        a(ng-href="{{app.url}}" title="{{app.url}}" target="_blank") {{ app.name }}
-
-      td(ng-if="isFilterVisible('Platform');")
-        div.flex-wrapper
-          div.flex-col
-            div(ng-if="app.platforms.web" tooltips tooltip-template="Web")
-              div(title="Web")
-                include ../img/icons/cloud-outline.svg
-          div.flex-col
-            div(ng-if="app.platforms.mac" tooltips tooltip-template="Mac")
-              div(title="Mac")
-                include ../img/icons/apple.svg
-          div.flex-col
-            div(ng-if="app.platforms.windows" tooltips tooltip-template="Windows")  
-              div(title="Windows")
-                include ../img/icons/windows.svg
-
-      td(ng-if="isFilterVisible('Free');")
-        div(ng-if="app.pricing.free")
-          include ../img/icons/check.svg
-      td(style="min-width: 100px;" ng-if="isFilterVisible('Subscription');")
-        span {{app.pricing.subscription}}
-      td(style="min-width: 100px;" ng-if="isFilterVisible('Purchase');")
-        span {{app.pricing.purchase}}
-
-      td(ng-if="isFilterVisible('Offline');")
-        div(ng-if="app.offline")
-          include ../img/icons/check.svg
-      td(ng-if="isFilterVisible('Pen Tool');")
-        div(ng-if="app.penTool")
-          include ../img/icons/check.svg
-      td(ng-if="isFilterVisible('Collaborate');")
-        div(ng-if="app.collaboration")
-          include ../img/icons/check.svg
-      td(ng-if="isFilterVisible('Comments');")
-        div(ng-if="app.comments")
-          include ../img/icons/check.svg
-      td(ng-if="isFilterVisible('Handoff');")
-        div(ng-if="app.handoff")
-          include ../img/icons/check.svg
-      td(ng-if="isFilterVisible('Artboards');")
-        div(ng-if="app.artboards")
-          include ../img/icons/check.svg
-      td(ng-if="isFilterVisible('Symbols');")
-        div(ng-if="app.symbols")
-          include ../img/icons/check.svg
-      td(ng-if="isFilterVisible('Responsive');")
-        div(ng-if="app.responsive")
-          include ../img/icons/check.svg
-      td(ng-if="isFilterVisible('Prototyping');")
-        div(ng-if="app.prototyping")
-          include ../img/icons/check.svg
-      td(ng-if="isFilterVisible('Import');")
-        div.flex-wrapper
-          div.flex-col
-            span(ng-if="app.import.svg") .svg
-          div.flex-col
-            span(ng-if="app.import.eps") .eps
-          div.flex-col
-            span(ng-if="app.import.pdf") .pdf
-          div.flex-col
-            span(ng-if="app.import.ai") .ai
-          div.flex-col
-            span(ng-if="app.import.psd") .psd
-      
-      td(ng-if="isFilterVisible('Export');")
-        div.flex-col
-            span(ng-if="app.export.svg") .svg
-          div.flex-col
-            span(ng-if="app.export.eps") .eps
-          div.flex-col
-            span(ng-if="app.export.pdf") .pdf
-          div.flex-col
-            span(ng-if="app.export.ai") .ai
-          div.flex-col
-            span(ng-if="app.export.psd") .psd
-          div.flex-col
-            div(ng-if="app.export.html" tooltips tooltip-template="HTML")
-              div(title="HTML")
-                include ../img/icons/html.svg
-        
-      
+script(type="text/x-template" id="design-tools")
+	//- div#loading-screen
+	//- 	h4 Loading...
+	table#scroll-table(v-scrolltable="")
+		thead#fixed-header
+			tr
+				th(v-for="column in toolsData.columns" class="fixed-header")
+					span(style="display: block; position: relative" v-tooltip.bottom-center="column.tipText") {{ column.title }}
+		tbody
+			tr(v-for="app in computedTools")
+				td(class="fixed-col")
+					a(v-bind:href="app.url" v-bind:title="app.url" target="_blank")
+						img(v-bind:alt="app.name + 'Logo'" src="../img/blank.png" v-bind:style="app.image")
+				td(class="name-col")
+					a(v-bind:href="app.url" v-bind:title="app.url" target="_blank") {{ app.name }}
+				td
+					div.flex-wrapper
+						div.flex-col
+							div(v-if="app.platforms.web" v-tooltip.bottom-center="'Web'")
+								div(title="Web")
+									include ../img/icons/cloud-outline.svg
+						div.flex-col
+							div(v-if="app.platforms.mac" v-tooltip.bottom-center="'Mac'")
+								div(title="Mac")
+									include ../img/icons/apple.svg
+						div.flex-col
+							div(v-if="app.platforms.windows" v-tooltip.bottom-center="'Windows'")
+								div(title="Windows")
+									include ../img/icons/windows.svg
+				td
+					div(v-if="app.pricing.free")
+						include ../img/icons/check.svg
+				td(style="min-width: 100px;")
+					span {{app.pricing.subscription}}
+				td(style="min-width: 100px;")
+					span {{app.pricing.purchase}}
+				td
+					div(v-if="app.offline")
+						include ../img/icons/check.svg
+				td
+					div(v-if="app.penTool")
+						include ../img/icons/check.svg
+				td
+					div(v-if="app.collaboration")
+						include ../img/icons/check.svg
+				td
+					div(v-if="app.comments")
+						include ../img/icons/check.svg
+				td
+					div(v-if="app.handoff")
+						include ../img/icons/check.svg
+				td
+					div(v-if="app.artboards")
+						include ../img/icons/check.svg
+				td
+					div(v-if="app.symbols")
+						include ../img/icons/check.svg
+				td
+					div(v-if="app.responsive")
+						include ../img/icons/check.svg
+				td
+					div(v-if="app.prototyping")
+						include ../img/icons/check.svg
+				//- td
+				//-     div.flex-wrapper
+				//-         div.flex-col
+				//-             span(v-if="app.import.svg") .svg
+				//-         div.flex-col
+				//-             span(v-if="app.import.eps") .eps
+				//-         div.flex-col
+				//-             span(v-if="app.import.pdf") .pdf
+				//-         div.flex-col
+				//-             span(v-if="app.import.ai") .ai
+				//-         div.flex-col
+				//-             span(v-if="app.import.psd") .psd
+				//- td
+				//-     div.flex-col
+				//-             span(v-if="app.export.svg") .svg
+				//-         div.flex-col
+				//-             span(v-if="app.export.eps") .eps
+				//-         div.flex-col
+				//-             span(v-if="app.export.pdf") .pdf
+				//-         div.flex-col
+				//-             span(v-if="app.export.ai") .ai
+				//-         div.flex-col
+				//-             span(v-if="app.export.psd") .psd
+				//-         div.flex-col
+				//-             div(v-if="app.export.html" v-tooltip.bottom-center="'HTML'")
+				//-                 div(title="HTML")
+				//-                     include ../img/icons/html.svg

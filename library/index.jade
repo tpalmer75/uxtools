@@ -104,9 +104,8 @@ html
                 .book-wrapper
                   .image-container
                     a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
-                    img.cover(
-                       v-bind:alt="book.title" 
-                       v-bind:src="'../img/book-covers/' + book.image")
+                    //- img.cover(v-bind:alt="book.title" v-lazy="book.image" :srcset="'../img/book-covers/' + book.image")
+                    img.cover(v-bind:alt="book.title" v-bind:src="'../img/book-covers/' + book.image")
                   .book-info
                     a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
                       h4.title {{ shortenedTitle(book.title) }}

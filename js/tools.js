@@ -1,141 +1,210 @@
-/*global angular:true */
+// @codekit-prepend "_bundle/tether-1.4.0.js"
+// @codekit-prepend "_bundle/tether-drop-.1.4.1.js"
+// @codekit-prepend "_bundle/tether-tooltip-1.1.0.js"
+// @codekit-prepend "_bundle/v-tooltip@1.1.2.js"
+// @not "_bundle/vue-tooltip@0.1.0.js"
 
-// @codekit-prepend "angular-tooltips.js"
-// @codekit-prepend "prototyping.js"
-// @codekit-prepend "handoff.js"
-// @codekit-prepend "monitoring.js"
-// @codekit-prepend "design.js"
+// @for dev "_dev/vue-2.1.10.js"
+// @codekit-prepend "_bundle/vue-2.1.10.min.js"
+// @codekit-prepend "_bundle/vue-router-2.2.0.js"
+
+// @codekit-prepend "_bundle/lodash-4.17.4.js"
+
+// @codekit-prepend "_bundle/data-design.js"
+// @codekit-prepend "_bundle/data-prototyping.js"
+// @codekit-prepend "_bundle/data-handoff.js"
+// @codekit-prepend "_bundle/data-monitoring.js"
+
+Vue.use(VTooltip)
+
+Vue.directive('scrolltable', {
+	inserted: function(el) {
+		  var scrollElement = document.getElementById("scroll-element");
+		  var fixedHeaders = document.querySelectorAll("th");
+		  var fixedCols = document.querySelectorAll(".fixed-col");
+		  var fixedColHeight = fixedCols[1].clientHeight;
+		  var mainHeader = document.getElementById("main-header");
+		  var latestKnownScrollX = 0;
+		  var latestKnownScrollY = 0;
+		  var ticking = false;
+		  var headerHeight = mainHeader.clientHeight;
+		  var fixedHeader = document.getElementById("fixed-header");
+		  var fixedHeaderHeight = fixedHeader.clientHeight;
+		  var columns = document.querySelectorAll("tr:first-of-type td");
+		  var table = document.getElementById("scroll-table");
 
 
-angular.module('uxTools', ['ui.router', 'uxTools.prototyping', 'uxTools.handoff', 'uxTools.monitoring', 'uxTools.design', '720kb.tooltips'])
+		  console.log("scrollElement", scrollElement)
+		  console.log("fixedHeaders", fixedHeaders)
+		  console.log("fixedCols", fixedCols)
+		  console.log("fixedColHeight", fixedColHeight)
+		  console.log("mainHeader", mainHeader)
+		  console.log("latestKnownScrollX", latestKnownScrollX)
+		  console.log("latestKnownScrollY", latestKnownScrollY)
+		  console.log("ticking", ticking)
+		  console.log("headerHeight", headerHeight)
+		  console.log("fixedHeader", fixedHeader)
+		  console.log("fixedHeaderHeight", fixedHeaderHeight)
+		  console.log("columns", columns)
+		  console.log("table", table)
 
-.config(function($stateProvider, $urlRouterProvider) {
+		  fixedHeader.style.position = "fixed"; // to keep it hidden while loading
+		  fixedHeader.style.top = headerHeight + "px";
 
-  $urlRouterProvider.otherwise('/');
+		  for (var i=0; i < columns.length; i++) {
+				var newWidth = columns[i].offsetWidth;
+				fixedHeaders[i].style.minWidth = newWidth;
+		  }
+		  
+		  var onScroll = function() {
+				latestKnownScrollX = scrollElement.scrollLeft;
+				latestKnownScrollY = scrollElement.scrollTop;
+				//console.log(latestKnownScrollX, latestKnownScrollY)
+				requestTick();
+		  };
 
-  $stateProvider
-    .state('prototyping', {
-      url: '/prototyping',
-      templateUrl : '../templates/prototyping.html',
-      controller: 'prototypingCtrl'
-    })
-    .state('hand-off', {
-      url: '/hand-off',
-      templateUrl : '../templates/hand-off.html',
-      controller: 'handoffCtrl'
-    })
-    .state('handoff', {
-      url: '/handoff',
-      templateUrl : '../templates/handoff.html',
-      controller: 'handoffCtrl'
-    })
-    .state('monitoring', {
-      url: '/monitoring',
-      templateUrl : '../templates/monitoring.html',
-      controller: 'monitoringCtrl'
-    })
-    .state('design', {
-      url: '/',
-      templateUrl : '../templates/design.html',
-      controller: 'designCtrl'
-    });
+		  function requestTick() {
+			if (!ticking) {
+			  requestAnimationFrame(update);
+			}
+			ticking = true;
+		  }
+
+		  var update = function() {
+				ticking = false;
+				var currentScrollY = latestKnownScrollY;
+				var currentScrollX = latestKnownScrollX;
+
+				fixedHeader.style.left = -currentScrollX;
+
+				if (currentScrollY <= headerHeight) {
+				  mainHeader.style.marginTop = -currentScrollY;
+				  fixedHeader.style.top = headerHeight - currentScrollY;
+				  fixedHeader.style.boxShadow = "";
+				} else {
+				  mainHeader.style.marginTop = -headerHeight;
+				  fixedHeader.style.top = 0;
+				  fixedHeader.style.boxShadow = "2px 2px 10px rgba(0,0,0,.15)";
+				}
+
+				if (currentScrollX > 0) {
+				  for ( var i=0; i < fixedCols.length; i++ ) {
+					fixedCols[i].style.position = "fixed";
+					fixedCols[i].style.top = parseInt(fixedHeader.style.top) + fixedHeaderHeight - currentScrollY + (fixedColHeight*i);
+					fixedCols[i].style.boxShadow = "2px 0 5px rgba(0,0,0,.1)";
+				  }
+				} else {
+				  for ( var i=0; i < fixedCols.length; i++ ) {
+					fixedCols[i].style.position = "absolute";
+					fixedCols[i].style.top = "";
+					fixedCols[i].style.boxShadow = "";
+				  }
+				}
+
+		  };
+
+		  // loadingScreen = document.getElementById("loading-screen");
+    //   loadingScreen.style.display = "none";
+
+		  scrollElement.onscroll = function() {onScroll()};
+		  window.onresize = function() {
+			headerHeight = mainHeader.clientHeight;
+			fixedHeader.style.top = headerHeight + "px";
+		  };
+	}
 })
 
-.directive('fixedTable', function($window, $timeout) {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
+const designComp = {
+	template: '#design-tools',
+	data: function () {
+		return {
+			toolsData: designData,
+			scroll: 0
+		}
+	},
+	computed: {
+		computedTools: function() {
+			return _.orderBy(this.toolsData.tools, 'name')
+		}
+	}
+}
 
-            $timeout(function() {
+const prototypingComp = {
+	template: '#prototyping-tools',
+	data: function () {
+		return {
+			toolsData: prototypingData,
+			scroll: 0
+		}
+	},
+	computed: {
+		computedTools: function() {
+			return _.orderBy(this.toolsData.tools, 'name')
+		}
+	}
+}
 
-              var scrollElement = document.getElementById("scroll-element");
-              var fixedHeaders = document.querySelectorAll("th");
-              var fixedCols = document.querySelectorAll(".fixed-col");
-              var fixedColHeight = fixedCols[1].clientHeight;
-              var mainHeader = document.getElementById("main-header");
-              var latestKnownScrollX = 0;
-              var latestKnownScrollY = 0;
-              var ticking = false;
-              var headerHeight = mainHeader.clientHeight;
-              var fixedHeader = document.getElementById("fixed-header");
-              var fixedHeaderHeight = fixedHeader.clientHeight;
-              var columns = document.querySelectorAll("tr:first-of-type td");
-              var table = document.getElementById("scroll-table");
+const handoffComp = {
+	template: '#handoff-tools',
+	data: function () {
+		return {
+			toolsData: handoffData,
+			scroll: 0
+		}
+	},
+	computed: {
+		computedTools: function() {
+			return _.orderBy(this.toolsData.tools, 'name')
+		}
+	}
+}
 
-              fixedHeader.style.position = "fixed"; // to keep it hidden while loading
-              fixedHeader.style.top = headerHeight + "px";
+const monitoringComp = {
+	template: '#monitoring-tools',
+	data: function () {
+		return {
+			toolsData: monitoringData,
+			scroll: 0
+		}
+	},
+	computed: {
+		computedTools: function() {
+			return _.orderBy(this.toolsData.tools, 'name')
+		}
+	}
+}
 
-              for (var i=0; i < columns.length; i++) {
-                var newWidth = columns[i].offsetWidth;
-                fixedHeaders[i].style.minWidth = newWidth;
-              }
-              
-              var onScroll = function() {
-                latestKnownScrollX = scrollElement.scrollLeft;
-                latestKnownScrollY = scrollElement.scrollTop;
-                requestTick();
-              };
+const router = new VueRouter({
+	routes: [
 
-              function requestTick() {
-                if (!ticking) {
-                  requestAnimationFrame(update);
-                }
-                ticking = true;
-              }
-
-              var update = function() {
-                ticking = false;
-                var currentScrollY = latestKnownScrollY;
-                var currentScrollX = latestKnownScrollX;
-
-                fixedHeader.style.left = -currentScrollX;
-
-                if (currentScrollY <= headerHeight) {
-                  mainHeader.style.marginTop = -currentScrollY;
-                  fixedHeader.style.top = headerHeight - currentScrollY;
-                  fixedHeader.style.boxShadow = "";
-                } else {
-                  mainHeader.style.marginTop = -headerHeight;
-                  fixedHeader.style.top = 0;
-                  fixedHeader.style.boxShadow = "2px 2px 10px rgba(0,0,0,.15)";
-                }
-
-                if (currentScrollX > 0) {
-                  for ( var i=0; i < fixedCols.length; i++ ) {
-                    fixedCols[i].style.position = "fixed";
-                    fixedCols[i].style.top = parseInt(fixedHeader.style.top) + fixedHeaderHeight - currentScrollY + (fixedColHeight*i);
-                    fixedCols[i].style.boxShadow = "2px 0 5px rgba(0,0,0,.1)";
-                  }
-                } else {
-                  for ( var i=0; i < fixedCols.length; i++ ) {
-                    fixedCols[i].style.position = "absolute";
-                    fixedCols[i].style.top = "";
-                    fixedCols[i].style.boxShadow = "";
-                  }
-                }
-
-              };
-
-              loadingScreen = document.getElementById("loading-screen");
-              loadingScreen.style.display = "none";
-
-              angular.element(scrollElement).bind("scroll", onScroll);
-              angular.element($window).bind("resize", function() {
-                headerHeight = mainHeader.clientHeight;
-                fixedHeader.style.top = headerHeight + "px";
-              });
-
-            }, 0);
-
-        }
-    };
+		{ 
+			path: '/design', 
+			component: designComp,
+		}, { 
+			path: '/prototyping', 
+			component: prototypingComp,
+		}, {
+			path: '/handoff', 
+			component: handoffComp,
+		}, {
+			path: '/monitoring', 
+			component: monitoringComp,
+		}, { 
+			path: '*',
+			redirect: '/design'
+		},
+	]
 })
 
+const app = new Vue({
+	router: router,
+	el: '#tools',
+	data: function() {
+		return {
+			showMenu: false,
+			designData: designData,
+			name: 'foo'
+		}
+	}
+})
 
-
-.config(['tooltipsConfProvider', function configConf(tooltipsConfProvider) {
-  tooltipsConfProvider.configure({
-    'speed': 'fast',
-    'side': 'bottom'
-  });
-}]);

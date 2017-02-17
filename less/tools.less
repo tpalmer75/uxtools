@@ -7,12 +7,17 @@
 body {
 	font-family: @font-stack;
 	color: #333;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
 }
 
 body, html {
+	height: 100%;
+	width: 100%;
+}
+
+#tools {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 	height: 100%;
 	width: 100%;
 }
@@ -174,6 +179,7 @@ table {
 	.flex-col {
 		width: 30px;
 		text-align: center;
+		position: relative;
 	}
 }
 
@@ -212,96 +218,6 @@ table {
 	}
 }
 
-
-// .filters-modal {
-// 	position: fixed;
-// 	top: 0;
-// 	left: 0;
-// 	width: 100%;
-// 	height: 100%;
-// 	padding: 20px;
-// 	background: fade(black, 10%);
-// 	z-index: 2;
-// 	opacity: 1;
-// 	transition: opacity .2s;
-// 	.wrapper {
-// 		background: none;
-
-// 	}
-// 	.modal-wrapper{
-// 		position: absolute;
-// 		top: 86px;
-// 		left: 14px;
-// 		padding: 16px 20px;
-// 		background: white;
-// 		max-width: 500px;
-// 		z-index: 2;
-// 		box-shadow: 0 10px 24px fade(black, 30%);
-// 		transition: all .2s ease-in-out;
-// 	}
-// 	ul {
-// 		columns: 100px 2;
-// 		li {
-// 			line-height: 32px;
-// 		}
-// 		input {
-// 			margin-right: 10px;
-// 		}
-// 	}
-// 	button {
-// 		appearance: none;
-// 		background: none;
-// 		cursor: pointer;
-// 		color: @blue-primary;
-// 		outline: none;
-// 		box-shadow: none;
-// 		font-family: @font-stack;
-// 		font-size: 16px;
-// 		border: 0;
-// 		margin-top: 10px;
-// 		height: 32px;
-// 	}
-// 	.button-container {
-// 		text-align: center;
-// 		clear: both;
-// 	}
-// 	&.ng-hide {
-// 			opacity: 0;
-// 			.modal-wrapper {
-// 				transform: translateY(-10px);
-// 			}
-// 		}
-// 	@media all and (max-width: @small-size) {
-// 		background: fade(black, 50%);
-// 		.wrapper {
-// 			display: flex;
-// 			flex-direction: column-reverse;
-// 			align-items: flex-end;
-// 		}
-// 		.modal-wrapper {
-// 			position: absolute;
-// 			transform: translateY(0);
-// 			top: auto;
-// 			bottom: 0;
-// 			left: auto;
-// 			width: 100%;
-// 			background: white;
-// 			box-shadow: 0 10px 48px fade(black, 30%);
-// 			padding: 20px;
-// 		}
-// 		&.ng-hide {
-// 			opacity: 0;
-// 			.modal-wrapper {
-// 				transform: translateY(100px);
-// 			}
-// 		}
-// 	}
-// 	@media all and (max-width: @mid-size) {
-// 		padding: 0;
-// 	}
-	
-// }
-
 .star {
     position: absolute;
     top: -3px;
@@ -311,4 +227,31 @@ table {
     }
 }
 
+.tooltip {
+  display: none;
+  opacity: 0;
+  transition: opacity .15s, margin .15s;
+  pointer-events: none;
+  padding: 4px;
+  z-index: 10;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: -4px;
 
+  .tooltip-content {
+    background: fade(#333, 90%);
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px 6px;
+  }
+
+  &.tooltip-open-transitionend {
+    display: block;
+  }
+
+  &.tooltip-after-open {
+    opacity: 1;
+    margin-top: 0;
+  }
+}

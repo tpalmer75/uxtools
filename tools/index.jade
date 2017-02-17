@@ -26,87 +26,84 @@ html(ng-app="uxTools")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
     link(href="../css/tools.css?version=1.5" rel="stylesheet" type="text/css")
 
-  body(ng-init="$root.showMenu = false")
-    header#main-header
-      .top-bar
-        h1.screen-reader UX Tools
-        .wrapper
-          .left
-            a(href="/")
-              img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
-          .right
+  body
+    #tools(v-bind:class="{ 'show-menu': showMenu }")
+      header#main-header
+        .top-bar
+          h1.screen-reader UX Tools
+          .wrapper
+            .left
+              a(href="/")
+                img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
+            .right
+              ul
+                li
+                  a(href="/tools") 
+                    span Tools
+                li
+                  a(href="/library") 
+                    span Library
+                li
+                  a(href="https://blog.uxtools.co") 
+                    span Blog
+                li
+                  a(href="/about.html") 
+                    span About
+                li
+                  a(href="http://newsletter.uxtools.co")
+                    button.small
+                      | Subscribe
+            #hamburger(@click="showMenu = true")
+              .icon
+                include ../img/icons/menu.svg
+              span Menu
+        #sidebar(v-bind:class="{'show-menu': showMenu}")
+          #shade.shade(@click="showMenu = false")
+            .container
+              ul
+                li
+                  a(href="/tools") 
+                    span Tools
+                li
+                  a(href="/library") 
+                    span Library
+                li
+                  a(href="https://blog.uxtools.co") 
+                    span Blog
+                li
+                  a(href="/about.html") 
+                    span About
+                li
+                  a(href="http://newsletter.uxtools.co")
+                    include ../img/icons/email.svg
+                    span Subscribe
+              #close.close(@click="showMenu = false")
+                include ../img/icons/close.svg
+        .bottom-bar
+          .scroll-tabs
             ul
               li
-                a(href="/tools") 
-                  span Tools
+                router-link(to="design")
+                  span Design
               li
-                a(href="/library") 
-                  span Library
+                router-link(to="prototyping")
+                  span Prototyping
               li
-                a(href="https://blog.uxtools.co") 
-                  span Blog
+                router-link(to="handoff")
+                  span Handoff
               li
-                a(href="/about.html") 
-                  span About
-              li
-                a(href="http://newsletter.uxtools.co")
-                  button.small
-                    | Subscribe
-          #hamburger(ng-click="$root.showMenu = true")
-            .icon
-              include ../img/icons/menu.svg
-            span Menu
-      #sidebar(ng-class="{'show-menu': $root.showMenu}")
-        #shade.shade(ng-click="$root.showMenu = false")
-          .container
-            ul
-              li
-                a(href="/tools") 
-                  span Tools
-              li
-                a(href="/library") 
-                  span Library
-              li
-                a(href="https://blog.uxtools.co") 
-                  span Blog
-              li
-                a(href="/about.html") 
-                  span About
-              li
-                a(href="http://newsletter.uxtools.co")
-                  include ../img/icons/email.svg
-                  span Subscribe
-            #close.close(ng-click="$root.showMenu = false")
-              include ../img/icons/close.svg
-      .bottom-bar
-        .scroll-tabs
-          ul
-            li(ui-sref-active="active")
-              a(ui-sref="design") Design
-            li(ui-sref-active="active")
-              a(ui-sref="prototyping") Prototyping
-            li(ui-sref-active="active")
-              a(ui-sref="handoff") Handoff
-            li(ui-sref-active="active")
-              a(ui-sref="monitoring") Monitoring
-                
-    section#scroll-element
-      div(ui-view="")
-        //- injected Angular Views
+                router-link(to="monitoring")
+                  span Monitoring
+                  
+      section#scroll-element
+        router-view
+          //- injected Vues
 
-    
-
-    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
-    //- script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
-    script(src="../js/min/tools-min.js?ver=1.1")
-    //- script(type="text/javascript" id="inspectletjs").
-    //-   window.__insp = window.__insp || [];
-    //-   __insp.push(['wid', 1656300355]);
-    //-   (function() {
-    //-   function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-    //-   setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
-    //-   })();
+    include ../templates/design.html
+    include ../templates/prototyping.html
+    include ../templates/handoff.html
+    include ../templates/monitoring.html
+    script(src="../js/min/tools-min.js?ver=1.2")
     script.
       window['_fs_debug'] = false;
       window['_fs_host'] = 'www.fullstory.com';
@@ -130,5 +127,3 @@ html(ng-app="uxTools")
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-78846271-1', 'auto');
       ga('send', 'pageview');
-
-

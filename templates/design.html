@@ -1,103 +1,80 @@
 
-<div id="loading-screen">
-  <h4>Loading...</h4>
-</div>
-<table id="scroll-table" fixed-table="fixed-table">
-  <thead id="fixed-header">
-    <tr>
-      <th ng-repeat="filter in filters" ng-if="isFilterVisible(filter.title)" class="fixed-header"><span tooltips="tooltips" tooltip-side="bottom" tooltip-template="{{filter.tipText}}">{{ filter.title }}</span></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="app in designTools | orderBy:sortType:sortReverse">
-      <td class="fixed-col"><a ng-href="{{app.url}}" title="{{app.url}}" target="_blank"><img alt="{{app.name}} Logo" src="../img/blank.png" ng-style="{{app.image}}"/></a></td>
-      <td class="name-col"><a ng-href="{{app.url}}" title="{{app.url}}" target="_blank">{{ app.name }}</a></td>
-      <td ng-if="isFilterVisible('Platform');">
-        <div class="flex-wrapper">
-          <div class="flex-col">
-            <div ng-if="app.platforms.web" tooltips="tooltips" tooltip-template="Web">
-              <div title="Web"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,18H6A4,4 0 0,1 2,14A4,4 0 0,1 6,10H6.71C7.37,7.69 9.5,6 12,6A5.5,5.5 0 0,1 17.5,11.5V12H19A3,3 0 0,1 22,15A3,3 0 0,1 19,18M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z" /></svg>
+<script type="text/x-template" id="design-tools">
+  <table id="scroll-table" v-scrolltable="">
+    <thead id="fixed-header">
+      <tr>
+        <th v-for="column in toolsData.columns" class="fixed-header"><span style="display: block; position: relative" v-tooltip.bottom-center="column.tipText">{{ column.title }}</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="app in computedTools">
+        <td class="fixed-col"><a v-bind:href="app.url" v-bind:title="app.url" target="_blank"><img v-bind:alt="app.name + 'Logo'" src="../img/blank.png" v-bind:style="app.image"/></a></td>
+        <td class="name-col"><a v-bind:href="app.url" v-bind:title="app.url" target="_blank">{{ app.name }}</a></td>
+        <td>
+          <div class="flex-wrapper">
+            <div class="flex-col">
+              <div v-if="app.platforms.web" v-tooltip.bottom-center="'Web'">
+                <div title="Web"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,18H6A4,4 0 0,1 2,14A4,4 0 0,1 6,10H6.71C7.37,7.69 9.5,6 12,6A5.5,5.5 0 0,1 17.5,11.5V12H19A3,3 0 0,1 22,15A3,3 0 0,1 19,18M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z" /></svg>
+                </div>
+              </div>
+            </div>
+            <div class="flex-col">
+              <div v-if="app.platforms.mac" v-tooltip.bottom-center="'Mac'">
+                <div title="Mac"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" /></svg>
+                </div>
+              </div>
+            </div>
+            <div class="flex-col">
+              <div v-if="app.platforms.windows" v-tooltip.bottom-center="'Windows'">
+                <div title="Windows"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,12V6.75L9,5.43V11.91L3,12M20,3V11.75L10,11.9V5.21L20,3M3,13L9,13.09V19.9L3,18.75V13M20,13.25V22L10,20.09V13.1L20,13.25Z" /></svg>
+                </div>
               </div>
             </div>
           </div>
-          <div class="flex-col">
-            <div ng-if="app.platforms.mac" tooltips="tooltips" tooltip-template="Mac">
-              <div title="Mac"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" /></svg>
-              </div>
-            </div>
+        </td>
+        <td>
+          <div v-if="app.pricing.free"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
           </div>
-          <div class="flex-col">
-            <div ng-if="app.platforms.windows" tooltips="tooltips" tooltip-template="Windows"> 
-              <div title="Windows"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,12V6.75L9,5.43V11.91L3,12M20,3V11.75L10,11.9V5.21L20,3M3,13L9,13.09V19.9L3,18.75V13M20,13.25V22L10,20.09V13.1L20,13.25Z" /></svg>
-              </div>
-            </div>
+        </td>
+        <td style="min-width: 100px;"><span>{{app.pricing.subscription}}</span></td>
+        <td style="min-width: 100px;"><span>{{app.pricing.purchase}}</span></td>
+        <td>
+          <div v-if="app.offline"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
           </div>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Free');">
-        <div ng-if="app.pricing.free"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td style="min-width: 100px;" ng-if="isFilterVisible('Subscription');"><span>{{app.pricing.subscription}}</span></td>
-      <td style="min-width: 100px;" ng-if="isFilterVisible('Purchase');"><span>{{app.pricing.purchase}}</span></td>
-      <td ng-if="isFilterVisible('Offline');">
-        <div ng-if="app.offline"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Pen Tool');">
-        <div ng-if="app.penTool"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Collaborate');">
-        <div ng-if="app.collaboration"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Comments');">
-        <div ng-if="app.comments"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Handoff');">
-        <div ng-if="app.handoff"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Artboards');">
-        <div ng-if="app.artboards"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Symbols');">
-        <div ng-if="app.symbols"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Responsive');">
-        <div ng-if="app.responsive"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Prototyping');">
-        <div ng-if="app.prototyping"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Import');">
-        <div class="flex-wrapper">
-          <div class="flex-col"><span ng-if="app.import.svg">.svg</span></div>
-          <div class="flex-col"><span ng-if="app.import.eps">.eps</span></div>
-          <div class="flex-col"><span ng-if="app.import.pdf">.pdf</span></div>
-          <div class="flex-col"><span ng-if="app.import.ai">.ai</span></div>
-          <div class="flex-col"><span ng-if="app.import.psd">.psd</span></div>
-        </div>
-      </td>
-      <td ng-if="isFilterVisible('Export');">
-        <div class="flex-col"><span ng-if="app.export.svg">.svg</span></div>
-        <div class="flex-col"><span ng-if="app.export.eps">.eps</span></div>
-        <div class="flex-col"><span ng-if="app.export.pdf">.pdf</span></div>
-        <div class="flex-col"><span ng-if="app.export.ai">.ai</span></div>
-        <div class="flex-col"><span ng-if="app.export.psd">.psd</span></div>
-        <div class="flex-col">
-          <div ng-if="app.export.html" tooltips="tooltips" tooltip-template="HTML">
-            <div title="HTML"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,17.56L16.07,16.43L16.62,10.33H9.38L9.2,8.3H16.8L17,6.31H7L7.56,12.32H14.45L14.22,14.9L12,15.5L9.78,14.9L9.64,13.24H7.64L7.93,16.43L12,17.56M4.07,3H19.93L18.5,19.2L12,21L5.5,19.2L4.07,3Z" /></svg>
-            </div>
+        </td>
+        <td>
+          <div v-if="app.penTool"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
           </div>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        </td>
+        <td>
+          <div v-if="app.collaboration"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
+          </div>
+        </td>
+        <td>
+          <div v-if="app.comments"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
+          </div>
+        </td>
+        <td>
+          <div v-if="app.handoff"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
+          </div>
+        </td>
+        <td>
+          <div v-if="app.artboards"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
+          </div>
+        </td>
+        <td>
+          <div v-if="app.symbols"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
+          </div>
+        </td>
+        <td>
+          <div v-if="app.responsive"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
+          </div>
+        </td>
+        <td>
+          <div v-if="app.prototyping"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</script>

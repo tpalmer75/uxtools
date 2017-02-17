@@ -1,9 +1,12 @@
 // @FOR DEV codekit-prepend "_dev/vue-2.1.10.js"
 // @codekit-prepend "_bundle/vue-2.1.10.min.js"
+// @codekit-prepend "_bundle/vue-lazyload-1.0.0.js"
 // @codekit-prepend "_bundle/lodash-4.17.4.js"
-// @codekit-prepend "_bundle/library-data.js"
+// @codekit-prepend "_bundle/data-library.js"
 
-var library = new Vue({
+//Vue.use(VueLazyLoad)
+
+new Vue({
     el: '#library',
 
 
@@ -24,7 +27,6 @@ var library = new Vue({
         }
     },
     data: {
-        message: 'Hello Vue!',
         showMenu: false,
         showModal: false,
         modalBookTitle: '',
