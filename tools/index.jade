@@ -79,13 +79,13 @@ html(ng-app="uxTools")
                     span Subscribe
               #close.close(@click="showMenu = false")
                 include ../img/icons/close.svg
-        .bottom-bar
+        .bottom-bar(v-cloak)
           .scroll-tabs
             ul
               li
                 router-link(to="design") Design
               li
-                router-link(to="bar") Prototyping
+                router-link(to="prototyping") Prototyping
               li
                 router-link(to="handoff") Handoff
               li
@@ -96,6 +96,9 @@ html(ng-app="uxTools")
           //- injected Vues
 
     include ../templates/design.html
+    include ../templates/prototyping.html
+    include ../templates/handoff.html
+    include ../templates/monitoring.html
     script(src="../js/min/tools-min.js?ver=1.2")
     script.
       window['_fs_debug'] = false;
@@ -120,144 +123,3 @@ html(ng-app="uxTools")
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-78846271-1', 'auto');
       ga('send', 'pageview');
-
-
-
-
-
-
-
-
-//- html(ng-app="uxTools")
-//-   head
-//-     title Uxtools.co – UX Tools
-//-     meta(name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing.")
-//-     meta(name="ROBOTS" content="INDEX, FOLLOW")
-//-     meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
-//-     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
-//-     link(rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png")
-//-     link(rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png")
-//-     link(rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png")
-//-     link(rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png")
-//-     link(rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png")
-//-     link(rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png")
-//-     link(rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png")
-//-     link(rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png")
-//-     link(rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png")
-//-     link(rel="icon" type="image/png" sizes="192x192"  href="../img/favicon/android-icon-192x192.png")
-//-     link(rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png")
-//-     link(rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png")
-//-     link(rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png")
-//-     link(rel="manifest" href="/manifest.json")
-//-     meta(name="msapplication-TileColor" content="#ffffff")
-//-     meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
-//-     meta(name="theme-color" content="#ffffff")
-//-     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
-//-     link(href="../css/tools.css?version=1.5" rel="stylesheet" type="text/css")
-
-//-   body(ng-init="$root.showMenu = false")
-//-     header#main-header
-//-       .top-bar
-//-         h1.screen-reader UX Tools
-//-         .wrapper
-//-           .left
-//-             a(href="/")
-//-               img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
-//-           .right
-//-             ul
-//-               li
-//-                 a(href="/tools") 
-//-                   span Tools
-//-               li
-//-                 a(href="/library") 
-//-                   span Library
-//-               li
-//-                 a(href="https://blog.uxtools.co") 
-//-                   span Blog
-//-               li
-//-                 a(href="/about.html") 
-//-                   span About
-//-               li
-//-                 a(href="http://newsletter.uxtools.co")
-//-                   button.small
-//-                     | Subscribe
-//-           #hamburger(ng-click="$root.showMenu = true")
-//-             .icon
-//-               include ../img/icons/menu.svg
-//-             span Menu
-//-       #sidebar(ng-class="{'show-menu': $root.showMenu}")
-//-         #shade.shade(ng-click="$root.showMenu = false")
-//-           .container
-//-             ul
-//-               li
-//-                 a(href="/tools") 
-//-                   span Tools
-//-               li
-//-                 a(href="/library") 
-//-                   span Library
-//-               li
-//-                 a(href="https://blog.uxtools.co") 
-//-                   span Blog
-//-               li
-//-                 a(href="/about.html") 
-//-                   span About
-//-               li
-//-                 a(href="http://newsletter.uxtools.co")
-//-                   include ../img/icons/email.svg
-//-                   span Subscribe
-//-             #close.close(ng-click="$root.showMenu = false")
-//-               include ../img/icons/close.svg
-//-       .bottom-bar
-//-         .scroll-tabs
-//-           ul
-//-             li(ui-sref-active="active")
-//-               a(ui-sref="design") Design
-//-             li(ui-sref-active="active")
-//-               a(ui-sref="prototyping") Prototyping
-//-             li(ui-sref-active="active")
-//-               a(ui-sref="handoff") Handoff
-//-             li(ui-sref-active="active")
-//-               a(ui-sref="monitoring") Monitoring
-                
-//-     section#scroll-element
-//-       div(ui-view="")
-//-         //- injected Angular Views
-
-    
-
-//-     script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
-//-     //- script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js")
-//-     script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js")
-//-     script(src="../js/min/tools-min.js?ver=1.1")
-//-     //- script(type="text/javascript" id="inspectletjs").
-//-     //-   window.__insp = window.__insp || [];
-//-     //-   __insp.push(['wid', 1656300355]);
-//-     //-   (function() {
-//-     //-   function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-//-     //-   setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
-//-     //-   })();
-//-     script.
-//-       window['_fs_debug'] = false;
-//-       window['_fs_host'] = 'www.fullstory.com';
-//-       window['_fs_org'] = '2EJY1';
-//-       window['_fs_namespace'] = 'FS';
-//-       (function(m,n,e,t,l,o,g,y){
-//-           if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
-//-           g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
-//-           o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
-//-           y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
-//-           g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
-//-           g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
-//-           g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
-//-           d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
-//-           ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
-//-       })(window,document,window['_fs_namespace'],'script','user');
-//-     script.
-//-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-//-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-//-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-//-       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-//-       ga('create', 'UA-78846271-1', 'auto');
-//-       ga('send', 'pageview');
-
-

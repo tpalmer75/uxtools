@@ -1,14 +1,13 @@
 
 <script type="text/x-template" id="design-tools">
-  <table id="scroll-table">
+  <table id="scroll-table" v-scrolltable="">
     <thead id="fixed-header">
       <tr>
-        <th v-for="column in designData.columns" class="fixed-header"><span style="display: block; position: relative" v-tooltip.bottom-center="column.tipText">{{ column.title }}</span>
-        </th>
+        <th v-for="column in toolsData.columns" class="fixed-header"><span style="display: block; position: relative" v-tooltip.bottom-center="column.tipText">{{ column.title }}</span></th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="app in designData.tools">
+      <tr v-for="app in computedTools">
         <td class="fixed-col"><a v-bind:href="app.url" v-bind:title="app.url" target="_blank"><img v-bind:alt="app.name + 'Logo'" src="../img/blank.png" v-bind:style="app.image"/></a></td>
         <td class="name-col"><a v-bind:href="app.url" v-bind:title="app.url" target="_blank">{{ app.name }}</a></td>
         <td>
