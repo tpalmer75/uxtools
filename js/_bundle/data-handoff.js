@@ -269,7 +269,7 @@ const handoffData = {
         "specs": true,
         "measure": true,
         "comments": true,
-        "revisions": false,
+        "revisions": true,
         "sharing": {
             "web": true,
         },
