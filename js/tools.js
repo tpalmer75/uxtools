@@ -33,21 +33,6 @@ Vue.directive('scrolltable', {
 		  var columns = document.querySelectorAll("tr:first-of-type td");
 		  var table = document.getElementById("scroll-table");
 
-
-		  console.log("scrollElement", scrollElement)
-		  console.log("fixedHeaders", fixedHeaders)
-		  console.log("fixedCols", fixedCols)
-		  console.log("fixedColHeight", fixedColHeight)
-		  console.log("mainHeader", mainHeader)
-		  console.log("latestKnownScrollX", latestKnownScrollX)
-		  console.log("latestKnownScrollY", latestKnownScrollY)
-		  console.log("ticking", ticking)
-		  console.log("headerHeight", headerHeight)
-		  console.log("fixedHeader", fixedHeader)
-		  console.log("fixedHeaderHeight", fixedHeaderHeight)
-		  console.log("columns", columns)
-		  console.log("table", table)
-
 		  fixedHeader.style.position = "fixed"; // to keep it hidden while loading
 		  fixedHeader.style.top = headerHeight + "px";
 
