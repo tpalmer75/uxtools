@@ -27,6 +27,10 @@ script(type="text/x-template" id="design-tools")
 							div(v-if="app.platforms.windows" v-tooltip.bottom-center="'Windows'")
 								div(title="Windows")
 									include ../img/icons/windows.svg
+						div.flex-col
+							div(v-if="app.platforms.linux" v-tooltip.bottom-center="'Linux'")
+								div(title="Linux")
+									include ../img/icons/linux.svg
 				td
 					div(v-if="app.pricing.free")
 						include ../img/icons/check.svg

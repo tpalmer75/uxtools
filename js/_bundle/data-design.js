@@ -419,6 +419,36 @@ const designData = {
         "pricing": {
             "subscription": "$15"
         }
+    }, {
+        "name": "Gravit Designer",
+        "url": "https://gravit.io/",
+        "image": {
+            "background-position": "0 -900",
+        },
+        "platforms": {
+            "web": true,
+            "mac": true,
+            "windows": true,
+            "linux": true
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": true,
+        "penTool": true,
+        "collaboration": false,
+        "comments": true,
+        "handoff": true,
+        "plugins": false,
+        "artboards": true,
+        "symbols": true,
+        "responsive": true,
+        "vector": true,
+        "prototyping": true,
+        "pricing": {
+            "free": true
+        }
     }]
 
 }
