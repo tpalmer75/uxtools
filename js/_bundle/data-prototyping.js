@@ -269,7 +269,8 @@ const prototypingData = {
         },
         "design": true,
         "platforms": {
-            "mac": true
+            "mac": true,
+            "windows": true
         },
         "import": {
 

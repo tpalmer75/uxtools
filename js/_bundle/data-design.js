@@ -241,7 +241,8 @@ const designData = {
             "background-position": "-400 0",
         },
         "platforms": {
-            "mac": true
+            "mac": true,
+            "windows": true
         },
         "import": {
             "svg": true,
