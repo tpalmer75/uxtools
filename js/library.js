@@ -64,8 +64,11 @@ new Vue({
         orderedCategoryOptions: function() {
             return _.orderBy(this.categoryData.categoryOptions, 'name');
         },
+        randomizedBooks: function() {
+            return _.shuffle(this.books)
+        },
         orderedBooks: function() {
-            return _.orderBy(this.books, 'recommendations.length', 'desc')
+            return _.orderBy(this.randomizedBooks, 'recommendations.length', 'desc')
         },
         computedTags: function() {
             if (this.searchTerm) {

@@ -7,7 +7,7 @@ var books = [{
         ],
         image: "krug.png",
         recommendations: [
-            "015","016","017","002","014","003","004","005","006","007","009","010","011","012","013"
+            "015","016","017","002","014","003","004","005","006","007","009","010","011","012","013","021"
         ]
     }, {
         title: "Mobile First",
@@ -39,7 +39,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "015","001","002","003","009"
+            "015","001","002","003","009","021"
         ],
         image: "cooper.png",
     }, {
@@ -116,7 +116,7 @@ var books = [{
             "Communication"
         ],
         recommendations: [
-            "017","001","003","004","010","011", "013"
+            "017","001","003","004","010","011", "013", "020"
         ],
         image: "weinschenk.png",
     }, {
@@ -193,7 +193,7 @@ var books = [{
             "Agile", "General UX"
         ],
         recommendations: [
-            "002","003","006","008","009","010","013"
+            "002","003","006","008","009","010","013", "020"
         ],
         image: "gothelf.jpg",
     }, {
@@ -369,7 +369,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "017","006","007","010","011","013"
+            "017","006","007","010","011","013","020","021"
         ],
         image: "allen.jpg",
     }, {
@@ -402,7 +402,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "006", "007","014"
+            "006", "007","014","021"
         ],
         image: "unger.jpg",
     }, {
@@ -523,7 +523,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "008"
+            "008", "022"
         ],
         image: "patton.jpg",
     }, {
@@ -776,7 +776,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "017","010","011","013"
+            "017","010","011","013","020","021"
         ],
         image: "reiss.jpg",
     }, {
@@ -798,7 +798,7 @@ var books = [{
             "Mobile & Repsonsive","Usability"
         ],
         recommendations: [
-            "010","013"
+            "010","013", "020","021"
         ],
         image: "nielsen-2.jpg",
     }, {
@@ -1204,7 +1204,7 @@ var books = [{
             "Interaction Design"
         ],
         recommendations: [
-            "019"
+            "019","022"
         ],
         image: "frost.png",
     }, {
@@ -1449,6 +1449,116 @@ var books = [{
             "018"
         ],
         image: "bouroullec.jpg",
+    }, {
+        title: "The Joy of UX: User Experience and Interactive Design for Developers",
+        author: "David Platt",
+        url: "http://amzn.to/2mGIK2n",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "platt.jpg",
+    }, {
+        title: "The Best Interface Is No Interface",
+        author: "Golden Krishna",
+        url: "http://amzn.to/2m8bTHq",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "krishna.jpg",
+    }, {
+        title: "The Tao of User Experience",
+        author: "Robert Hoekman Jr",
+        url: "http://amzn.to/2m8ydRc",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "hoekman-2.jpg",
+    }, {
+        title: "100 Years of Swiss Graphic Design",
+        author: "Christian Brandle, Karin Gimmi, Barbara Junod, Bettina Richter",
+        url: "http://amzn.to/2m3e1Q5",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "brandle.jpg",
+    }, {
+        title: "Borge Mogensen: Simplicity and Function",
+        author: "Michael Müller, Børge Mogensen",
+        url: "http://amzn.to/2lkf1eJ",
+        tags: [
+            "Visual Design", "Interaction Design"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "muller-4.jpg",
+    }, {
+        title: "Data-Driven Design: Improving User Experience with A/B Testing",
+        author: "Rochelle King, Elizabeth F Churchill, Caitlin Tan",
+        url: "http://amzn.to/2lkg7Hq",
+        tags: [
+            "Data & Analytics"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "king.jpg",
+    }, {
+        title: "How to",
+        author: "Michael Bierut",
+        url: "http://amzn.to/2mC5Ubf",
+        tags: [
+            "Visual Design", "Communication"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "bierut.jpg",
+    }, {
+        title: "The Practitioner’s Guide to User Experience Design",
+        author: "Luke Miller",
+        url: "http://amzn.to/2lQToGt",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "miller-2.jpg",
+    }, {
+        title: "Prototyping for Physical and Digital Products",
+        author: "Kathryn McElroy",
+        url: "http://amzn.to/2mqkRjx",
+        tags: [
+            "General UX"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "mcelroy.jpg",
+    }, {
+        title: "Graphic Design Visionaries",
+        author: "Caroline Roberts",
+        url: "http://amzn.to/2mqkgOQ",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "022"
+        ],
+        image: "roberts.jpg",
     }];
 
     var bookLists = {
@@ -1565,5 +1675,23 @@ var books = [{
             owner: "Webydo.",
             url: "https://cmd-t.webydo.com/the-most-interesting-ux-ebooks-published-in-2016-d369bc4c3b10",
             image: "webydo.png"
+        },
+        "020": {
+            name: "UX Designers Library: A Wealth of Books for the Eager UXD",
+            owner: "Codal",
+            url: "https://www.codal.com/ux-designers-library-a-wealth-of-books-for-the-eager-uxd/",
+            image: "codal.jpg"
+        },
+        "021": {
+            name: "6 UX Books Suitable For Beginners & Experienced Designers",
+            owner: "Everyday Designer",
+            url: "https://www.everydaydesigner.net/resources/6-ux-books-suitable-for-beginners-experienced-designers",
+            image: "everydaydesigner.png"
+        },
+        "022": {
+            name: "Best new UX Books from the last 3 years",
+            owner: "uxdesign.cc",
+            url: "https://uxdesign.cc/best-new-ux-books-from-the-last-3-years-d975403b2956",
+            image: "uxdesigncc.jpg"
         }
     };
