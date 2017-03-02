@@ -20,6 +20,7 @@ const handoffData = {
         "variables": true,
         "guides": true,
         "comments": true,
+        "revisions": true,
         "sharing": {
             "mac": true,
             "web": true,
