@@ -1,4 +1,6 @@
-var books = [{
+{
+"books":
+    {
         title: "Don't Make Me Think",
         author: "Steve Krug",
         url: "http://amzn.to/2eOJgqS",
@@ -28,7 +30,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "015","018","016","simon-pan-only-ux-reading-list-ever","003","005","014","006","009","012",
+            "015","018","016","001","003","005","014","006","009","012",
         ],
         image: "norman.png",
     }, {
@@ -39,7 +41,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "015","simon-pan-only-ux-reading-list-ever","002","003","009","021"
+            "015","001","002","003","009","021"
         ],
         image: "cooper.png",
     }, {
@@ -50,7 +52,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "015","simon-pan-only-ux-reading-list-ever","004","005","006","007"
+            "015","001","004","005","006","007"
         ],
         image: "garrett.png",
     }, {
@@ -61,7 +63,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "015","simon-pan-only-ux-reading-list-ever"
+            "015","001"
         ],
         image: "merholz.png",
     }, {
@@ -72,7 +74,7 @@ var books = [{
             "Info Architecture"
         ],
         recommendations: [
-            "simon-pan-only-ux-reading-list-ever","013"
+            "001","013"
         ],
         image: "spencer.png",
     }, {
@@ -83,7 +85,7 @@ var books = [{
             "Communication"
         ],
         recommendations: [
-            "015","simon-pan-only-ux-reading-list-ever"
+            "015","001"
         ],
         image: "brown.png",
     }, {
@@ -94,7 +96,7 @@ var books = [{
             "Communication"
         ],
         recommendations: [
-            "simon-pan-only-ux-reading-list-ever",
+            "001",
         ],
         image: "brown-2.png",
     }, {
@@ -105,7 +107,7 @@ var books = [{
             "General UX", "Interaction Design"
         ],
         recommendations: [
-            "simon-pan-only-ux-reading-list-ever","007"
+            "001","007"
         ],
         image: "anderson.png",
     }, {
@@ -116,7 +118,7 @@ var books = [{
             "Communication"
         ],
         recommendations: [
-            "020","017","simon-pan-only-ux-reading-list-ever","003","004","010","011", "013"
+            "020","017","001","003","004","010","011", "013"
         ],
         image: "weinschenk.png",
     }, {
@@ -127,7 +129,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "simon-pan-only-ux-reading-list-ever",
+            "001",
         ],
         image: "chimero.png",
     }, {
@@ -1559,10 +1561,10 @@ var books = [{
             "022"
         ],
         image: "roberts.jpg",
-    }];
-
-    var bookLists = {
-        "simon-pan-only-ux-reading-list-ever": {
+    }
+},
+ "bookLists": {
+        "001": {
             name: "The Only UX Reading List Ever",
             owner: "Simon Pan",
             url: "https://medium.com/interactive-mind/the-only-ux-reading-list-ever-d420edb3f4ff",
@@ -1694,4 +1696,5 @@ var books = [{
             url: "https://uxdesign.cc/best-new-ux-books-from-the-last-3-years-d975403b2956",
             image: "uxdesigncc.jpg"
         }
-    };
+    }
+}

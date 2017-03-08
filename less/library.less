@@ -4,7 +4,7 @@
 @import "common.less";
 
 body {
-	background: #F1F1F1;
+	background: white;
 }
 
 #library {
@@ -20,8 +20,9 @@ a {
 }
 
 .wrapper {
+	width: 100%;
 	max-width: 1600px;
-	margin: auto;
+	margin: 0 auto;
 }
 
 .select-wrapper {
@@ -59,20 +60,103 @@ select {
     //z-index: 2;
 }
 
+#library-sidebar {
+	background: #f1f1f1;
+	// width: 300px;
+	flex: 0 0 300px;
+	min-height: 100%;
+	padding: 20px;
+	@media all and (max-width: 999px) {
+		flex: 0 0 250px;
+	}
+}
+
+.sidebar-list {
+	border-top: 1px solid #ccc;
+	margin-top: 20px;
+	header {
+		font-weight: bold;
+		font-size: 14px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		margin: 30px 0;
+	}
+	li {
+		margin: 10px 0;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		span {
+			flex: 1 0 auto;
+		}
+		svg {
+			opacity: 0;
+			visibility: hidden;
+			fill: @blue-primary;
+		}
+		&.active {
+			color: @blue-primary;
+			svg {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+		img {
+			width: 32px;
+			height: 32px;
+			border-radius: 999px;
+			margin-right: 10px;
+			flex: 0 0 auto;
+			@media all and (max-width: 999px) {
+				width: 24px;
+				height: 24px;
+			}
+		}
+		&.image-list {
+			justify-content: initial;
+			margin-bottom: 15px;
+			.owner {
+				color: #999;
+				font-size: 14px;
+				margin-top: 5px;
+			}
+		}
+	}
+	.show-more {
+		// font-weight: bold;
+		color: @blue-primary;
+		margin-top: 15px;
+		align-items: center;
+		justify-content: flex-start;
+		position: relative;
+		left: -6px;
+		svg {
+			fill: @blue-primary;
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+
+section {
+	display: flex;
+	align-items: stretch;
+}
+
 #books {
 	display: flex;
 	justify-content: space-between;
 	margin: auto;
 	flex-wrap: wrap;
-	padding: 30px 20px 0;
-	@media all and (max-width: 766px) {
-		padding: 0;
+	padding: 50px;
+	@media all and (max-width: 999px) {
+		padding: 30px;
 	}
 	> li {
 		width: 32%;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 		background: white;
-		box-shadow: 0 2px 5px rgba(0,0,0,.15);
+		// box-shadow: 0 2px 5px rgba(0,0,0,.15);
 		flex-direction: column;
 		justify-content: space-between;
 		display: flex;
@@ -90,12 +174,12 @@ select {
 			padding: 10px 0;
 		}
 		.book-info {
-			padding: 20px 10px 10px 0;
+			padding: 0 10px 10px 10px;
 		}
 		.title {
-			font-family: @title-font-stack;
+			// font-family: @title-font-stack;
 			font-weight: bold;
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 			line-height: 1.2;
 			&:hover {
 				text-decoration: underline;
@@ -114,15 +198,15 @@ select {
 		height: 100px;
 		flex: 0 0 auto;
 		text-align: center;
-		margin: -10px 20px 20px;
-		@media all and (max-width: 766px) {
-			margin-top: 10px;
-		}
-		@media all and (max-width: 499px) {
-			width: 80px;
-			height: 100px;
-			margin: 10px;
-		}
+		// margin: 0 20px 20px;
+		// @media all and (max-width: 766px) {
+		// 	margin-top: 10px;
+		// }
+		// @media all and (max-width: 499px) {
+		// 	width: 80px;
+		// 	height: 100px;
+		// 	margin: 10px;
+		// }
 		img {
 			//width: 100%;
 			//height: auto;
@@ -154,54 +238,19 @@ select {
 			}
 		}
 	}
-	.recommendation-wrapper {
-		padding: 10px;
-		border-top: 1px solid #ddd;
-		background: #F8F8F8;
-		transition: background .2s;
+	.book-lists {
+		display: flex;
+		align-items: center;
+		font-size: 14px;
 		cursor: pointer;
-		&:hover {
-			background: #f1f1f1;
-		}
-		@media all and (max-width: 766px) {
-			background: none;
-			border-top: none;
-			margin-left: 10px;
-			&:hover {
-				background: none;
-			}
-		}
-		@media all and (max-width: 499px) {
-			margin-left: 0;
-		}
-	}
-	.recommendations {
-		height: 24px;
-		overflow: hidden;
-		width: 100%;
-		li {
-			display: inline-block;
-			//color: @blue-alternate;
-			//font-weight: bold;
-			vertical-align: middle;
-			// cursor: pointer;
-		}
-		.count {
-			margin-right: 10px;
-		}
-		img {
-			width: 24px;
-			background-size: 500px;
-			border-radius: 50%;
-			margin-right: 5px;
-		}
 		svg {
 			fill: @blue-primary;
+			transition: fill .2s;
 		}
-		.view-all {
-			color: #999;
-			text-decoration: underline;
-			font-size: 14px;
+		&:hover {
+			svg {
+				fill: @blue-alternate;
+			}
 		}
 	}
 }
@@ -211,43 +260,25 @@ select {
 	justify-content: space-between;
 }
 
-#search {
+.search {
 	position: relative;
 	input {
 		font-family: @font-stack;
-		background-color: transparent;
-	    border: 0;
-	    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-	    border-radius: 0;
-	    color: white;
-	    font-size: 16px;
-	    margin: 5px 0 10px;
-	    padding: 8px 0;
-	    position: relative;
-	    width: 250px;
-	    max-width: 100%;
-	    z-index: 2;
-		&::-webkit-input-placeholder {
-			color: fade(white, 50%);
-		}
-		&:-moz-placeholder {
-			color: fade(white, 50%);
-		}
-		&::-moz-placeholder {
-			color: fade(white, 50%);
-		}
-		&:-ms-input-placeholder {
-			color: fade(white, 50%);
-		}
-		@media all and (max-width: @small-size) {
-			width: 100%;
-		}
+		background-color: white;
+		appearance: none;
+		border: 1px solid #ccc;
+		border-radius: 999px;
+		height: 32px;
+		width: 100%;
+		font-size: 16px;
+		text-indent: 10px;
+		padding-right: 30px;
 	}
 	svg {
-		fill: white;
+		fill: #555;
 		position: absolute;
-		top: 10px;
-		right: 5px;
+		top: 4px;
+		right: 7px;
 	}
 	@media all and (max-width: @small-size) {
 		width: 100%;
@@ -293,6 +324,8 @@ select {
 		}
 	}
 }
+
+
 
 #modal-wrapper {
 	opacity: 1;
@@ -416,4 +449,11 @@ select {
 
 [v-cloak] {
 	display: none;
+}
+
+.mobile {
+	display: none;
+	@media all and (max-width: 500px) {
+		display: block;
+	}
 }

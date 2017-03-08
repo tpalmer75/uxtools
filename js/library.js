@@ -1,12 +1,52 @@
-// @FOR DEV codekit-prepend "_dev/vue-2.1.10.js"
-// @codekit-prepend "_bundle/vue-2.1.10.min.js"
+// @codekit-prepend codekit-prepend "_dev/vue-2.1.10.js"
+// @FOR DEV "_bundle/vue.min.js"
+// @codekit-prepend "_bundle/vue-router-2.2.0.js"
 // @codekit-prepend "_bundle/vue-lazyload-1.0.0.js"
 // @codekit-prepend "_bundle/lodash-4.17.4.js"
 // @codekit-prepend "_bundle/data-library.js"
 
-//Vue.use(VueLazyLoad)
+// Vue.use(VueLazyLoad)
+
+const bookListComp = {
+    template: '#book-list',
+    props: ['listId'],
+    data: function () {
+        return {
+            books: function() {
+                console.log(listId)
+                return this.$parent.filteredBooks
+
+            }
+        }
+    },
+    computed: {
+        // computedTools: function() {
+        //     return _.orderBy(this.toolsData.tools, 'name')
+        // }
+    }
+}
+
+
+const router = new VueRouter({
+    routes: [
+
+        { 
+            path: '/', 
+            component: bookListComp,
+            // props: { books: this.filteredBooks }
+        }, { 
+            path: '/lists/:listId', 
+            component: bookListComp,
+            props: true
+        }, { 
+            path: '*',
+            redirect: '/'
+        }
+    ]
+})
 
 new Vue({
+    router: router,
     el: '#library',
 
 
@@ -24,7 +64,31 @@ new Vue({
         },
         scrollToTop: function() {
             window.scrollTo(0,0);
+        },
+        showMoreCategories: function() {
+            var arr = this.categoryData.categoryOptions
+            if (this.categoryCount < arr.length) {
+                this.categoryCount = arr.length
+            } else {
+                this.categoryCount = 5;
+            }
+        },
+        setTags: function(tagName) {
+            var currentTag = this.categoryData.categoryModel.tags
+            if (!currentTag) {
+                this.categoryData.categoryModel.tags = tagName
+            } else {
+                this.categoryData.categoryModel.tags = ''
+            }
         }
+        // showMoreBookLists: function() {
+        //     var max = 10;
+        //     if (this.bookListsCount < max) {
+        //         this.bookListsCount = max
+        //     } else {
+        //         this.bookListsCount = 5;
+        //     }
+        // }
     },
     data: {
         showMenu: false,
@@ -56,13 +120,28 @@ new Vue({
                 {name: "Process", value: "Process"}
             ]
           },
+        categoryCount: 5,
+        bookListsCount: 10,
+        booksCount: 20,
         books: books,
         bookLists: bookLists
 
     },
     computed: {
         orderedCategoryOptions: function() {
-            return _.orderBy(this.categoryData.categoryOptions, 'name');
+            var arr =  _.orderBy(this.categoryData.categoryOptions, 'name');
+            var truncated = arr.slice(0, this.categoryCount);
+            return truncated
+        },
+        // truncatedBooks: function() {
+        //     var arr = this.books
+        //     var truncated = arr.slice(0, this.booksCount);
+        //     return truncated
+        // },
+        convertedBookLists: function() {
+            var arr = _.values(this.bookLists)
+            var truncArr = arr.slice(0, this.bookListsCount)
+            return truncArr
         },
         randomizedBooks: function() {
             return _.shuffle(this.books)
