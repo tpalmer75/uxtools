@@ -829,7 +829,7 @@ const prototypingData = {
         "sensors": false
         // "mobileOnly": null,
     }, {
-        "name": "Kite Composer",
+        "name": "Kite Compositor",
         "url": "https://kiteapp.co/",
         "image": {
             "background-position": "-100 -900",
