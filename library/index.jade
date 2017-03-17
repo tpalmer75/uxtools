@@ -168,24 +168,25 @@ html
                           h6 {{bookLists[list].owner}}
 
     script(type="text/x-template" id="book-list")
-      //- p Hello, world!!!!!!
-      ul#books
-        li(v-for="book in books()")
-          .book-wrapper
-            .image-container
-              a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
-                img.cover(v-bind:alt="book.title" v-bind:src="'../img/book-covers/' + book.image")
-      //-       .book-info
-      //-         a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
-      //-           h4.title {{ shortenedTitle(book.title) }}
-      //-         h5
-      //-           em by 
-      //-           | {{ book.author }}
-      //-         ul.tags
-      //-           li(v-for="tag in book.tags" @click="clearAll(); scrollToTop(); categoryData.categoryModel.tags = tag") {{ tag }}
-      //-         .book-lists(@click="showModal=true; setModalData(book);")
-      //-           include ../img/icons/bookmark.svg
-      //-           span {{book.recommendations.length}}
+      div
+        p Hello, worl!
+        ul#books
+          li(v-for="book in books")
+            .book-wrapper
+              .image-container
+                a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
+                  img.cover(v-bind:alt="book.title" v-bind:src="'../img/book-covers/' + book.image")
+              .book-info
+                a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
+                  h4.title {{ shortenedTitle(book.title) }}
+                h5
+                  em by 
+                  | {{ book.author }}
+                ul.tags
+                  li(v-for="tag in book.tags" @click="clearAll(); scrollToTop(); categoryData.categoryModel.tags = tag") {{ tag }}
+                .book-lists(@click="showModal=true; setModalData(book);")
+                  include ../img/icons/bookmark.svg
+                  span {{book.recommendations.length}}
     script(src="../js/min/library-min.js?ver=1.3")
     script.
       window['_fs_debug'] = false;

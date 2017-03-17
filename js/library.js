@@ -10,19 +10,27 @@
 const bookListComp = {
     template: '#book-list',
     props: ['listId'],
-    data: function () {
-        return {
-            books: function() {
-                console.log(listId)
-                return this.$parent.filteredBooks
-
-            }
+    computed: {
+        books: function() {
+            let arr = this.$parent.filteredBooks
+            let listId = this.listId
+            return arr.filter(function(book) {
+                // loop through all recommendations
+                for (i=0;i<book.recommendations.length;i++) {
+                    let list = book.recommendations[i]
+                    // if this ID is found in the recommendations array
+                    if (list == listId) {
+                        // add it to the filtered array
+                        return true
+                    }
+                }
+            })
         }
     },
-    computed: {
-        // computedTools: function() {
-        //     return _.orderBy(this.toolsData.tools, 'name')
-        // }
+    methods: {
+        shortenedTitle: function(string) {
+            return _.truncate(string, {length: 60});
+        }
     }
 }
 
@@ -58,9 +66,6 @@ new Vue({
         setModalData: function(book) {
             this.modalBookTitle = book.title;
             this.modalBookRecommendations = book.recommendations;
-        },
-        shortenedTitle: function(string) {
-            return _.truncate(string, {length: 60});
         },
         scrollToTop: function() {
             window.scrollTo(0,0);
