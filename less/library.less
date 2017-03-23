@@ -86,6 +86,7 @@ select {
 		cursor: pointer;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		span {
 			flex: 1 0 auto;
 		}
@@ -113,8 +114,11 @@ select {
 			}
 		}
 		&.image-list {
-			justify-content: initial;
-			margin-bottom: 15px;
+			a {
+				display: flex;
+				justify-content: initial;
+				margin-bottom: 15px;
+			}
 			.owner {
 				color: #999;
 				font-size: 14px;
@@ -143,15 +147,19 @@ section {
 	align-items: stretch;
 }
 
+.books-wrapper {
+	padding: 0 50px;
+	@media all and (max-width: 999px) {
+		padding: 0 30px;
+	}
+}
+
 #books {
 	display: flex;
 	justify-content: space-between;
 	margin: auto;
 	flex-wrap: wrap;
-	padding: 50px;
-	@media all and (max-width: 999px) {
-		padding: 30px;
-	}
+	margin-top: 50px;
 	> li {
 		width: 32%;
 		margin-bottom: 40px;
@@ -252,6 +260,35 @@ section {
 				fill: @blue-alternate;
 			}
 		}
+	}
+}
+
+.books-header {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #eee;
+	//padding: 20px 0;
+	min-height: 74px;
+	align-items: center;
+	.flex-wrapper {
+		display: flex;
+	}
+	img {
+		width: 40px;
+		height: 40px;
+		border-radius: 999px;
+		margin-right: 15px;
+	}
+	h3 {
+		font-weight: bold;
+		margin-bottom: 3px;
+	}
+	h4 {
+		color: #999;
+	}
+	.view-all {
+		display: flex;
+		align-items: center;
 	}
 }
 

@@ -10,44 +10,67 @@
 const bookListComp = {
     template: '#book-list',
     props: ['listId'],
+    data: function() {
+        return {
+            bookLists: this.$parent.bookLists
+        }
+    },
     computed: {
         books: function() {
             let arr = this.$parent.filteredBooks
             let listId = this.listId
-            return arr.filter(function(book) {
-                // loop through all recommendations
-                for (i=0;i<book.recommendations.length;i++) {
-                    let list = book.recommendations[i]
-                    // if this ID is found in the recommendations array
-                    if (list == listId) {
-                        // add it to the filtered array
-                        return true
+            if (listId) {
+                return arr.filter(function(book) {
+                    // loop through all recommendations
+                    for (i=0;i<book.recommendations.length;i++) {
+                        let list = book.recommendations[i]
+                        // if this ID is found in the recommendations array
+                        if (list == listId) {
+                            // add it to the filtered array
+                            return true
+                        }
                     }
-                }
-            })
+                })
+            } else {
+                return arr
+            }
         }
     },
     methods: {
         shortenedTitle: function(string) {
             return _.truncate(string, {length: 60});
+        },
+        clearAll: function() {
+            this.$parent.clearAll()
+        },
+        scrollToTop: function() {
+            this.$parent.scrollToTop()
+        },
+        setTags: function(tag) {
+            this.$parent.setTags(tag)
         }
     }
 }
 
 
 const router = new VueRouter({
+    // mode: 'history',
+    // base: '/library',
     routes: [
 
         { 
             path: '/', 
+            name: 'main',
             component: bookListComp,
             // props: { books: this.filteredBooks }
         }, { 
             path: '/lists/:listId', 
+            name: 'bookList',
             component: bookListComp,
             props: true
         }, { 
             path: '*',
+            name: 'default',
             redirect: '/'
         }
     ]
@@ -80,10 +103,10 @@ new Vue({
         },
         setTags: function(tagName) {
             var currentTag = this.categoryData.categoryModel.tags
-            if (!currentTag) {
-                this.categoryData.categoryModel.tags = tagName
-            } else {
+            if (currentTag == tagName) {
                 this.categoryData.categoryModel.tags = ''
+            } else {
+                this.categoryData.categoryModel.tags = tagName
             }
         }
         // showMoreBookLists: function() {

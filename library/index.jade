@@ -118,10 +118,11 @@ html
               header Featured Lists
               ul
                 li.image-list(v-for="list in convertedBookLists")
-                  img(v-bind:src="'../img/book-recommendations/' + list.image")
-                  .text-wrapper
-                    div {{ list.name }}
-                    div.owner {{ list.owner }}
+                  router-link(:to="{ name: 'bookList', params: {listId: list.id }}")
+                    img(v-bind:src="'../img/book-recommendations/' + list.image")
+                    .text-wrapper
+                      div {{ list.name }}
+                      div.owner {{ list.owner }}
                 //- li.show-more(@click="showMoreBookLists()") 
                 //-   include ../img/icons/unfold-more-horizontal.svg
                 //-   span(v-show="bookListsCount < 6") Show More
@@ -168,14 +169,22 @@ html
                           h6 {{bookLists[list].owner}}
 
     script(type="text/x-template" id="book-list")
-      div
-        p Hello, worl!
+      div.books-wrapper
+        header.books-header(v-if="listId")
+          .flex-wrapper
+            img(v-bind:src="'../../img/book-recommendations/'+bookLists[listId].image")
+            .content-wrapper
+              h3 {{ bookLists[listId].name }}
+              h4 {{ bookLists[listId].owner }}
+          router-link.view-all(to="/")
+            include ../img/icons/book-open-variant.svg
+            span View All Books
         ul#books
           li(v-for="book in books")
             .book-wrapper
               .image-container
                 a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
-                  img.cover(v-bind:alt="book.title" v-bind:src="'../img/book-covers/' + book.image")
+                  img.cover(v-bind:alt="book.title" v-bind:src="'../../img/book-covers/' + book.image")
               .book-info
                 a(v-bind:href="book.url" target="_blank" v-bind:title="book.title")
                   h4.title {{ shortenedTitle(book.title) }}
@@ -183,10 +192,13 @@ html
                   em by 
                   | {{ book.author }}
                 ul.tags
-                  li(v-for="tag in book.tags" @click="clearAll(); scrollToTop(); categoryData.categoryModel.tags = tag") {{ tag }}
-                .book-lists(@click="showModal=true; setModalData(book);")
+                  li(v-for="tag in book.tags" @click="clearAll(); scrollToTop(); $parent.categoryData.categoryModel.tags = tag") {{ tag }}
+                .book-lists(@click="$parent.showModal=true; $parent.setModalData(book);")
                   include ../img/icons/bookmark.svg
                   span {{book.recommendations.length}}
+        .no-books
+          p Hmm, looks like there aren't any books here.
+          button.blue View All Books
     script(src="../js/min/library-min.js?ver=1.3")
     script.
       window['_fs_debug'] = false;

@@ -1566,132 +1566,154 @@ var books = [{
             name: "The Only UX Reading List Ever",
             owner: "Simon Pan",
             url: "https://medium.com/interactive-mind/the-only-ux-reading-list-ever-d420edb3f4ff",
-            image: "simon-pan.jpg"
+            image: "simon-pan.jpg",
+            id: "simon-pan-only-ux-reading-list-ever"
         },
         "002": {
             name: "User Experience Design — Best sources to learn UX",
             owner: "Order Group",
             url: "https://blog.prototypr.io/user-experience-design-best-sources-to-learn-ux-c67bf80484ce",
-            image: "order-group.png"
+            image: "order-group.png",
+            id: "002"
         },
         "003": {
             name: "UX Tools Book Survey",
             owner: "Uxtools.co",
             url: "https://blog.uxtools.co/ux-books-survey-results-a-reading-list-d19e8f518026",
-            image: "uxtools.png"
+            image: "uxtools.png",
+            id: "003"
         },
         "004": {
             name: "The Essential Reading List",
             owner: "uxdesign.cc",
             url: "https://uxdesign.cc/ux-books-on-user-research-strategy-2c8eeef820a8",
-            image: "uxdesigncc.jpg"
+            image: "uxdesigncc.jpg",
+            id: "004"
         },
         "005": {
             name: "UX Beginner Reading List",
             owner: "UX Beginner",
             url: "http://www.uxbeginner.com/ux-beginner-reading-list/",
-            image: "ux-beginner.png"
+            image: "ux-beginner.png",
+            id: "005"
         },
         "006": {
             name: "10 must-read UX design books",
             owner: "Adham Dannaway",
             url: "http://www.adhamdannaway.com/blog/ux-design/10-must-read-ux-design-books",
-            image: "dannaway.png"
+            image: "dannaway.png",
+            id: "006"
         },
         "007": {
             name: "A Must Have Book Collection on UX",
             owner: "Paul Olyslager",
             url: "https://www.paulolyslager.com/must-have-book-collection-on-ux/",
-            image: "olyslager.jpg"
+            image: "olyslager.jpg",
+            id: "007"
         },
         "008": {
             name: "10 UX books that should be on your reading list",
             owner: "UX for the Masses",
             url: "http://www.uxforthemasses.com/recommended-ux-books/",
-            image: "uxforthemasses.jpg"
+            image: "uxforthemasses.jpg",
+            id: "008"
         },
         "009": {
             name: "My UX Reading List — 2015",
             owner: "Dave Malouf",
             url: "https://medium.com/swlh/my-ux-reading-list-2015-b048be1a74fa",
-            image: "malouf.jpg"
+            image: "malouf.jpg",
+            id: "009"
         },
         "010": {
             name: "10 Must-Read UX Books",
             owner: "Creative Market",
             url: "https://creativemarket.com/blog/10-must-read-ux-books",
-            image: "creativemarket.jpg"
+            image: "creativemarket.jpg",
+            id: "010"
         },
         "011": {
             name: "Essential Reading: 5 Must-Read User Experience Design Books",
             owner: "General Assembly",
             url: "https://generalassemb.ly/blog/top-user-experience-design-books/",
-            image: "generalassembly.png"
+            image: "generalassembly.png",
+            id: "011"
         },
         "012": {
             name: "7 Books Every UX Designer Should Read",
             owner: "Prototypr.io",
             url: "https://blog.prototypr.io/7-books-every-ux-designer-should-read-adf1ed4e68ae",
-            image: "prototypr.png"
+            image: "prototypr.png",
+            id: "012"
         },
         "013": {
             name: "The best UX Books",
             owner: "Springboard",
             url: "https://www.springboard.com/blog/ux-23-best-ux-books/",
-            image: "springboard.png"
+            image: "springboard.png",
+            id: "013"
         },
         "014": {
             name: "UX Resources for Beginners",
             owner: "Jessica Ivins",
             url: "http://jessicaivins.net/ux-resources-for-beginners/",
-            image: "jessicaivins.jpg"
+            image: "jessicaivins.jpg",
+            id: "014"
         },
         "015": {
             name: "So you wanna be a user experience designer — Step 1: Resources",
             owner: "Whitney Hess",
             url: "https://whitneyhess.com/blog/2009/06/30/so-you-wanna-be-a-user-experience-designer-step-1-resources/",
-            image: "whitneyhess.jpg"
+            image: "whitneyhess.jpg",
+            id: "015"
         },
         "016": {
             name: "Recommended Books for the UX Beginner’s Library",
             owner: "UX Booth",
             url: "http://www.uxbooth.com/articles/2016-user-experience-recommended-books/",
-            image: "uxbooth.png"
+            image: "uxbooth.png",
+            id: "016"
         },
         "017": {
             name: "Top 10 Best Usability, and UX Books You Should Read",
             owner: "Susan Weinschenk",
             url: "https://www.blog.theteamw.com/2013/01/23/top-10-best-usability-ux-and-design-books-you-should-read/",
-            image: "weinschenk.jpg"
+            image: "weinschenk.jpg",
+            id: "017"
         },
         "018": {
             name: "Great Books for Designers to Read in 2016",
             owner: "Pttrns",
             url: "https://blog.pttrns.com/great-books-for-designers-to-read-in-2016-d2ebea3763f4",
-            image: "pttrns.png"
+            image: "pttrns.png",
+            id: "018"
         },
         "019": {
             name: "The Most Interesting UX eBooks Published in 2016",
             owner: "Webydo.",
             url: "https://cmd-t.webydo.com/the-most-interesting-ux-ebooks-published-in-2016-d369bc4c3b10",
-            image: "webydo.png"
+            image: "webydo.png",
+            id: "019"
         },
         "020": {
             name: "UX Designers Library: A Wealth of Books for the Eager UXD",
             owner: "Codal",
             url: "https://www.codal.com/ux-designers-library-a-wealth-of-books-for-the-eager-uxd/",
-            image: "codal.jpg"
+            image: "codal.jpg",
+            id: "020"
         },
         "021": {
             name: "6 UX Books Suitable For Beginners & Experienced Designers",
             owner: "Everyday Designer",
             url: "https://www.everydaydesigner.net/resources/6-ux-books-suitable-for-beginners-experienced-designers",
-            image: "everydaydesigner.png"
+            image: "everydaydesigner.png",
+            id: "021"
         },
         "022": {
             name: "Best new UX Books from the last 3 years",
             owner: "uxdesign.cc",
             url: "https://uxdesign.cc/best-new-ux-books-from-the-last-3-years-d975403b2956",
-            image: "uxdesigncc.jpg"
+            image: "uxdesigncc.jpg",
+            id: "022"
         }
     };
