@@ -136,13 +136,6 @@ html
                 v-model="searchTerm" v-on:change="categoryData.categoryModel.tags=''")
               include ../img/icons/magnify.svg
 
-            //------ FILTER GROWL --------
-            transition(name="slide-down")
-              .filter-wrapper(v-show="computedTags || searchTerm" v-bind:class="{'showing': computedTags || searchTerm}")
-                .filter-growl 
-                  span Only showing "{{computedTags}}{{searchTerm}}"
-                  span.close(@click="clearAll()") Dismiss
-
             router-view
 
             
@@ -175,10 +168,18 @@ html
             img(v-bind:src="'../../img/book-recommendations/'+bookLists[listId].image")
             .content-wrapper
               h3 {{ bookLists[listId].name }}
-              h4 {{ bookLists[listId].owner }}
+              a(v-bind:href="bookLists[listId].url" target="_blank")
+                h4 {{ bookLists[listId].owner }}
+                  include ../img/icons/share.svg
           router-link.view-all(to="/")
             include ../img/icons/book-open-variant.svg
             span View All Books
+        //------ FILTER GROWL --------
+        transition(name="slide-down")
+          .filter-wrapper(v-show="$parent.computedTags || $parent.searchTerm" v-bind:class="{'showing': $parent.computedTags || $parent.searchTerm}")
+            .filter-growl 
+              span Only showing "{{$parent.computedTags}}{{$parent.searchTerm}}"
+              span.close(@click="clearAll()") Dismiss
         ul#books
           li(v-for="book in books")
             .book-wrapper
@@ -196,9 +197,10 @@ html
                 .book-lists(@click="$parent.showModal=true; $parent.setModalData(book);")
                   include ../img/icons/bookmark.svg
                   span {{book.recommendations.length}}
-        .no-books
+        .no-books(v-if="!books.length")
           p Hmm, looks like there aren't any books here.
-          button.blue View All Books
+          router-link(to="/")
+            button.blue.small View All Books
     script(src="../js/min/library-min.js?ver=1.3")
     script.
       window['_fs_debug'] = false;
