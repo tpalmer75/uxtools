@@ -80,63 +80,58 @@ html
                   include ../img/icons/close.svg
           .bottom-bar.mobile
             .wrapper
-              //- #filters
-              //-   .select-wrapper
-              //-     include ../img/icons/menu-down.svg
-              //-     select(name="categoryFilter" v-model="categoryData.categoryModel.tags")
-              //-       option(value="") All Categories
-              //-       option(v-for="option in orderedCategoryOptions" v-bind:value="option.value") {{option.name}}
+              a.show-library-sidebar(@click="showSidebar = true") Refine
+              .search.mobile
+                input(
+                  placeholder="Search..." 
+                  v-model="searchTerm" v-on:change="categoryData.categoryModel.tags=''")
+                include ../img/icons/magnify.svg
                   
         section(v-cloak)
-          #library-sidebar
-            .search
-              input(
-                placeholder="Search..." 
-                v-model="searchTerm" v-on:change="categoryData.categoryModel.tags=''")
-              include ../img/icons/magnify.svg
+          #library-sidebar-shade.mobile(@click="showSidebar = false" v-bind:class="{'showing':showSidebar}")
+            #library-sidebar(v-bind:class="{'showing':showSidebar}")
+              .close.mobile(@click="showSidebar = false")
+                include ../img/icons/close.svg
+              .search.non-mobile
+                input(
+                  placeholder="Search..." 
+                  v-model="searchTerm" v-on:change="categoryData.categoryModel.tags='';")
+                include ../img/icons/magnify.svg
 
-            //------ CATEGORIES -------
-            .sidebar-list
-              header Categories
-              ul
-                li(@click="categoryData.categoryModel.tags = ''"
-                  v-bind:class="{'active': !categoryData.categoryModel.tags}") 
-                  span All Categories
-                  include ../img/icons/check.svg
-                li(v-for="option in orderedCategoryOptions" 
-                  @click="setTags(option.value)"
-                  v-bind:class="{'active': categoryData.categoryModel.tags == option.value}") 
-                    span {{option.name}}
+              //------ CATEGORIES -------
+              .sidebar-list
+                header Categories
+                ul
+                  li(@click="categoryData.categoryModel.tags = ''"
+                    v-bind:class="{'active': !categoryData.categoryModel.tags}") 
+                    span All Categories
                     include ../img/icons/check.svg
-                li.show-more(@click="showMoreCategories()") 
-                  include ../img/icons/unfold-more-horizontal.svg
-                  span(v-show="categoryCount < 6") Show More
-                  span(v-show="categoryCount > 5") Show Less
+                  li(v-for="option in orderedCategoryOptions" 
+                    @click="setTags(option.value)"
+                    v-bind:class="{'active': categoryData.categoryModel.tags == option.value}") 
+                      span {{option.name}}
+                      include ../img/icons/check.svg
+                  li.show-more(@click="showMoreCategories()") 
+                    include ../img/icons/unfold-more-horizontal.svg
+                    span(v-show="categoryCount < 6") Show More
+                    span(v-show="categoryCount > 5") Show Less
 
-            //------ FEATURED LISTS -------
-            .sidebar-list
-              header Featured Lists
-              ul
-                li.image-list(v-for="list in convertedBookLists")
-                  router-link(:to="{ name: 'bookList', params: {listId: list.id }}")
-                    img(v-bind:src="'../img/book-recommendations/' + list.image")
-                    .text-wrapper
-                      div {{ list.name }}
-                      div.owner {{ list.owner }}
+              //------ FEATURED LISTS -------
+              .sidebar-list
+                header Featured Lists
+                ul
+                  li.image-list(v-for="list in convertedBookLists")
+                    router-link(:to="{ name: 'bookList', params: {listId: list.id }}")
+                      img(v-bind:src="'../img/book-recommendations/' + list.image")
+                      .text-wrapper
+                        div {{ list.name }}
+                        div.owner {{ list.owner }}
                 //- li.show-more(@click="showMoreBookLists()") 
                 //-   include ../img/icons/unfold-more-horizontal.svg
                 //-   span(v-show="bookListsCount < 6") Show More
                 //-   span(v-show="bookListsCount > 5") Show Less
 
-
-          .wrapper
-            .search.mobile
-              input(
-                placeholder="Search..." 
-                v-model="searchTerm" v-on:change="categoryData.categoryModel.tags=''")
-              include ../img/icons/magnify.svg
-
-            router-view
+          router-view
 
             
                 

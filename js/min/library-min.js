@@ -29820,8 +29820,8 @@ new Vue({
         bookListsCount: 10,
         booksCount: 20,
         books: books,
-        bookLists: bookLists
-
+        bookLists: bookLists,
+        showSidebar: false
     },
     computed: {
         orderedCategoryOptions: function() {
