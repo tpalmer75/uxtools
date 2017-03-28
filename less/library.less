@@ -10,9 +10,16 @@ body {
 	background: white;
 }
 
-#library {
+body, html {
 	height: 100%;
-	&.show-modal {
+}
+
+#library {
+	// height: 100%;
+	// display: flex;
+	// flex: 1;
+	// flex-direction: column;
+	&.no-scroll {
 		overflow: hidden;
 	}
 }
@@ -66,18 +73,11 @@ select {
 
 #library-sidebar {
 	background: #f1f1f1;
-	width: 300px;
-	flex: 0 0 300px;
 	min-height: 100%;
 	padding: 20px;
 	left: 0;
-	transition: left .2s ease-in-out;
-	@media all and (max-width: 999px) {
-		flex: 0 0 250px;
-	}
+	transition: left .2s ease-in-out, box-shadow .2s ease-in-out;
 	@media all and (max-width: 699px) {
-		// font-size: 14px;
-		// flex: 0 0 225px;
 		position: fixed;
 		z-index: 5;
 		top: 0;
@@ -86,10 +86,11 @@ select {
 		width: 250px;
 		height: 100vh;
 		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
 		font-size: 14px;
-		box-shadow: 5px 0px 20px rgba(0,0,0,.25);
 		&.showing {
 			left: 0;
+			box-shadow: 5px 0px 20px rgba(0,0,0,.25);
 		}
 	}
 }
@@ -99,18 +100,26 @@ select {
 }
 
 #library-sidebar-shade {
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: -100vw;
-	background: rgba(0,0,0,0);
-	z-index: 9;
-	transition: background .2s ease-in-out, left 0s .2s;
-	&.showing {
-		left: 0;
-		background: rgba(0,0,0,.25);
-		transition: background .2s ease-in-out, left 0s;
+	display: flex;
+	flex: 0 0 300px;
+	// flex: 1;
+	@media all and (max-width: 999px) {
+		flex: 0 0 250px;
+	}
+	@media all and (max-width: 699px) {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: -100vw;
+		background: rgba(0,0,0,0);
+		z-index: 9;
+		transition: background .2s ease-in-out, left 0s .2s;
+		&.showing {
+			left: 0;
+			background: rgba(0,0,0,.25);
+			transition: background .2s ease-in-out, left 0s;
+		}
 	}
 }
 
@@ -187,11 +196,13 @@ select {
 
 section {
 	display: flex;
+	flex: 1;
 	align-items: stretch;
 }
 
 .books-wrapper {
 	padding: 0 50px;
+	width: 100%;
 	@media all and (max-width: 999px) {
 		padding: 0 30px;
 	}
@@ -290,7 +301,7 @@ section {
 		}
 	}
 	.book-lists {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		font-size: 14px;
 		cursor: pointer;
@@ -316,7 +327,7 @@ section {
 	flex-wrap: wrap;
 	.flex-wrapper {
 		display: flex;
-		min-width: 400px;
+		// min-width: 400px;
 	}
 	img {
 		width: 40px;
@@ -330,7 +341,7 @@ section {
 	}
 	h4 {
 		color: #999;
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 	}
 	svg {
@@ -345,6 +356,15 @@ section {
 		order: 1;
 		color: @blue-primary;
 		
+	}
+	@media all and (max-width: 599px) {
+		.view-all {
+			order: 1;
+			margin-bottom: 20px;
+		}
+		.flex-wrapper {
+			order: 2;
+		}
 	}
 }
 
@@ -570,6 +590,7 @@ section {
 .no-books {
 	padding: 30px;
 	text-align: center;
+	width: 100%;
 	button {
 		margin-top: 20px;
 	}

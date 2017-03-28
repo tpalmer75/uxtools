@@ -26,7 +26,7 @@ html
     link(href="/css/library.css?ver=1.4" rel="stylesheet" type="text/css")
 
     body
-      #library(v-bind:class="{'show-modal':showModal}")
+      #library(v-bind:class="{'no-scroll':showModal || showSidebar}")
         header#main-header
           .top-bar
             h1.screen-reader UX Library
@@ -88,8 +88,10 @@ html
                 include ../img/icons/magnify.svg
                   
         section(v-cloak)
-          #library-sidebar-shade.mobile(@click="showSidebar = false" v-bind:class="{'showing':showSidebar}")
-            #library-sidebar(v-bind:class="{'showing':showSidebar}")
+          #library-sidebar-shade(@click="showSidebar = false" v-bind:class="{'showing':showSidebar}")
+            #library-sidebar(
+              v-bind:class="{'showing':showSidebar}" 
+              @click.stop="")
               .close.mobile(@click="showSidebar = false")
                 include ../img/icons/close.svg
               .search.non-mobile
@@ -120,7 +122,7 @@ html
               .sidebar-list
                 header Featured Lists
                 ul
-                  li.image-list(v-for="list in convertedBookLists")
+                  li.image-list(v-for="list in convertedBookLists" @click="showSidebar = false")
                     router-link(:to="{ name: 'bookList', params: {listId: list.id }}")
                       img(v-bind:src="'../img/book-recommendations/' + list.image")
                       .text-wrapper
@@ -194,8 +196,7 @@ html
                   span {{book.recommendations.length}}
         .no-books(v-if="!books.length")
           p Hmm, looks like there aren't any books here.
-          router-link(to="/")
-            button.blue.small View All Books
+            button.blue.small(@click="reset()") View All Books
     script(src="../js/min/library-min.js?ver=1.3")
     script.
       window['_fs_debug'] = false;

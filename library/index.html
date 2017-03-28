@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet"/>
     <link href="/css/library.css?ver=1.4" rel="stylesheet" type="text/css"/>
     <body>
-      <div id="library" v-bind:class="{'show-modal':showModal}">
+      <div id="library" v-bind:class="{'no-scroll':showModal || showSidebar}">
         <header id="main-header">
           <div class="top-bar">
             <h1 class="screen-reader">UX Library</h1>
@@ -72,8 +72,8 @@
           </div>
         </header>
         <section v-cloak="v-cloak">
-          <div id="library-sidebar-shade" @click="showSidebar = false" v-bind:class="{'showing':showSidebar}" class="mobile">
-            <div id="library-sidebar" v-bind:class="{'showing':showSidebar}">
+          <div id="library-sidebar-shade" @click="showSidebar = false" v-bind:class="{'showing':showSidebar}">
+            <div id="library-sidebar" v-bind:class="{'showing':showSidebar}" @click.stop="">
               <div @click="showSidebar = false" class="close mobile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
               </div>
               <div class="search non-mobile">
@@ -93,7 +93,7 @@
               <div class="sidebar-list">
                 <header>Featured Lists</header>
                 <ul>
-                  <li v-for="list in convertedBookLists" class="image-list">
+                  <li v-for="list in convertedBookLists" @click="showSidebar = false" class="image-list">
                     <router-link :to="{ name: 'bookList', params: {listId: list.id }}"><img v-bind:src="'../img/book-recommendations/' + list.image"/>
                       <div class="text-wrapper">
                         <div>{{ list.name }}</div>
@@ -171,10 +171,9 @@
           </li>
         </ul>
         <div v-if="!books.length" class="no-books">
-          <p>Hmm, looks like there aren't any books here.</p>
-          <router-link to="/">
-            <button class="blue small">View All Books</button>
-          </router-link>
+          <p>Hmm, looks like there aren't any books here.
+            <button @click="reset()" class="blue small">View All Books</button>
+          </p>
         </div>
       </div>
     </script>

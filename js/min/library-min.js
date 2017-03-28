@@ -29716,6 +29716,11 @@ const bookListComp = {
         },
         setTags: function(tag) {
             this.$parent.setTags(tag)
+        },
+        reset: function() {
+            router.push('/');
+            this.$parent.categoryData.categoryModel.tags = '';
+            this.$parent.searchTerm = '';
         }
     }
 }
