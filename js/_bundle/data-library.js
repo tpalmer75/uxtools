@@ -7,7 +7,7 @@ var books = [{
         ],
         image: "krug.png",
         recommendations: [
-            "015","016","017","002","014","003","004","005","006","007","009","010","011","012","013","021"
+            "whitney-hess-wanna-be-a-ux-designer","uxbooth-recommended-books-ux-beginner","team-w-top-10-ux-books","order-group-best-sources-learn-ux","jessica-ivins-ux-resources-beginners","uxtools-books-survey","uxdesign-cc-essential-reading-list","ux-beginner-reading-list","adham-dannaway-must-read-ux","paulolyslager-must-have-collection-ux","dave-malouf-my-ux-list-2016","creative-market-10-must-read-ux-books","general-assembly-5-must-read-ux-books","prototypr-io-7-ux-books-every-designer","springboard-best-ux-books","everyday-designer-6-books-beginners"
         ]
     }, {
         title: "Mobile First",
@@ -28,7 +28,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "015","018","016","simon-pan-only-ux-reading-list-ever","003","005","014","006","009","012",
+            "whitney-hess-wanna-be-a-ux-designer","pttrns-great-books-for-designers-2016","uxbooth-recommended-books-ux-beginner","simon-pan-only-ux-reading-list-ever","uxtools-books-survey","ux-beginner-reading-list","jessica-ivins-ux-resources-beginners","adham-dannaway-must-read-ux","dave-malouf-my-ux-list-2016","prototypr-io-7-ux-books-every-designer",
         ],
         image: "norman.png",
     }, {
@@ -39,7 +39,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "015","simon-pan-only-ux-reading-list-ever","002","003","009","021"
+            "whitney-hess-wanna-be-a-ux-designer","simon-pan-only-ux-reading-list-ever","order-group-best-sources-learn-ux","uxtools-books-survey","dave-malouf-my-ux-list-2016","everyday-designer-6-books-beginners"
         ],
         image: "cooper.png",
     }, {
@@ -50,7 +50,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "015","simon-pan-only-ux-reading-list-ever","004","005","006","007"
+            "whitney-hess-wanna-be-a-ux-designer","simon-pan-only-ux-reading-list-ever","uxdesign-cc-essential-reading-list","ux-beginner-reading-list","adham-dannaway-must-read-ux","paulolyslager-must-have-collection-ux"
         ],
         image: "garrett.png",
     }, {
@@ -61,7 +61,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "015","simon-pan-only-ux-reading-list-ever"
+            "whitney-hess-wanna-be-a-ux-designer","simon-pan-only-ux-reading-list-ever"
         ],
         image: "merholz.png",
     }, {
@@ -72,7 +72,7 @@ var books = [{
             "Info Architecture"
         ],
         recommendations: [
-            "simon-pan-only-ux-reading-list-ever","013"
+            "simon-pan-only-ux-reading-list-ever","springboard-best-ux-books"
         ],
         image: "spencer.png",
     }, {
@@ -83,7 +83,7 @@ var books = [{
             "Communication"
         ],
         recommendations: [
-            "015","simon-pan-only-ux-reading-list-ever"
+            "whitney-hess-wanna-be-a-ux-designer","simon-pan-only-ux-reading-list-ever"
         ],
         image: "brown.png",
     }, {
@@ -105,7 +105,7 @@ var books = [{
             "General UX", "Interaction Design"
         ],
         recommendations: [
-            "simon-pan-only-ux-reading-list-ever","007"
+            "simon-pan-only-ux-reading-list-ever","paulolyslager-must-have-collection-ux"
         ],
         image: "anderson.png",
     }, {
@@ -116,7 +116,7 @@ var books = [{
             "Communication"
         ],
         recommendations: [
-            "020","017","simon-pan-only-ux-reading-list-ever","003","004","010","011", "013"
+            "codal-ux-designers-library","team-w-top-10-ux-books","simon-pan-only-ux-reading-list-ever","uxtools-books-survey","uxdesign-cc-essential-reading-list","creative-market-10-must-read-ux-books","general-assembly-5-must-read-ux-books", "springboard-best-ux-books"
         ],
         image: "weinschenk.png",
     }, {
@@ -138,7 +138,7 @@ var books = [{
             "General UX", "Usability"
         ],
         recommendations: [
-            "002","009","015"
+            "order-group-best-sources-learn-ux","dave-malouf-my-ux-list-2016","whitney-hess-wanna-be-a-ux-designer"
         ],
         image: "norman-2.jpg",
     }, {
@@ -149,7 +149,7 @@ var books = [{
             "Interaction Design"
         ],
         recommendations: [
-            "002","004","008","009","012"
+            "order-group-best-sources-learn-ux","uxdesign-cc-essential-reading-list","uxforthemasses-ux-books-reading-list","dave-malouf-my-ux-list-2016","prototypr-io-7-ux-books-every-designer"
         ],
         image: "saffer.jpg",
     }, {
@@ -160,7 +160,7 @@ var books = [{
             "Mobile & Responsive"
         ],
         recommendations: [
-            "002",
+            "order-group-best-sources-learn-ux",
         ],
         image: "marcotte.jpg",
     }, {
@@ -171,7 +171,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "002",
+            "order-group-best-sources-learn-ux",
         ],
         image: "kuniavsky.jpg",
     }, {
@@ -182,7 +182,7 @@ var books = [{
             "Process"
         ],
         recommendations: [
-            "016","002","003","007","015","009"
+            "uxbooth-recommended-books-ux-beginner","order-group-best-sources-learn-ux","uxtools-books-survey","paulolyslager-must-have-collection-ux","whitney-hess-wanna-be-a-ux-designer","dave-malouf-my-ux-list-2016"
         ],
         image: "buxton.jpg",
     }, {
@@ -193,7 +193,7 @@ var books = [{
             "Agile", "General UX"
         ],
         recommendations: [
-            "002","003","006","008","009","010","013", "020"
+            "order-group-best-sources-learn-ux","uxtools-books-survey","adham-dannaway-must-read-ux","uxforthemasses-ux-books-reading-list","dave-malouf-my-ux-list-2016","creative-market-10-must-read-ux-books","springboard-best-ux-books", "codal-ux-designers-library"
         ],
         image: "gothelf.jpg",
     }, {
@@ -204,7 +204,7 @@ var books = [{
             "Research","Usability"
         ],
         recommendations: [
-            "017","003","007","010"
+            "team-w-top-10-ux-books","uxtools-books-survey","paulolyslager-must-have-collection-ux","creative-market-10-must-read-ux-books"
         ],
         image: "krug-2.jpg",
     }, {
@@ -215,7 +215,7 @@ var books = [{
             "Research"
         ],
         recommendations: [
-            "003","005"
+            "uxtools-books-survey","ux-beginner-reading-list"
         ],
         image: "hall.jpg",
     }, {
@@ -226,7 +226,7 @@ var books = [{
             "Agile"
         ],
         recommendations: [
-            "003"
+            "uxtools-books-survey"
         ],
         image: "knapp.jpg",
     }, {
@@ -237,7 +237,7 @@ var books = [{
             "Typography", "Visual Design"
         ],
         recommendations: [
-            "003","012"
+            "uxtools-books-survey","prototypr-io-7-ux-books-every-designer"
         ],
         image: "lupton.jpg",
     }, {
@@ -248,7 +248,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "003","015"
+            "uxtools-books-survey","whitney-hess-wanna-be-a-ux-designer"
         ],
         image: "cooper-2.jpg",
     }, {
@@ -259,7 +259,7 @@ var books = [{
             "Communication", "Career"
         ],
         recommendations: [
-            "003","005"
+            "uxtools-books-survey","ux-beginner-reading-list"
         ],
         image: "monteiro.jpg",
     }, {
@@ -270,7 +270,7 @@ var books = [{
             "Communcation"
         ],
         recommendations: [
-            "003"
+            "uxtools-books-survey"
         ],
         image: "greever.jpg",
     }, {
@@ -281,7 +281,7 @@ var books = [{
             "Info Architecture"
         ],
         recommendations: [
-            "004"
+            "uxdesign-cc-essential-reading-list"
         ],
         image: "resmini.jpg",
     }, {
@@ -292,7 +292,7 @@ var books = [{
             "Info Architecture"
         ],
         recommendations: [
-            "015","016","004","009","014"
+            "whitney-hess-wanna-be-a-ux-designer","uxbooth-recommended-books-ux-beginner","uxdesign-cc-essential-reading-list","dave-malouf-my-ux-list-2016","jessica-ivins-ux-resources-beginners"
         ],
         image: "rosenfeld.jpg",
     }, {
@@ -303,7 +303,7 @@ var books = [{
             "Data & Analytics","Research"
         ],
         recommendations: [
-            "017","004","011","013"
+            "team-w-top-10-ux-books","uxdesign-cc-essential-reading-list","general-assembly-5-must-read-ux-books","springboard-best-ux-books"
         ],
         image: "albert.jpg",
     }, {
@@ -314,7 +314,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "015","005"
+            "whitney-hess-wanna-be-a-ux-designer","ux-beginner-reading-list"
         ],
         image: "wroblewski-2.jpg",
     }, {
@@ -325,7 +325,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "005"
+            "ux-beginner-reading-list"
         ],
         image: "goodwin.jpg",
     }, {
@@ -336,7 +336,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "005","006","009","012"
+            "ux-beginner-reading-list","adham-dannaway-must-read-ux","dave-malouf-my-ux-list-2016","prototypr-io-7-ux-books-every-designer"
         ],
         image: "lidwell.jpg",
     }, {
@@ -347,7 +347,7 @@ var books = [{
             "Creativity"
         ],
         recommendations: [
-            "005"
+            "ux-beginner-reading-list"
         ],
         image: "pressfield.jpg",
     }, {
@@ -358,7 +358,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "006","007"
+            "adham-dannaway-must-read-ux","paulolyslager-must-have-collection-ux"
         ],
         image: "hartson.jpg",
     }, {
@@ -369,7 +369,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "017","006","007","010","011","013","020","021"
+            "team-w-top-10-ux-books","adham-dannaway-must-read-ux","paulolyslager-must-have-collection-ux","creative-market-10-must-read-ux-books","general-assembly-5-must-read-ux-books","springboard-best-ux-books","codal-ux-designers-library","everyday-designer-6-books-beginners"
         ],
         image: "allen.jpg",
     }, {
@@ -380,7 +380,7 @@ var books = [{
             "General UX", "Research"
         ],
         recommendations: [
-            "006","010"
+            "adham-dannaway-must-read-ux","creative-market-10-must-read-ux-books"
         ],
         image: "buley.jpg",
     }, {
@@ -391,7 +391,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "006"
+            "adham-dannaway-must-read-ux"
         ],
         image: "greenberg.jpg",
     }, {
@@ -402,7 +402,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "006", "007","014","021"
+            "adham-dannaway-must-read-ux", "paulolyslager-must-have-collection-ux","jessica-ivins-ux-resources-beginners","everyday-designer-6-books-beginners"
         ],
         image: "unger.jpg",
     }, {
@@ -413,7 +413,7 @@ var books = [{
             "Agile"
         ],
         recommendations: [
-            "006","008"
+            "adham-dannaway-must-read-ux","uxforthemasses-ux-books-reading-list"
         ],
         image: "ratcliffe.jpg",
     }, {
@@ -424,7 +424,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "007"
+            "paulolyslager-must-have-collection-ux"
         ],
         image: "bowles.jpg",
     }, {
@@ -435,7 +435,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "007"
+            "paulolyslager-must-have-collection-ux"
         ],
         image: "mathis.jpg",
     }, {
@@ -446,7 +446,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "007"
+            "paulolyslager-must-have-collection-ux"
         ],
         image: "nielsen.jpg",
     }, {
@@ -457,7 +457,7 @@ var books = [{
             "Usability", "Interaction Design"
         ],
         recommendations: [
-            "007"
+            "paulolyslager-must-have-collection-ux"
         ],
         image: "colborne.jpg",
     }, {
@@ -468,7 +468,7 @@ var books = [{
             "Data & Analytics"
         ],
         recommendations: [
-            "007"
+            "paulolyslager-must-have-collection-ux"
         ],
         image: "tullis.jpg",
     }, {
@@ -479,7 +479,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "007"
+            "paulolyslager-must-have-collection-ux"
         ],
         image: "hoekman.jpg",
     }, {
@@ -490,7 +490,7 @@ var books = [{
             "General UX", "Interaction Design"
         ],
         recommendations: [
-            "007"
+            "paulolyslager-must-have-collection-ux"
         ],
         image: "scott.jpg",
     }, {
@@ -501,7 +501,7 @@ var books = [{
             "Research", "Usability"
         ],
         recommendations: [
-            "015","007"
+            "whitney-hess-wanna-be-a-ux-designer","paulolyslager-must-have-collection-ux"
         ],
         image: "rubin.jpg",
     }, {
@@ -512,7 +512,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "007"
+            "paulolyslager-must-have-collection-ux"
         ],
         image: "thurow.jpg",
     }, {
@@ -523,7 +523,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "008", "022"
+            "uxforthemasses-ux-books-reading-list", "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "patton.jpg",
     }, {
@@ -534,7 +534,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "008"
+            "uxforthemasses-ux-books-reading-list"
         ],
         image: "levy.jpg",
     }, {
@@ -545,7 +545,7 @@ var books = [{
             "Research"
         ],
         recommendations: [
-            "008"
+            "uxforthemasses-ux-books-reading-list"
         ],
         image: "ladner.jpg",
     }, {
@@ -556,7 +556,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "008"
+            "uxforthemasses-ux-books-reading-list"
         ],
         image: "natoli.jpg",
     }, {
@@ -567,7 +567,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "008"
+            "uxforthemasses-ux-books-reading-list"
         ],
         image: "hanington.jpg",
     }, {
@@ -578,7 +578,7 @@ var books = [{
             "Creativity"
         ],
         recommendations: [
-            "008","018"
+            "uxforthemasses-ux-books-reading-list","pttrns-great-books-for-designers-2016"
         ],
         image: "catmull.jpg",
     }, {
@@ -589,7 +589,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "008","009","010"
+            "uxforthemasses-ux-books-reading-list","dave-malouf-my-ux-list-2016","creative-market-10-must-read-ux-books"
         ],
         image: "polaine.jpg",
     }, {
@@ -600,7 +600,7 @@ var books = [{
             "Career","Creativity"
         ],
         recommendations: [
-            "008","009"
+            "uxforthemasses-ux-books-reading-list","dave-malouf-my-ux-list-2016"
         ],
         image: "gray.jpg",
     }, {
@@ -611,7 +611,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "raskin.jpg",
     }, {
@@ -622,7 +622,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "009","014"
+            "dave-malouf-my-ux-list-2016","jessica-ivins-ux-resources-beginners"
         ],
         image: "covert.jpg",
     }, {
@@ -633,7 +633,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "009","016"
+            "dave-malouf-my-ux-list-2016","uxbooth-recommended-books-ux-beginner"
         ],
         image: "quesenbery.jpg",
     }, {
@@ -644,7 +644,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "stickdorn.jpg",
     }, {
@@ -655,7 +655,7 @@ var books = [{
             "Research"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "portigal.jpg",
     }, {
@@ -666,7 +666,7 @@ var books = [{
             "Communication"
         ],
         recommendations: [
-            "016","009"
+            "uxbooth-recommended-books-ux-beginner","dave-malouf-my-ux-list-2016"
         ],
         image: "cheng.jpg",
     }, {
@@ -677,7 +677,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "mccloud.jpg",
     }, {
@@ -688,7 +688,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "hannah.jpg",
     }, {
@@ -699,7 +699,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "laurel.jpg",
     }, {
@@ -710,7 +710,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "mcculough.jpg",
     }, {
@@ -721,7 +721,7 @@ var books = [{
             "General UX", "Interaction Design"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "dourish.jpg",
     }, {
@@ -732,7 +732,7 @@ var books = [{
             "Research"
         ],
         recommendations: [
-            "015","009"
+            "whitney-hess-wanna-be-a-ux-designer","dave-malouf-my-ux-list-2016"
         ],
         image: "kuniavsky.jpg",
     }, {
@@ -743,7 +743,7 @@ var books = [{
             "Data & Analytics"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "hanks.jpg",
     }, {
@@ -754,7 +754,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "009"
+            "dave-malouf-my-ux-list-2016"
         ],
         image: "wurman.jpg",
     }, {
@@ -765,7 +765,7 @@ var books = [{
             "Data & Analytics"
         ],
         recommendations: [
-            "009","012"
+            "dave-malouf-my-ux-list-2016","prototypr-io-7-ux-books-every-designer"
         ],
         image: "few.jpg",
     }, {
@@ -776,7 +776,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "017","010","011","013","020","021"
+            "team-w-top-10-ux-books","creative-market-10-must-read-ux-books","general-assembly-5-must-read-ux-books","springboard-best-ux-books","codal-ux-designers-library","everyday-designer-6-books-beginners"
         ],
         image: "reiss.jpg",
     }, {
@@ -787,7 +787,7 @@ var books = [{
             "Research","Data & Analytics"
         ],
         recommendations: [
-            "017","016","010"
+            "team-w-top-10-ux-books","uxbooth-recommended-books-ux-beginner","creative-market-10-must-read-ux-books"
         ],
         image: "sauro.jpg",
     }, {
@@ -798,7 +798,7 @@ var books = [{
             "Mobile & Repsonsive","Usability"
         ],
         recommendations: [
-            "010","013", "020","021"
+            "creative-market-10-must-read-ux-books","springboard-best-ux-books", "codal-ux-designers-library","everyday-designer-6-books-beginners"
         ],
         image: "nielsen-2.jpg",
     }, {
@@ -809,7 +809,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "012"
+            "prototypr-io-7-ux-books-every-designer"
         ],
         image: "graham.jpg",
     }, {
@@ -820,7 +820,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "012"
+            "prototypr-io-7-ux-books-every-designer"
         ],
         image: "maeda.jpg",
     }, {
@@ -831,7 +831,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "012"
+            "prototypr-io-7-ux-books-every-designer"
         ],
         image: "young.jpg",
     }, {
@@ -842,7 +842,7 @@ var books = [{
             "Interaction Design"
         ],
         recommendations: [
-            "012","013"
+            "prototypr-io-7-ux-books-every-designer","springboard-best-ux-books"
         ],
         image: "moggridge.jpg",
     }, {
@@ -853,7 +853,7 @@ var books = [{
             "Data & Analytics"
         ],
         recommendations: [
-            "012"
+            "prototypr-io-7-ux-books-every-designer"
         ],
         image: "munzner.jpg",
     }, {
@@ -864,7 +864,7 @@ var books = [{
             "Career", "Creativity"
         ],
         recommendations: [
-            "012"
+            "prototypr-io-7-ux-books-every-designer"
         ],
         image: "bono.jpg",
     }, {
@@ -875,7 +875,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "012"
+            "prototypr-io-7-ux-books-every-designer"
         ],
         image: "raizman.jpg",
     }, {
@@ -886,7 +886,7 @@ var books = [{
             "Branding", "Visual Design"
         ],
         recommendations: [
-            "012","013"
+            "prototypr-io-7-ux-books-every-designer","springboard-best-ux-books"
         ],
         image: "wheeler.jpg",
     }, {
@@ -897,7 +897,7 @@ var books = [{
             "Typography", "Visual Design"
         ],
         recommendations: [
-            "013"
+            "springboard-best-ux-books"
         ],
         image: "garfield.jpg",
     }, {
@@ -908,7 +908,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "013"
+            "springboard-best-ux-books"
         ],
         image: "hicks.jpg",
     }, {
@@ -919,7 +919,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "013","017"
+            "springboard-best-ux-books","team-w-top-10-ux-books"
         ],
         image: "jarrett.jpg",
     }, {
@@ -930,7 +930,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "013"
+            "springboard-best-ux-books"
         ],
         image: "miller.jpg",
     }, {
@@ -941,7 +941,7 @@ var books = [{
             "Psychology"
         ],
         recommendations: [
-            "013"
+            "springboard-best-ux-books"
         ],
         image: "eyal.jpg",
     }, {
@@ -952,7 +952,7 @@ var books = [{
             "Psychology"
         ],
         recommendations: [
-            "013"
+            "springboard-best-ux-books"
         ],
         image: "ariely.jpg",
     }, {
@@ -963,7 +963,7 @@ var books = [{
             "Psychology"
         ],
         recommendations: [
-            "018", "013"
+            "pttrns-great-books-for-designers-2016", "springboard-best-ux-books"
         ],
         image: "kahneman.jpg",
     }, {
@@ -974,7 +974,7 @@ var books = [{
             "Psychology"
         ],
         recommendations: [
-            "013"
+            "springboard-best-ux-books"
         ],
         image: "walter.jpg",
     }, {
@@ -985,7 +985,7 @@ var books = [{
             "Research"
         ],
         recommendations: [
-            "016","013"
+            "uxbooth-recommended-books-ux-beginner","springboard-best-ux-books"
         ],
         image: "portigal.jpg",
     }, {
@@ -996,7 +996,7 @@ var books = [{
             "Research"
         ],
         recommendations: [
-            "013"
+            "springboard-best-ux-books"
         ],
         image: "harris.jpg",
     }, {
@@ -1007,7 +1007,7 @@ var books = [{
             "Career", "General UX"
         ],
         recommendations: [
-            "013"
+            "springboard-best-ux-books"
         ],
         image: "springboard.png",
     }, {
@@ -1018,7 +1018,7 @@ var books = [{
             "Career", "General UX"
         ],
         recommendations: [
-            "013"
+            "springboard-best-ux-books"
         ],
         image: "fried.jpg",
     }, {
@@ -1029,7 +1029,7 @@ var books = [{
             "Writing"
         ],
         recommendations: [
-            "014"
+            "jessica-ivins-ux-resources-beginners"
         ],
         image: "redish.jpg",
     }, {
@@ -1040,7 +1040,7 @@ var books = [{
             "General UX", "Career"
         ],
         recommendations: [
-            "014"
+            "jessica-ivins-ux-resources-beginners"
         ],
         image: "magain.jpg",
     }, {
@@ -1051,7 +1051,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "015"
+            "whitney-hess-wanna-be-a-ux-designer"
         ],
         image: "porter.jpg",
     }, {
@@ -1062,7 +1062,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "015","016"
+            "whitney-hess-wanna-be-a-ux-designer","uxbooth-recommended-books-ux-beginner"
         ],
         image: "tidwell.jpg",
     }, {
@@ -1073,7 +1073,7 @@ var books = [{
             "General UX", "Communication"
         ],
         recommendations: [
-            "015"
+            "whitney-hess-wanna-be-a-ux-designer"
         ],
         image: "mullet.jpg",
     }, {
@@ -1084,7 +1084,7 @@ var books = [{
             "Info Architecture"
         ],
         recommendations: [
-            "015"
+            "whitney-hess-wanna-be-a-ux-designer"
         ],
         image: "wodtke.jpg",
     }, {
@@ -1095,7 +1095,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "015"
+            "whitney-hess-wanna-be-a-ux-designer"
         ],
         image: "kalbach.jpg",
     }, {
@@ -1106,7 +1106,7 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "015"
+            "whitney-hess-wanna-be-a-ux-designer"
         ],
         image: "nielsen-3.jpg",
     }, {
@@ -1117,7 +1117,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "015"
+            "whitney-hess-wanna-be-a-ux-designer"
         ],
         image: "casey.jpg",
     }, {
@@ -1128,7 +1128,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "016"
+            "uxbooth-recommended-books-ux-beginner"
         ],
         image: "mcgrane.jpg",
     }, {
@@ -1139,7 +1139,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "016"
+            "uxbooth-recommended-books-ux-beginner"
         ],
         image: "bloomstein.jpg",
     }, {
@@ -1160,7 +1160,7 @@ var books = [{
             "General UX","Communication"
         ],
         recommendations: [
-            "017"
+            "team-w-top-10-ux-books"
         ],
         image: "caddick.jpg",
     }, {
@@ -1171,7 +1171,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "017"
+            "team-w-top-10-ux-books"
         ],
         image: "boag.jpg",
     }, {
@@ -1182,7 +1182,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "017"
+            "team-w-top-10-ux-books"
         ],
         image: "spencer.jpg",
     }, {
@@ -1193,7 +1193,7 @@ var books = [{
             "Visual Design", "Typography"
         ],
         recommendations: [
-            "018", "019"
+            "pttrns-great-books-for-designers-2016", "webydo-interesting-ux-ebooks"
         ],
         image: "vignelli.jpg",
     }, {
@@ -1204,7 +1204,7 @@ var books = [{
             "Interaction Design"
         ],
         recommendations: [
-            "019","022"
+            "webydo-interesting-ux-ebooks","uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "frost.png",
     }, {
@@ -1215,7 +1215,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "rams.jpg",
     }, {
@@ -1226,7 +1226,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "rand.jpg",
     }, {
@@ -1237,7 +1237,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "muller.jpg",
     }, {
@@ -1248,7 +1248,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "albers.jpg",
     }, {
@@ -1259,7 +1259,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "muller-2.jpg",
     }, {
@@ -1270,7 +1270,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "muller-3.jpg",
     }, {
@@ -1281,7 +1281,7 @@ var books = [{
             "Visual Design", "Data & Analytics"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "tufte.jpg",
     }, {
@@ -1292,7 +1292,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "fletcher.jpg",
     }, {
@@ -1303,7 +1303,7 @@ var books = [{
             "General UX", "Usability"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "maeda-2.jpg",
     }, {
@@ -1314,7 +1314,7 @@ var books = [{
             "General UX", "Usability"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "itten.jpg",
     }, {
@@ -1325,7 +1325,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "yoshioka.jpg",
     }, {
@@ -1336,7 +1336,7 @@ var books = [{
             "Creativity"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "johnson.jpg",
     }, {
@@ -1347,7 +1347,7 @@ var books = [{
             "Creativity"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "brown.jpg",
     }, {
@@ -1358,7 +1358,7 @@ var books = [{
             "Creativity", "Career"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "tuck.jpg",
     }, {
@@ -1369,7 +1369,7 @@ var books = [{
             "Usability", "General UX"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "norman-3.jpg",
     }, {
@@ -1380,7 +1380,7 @@ var books = [{
             "Usability", "General UX"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "schwartz.jpg",
     }, {
@@ -1391,7 +1391,7 @@ var books = [{
             "Visual Design", "Career"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "kroeger.jpg",
     }, {
@@ -1402,7 +1402,7 @@ var books = [{
             "Typography"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "bovellan.jpg",
     }, {
@@ -1413,7 +1413,7 @@ var books = [{
             "Typography", "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "coles.jpg",
     }, {
@@ -1424,7 +1424,7 @@ var books = [{
             "Data & Analytics", "Communication"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "mccandless.jpg",
     }, {
@@ -1435,7 +1435,7 @@ var books = [{
             "Creativity", "Career"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "isaacson.jpg",
     }, {
@@ -1446,7 +1446,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "018"
+            "pttrns-great-books-for-designers-2016"
         ],
         image: "bouroullec.jpg",
     }, {
@@ -1457,7 +1457,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "platt.jpg",
     }, {
@@ -1468,7 +1468,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "krishna.jpg",
     }, {
@@ -1479,7 +1479,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "hoekman-2.jpg",
     }, {
@@ -1490,7 +1490,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "brandle.jpg",
     }, {
@@ -1501,7 +1501,7 @@ var books = [{
             "Visual Design", "Interaction Design"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "muller-4.jpg",
     }, {
@@ -1512,7 +1512,7 @@ var books = [{
             "Data & Analytics"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "king.jpg",
     }, {
@@ -1523,7 +1523,7 @@ var books = [{
             "Visual Design", "Communication"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "bierut.jpg",
     }, {
@@ -1534,7 +1534,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "miller-2.jpg",
     }, {
@@ -1545,7 +1545,7 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "mcelroy.jpg",
     }, {
@@ -1556,7 +1556,7 @@ var books = [{
             "Visual Design"
         ],
         recommendations: [
-            "022"
+            "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "roberts.jpg",
     }];
@@ -1569,151 +1569,151 @@ var books = [{
             image: "simon-pan.jpg",
             id: "simon-pan-only-ux-reading-list-ever"
         },
-        "002": {
+        "order-group-best-sources-learn-ux": {
             name: "User Experience Design — Best sources to learn UX",
             owner: "Order Group",
             url: "https://blog.prototypr.io/user-experience-design-best-sources-to-learn-ux-c67bf80484ce",
             image: "order-group.png",
-            id: "002"
+            id: "order-group-best-sources-learn-ux"
         },
-        "003": {
+        "uxtools-books-survey": {
             name: "UX Tools Book Survey",
             owner: "Uxtools.co",
             url: "https://blog.uxtools.co/ux-books-survey-results-a-reading-list-d19e8f518026",
             image: "uxtools.png",
-            id: "003"
+            id: "uxtools-books-survey"
         },
-        "004": {
+        "uxdesign-cc-essential-reading-list": {
             name: "The Essential Reading List",
             owner: "uxdesign.cc",
             url: "https://uxdesign.cc/ux-books-on-user-research-strategy-2c8eeef820a8",
             image: "uxdesigncc.jpg",
-            id: "004"
+            id: "uxdesign-cc-essential-reading-list"
         },
-        "005": {
+        "ux-beginner-reading-list": {
             name: "UX Beginner Reading List",
             owner: "UX Beginner",
             url: "http://www.uxbeginner.com/ux-beginner-reading-list/",
             image: "ux-beginner.png",
-            id: "005"
+            id: "ux-beginner-reading-list"
         },
-        "006": {
+        "adham-dannaway-must-read-ux": {
             name: "10 must-read UX design books",
             owner: "Adham Dannaway",
             url: "http://www.adhamdannaway.com/blog/ux-design/10-must-read-ux-design-books",
             image: "dannaway.png",
-            id: "006"
+            id: "adham-dannaway-must-read-ux"
         },
-        "007": {
+        "paulolyslager-must-have-collection-ux": {
             name: "A Must Have Book Collection on UX",
             owner: "Paul Olyslager",
             url: "https://www.paulolyslager.com/must-have-book-collection-on-ux/",
             image: "olyslager.jpg",
-            id: "007"
+            id: "paulolyslager-must-have-collection-ux"
         },
-        "008": {
+        "uxforthemasses-ux-books-reading-list": {
             name: "10 UX books that should be on your reading list",
             owner: "UX for the Masses",
             url: "http://www.uxforthemasses.com/recommended-ux-books/",
             image: "uxforthemasses.jpg",
-            id: "008"
+            id: "uxforthemasses-ux-books-reading-list"
         },
-        "009": {
+        "dave-malouf-my-ux-list-2016": {
             name: "My UX Reading List — 2015",
             owner: "Dave Malouf",
             url: "https://medium.com/swlh/my-ux-reading-list-2015-b048be1a74fa",
             image: "malouf.jpg",
-            id: "009"
+            id: "dave-malouf-my-ux-list-2016"
         },
-        "010": {
+        "creative-market-10-must-read-ux-books": {
             name: "10 Must-Read UX Books",
             owner: "Creative Market",
             url: "https://creativemarket.com/blog/10-must-read-ux-books",
             image: "creativemarket.jpg",
-            id: "010"
+            id: "creative-market-10-must-read-ux-books"
         },
-        "011": {
+        "general-assembly-5-must-read-ux-books": {
             name: "Essential Reading: 5 Must-Read User Experience Design Books",
             owner: "General Assembly",
             url: "https://generalassemb.ly/blog/top-user-experience-design-books/",
             image: "generalassembly.png",
-            id: "011"
+            id: "general-assembly-5-must-read-ux-books"
         },
-        "012": {
+        "prototypr-io-7-ux-books-every-designer": {
             name: "7 Books Every UX Designer Should Read",
             owner: "Prototypr.io",
             url: "https://blog.prototypr.io/7-books-every-ux-designer-should-read-adf1ed4e68ae",
             image: "prototypr.png",
-            id: "012"
+            id: "prototypr-io-7-ux-books-every-designer"
         },
-        "013": {
+        "springboard-best-ux-books": {
             name: "The best UX Books",
             owner: "Springboard",
             url: "https://www.springboard.com/blog/ux-23-best-ux-books/",
             image: "springboard.png",
-            id: "013"
+            id: "springboard-best-ux-books"
         },
-        "014": {
+        "jessica-ivins-ux-resources-beginners": {
             name: "UX Resources for Beginners",
             owner: "Jessica Ivins",
             url: "http://jessicaivins.net/ux-resources-for-beginners/",
             image: "jessicaivins.jpg",
-            id: "014"
+            id: "jessica-ivins-ux-resources-beginners"
         },
-        "015": {
+        "whitney-hess-wanna-be-a-ux-designer": {
             name: "So you wanna be a user experience designer — Step 1: Resources",
             owner: "Whitney Hess",
             url: "https://whitneyhess.com/blog/2009/06/30/so-you-wanna-be-a-user-experience-designer-step-1-resources/",
             image: "whitneyhess.jpg",
-            id: "015"
+            id: "whitney-hess-wanna-be-a-ux-designer"
         },
-        "016": {
+        "uxbooth-recommended-books-ux-beginner": {
             name: "Recommended Books for the UX Beginner’s Library",
             owner: "UX Booth",
             url: "http://www.uxbooth.com/articles/2016-user-experience-recommended-books/",
             image: "uxbooth.png",
-            id: "016"
+            id: "uxbooth-recommended-books-ux-beginner"
         },
-        "017": {
+        "team-w-top-10-ux-books": {
             name: "Top 10 Best Usability, and UX Books You Should Read",
             owner: "Susan Weinschenk",
             url: "https://www.blog.theteamw.com/2013/01/23/top-10-best-usability-ux-and-design-books-you-should-read/",
             image: "weinschenk.jpg",
-            id: "017"
+            id: "team-w-top-10-ux-books"
         },
-        "018": {
+        "pttrns-great-books-for-designers-2016": {
             name: "Great Books for Designers to Read in 2016",
             owner: "Pttrns",
             url: "https://blog.pttrns.com/great-books-for-designers-to-read-in-2016-d2ebea3763f4",
             image: "pttrns.png",
-            id: "018"
+            id: "pttrns-great-books-for-designers-2016"
         },
-        "019": {
+        "webydo-interesting-ux-ebooks": {
             name: "The Most Interesting UX eBooks Published in 2016",
             owner: "Webydo.",
             url: "https://cmd-t.webydo.com/the-most-interesting-ux-ebooks-published-in-2016-d369bc4c3b10",
             image: "webydo.png",
-            id: "019"
+            id: "webydo-interesting-ux-ebooks"
         },
-        "020": {
+        "codal-ux-designers-library": {
             name: "UX Designers Library: A Wealth of Books for the Eager UXD",
             owner: "Codal",
             url: "https://www.codal.com/ux-designers-library-a-wealth-of-books-for-the-eager-uxd/",
             image: "codal.jpg",
-            id: "020"
+            id: "codal-ux-designers-library"
         },
-        "021": {
+        "everyday-designer-6-books-beginners": {
             name: "6 UX Books Suitable For Beginners & Experienced Designers",
             owner: "Everyday Designer",
             url: "https://www.everydaydesigner.net/resources/6-ux-books-suitable-for-beginners-experienced-designers",
             image: "everydaydesigner.png",
-            id: "021"
+            id: "everyday-designer-6-books-beginners"
         },
-        "022": {
+        "uxdesign-cc-best-ux-books-from-3-years": {
             name: "Best new UX Books from the last 3 years",
             owner: "uxdesign.cc",
             url: "https://uxdesign.cc/best-new-ux-books-from-the-last-3-years-d975403b2956",
             image: "uxdesigncc.jpg",
-            id: "022"
+            id: "uxdesign-cc-best-ux-books-from-3-years"
         }
     };

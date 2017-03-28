@@ -194,6 +194,11 @@ html
                 .book-lists(@click="$parent.showModal=true; $parent.setModalData(book);")
                   include ../img/icons/bookmark.svg
                   span {{book.recommendations.length}}
+          li(style="height: 0")
+          li(style="height: 0")
+          li(style="height: 0")
+          li(style="height: 0")
+          li(style="height: 0")
         .no-books(v-if="!books.length")
           p Hmm, looks like there aren't any books here.
             button.blue.small(@click="reset()") View All Books
