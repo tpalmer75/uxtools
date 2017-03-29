@@ -139,7 +139,7 @@
     <script type="text/x-template" id="book-list">
       <div class="books-wrapper">
         <header v-if="listId" class="books-header">
-          <div class="flex-wrapper"><img v-bind:src="'../../img/book-recommendations/'+bookLists[listId].image"/>
+          <div class="flex-wrapper"><a v-bind:href="bookLists[listId].url" target="_blank"><img v-bind:src="'../../img/book-recommendations/'+bookLists[listId].image"/></a>
             <div class="content-wrapper">
               <h3>{{ bookLists[listId].name }}</h3><a v-bind:href="bookLists[listId].url" target="_blank">
                 <h4>{{ bookLists[listId].owner }}<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,11L14,4V8C7,9 4,14 3,19C5.5,15.5 9,13.9 14,13.9V18L21,11Z" /></svg>
@@ -169,12 +169,15 @@
               </div>
             </div>
           </li>
-          <li style="height: 0"></li>
-          <li style="height: 0"></li>
-          <li style="height: 0"></li>
-          <li style="height: 0"></li>
-          <li style="height: 0"></li>
+          <li style="padding: 0; border-bottom: none;"></li>
+          <li style="padding: 0; border-bottom: none;"></li>
+          <li style="padding: 0; border-bottom: none;"></li>
+          <li style="padding: 0; border-bottom: none;"></li>
+          <li style="padding: 0; border-bottom: none;"></li>
         </ul>
+        <div v-if="listId &amp;&amp; books.length" style="font-size: 14px; color: #999;" class="no-books">
+          <p>These are just the books from {{ bookLists[listId].owner }}'s list. Want to see more? <a @click="reset()">View&nbsp;All&nbsp;Books</a></p>
+        </div>
         <div v-if="!books.length" class="no-books">
           <p>Hmm, looks like there aren't any books here.
             <button @click="reset()" class="blue small">View All Books</button>

@@ -162,7 +162,8 @@ html
       div.books-wrapper
         header.books-header(v-if="listId")
           .flex-wrapper
-            img(v-bind:src="'../../img/book-recommendations/'+bookLists[listId].image")
+            a(v-bind:href="bookLists[listId].url" target="_blank")
+              img(v-bind:src="'../../img/book-recommendations/'+bookLists[listId].image")
             .content-wrapper
               h3 {{ bookLists[listId].name }}
               a(v-bind:href="bookLists[listId].url" target="_blank")
@@ -194,11 +195,14 @@ html
                 .book-lists(@click="$parent.showModal=true; $parent.setModalData(book);")
                   include ../img/icons/bookmark.svg
                   span {{book.recommendations.length}}
-          li(style="height: 0")
-          li(style="height: 0")
-          li(style="height: 0")
-          li(style="height: 0")
-          li(style="height: 0")
+          li(style="padding: 0; border-bottom: none;")
+          li(style="padding: 0; border-bottom: none;")
+          li(style="padding: 0; border-bottom: none;")
+          li(style="padding: 0; border-bottom: none;")
+          li(style="padding: 0; border-bottom: none;")
+        .no-books(v-if="listId && books.length" style="font-size: 14px; color: #999;")
+          p These are just the books from {{ bookLists[listId].owner }}'s list. Want to see more? 
+            a(@click="reset()") View&nbsp;All&nbsp;Books
         .no-books(v-if="!books.length")
           p Hmm, looks like there aren't any books here.
             button.blue.small(@click="reset()") View All Books

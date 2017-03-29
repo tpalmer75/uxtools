@@ -7,7 +7,8 @@ var books = [{
         ],
         image: "krug.png",
         recommendations: [
-            "whitney-hess-wanna-be-a-ux-designer","uxbooth-recommended-books-ux-beginner","team-w-top-10-ux-books","order-group-best-sources-learn-ux","jessica-ivins-ux-resources-beginners","uxtools-books-survey","uxdesign-cc-essential-reading-list","ux-beginner-reading-list","adham-dannaway-must-read-ux","paulolyslager-must-have-collection-ux","dave-malouf-my-ux-list-2016","creative-market-10-must-read-ux-books","general-assembly-5-must-read-ux-books","prototypr-io-7-ux-books-every-designer","springboard-best-ux-books","everyday-designer-6-books-beginners"
+            "whitney-hess-wanna-be-a-ux-designer",
+            "uxbooth-recommended-books-ux-beginner","team-w-top-10-ux-books","order-group-best-sources-learn-ux","jessica-ivins-ux-resources-beginners","uxtools-books-survey","uxdesign-cc-essential-reading-list","ux-beginner-reading-list","adham-dannaway-must-read-ux","paulolyslager-must-have-collection-ux","dave-malouf-my-ux-list-2016","creative-market-10-must-read-ux-books","general-assembly-5-must-read-ux-books","prototypr-io-7-ux-books-every-designer","springboard-best-ux-books","everyday-designer-6-books-beginners"
         ]
     }, {
         title: "Mobile First",
@@ -28,7 +29,15 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "whitney-hess-wanna-be-a-ux-designer","pttrns-great-books-for-designers-2016","uxbooth-recommended-books-ux-beginner","simon-pan-only-ux-reading-list-ever","uxtools-books-survey","ux-beginner-reading-list","jessica-ivins-ux-resources-beginners","adham-dannaway-must-read-ux","dave-malouf-my-ux-list-2016","prototypr-io-7-ux-books-every-designer",
+            "whitney-hess-wanna-be-a-ux-designer",
+            "pttrns-great-books-for-designers-2016",
+            "uxbooth-recommended-books-ux-beginner",
+            "simon-pan-only-ux-reading-list-ever",
+            "uxtools-books-survey",
+            "ux-beginner-reading-list",
+            "jessica-ivins-ux-resources-beginners",
+            "dave-malouf-my-ux-list-2016",
+            "prototypr-io-7-ux-books-every-designer",
         ],
         image: "norman.png",
     }, {

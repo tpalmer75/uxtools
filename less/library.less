@@ -324,10 +324,10 @@ section {
 	padding: 16px 0;
 	min-height: 74px;
 	align-items: center;
-	flex-wrap: wrap;
+	flex-wrap: wrap-reverse;
 	.flex-wrapper {
 		display: flex;
-		// min-width: 400px;
+		padding-right: 20px;
 	}
 	img {
 		width: 40px;
@@ -353,17 +353,11 @@ section {
 	.view-all {
 		display: flex;
 		align-items: center;
-		order: 1;
+		margin-bottom: 20px;
 		color: @blue-primary;
-		
 	}
 	@media all and (max-width: 599px) {
-		.view-all {
-			order: 1;
-			margin-bottom: 20px;
-		}
 		.flex-wrapper {
-			order: 2;
 		}
 	}
 }
@@ -591,7 +585,13 @@ section {
 	padding: 30px;
 	text-align: center;
 	width: 100%;
+	line-height: 1.4;
 	button {
 		margin-top: 20px;
+	}
+	a {
+		text-decoration: underline;
+		color: @blue-primary;
+		cursor: pointer;
 	}
 }
