@@ -1,6 +1,6 @@
-// @codekit-prepend codekit-prepend "_dev/vue-2.1.10.js"
+// @codekit-prepend codekit-prepend "_bundle/vue.js"
 // @FOR DEV "_bundle/vue.min.js"
-// @codekit-prepend "_bundle/vue-router-2.2.0.js"
+// @codekit-prepend "_bundle/vue-router.js"
 // @codekit-prepend "_bundle/vue-lazyload-1.0.0.js"
 // @codekit-prepend "_bundle/lodash-4.17.4.js"
 // @codekit-prepend "_bundle/data-library.js"

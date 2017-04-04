@@ -3,9 +3,8 @@
 // @codekit-prepend "_bundle/tether-tooltip-1.1.0.js"
 // @not "_bundle/vue-tooltip@0.1.0.js"
 
-// @for dev "_dev/vue-2.1.10.js"
-// @codekit-prepend "_bundle/vue-2.1.10.min.js"
-// @codekit-prepend "_bundle/vue-router-2.2.0.js"
+// @codekit-prepend "_bundle/vue.js"
+// @codekit-prepend "_bundle/vue-router.js"
 
 // @codekit-prepend "_bundle/v-tooltip@1.1.2.js"
 
