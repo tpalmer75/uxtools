@@ -15,10 +15,6 @@ body, html {
 }
 
 #library {
-	// height: 100%;
-	// display: flex;
-	// flex: 1;
-	// flex-direction: column;
 	&.no-scroll {
 		overflow: hidden;
 	}
@@ -62,13 +58,9 @@ select {
     font-family: @font-stack;
     font-size: 16px;
     font-weight: 400;
-    //margin-top: 10px;
     padding: 5px 16px 8px 0;
     position: relative;
     width: 200px;
-    //vertical-align: top;
-    //width: 100%;
-    //z-index: 2;
 }
 
 #library-sidebar {
@@ -102,7 +94,6 @@ select {
 #library-sidebar-shade {
 	display: flex;
 	flex: 0 0 300px;
-	// flex: 1;
 	@media all and (max-width: 999px) {
 		flex: 0 0 250px;
 	}
@@ -179,7 +170,6 @@ select {
 		}
 	}
 	.show-more {
-		// font-weight: bold;
 		color: @blue-primary;
 		margin-top: 15px;
 		align-items: center;
@@ -206,6 +196,9 @@ section {
 	@media all and (max-width: 999px) {
 		padding: 0 30px;
 	}
+	@media all and (max-width: 599px) {
+		padding: 0 15px;
+	}
 }
 
 #books {
@@ -218,7 +211,6 @@ section {
 		width: 32%;
 		margin-bottom: 40px;
 		background: white;
-		// box-shadow: 0 2px 5px rgba(0,0,0,.15);
 		flex-direction: column;
 		justify-content: space-between;
 		display: flex;
@@ -239,7 +231,6 @@ section {
 			padding: 0 10px 10px 10px;
 		}
 		.title {
-			// font-family: @title-font-stack;
 			font-weight: bold;
 			margin-bottom: 5px;
 			line-height: 1.2;
@@ -260,18 +251,7 @@ section {
 		height: 100px;
 		flex: 0 0 auto;
 		text-align: center;
-		// margin: 0 20px 20px;
-		// @media all and (max-width: 766px) {
-		// 	margin-top: 10px;
-		// }
-		// @media all and (max-width: 499px) {
-		// 	width: 80px;
-		// 	height: 100px;
-		// 	margin: 10px;
-		// }
 		img {
-			//width: 100%;
-			//height: auto;
 			max-width: 100%;
 			max-height: 100%;
 			box-shadow: 0 2px 5px fade(black, 10%);
@@ -365,11 +345,8 @@ section {
 .bottom-bar {
 	display: flex;
 	padding: 10px 0;
-	// justify-content: space-between;
 	.search {
 		width: 100%;
-		// min-width: none;
-		// flex: 1 0 auto;
 		margin-left: 20px;
 		input {
 			border: none;
@@ -447,9 +424,6 @@ section {
 #modal-wrapper {
 	opacity: 1;
 	display: flex;
-	position: relative; // to prevent header clipping
-	z-index: 3; 	    // to prevent header clipping
-	transition: all .2s;//to make vuejs animations work
 	&.grow-enter, &.grow-leave-to {
 		.container {
 			opacity: 0;

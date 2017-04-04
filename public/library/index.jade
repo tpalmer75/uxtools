@@ -33,7 +33,7 @@ html
             .wrapper
               .left
                 a(href="/")
-                  img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
+                  img#logo(src="/img/uxtools-logo.svg" alt="UX Tools")
               .right
                 ul
                   li
@@ -163,7 +163,7 @@ html
         header.books-header(v-if="listId")
           .flex-wrapper
             a(v-bind:href="bookLists[listId].url" target="_blank")
-              img(v-bind:src="'../../img/book-recommendations/'+bookLists[listId].image")
+              img(v-bind:src="'/img/book-recommendations/'+bookLists[listId].image")
             .content-wrapper
               h3 {{ bookLists[listId].name }}
               a(v-bind:href="bookLists[listId].url" target="_blank")
@@ -206,7 +206,7 @@ html
         .no-books(v-if="!books.length")
           p Hmm, looks like there aren't any books here.
             button.blue.small(@click="reset()") View All Books
-    script(src="../js/min/library-min.js?ver=1.3")
+    script(src="/js/min/library-min.js?ver=1.3")
     script.
       window['_fs_debug'] = false;
       window['_fs_host'] = 'www.fullstory.com';
