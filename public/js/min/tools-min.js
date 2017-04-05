@@ -33259,6 +33259,8 @@ const monitoringComp = {
 }
 
 const router = new VueRouter({
+	mode:"history",
+	base:"/tools",
 	routes: [
 
 		{ 

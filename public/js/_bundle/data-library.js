@@ -125,7 +125,15 @@ var books = [{
             "Communication"
         ],
         recommendations: [
-            "codal-ux-designers-library","team-w-top-10-ux-books","simon-pan-only-ux-reading-list-ever","uxtools-books-survey","uxdesign-cc-essential-reading-list","creative-market-10-must-read-ux-books","general-assembly-5-must-read-ux-books", "springboard-best-ux-books"
+            "codal-ux-designers-library",
+            "team-w-top-10-ux-books",
+            "simon-pan-only-ux-reading-list-ever",
+            "uxtools-books-survey",
+            "uxdesign-cc-essential-reading-list",
+            "creative-market-10-must-read-ux-books",
+            "general-assembly-5-must-read-ux-books", 
+            "springboard-best-ux-books",
+            "career-foundry-best-books-ux"
         ],
         image: "weinschenk.png",
     }, {
@@ -312,7 +320,11 @@ var books = [{
             "Data & Analytics","Research"
         ],
         recommendations: [
-            "team-w-top-10-ux-books","uxdesign-cc-essential-reading-list","general-assembly-5-must-read-ux-books","springboard-best-ux-books"
+            "team-w-top-10-ux-books",
+            "uxdesign-cc-essential-reading-list",
+            "general-assembly-5-must-read-ux-books",
+            "springboard-best-ux-books",
+            "career-foundry-best-books-ux"
         ],
         image: "albert.jpg",
     }, {
@@ -367,7 +379,9 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "adham-dannaway-must-read-ux","paulolyslager-must-have-collection-ux"
+            "adham-dannaway-must-read-ux",
+            "paulolyslager-must-have-collection-ux",
+            "career-foundry-best-books-ux"
         ],
         image: "hartson.jpg",
     }, {
@@ -378,7 +392,15 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "team-w-top-10-ux-books","adham-dannaway-must-read-ux","paulolyslager-must-have-collection-ux","creative-market-10-must-read-ux-books","general-assembly-5-must-read-ux-books","springboard-best-ux-books","codal-ux-designers-library","everyday-designer-6-books-beginners"
+            "team-w-top-10-ux-books",
+            "adham-dannaway-must-read-ux",
+            "paulolyslager-must-have-collection-ux",
+            "creative-market-10-must-read-ux-books",
+            "general-assembly-5-must-read-ux-books",
+            "springboard-best-ux-books",
+            "codal-ux-designers-library",
+            "everyday-designer-6-books-beginners",
+            "career-foundry-best-books-ux"
         ],
         image: "allen.jpg",
     }, {
@@ -455,7 +477,8 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "paulolyslager-must-have-collection-ux"
+            "paulolyslager-must-have-collection-ux",
+            "career-foundry-best-books-ux"
         ],
         image: "nielsen.jpg",
     }, {
@@ -466,7 +489,8 @@ var books = [{
             "Usability", "Interaction Design"
         ],
         recommendations: [
-            "paulolyslager-must-have-collection-ux"
+            "paulolyslager-must-have-collection-ux",
+            "career-foundry-best-books-ux"
         ],
         image: "colborne.jpg",
     }, {
@@ -488,7 +512,8 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "paulolyslager-must-have-collection-ux"
+            "paulolyslager-must-have-collection-ux",
+            "career-foundry-best-books-ux"
         ],
         image: "hoekman.jpg",
     }, {
@@ -565,7 +590,8 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "uxforthemasses-ux-books-reading-list"
+            "uxforthemasses-ux-books-reading-list",
+            "career-foundry-best-books-ux"
         ],
         image: "natoli.jpg",
     }, {
@@ -807,7 +833,11 @@ var books = [{
             "Mobile & Repsonsive","Usability"
         ],
         recommendations: [
-            "creative-market-10-must-read-ux-books","springboard-best-ux-books", "codal-ux-designers-library","everyday-designer-6-books-beginners"
+            "creative-market-10-must-read-ux-books",
+            "springboard-best-ux-books", 
+            "codal-ux-designers-library",
+            "everyday-designer-6-books-beginners",
+            "career-foundry-best-books-ux"
         ],
         image: "nielsen-2.jpg",
     }, {
@@ -928,7 +958,9 @@ var books = [{
             "Usability"
         ],
         recommendations: [
-            "springboard-best-ux-books","team-w-top-10-ux-books"
+            "springboard-best-ux-books",
+            "team-w-top-10-ux-books",
+            "career-foundry-best-books-ux"
         ],
         image: "jarrett.jpg",
     }, {
@@ -1568,9 +1600,40 @@ var books = [{
             "uxdesign-cc-best-ux-books-from-3-years"
         ],
         image: "roberts.jpg",
+    }, {
+        title: "Envisioning Information ",
+        author: "Edward R. Tufte",
+        url: "http://amzn.to/2oCNc73",
+        tags: [
+            "Data & Analytics"
+        ],
+        recommendations: [
+            "career-foundry-best-books-ux"
+        ],
+        image: "tufte-2.jpg",
     }];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     var bookLists = {
+        "career-foundry-best-books-ux": {
+            name: "Recommended Reading: The Eleven Best Books On UX",
+            owner: "Career Foundry",
+            url: "https://careerfoundry.com/en/blog/ux-design/best-books-ux/",
+            image: "careerfoundry.jpg",
+            id: "career-foundry-best-books-ux"
+        },
         "simon-pan-only-ux-reading-list-ever": {
             name: "The Only UX Reading List Ever",
             owner: "Simon Pan",
@@ -1724,5 +1787,6 @@ var books = [{
             url: "https://uxdesign.cc/best-new-ux-books-from-the-last-3-years-d975403b2956",
             image: "uxdesigncc.jpg",
             id: "uxdesign-cc-best-ux-books-from-3-years"
-        }
+        },
+        
     };

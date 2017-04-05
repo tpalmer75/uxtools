@@ -26,3 +26,4 @@ $.ajax({
         output += '</ul>';
         $("#medium").html(output);
 });
+
