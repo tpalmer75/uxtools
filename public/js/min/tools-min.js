@@ -31193,7 +31193,8 @@ const designData = {
         },
         "platforms": {
             "web": true,
-            "mac": true
+            "mac": true,
+            "windows": true
         },
         "import": {
             "svg": true,
@@ -31212,13 +31213,13 @@ const designData = {
         "collaboration": true,
         "handoff": true,
         "artboards": true,
-        "symbols": false,
+        "symbols": true,
         "responsive": true,
         "vector": true,
         "pricing": {
             "free": true,
-            "subscription": "$--",
-            "purchase": "$--"
+            "subscription": "$12",
+            "purchase": ""
         }
     }, {
         "name": "Adobe Illustrator",
@@ -31360,16 +31361,17 @@ const designData = {
         },
         "offline": true,
         "penTool": true,
+        "comments": true,
         "collaboration": false,
         "handoff": false,
         "artboards": true,
-        "symbols": false,
+        "symbols": true,
         "responsive": false,
         "prototyping": true,
         "vector": true,
         "pricing": {
             "free": true,
-            "subscription": "$--"
+            "subscription": "?"
         }
 
     }, {
@@ -31481,7 +31483,8 @@ const designData = {
         "vector": false,
         "prototyping": true,
         "pricing": {
-            "subscription": "$15"
+            "subscription": "$15",
+            "free": true
         }
     }, {
         "name": "Gravit Designer",
@@ -31801,7 +31804,7 @@ const prototypingData = {
         },
         "pricing": {
             "free": false,
-            "subscription": "$19+",
+            "subscription": "?",
             "purchase": ""
         }
     }, {

@@ -282,7 +282,7 @@ const prototypingData = {
         },
         "pricing": {
             "free": false,
-            "subscription": "$19+",
+            "subscription": "?",
             "purchase": ""
         }
     }, {

@@ -94,7 +94,7 @@
                 <header>Featured Lists</header>
                 <ul>
                   <li v-for="list in convertedBookLists" @click="showSidebar = false" class="image-list">
-                    <router-link :to="{ name: 'bookList', params: {listId: list.id }}"><img v-bind:src="'../img/book-recommendations/' + list.image"/>
+                    <router-link :to="{ name: 'bookList', params: {listId: list.id }}"><img v-bind:src="'/img/book-recommendations/' + list.image"/>
                       <div class="text-wrapper">
                         <div>{{ list.name }}</div>
                         <div class="owner">{{ list.owner }}</div>
@@ -123,7 +123,7 @@
                 </header>
                 <div class="scroll-area">
                   <ul>
-                    <li v-for="list in modalBookRecommendations"><a target="_blank" v-bind:href="bookLists[list].url + '?ref=uxtools.co'"><img v-bind:src="'../img/book-recommendations/' +bookLists[list].image"/>
+                    <li v-for="list in modalBookRecommendations"><a target="_blank" v-bind:href="bookLists[list].url + '?ref=uxtools.co'"><img v-bind:src="'/img/book-recommendations/' +bookLists[list].image"/>
                         <div class="content">
                           <h5>{{bookLists[list].name}}</h5>
                           <h6>{{bookLists[list].owner}}</h6>

@@ -124,7 +124,7 @@ html
                 ul
                   li.image-list(v-for="list in convertedBookLists" @click="showSidebar = false")
                     router-link(:to="{ name: 'bookList', params: {listId: list.id }}")
-                      img(v-bind:src="'../img/book-recommendations/' + list.image")
+                      img(v-bind:src="'/img/book-recommendations/' + list.image")
                       .text-wrapper
                         div {{ list.name }}
                         div.owner {{ list.owner }}
@@ -153,7 +153,7 @@ html
                   ul
                     li(v-for="list in modalBookRecommendations")
                       a(target="_blank" v-bind:href="bookLists[list].url + '?ref=uxtools.co'")
-                        img(v-bind:src="'../img/book-recommendations/' +bookLists[list].image")
+                        img(v-bind:src="'/img/book-recommendations/' +bookLists[list].image")
                         .content
                           h5 {{bookLists[list].name}}
                           h6 {{bookLists[list].owner}}
