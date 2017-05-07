@@ -1,60 +1,59 @@
 script(type="text/x-template" id="monitoring-tools")
-	//- div#loading-screen
-	//-   h4 Loading...
-	table#scroll-table(v-scrolltable="")
-		thead#fixed-header
-			tr
-				th(v-for="column in toolsData.columns" class="fixed-header")
-					span(style="display: block; position: relative" v-tooltip.bottom-center="column.tipText") {{ column.title }}
-		tbody
-			tr(v-for="app in computedTools")
-				td(class="fixed-col")
-					a(v-bind:href="app.url" v-bind:title="app.url" target="_blank")
-						img(v-bind:alt="app.name + 'Logo'" src="../img/blank.png" v-bind:style="app.image")
-				td(class="name-col")
-					a(v-bind:href="app.url" v-bind:title="app.url" target="_blank") {{ app.name }}
-				td
-					div(v-if="app.pricing.free")
-						include ../img/icons/check.svg
-				td(style="min-width: 100px")
-					span {{app.pricing.subscription}}
-				td(style="min-width: 100px")
-					span {{app.pricing.purchase}}
-				//- td
-				//- 	div.flex-wrapper
-				//- 		div.flex-col
-				//- 			div(v-if="app.platforms.web" v-tooltip.bottom-center="'Web'")
-				//- 				div(title="Web")
-				//- 					include ../img/icons/cloud-outline.svg
-				td
-					div(v-if="app.playback")
-						include ../img/icons/check.svg
-				td
-					div(v-if="app.skipInactivity")
-						include ../img/icons/check.svg
-				td
-					div(v-if="app.playbackSpeed")
-						include ../img/icons/check.svg
-				td
-					div(v-if="app.jumpBack")
-						include ../img/icons/check.svg
-				td
-					div(v-if="app.console")
-						include ../img/icons/check.svg
-				td
-					div(v-if="app.heatmaps")
-						include ../img/icons/check.svg
-				td
-					div(v-if="app.location")
-						include ../img/icons/check.svg
-				td
-					div(v-if="app.formAnalytics")
-						include ../img/icons/check.svg
-				td
-					div(v-if="app.polls")
-						include ../img/icons/check.svg
-				td
-					div.flex-col
-						div(v-if="app.export.html" v-tooltip.bottom-center="'Static HTML file'")
-							div(title="HTML")
-								include ../img/icons/html.svg
+	div
+		table#scroll-table(v-scrolltable="")
+			thead#fixed-header
+				tr
+					th(v-for="column in toolsData.columns" class="fixed-header")
+						span(style="display: block; position: relative" v-tooltip.bottom-center="column.tipText") {{ column.title }}
+			tbody
+				tr(v-for="app in computedTools")
+					td(class="fixed-col")
+						a(v-bind:href="app.url" v-bind:title="app.url" target="_blank")
+							img(v-bind:alt="app.name + 'Logo'" src="../img/blank.png" v-bind:style="app.image")
+					td(class="name-col")
+						a(v-bind:href="app.url" v-bind:title="app.url" target="_blank") {{ app.name }}
+					td
+						div(v-if="app.pricing.free")
+							include ../img/icons/check.svg
+					td(style="min-width: 100px")
+						span {{app.pricing.subscription}}
+					td(style="min-width: 100px")
+						span {{app.pricing.purchase}}
+					//- td
+					//- 	div.flex-wrapper
+					//- 		div.flex-col
+					//- 			div(v-if="app.platforms.web" v-tooltip.bottom-center="'Web'")
+					//- 				div(title="Web")
+					//- 					include ../img/icons/cloud-outline.svg
+					td
+						div(v-if="app.playback")
+							include ../img/icons/check.svg
+					td
+						div(v-if="app.skipInactivity")
+							include ../img/icons/check.svg
+					td
+						div(v-if="app.playbackSpeed")
+							include ../img/icons/check.svg
+					td
+						div(v-if="app.jumpBack")
+							include ../img/icons/check.svg
+					td
+						div(v-if="app.console")
+							include ../img/icons/check.svg
+					td
+						div(v-if="app.heatmaps")
+							include ../img/icons/check.svg
+					td
+						div(v-if="app.location")
+							include ../img/icons/check.svg
+					td
+						div(v-if="app.formAnalytics")
+							include ../img/icons/check.svg
+					td
+						div(v-if="app.polls")
+							include ../img/icons/check.svg
+					td
+						div.flex-col
+							div(v-if="app.export.html" v-tooltip.bottom-center="'Static HTML file'")
+								div(title="HTML")
+									include ../img/icons/html.svg

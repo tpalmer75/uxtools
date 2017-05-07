@@ -31846,6 +31846,7 @@ const prototypingData = {
         "sharing": {
             "iOS": true
         },
+        "sensors": true,
         "pricing": {
             "free": true,
             "subscription": "",
@@ -32149,7 +32150,9 @@ const prototypingData = {
             "mac": true,
             "windows": true
         },
-        "import": {},
+        "import": {
+            "sketch": true,
+        },
         "design": true,
         "navigation": true,
         "transition": true,

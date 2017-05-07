@@ -1,6 +1,5 @@
 @import "variables.less";
 @import "reset.less";
-@import "angular-tooltips.less";
 @import "header.less";
 @import "common.less";
 
@@ -62,7 +61,7 @@ section {
 
 table {
 	width: 100%;
-	margin-bottom: 50px;
+	// margin-bottom: 50px;
 	@media all and (max-width: @small-size) {
 		font-size: 14px;
 	}
@@ -218,13 +217,26 @@ table {
 	}
 }
 
-.star {
-    position: absolute;
-    top: -3px;
-    left: 31px;
-    svg path {
-    	fill: #FFC107;
-    }
+// .star {
+//     position: absolute;
+//     top: -3px;
+//     left: 31px;
+//     svg path {
+//     	fill: #FFC107;
+//     }
+// }
+
+.new-tool {
+	color: @blue-primary;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	margin-bottom: 50px;
+	svg {
+		fill: currentColor;
+		margin: 0 13px;
+	}
 }
 
 .tooltip {
