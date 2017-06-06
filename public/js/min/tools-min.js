@@ -31516,6 +31516,92 @@ const designData = {
         "pricing": {
             "free": true
         }
+    }, {
+        "name": "MockFlow",
+        "url": "https://www.mockflow.com/",
+        "image": {
+            "background-position": "-200 -900",
+        },
+        "platforms": {
+            "web": true,
+            "mac": true,
+            "windows": true,
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": false,
+        "penTool": false,
+        "collaboration": true,
+        "comments": true,
+        "handoff": true,
+        "plugins": false,
+        "artboards": false,
+        "symbols": true,
+        "responsive": false,
+        "vector": false,
+        "prototyping": false,
+        "pricing": {
+            "free": false,
+            "subscription": "$19"
+        }
+    }, {
+        "name": "Antetype",
+        "url": "http://antetype.com/",
+        "image": {
+            "background-position": "-400 -900",
+        },
+        "platforms": {
+            "web": true,
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": true,
+        "penTool": false,
+        "collaboration": false,
+        "comments": true,
+        "handoff": true,
+        "plugins": false,
+        "artboards": true,
+        "symbols": true,
+        "responsive": true,
+        "vector": true,
+        "prototyping": true,
+        "pricing": {
+            "free": false,
+            "purchase": "$189"
+        }
+    }, {
+        "name": "Proto.io",
+        "url": "https://proto.io/",
+        "image": {
+            "background-position": "-100 -500",
+        },
+        "platforms": {
+            "web": true,
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": true,
+        "penTool": true,
+        "collaboration": true,
+        "comments": true,
+        "handoff": false,
+        "plugins": false,
+        "artboards": true,
+        "symbols": false,
+        "responsive": false,
+        "vector": true,
+        "prototyping": true,
+        "pricing": {
+            "free": true,
+            "subscription": "$24+"
+        }
     }]
 
 }
@@ -32195,7 +32281,8 @@ const prototypingData = {
             "background-position": "-0 -800",
         },
         "platforms": {
-            "mac": true
+            "mac": true,
+            "windows": true
         },
         "pricing": {
             "free": true,
@@ -32212,6 +32299,7 @@ const prototypingData = {
         "data": false,
         "code": false,
         "sharing": {
+            "web": true,
             "android": true,
             "iOS": true
         },
@@ -32351,6 +32439,38 @@ const prototypingData = {
         "tasks": true,
         "analytics": true,
         "heatmaps": true,
+        "sensors": false
+        // "mobileOnly": null,
+    }, {
+        "name": "Kite Compositor",
+        "url": "https://kiteapp.co",
+        "image": {
+            "background-position": "-100 -900",
+        },
+        "platforms": {
+            "mac": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$99"
+        },
+        "design": false,
+        "import": {
+            "sketch": true
+        },
+        "micro": true,
+        "navigation": true,
+        "transition": true,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "mac": true
+        },
+        "handoff": false,
+        "tasks": false,
+        "analytics": false,
+        "heatmaps": false,
         "sensors": false
         // "mobileOnly": null,
     }],
@@ -32730,6 +32850,63 @@ const handoffData = {
             "subscription": "$15+"
         },
         "integrations": {},
+    }, {
+        "name": "Frontify",
+        "url": "www.frontify.com",
+        "image": {
+            "background-position": "-300 -900",
+        },
+        "platforms": {
+            "web": true
+        },
+        "programs": {
+        },
+        "specs": true,
+        "automatic": false,
+        "assets": false,
+        "measure": true,
+        "variables": true,
+        "guides": false,
+        "layers": false,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$34+"
+        },
+        "integrations": {},
+    }, {
+        "name": "CanvasFlip",
+        "url": "https://www.canvasflip.com/specs-the-design-hand-off.php",
+        "image": {
+            "background-position": "-500 -200",
+        },
+        "platforms": {
+            "mac": true
+        },
+        "programs": {
+            "sketch": true,
+        },
+        "specs": true,
+        "automatic": true,
+        "assets": true,
+        "measure": true,
+        "variables": true,
+        "guides": true,
+        "layers": true,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$15+"
+        },
+        "integrations": {},
     }],
 
     columns: [
@@ -32824,7 +33001,7 @@ const handoffData = {
             "canChange": true,
             "tipText": "Other external apps"
     }]
-}
+};
 
 const monitoringData = {
 	tools: [{

@@ -673,7 +673,8 @@ const prototypingData = {
             "background-position": "-0 -800",
         },
         "platforms": {
-            "mac": true
+            "mac": true,
+            "windows": true
         },
         "pricing": {
             "free": true,
@@ -690,6 +691,7 @@ const prototypingData = {
         "data": false,
         "code": false,
         "sharing": {
+            "web": true,
             "android": true,
             "iOS": true
         },
@@ -829,6 +831,38 @@ const prototypingData = {
         "tasks": true,
         "analytics": true,
         "heatmaps": true,
+        "sensors": false
+        // "mobileOnly": null,
+    }, {
+        "name": "Kite Compositor",
+        "url": "https://kiteapp.co",
+        "image": {
+            "background-position": "-100 -900",
+        },
+        "platforms": {
+            "mac": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$99"
+        },
+        "design": false,
+        "import": {
+            "sketch": true
+        },
+        "micro": true,
+        "navigation": true,
+        "transition": true,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "mac": true
+        },
+        "handoff": false,
+        "tasks": false,
+        "analytics": false,
+        "heatmaps": false,
         "sensors": false
         // "mobileOnly": null,
     }],

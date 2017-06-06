@@ -453,6 +453,92 @@ const designData = {
         "pricing": {
             "free": true
         }
+    }, {
+        "name": "MockFlow",
+        "url": "https://www.mockflow.com/",
+        "image": {
+            "background-position": "-200 -900",
+        },
+        "platforms": {
+            "web": true,
+            "mac": true,
+            "windows": true,
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": false,
+        "penTool": false,
+        "collaboration": true,
+        "comments": true,
+        "handoff": true,
+        "plugins": false,
+        "artboards": false,
+        "symbols": true,
+        "responsive": false,
+        "vector": false,
+        "prototyping": false,
+        "pricing": {
+            "free": false,
+            "subscription": "$19"
+        }
+    }, {
+        "name": "Antetype",
+        "url": "http://antetype.com/",
+        "image": {
+            "background-position": "-400 -900",
+        },
+        "platforms": {
+            "web": true,
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": true,
+        "penTool": false,
+        "collaboration": false,
+        "comments": true,
+        "handoff": true,
+        "plugins": false,
+        "artboards": true,
+        "symbols": true,
+        "responsive": true,
+        "vector": true,
+        "prototyping": true,
+        "pricing": {
+            "free": false,
+            "purchase": "$189"
+        }
+    }, {
+        "name": "Proto.io",
+        "url": "https://proto.io/",
+        "image": {
+            "background-position": "-100 -500",
+        },
+        "platforms": {
+            "web": true,
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": true,
+        "penTool": true,
+        "collaboration": true,
+        "comments": true,
+        "handoff": false,
+        "plugins": false,
+        "artboards": true,
+        "symbols": false,
+        "responsive": false,
+        "vector": true,
+        "prototyping": true,
+        "pricing": {
+            "free": true,
+            "subscription": "$24+"
+        }
     }]
 
 }

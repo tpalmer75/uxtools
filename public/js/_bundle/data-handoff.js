@@ -279,6 +279,63 @@ const handoffData = {
             "subscription": "$15+"
         },
         "integrations": {},
+    }, {
+        "name": "Frontify",
+        "url": "www.frontify.com",
+        "image": {
+            "background-position": "-300 -900",
+        },
+        "platforms": {
+            "web": true
+        },
+        "programs": {
+        },
+        "specs": true,
+        "automatic": false,
+        "assets": false,
+        "measure": true,
+        "variables": true,
+        "guides": false,
+        "layers": false,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$34+"
+        },
+        "integrations": {},
+    }, {
+        "name": "CanvasFlip",
+        "url": "https://www.canvasflip.com/specs-the-design-hand-off.php",
+        "image": {
+            "background-position": "-500 -200",
+        },
+        "platforms": {
+            "mac": true
+        },
+        "programs": {
+            "sketch": true,
+        },
+        "specs": true,
+        "automatic": true,
+        "assets": true,
+        "measure": true,
+        "variables": true,
+        "guides": true,
+        "layers": true,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$15+"
+        },
+        "integrations": {},
     }],
 
     columns: [
@@ -373,4 +430,4 @@ const handoffData = {
             "canChange": true,
             "tipText": "Other external apps"
     }]
-}
+};

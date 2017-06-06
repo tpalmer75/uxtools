@@ -1,0 +1,31 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.6.1
+[debug] Platform:     darwin
+[debug] Node Version: v6.10.1
+[debug] Time:         Mon Jun 05 2017 20:27:20 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/K5Xeye9FjIvuqlCrNqTi0K6hnfPBzCWFUbgNubazdaw',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Jun 05 2017 20:27:20 GMT-0600 (MDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/uxtools-3ac6e  
+ Mon Jun 05 2017 20:27:21 GMT-0600 (MDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/uxtools-3ac6e/tokens  
+ Mon Jun 05 2017 20:27:23 GMT-0600 (MDT)
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'uxtools-3ac6e'...
+[info] 
+[info] i  deploying database, hosting
+[info] ✔  database: rules ready to deploy.
+[info] i  hosting: preparing public directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/uxtools-3ac6e/uploads/-KlvDarWeM54CUxrPR7Y?fileCount=346&message=  
+ Mon Jun 05 2017 20:27:26 GMT-0600 (MDT)
