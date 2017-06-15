@@ -31138,17 +31138,19 @@ const designData = {
             "show": true,
             "canChange": true,
             "tipText": "Can prototype<br>within the app"
-    }, {
-            "title": "Import",
-            "show": false,
-            "canChange": true,
-            "tipText": "Unique formats that<br>can be opened"
-    }, {
-            "title": "Export",
-            "show": false,
-            "canChange": true,
-            "tipText": "Unique formats that can<br>be exported"
-    }],
+    }
+    // , {
+    //         "title": "Import",
+    //         "show": false,
+    //         "canChange": true,
+    //         "tipText": "Unique formats that<br>can be opened"
+    // }, {
+    //         "title": "Export",
+    //         "show": false,
+    //         "canChange": true,
+    //         "tipText": "Unique formats that can<br>be exported"
+    // }
+    ],
     tools: [{
         "name": "Sketch",
         "url": "https://www.sketchapp.com/",
@@ -31602,6 +31604,35 @@ const designData = {
             "free": true,
             "subscription": "$24+"
         }
+    }, {
+        "name": "Framer",
+        "url": "http://framerjs.com/",
+        "image": {
+            "background-position": "-200 -400",
+        },
+        "platforms": {
+            "mac": true,
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": true,
+        "penTool": false,
+        "collaboration": false,
+        "comments": false,
+        "handoff": true,
+        "plugins": false,
+        "artboards": true,
+        "symbols": false,
+        "responsive": true,
+        "vector": true,
+        "prototyping": true,
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$129"
+        }
     }]
 
 }
@@ -31622,6 +31653,7 @@ const prototypingData = {
             "sketch": true,
             "figma": true,
         },
+        "design": true,
         "micro": true,
         "navigation": true,
         "transition": true,
@@ -32032,6 +32064,7 @@ const prototypingData = {
         // "micro": only with GIF,
         "navigation": true,
         "transition": true,
+        "handoff": true,
         "sharing": {
             "iOS": true,
             "android": true,
@@ -32473,6 +32506,69 @@ const prototypingData = {
         "heatmaps": false,
         "sensors": false
         // "mobileOnly": null,
+    }, {
+        "name": "Frontify",
+        "url": "https://frontify.com/workspace",
+        "image": {
+            "background-position": "-300 -900",
+        },
+        "platforms": {
+            "web": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$29+",
+            "purchase": ""
+        },
+        "design": false,
+        "import": {
+        },
+        "micro": false,
+        "navigation": true,
+        "transition": false,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "web": true
+        },
+        "handoff": true,
+        "tasks": true,
+        "analytics": false,
+        "heatmaps": false,
+        "sensors": false
+        // "mobileOnly": null,
+    }, {
+        "name": "Launchpad by Anima",
+        "url": "https://launchpad.animaapp.com",
+        "image": {
+            "background-position": "-500 -900",
+        },
+        "platforms": {
+            "mac": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$99"
+        },
+        "design": false,
+        "import": {
+            "sketch": true
+        },
+        "micro": false,
+        "navigation": true,
+        "transition": true,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "web": true
+        },
+        "handoff": true,
+        "tasks": false,
+        "analytics": true,
+        "heatmaps": false,
+        "sensors": false
+        // "mobileOnly": null,
     }],
 
     columns: [{
@@ -32852,7 +32948,7 @@ const handoffData = {
         "integrations": {},
     }, {
         "name": "Frontify",
-        "url": "www.frontify.com",
+        "url": "https://www.frontify.com",
         "image": {
             "background-position": "-300 -900",
         },
@@ -32875,7 +32971,7 @@ const handoffData = {
         },
         "pricing": {
             "free": false,
-            "subscription": "$34+"
+            "subscription": "$29+"
         },
         "integrations": {},
     }, {

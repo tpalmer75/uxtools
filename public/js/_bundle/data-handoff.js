@@ -281,7 +281,7 @@ const handoffData = {
         "integrations": {},
     }, {
         "name": "Frontify",
-        "url": "www.frontify.com",
+        "url": "https://www.frontify.com",
         "image": {
             "background-position": "-300 -900",
         },
@@ -304,7 +304,7 @@ const handoffData = {
         },
         "pricing": {
             "free": false,
-            "subscription": "$34+"
+            "subscription": "$29+"
         },
         "integrations": {},
     }, {

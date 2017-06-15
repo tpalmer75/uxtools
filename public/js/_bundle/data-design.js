@@ -75,17 +75,19 @@ const designData = {
             "show": true,
             "canChange": true,
             "tipText": "Can prototype<br>within the app"
-    }, {
-            "title": "Import",
-            "show": false,
-            "canChange": true,
-            "tipText": "Unique formats that<br>can be opened"
-    }, {
-            "title": "Export",
-            "show": false,
-            "canChange": true,
-            "tipText": "Unique formats that can<br>be exported"
-    }],
+    }
+    // , {
+    //         "title": "Import",
+    //         "show": false,
+    //         "canChange": true,
+    //         "tipText": "Unique formats that<br>can be opened"
+    // }, {
+    //         "title": "Export",
+    //         "show": false,
+    //         "canChange": true,
+    //         "tipText": "Unique formats that can<br>be exported"
+    // }
+    ],
     tools: [{
         "name": "Sketch",
         "url": "https://www.sketchapp.com/",
@@ -538,6 +540,35 @@ const designData = {
         "pricing": {
             "free": true,
             "subscription": "$24+"
+        }
+    }, {
+        "name": "Framer",
+        "url": "http://framerjs.com/",
+        "image": {
+            "background-position": "-200 -400",
+        },
+        "platforms": {
+            "mac": true,
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": true,
+        "penTool": false,
+        "collaboration": false,
+        "comments": false,
+        "handoff": true,
+        "plugins": false,
+        "artboards": true,
+        "symbols": false,
+        "responsive": true,
+        "vector": true,
+        "prototyping": true,
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$129"
         }
     }]
 

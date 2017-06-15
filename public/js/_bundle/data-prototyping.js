@@ -14,6 +14,7 @@ const prototypingData = {
             "sketch": true,
             "figma": true,
         },
+        "design": true,
         "micro": true,
         "navigation": true,
         "transition": true,
@@ -424,6 +425,7 @@ const prototypingData = {
         // "micro": only with GIF,
         "navigation": true,
         "transition": true,
+        "handoff": true,
         "sharing": {
             "iOS": true,
             "android": true,
@@ -862,6 +864,69 @@ const prototypingData = {
         "handoff": false,
         "tasks": false,
         "analytics": false,
+        "heatmaps": false,
+        "sensors": false
+        // "mobileOnly": null,
+    }, {
+        "name": "Frontify",
+        "url": "https://frontify.com/workspace",
+        "image": {
+            "background-position": "-300 -900",
+        },
+        "platforms": {
+            "web": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "$29+",
+            "purchase": ""
+        },
+        "design": false,
+        "import": {
+        },
+        "micro": false,
+        "navigation": true,
+        "transition": false,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "web": true
+        },
+        "handoff": true,
+        "tasks": true,
+        "analytics": false,
+        "heatmaps": false,
+        "sensors": false
+        // "mobileOnly": null,
+    }, {
+        "name": "Launchpad by Anima",
+        "url": "https://launchpad.animaapp.com",
+        "image": {
+            "background-position": "-500 -900",
+        },
+        "platforms": {
+            "mac": true
+        },
+        "pricing": {
+            "free": false,
+            "subscription": "",
+            "purchase": "$99"
+        },
+        "design": false,
+        "import": {
+            "sketch": true
+        },
+        "micro": false,
+        "navigation": true,
+        "transition": true,
+        "data": false,
+        "code": false,
+        "sharing": {
+            "web": true
+        },
+        "handoff": true,
+        "tasks": false,
+        "analytics": true,
         "heatmaps": false,
         "sensors": false
         // "mobileOnly": null,
