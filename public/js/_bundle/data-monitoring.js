@@ -194,6 +194,30 @@ const monitoringData = {
 		"export": {},
 		// Can search according the the html element a user clicked
 		// can watch live sessions
+	}, {
+		"name": "Zarget",
+		"url": "https://zarget.com",
+		"image": {
+			"background-position": "0 -1000",
+		},
+		"platforms": {
+			"web": true
+		},
+		"playback": true,
+		"tags": false,
+		"location": false,
+		"heatmaps": true,
+		"console": false,
+		"skipInactivity": false,
+		"playbackSpeed": false,
+		"formAnalytics": true,
+		"jumpBack": false,
+		"polls": true,
+		"pricing": {
+			"free": false,
+			"subscription": "$44+"
+		},
+		"export": {},
 	}],
 
 	columns: [
@@ -273,4 +297,4 @@ const monitoringData = {
 			"canChange": true,
 			"tipText": "Format for<br> downloaded"
 	}]
-}
+};

@@ -31555,7 +31555,7 @@ const designData = {
             "background-position": "-400 -900",
         },
         "platforms": {
-            "web": true,
+            "mac": true,
         },
         "import": {
         },
@@ -33003,6 +33003,35 @@ const handoffData = {
             "subscription": "$15+"
         },
         "integrations": {},
+    }, {
+        "name": "Zarget",
+        "url": "https://zarget.com",
+        "image": {
+            "background-position": "0 -1000",
+        },
+        "platforms": {
+            "mac": true
+        },
+        "programs": {
+            "sketch": true,
+        },
+        "specs": true,
+        "automatic": true,
+        "assets": true,
+        "measure": true,
+        "variables": true,
+        "guides": true,
+        "layers": true,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$15+"
+        },
+        "integrations": {},
     }],
 
     columns: [
@@ -33295,6 +33324,30 @@ const monitoringData = {
 		"export": {},
 		// Can search according the the html element a user clicked
 		// can watch live sessions
+	}, {
+		"name": "Zarget",
+		"url": "https://zarget.com",
+		"image": {
+			"background-position": "0 -1000",
+		},
+		"platforms": {
+			"web": true
+		},
+		"playback": true,
+		"tags": false,
+		"location": false,
+		"heatmaps": true,
+		"console": false,
+		"skipInactivity": false,
+		"playbackSpeed": false,
+		"formAnalytics": true,
+		"jumpBack": false,
+		"polls": true,
+		"pricing": {
+			"free": false,
+			"subscription": "$44+"
+		},
+		"export": {},
 	}],
 
 	columns: [
@@ -33374,7 +33427,7 @@ const monitoringData = {
 			"canChange": true,
 			"tipText": "Format for<br> downloaded"
 	}]
-}
+};
 
 // @codekit-prepend "_bundle/tether-1.4.0.js"
 // @codekit-prepend "_bundle/tether-drop-.1.4.1.js"

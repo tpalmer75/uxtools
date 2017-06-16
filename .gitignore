@@ -5,3 +5,5 @@ config.codekit
 functions/
 
 config.codekit3
+
+firebase-debug.log

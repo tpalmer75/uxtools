@@ -336,6 +336,35 @@ const handoffData = {
             "subscription": "$15+"
         },
         "integrations": {},
+    }, {
+        "name": "Zarget",
+        "url": "https://zarget.com",
+        "image": {
+            "background-position": "0 -1000",
+        },
+        "platforms": {
+            "mac": true
+        },
+        "programs": {
+            "sketch": true,
+        },
+        "specs": true,
+        "automatic": true,
+        "assets": true,
+        "measure": true,
+        "variables": true,
+        "guides": true,
+        "layers": true,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$15+"
+        },
+        "integrations": {},
     }],
 
     columns: [

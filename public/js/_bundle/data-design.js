@@ -492,7 +492,7 @@ const designData = {
             "background-position": "-400 -900",
         },
         "platforms": {
-            "web": true,
+            "mac": true,
         },
         "import": {
         },
