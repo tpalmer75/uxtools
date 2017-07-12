@@ -267,10 +267,13 @@ const handoffData = {
         "programs": {
             "sketch": true,
         },
+        "automatic": true,
         "specs": true,
         "measure": true,
         "comments": true,
         "revisions": true,
+        "assets": true,
+        "layers": true,
         "sharing": {
             "web": true,
         },
