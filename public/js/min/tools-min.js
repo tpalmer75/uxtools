@@ -1,3 +1,20 @@
+var hamburger = document.getElementById("hamburger");
+var sidebar = document.getElementById("sidebar");
+var shade = document.getElementById("shade");
+var close = document.getElementById("close");
+
+hamburger.addEventListener("click", function() {
+	sidebar.classList.add("show-menu");
+}, false);
+
+shade.addEventListener("click", function() {
+	sidebar.classList.remove("show-menu");
+}, false);
+
+close.addEventListener("click", function() {
+	sidebar.classList.remove("show-menu");
+}, false);
+
 /*! tether 1.4.0 */
 
 (function(root, factory) {
@@ -33405,6 +33422,7 @@ const monitoringData = {
 	}]
 };
 
+// @codekit-prepend "_bundle/header.js"
 // @codekit-prepend "_bundle/tether-1.4.0.js"
 // @codekit-prepend "_bundle/tether-drop-.1.4.1.js"
 // @codekit-prepend "_bundle/tether-tooltip-1.1.0.js"
@@ -33600,7 +33618,7 @@ const app = new Vue({
 			name: 'foo'
 		}
 	}
-})
+});
 
 
 

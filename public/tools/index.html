@@ -32,7 +32,7 @@
         <div class="top-bar">
           <h1 class="screen-reader">UX Tools</h1>
           <div class="wrapper">
-            <div class="left"><a href="/"><img id="logo" src="../img/uxtools-logo.svg" alt="UX Tools"/></a></div>
+            <div class="left"><a href="/"><img id="logo" src="/img/uxtools-logo.svg" alt="UX Tools"/></a></div>
             <div class="right">
               <ul>
                 <li><a href="/tools"> <span>Tools</span></a></li>
@@ -43,14 +43,14 @@
                     <button class="small">Subscribe</button></a></li>
               </ul>
             </div>
-            <div id="hamburger" @click="showMenu = true">
+            <div id="hamburger">
               <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
               </div><span>Menu</span>
             </div>
           </div>
         </div>
-        <div id="sidebar" v-bind:class="{'show-menu': showMenu}">
-          <div id="shade" @click="showMenu = false" class="shade">
+        <div id="sidebar">
+          <div id="shade" class="shade">
             <div class="container">
               <ul>
                 <li><a href="/tools"> <span>Tools</span></a></li>
@@ -59,7 +59,7 @@
                 <li><a href="/about.html"> <span>About</span></a></li>
                 <li><a href="http://newsletter.uxtools.co"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg><span>Subscribe</span></a></li>
               </ul>
-              <div id="close" @click="showMenu = false" class="close"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+              <div id="close" class="close"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
               </div>
             </div>
           </div>
@@ -567,15 +567,15 @@
       window['_fs_org'] = '2EJY1';
       window['_fs_namespace'] = 'FS';
       (function(m,n,e,t,l,o,g,y){
-          if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
-          g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
-          o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
-          y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
-          g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
-          g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
-          g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
-          d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
-          ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+      		if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
+      		g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+      		o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+      		y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+      		g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+      		g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+      		g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+      		d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+      		';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
       })(window,document,window['_fs_namespace'],'script','user');
     </script>
     <script>

@@ -1,3 +1,20 @@
+var hamburger = document.getElementById("hamburger");
+var sidebar = document.getElementById("sidebar");
+var shade = document.getElementById("shade");
+var close = document.getElementById("close");
+
+hamburger.addEventListener("click", function() {
+	sidebar.classList.add("show-menu");
+}, false);
+
+shade.addEventListener("click", function() {
+	sidebar.classList.remove("show-menu");
+}, false);
+
+close.addEventListener("click", function() {
+	sidebar.classList.remove("show-menu");
+}, false);
+
 /*!
  * Vue.js v2.2.0
  * (c) 2014-2017 Evan You
@@ -30400,8 +30417,9 @@ var books = [{
         
     };
 
-// @codekit-prepend codekit-prepend "_bundle/vue.js"
-// @FOR DEV "_bundle/vue.min.js"
+// @codekit-prepend "_bundle/header.js"
+// @codekit-prepend "_bundle/vue.js"
+// @codekit-prepend "_bundle/vue.min.js"
 // @codekit-prepend "_bundle/vue-router.js"
 // @codekit-prepend "_bundle/vue-lazyload-1.0.0.js"
 // @codekit-prepend "_bundle/lodash-4.17.4.js"
@@ -30625,5 +30643,6 @@ new Vue({
 		},
 	}
 });
+
 
 

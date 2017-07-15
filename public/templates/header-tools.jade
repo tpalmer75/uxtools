@@ -1,0 +1,18 @@
+extends header.jade
+
+block bottomBar
+	.bottom-bar
+		.scroll-tabs
+			ul
+				li
+					router-link(to="design")
+						span Design
+				li
+					router-link(to="prototyping")
+						span Prototyping
+				li
+					router-link(to="handoff")
+						span Handoff
+				li
+					router-link(to="monitoring")
+						span Monitoring

@@ -1,3 +1,4 @@
+// @codekit-prepend "_bundle/header.js"
 // @codekit-prepend "_bundle/tether-1.4.0.js"
 // @codekit-prepend "_bundle/tether-drop-.1.4.1.js"
 // @codekit-prepend "_bundle/tether-tooltip-1.1.0.js"
@@ -193,5 +194,5 @@ const app = new Vue({
 			name: 'foo'
 		}
 	}
-})
+});
 

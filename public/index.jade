@@ -26,59 +26,20 @@ html(ng-app="uxTools")
     meta(name="theme-color" content="#ffffff")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Poppins:600" rel="stylesheet")
     link(href="css/style.css?version=1.3" rel="stylesheet" type="text/css")
+    script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+    script.
+      (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2169456968850651",
+      enable_page_level_ads: true
+      });
+
 
   body
-    header#main-header
-      .top-bar
-        h1.screen-reader UX Tools
-        .wrapper
-          .left
-            a(href="/")
-              img#logo(src="img/uxtools-logo.svg" alt="UX Tools")
-          .right
-            ul
-              li
-                a(href="/tools") 
-                  span Tools
-              li
-                a(href="/library") 
-                  span Library
-              li
-                a(href="https://blog.uxtools.co") 
-                  span Blog
-              li
-                a(href="/about.html") 
-                  span About
-              li
-                a(href="http://newsletter.uxtools.co")
-                  button.small
-                    | Subscribe
-          #hamburger
-            .icon
-              include img/icons/menu.svg
-            span Menu
-      #sidebar
-        #shade.shade
-          .container
-            ul
-              li
-                a(href="/tools") 
-                  span Tools
-              li
-                a(href="/library") 
-                  span Library
-              li
-                a(href="https://blog.uxtools.co") 
-                  span Blog
-              li
-                a(href="/about.html") 
-                  span About
-              li
-                a(href="http://newsletter.uxtools.co")
-                  include img/icons/email.svg
-                  span Subscribe
-            #close.close
-              include img/icons/close.svg
+
+    //-—————— HEADER TEMPLATE——————————
+    include templates/header.html
+
+
     section
       .wrapper
         .columns.reverse
@@ -148,10 +109,10 @@ html(ng-app="uxTools")
               .image-container.loading
             li
               .image-container.loading
-    section(style="max-width: 800px; margin: auto;")
-      .wrapper
-        a.twitter-timeline(data-link-color='#4285F4', href='https://twitter.com/uxtoolsco') Tweets by uxtoolsco
-        script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
+    //- section(style="max-width: 800px; margin: auto;")
+    //-   .wrapper
+    //-     a.twitter-timeline(data-link-color='#4285F4', href='https://twitter.com/uxtoolsco') Tweets by uxtoolsco
+    //-     script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
 
     footer
       p Made by 
@@ -161,9 +122,7 @@ html(ng-app="uxTools")
 
 
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
-    script(src="js/medium.js?ver=1.1" type="text/javascript")
     script(type="text/javascript").
-      
       var hamburger = document.getElementById("hamburger");
       var sidebar = document.getElementById("sidebar");
       var shade = document.getElementById("shade");
@@ -180,7 +139,7 @@ html(ng-app="uxTools")
       close.addEventListener("click", function() {
         sidebar.classList.remove("show-menu");
       }, false);
-
+    script(src="js/medium.js?ver=1.1" type="text/javascript")
     script(type="text/javascript" src="https://rss2json.com/gfapi.js")
     script.
       window['_fs_debug'] = false;
