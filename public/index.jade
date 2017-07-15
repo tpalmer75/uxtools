@@ -26,20 +26,13 @@ html(ng-app="uxTools")
     meta(name="theme-color" content="#ffffff")
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Poppins:600" rel="stylesheet")
     link(href="css/style.css?version=1.3" rel="stylesheet" type="text/css")
-    script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
-    script.
-      (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-2169456968850651",
-      enable_page_level_ads: true
-      });
 
 
   body
 
     //-—————— HEADER TEMPLATE——————————
-    include templates/header.html
-
-
+    include templates/header.jade
+    
     section
       .wrapper
         .columns.reverse
@@ -54,6 +47,18 @@ html(ng-app="uxTools")
               .landing-image
                 img(src="img/landing-image-logos.png" alt="App Logos")
                 img.shadow-image(src="img/bottom-shadow.png")
+
+    section(style="padding: 20px 0; text-align: center; position: relative;")
+      //- .promotion-missing
+      //-   h4 Normally there's an ad here. 🤔
+      //-   p I run this site by myself, so it would be awesome if you turned off your ad blocker.
+
+      script(async src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+          //- Main Page Responsive
+        ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2169456968850651', data-ad-slot='4605423926', data-ad-format='auto')
+        script.
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      
 
     section
       .wrapper
