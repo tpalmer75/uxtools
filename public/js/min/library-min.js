@@ -28594,6 +28594,7 @@ var books = [{
             "jessica-ivins-ux-resources-beginners",
             "dave-malouf-my-ux-list-2016",
             "prototypr-io-7-ux-books-every-designer",
+            "iamwire-ux-design-books"
         ],
         image: "norman.png",
     }, {
@@ -29000,7 +29001,9 @@ var books = [{
             "Agile"
         ],
         recommendations: [
-            "adham-dannaway-must-read-ux","uxforthemasses-ux-books-reading-list"
+            "adham-dannaway-must-read-ux",
+            "uxforthemasses-ux-books-reading-list",
+            "iamwire-ux-design-books"
         ],
         image: "ratcliffe.jpg",
     }, {
@@ -29113,7 +29116,9 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "uxforthemasses-ux-books-reading-list", "uxdesign-cc-best-ux-books-from-3-years"
+            "uxforthemasses-ux-books-reading-list",
+            "uxdesign-cc-best-ux-books-from-3-years",
+            "iamwire-ux-design-books"
         ],
         image: "patton.jpg",
     }, {
@@ -29481,7 +29486,9 @@ var books = [{
             "Branding", "Visual Design"
         ],
         recommendations: [
-            "prototypr-io-7-ux-books-every-designer","springboard-best-ux-books"
+            "prototypr-io-7-ux-books-every-designer",
+            "springboard-best-ux-books",
+            "iamwire-ux-design-books"
         ],
         image: "wheeler.jpg",
     }, {
@@ -30054,7 +30061,8 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "uxdesign-cc-best-ux-books-from-3-years"
+            "uxdesign-cc-best-ux-books-from-3-years",
+            "iamwire-ux-design-books"
         ],
         image: "platt.jpg",
     }, {
@@ -30109,7 +30117,8 @@ var books = [{
             "Data & Analytics"
         ],
         recommendations: [
-            "uxdesign-cc-best-ux-books-from-3-years"
+            "uxdesign-cc-best-ux-books-from-3-years",
+            "iamwire-ux-design-books"
         ],
         image: "king.jpg",
     }, {
@@ -30120,7 +30129,8 @@ var books = [{
             "Visual Design", "Communication"
         ],
         recommendations: [
-            "uxdesign-cc-best-ux-books-from-3-years"
+            "uxdesign-cc-best-ux-books-from-3-years",
+            "iamwire-ux-design-books"
         ],
         image: "bierut.jpg",
     }, {
@@ -30131,7 +30141,8 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "uxdesign-cc-best-ux-books-from-3-years"
+            "uxdesign-cc-best-ux-books-from-3-years",
+            "iamwire-ux-design-books"
         ],
         image: "miller-2.jpg",
     }, {
@@ -30142,7 +30153,8 @@ var books = [{
             "General UX"
         ],
         recommendations: [
-            "uxdesign-cc-best-ux-books-from-3-years"
+            "uxdesign-cc-best-ux-books-from-3-years",
+            "iamwire-ux-design-books"
         ],
         image: "mcelroy.jpg",
     }, {
@@ -30157,16 +30169,50 @@ var books = [{
         ],
         image: "roberts.jpg",
     }, {
-        title: "Envisioning Information ",
+        title: "Envisioning Information",
         author: "Edward R. Tufte",
         url: "http://amzn.to/2oCNc73",
         tags: [
             "Data & Analytics"
         ],
         recommendations: [
-            "career-foundry-best-books-ux"
+            "career-foundry-best-books-ux",
+            "iamwire-ux-design-books"
         ],
         image: "tufte-2.jpg",
+    }, {
+        title: "The Design Studio Method",
+        author: "Brian Sullivan",
+        url: "http://amzn.to/2rz9t3O",
+        tags: [
+            "Creativity"
+        ],
+        recommendations: [
+            "iamwire-ux-design-books"
+        ],
+        image: "sullivan.jpg",
+    }, {
+        title: "Point and Line to Plane (Dover Fine Art, History of Art)",
+        author: "Wassily Kandinsky",
+        url: "http://amzn.to/2tnWJ1f",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "iamwire-ux-design-books"
+        ],
+        image: "kandinsky.jpg",
+    }, {
+        title: "Sunday Sketching",
+        author: "Christoph Niemann",
+        url: "http://amzn.to/2rMHNgh",
+        tags: [
+            "Visual Design"
+        ],
+        recommendations: [
+            "iamwire-ux-design-books"
+        ],
+        image: "niemann.jpg",
     }];
 
 
@@ -30343,6 +30389,13 @@ var books = [{
             url: "https://uxdesign.cc/best-new-ux-books-from-the-last-3-years-d975403b2956",
             image: "uxdesigncc.jpg",
             id: "uxdesign-cc-best-ux-books-from-3-years"
+        },
+        "iamwire-ux-design-books": {
+            name: "14 UX Design Books: The Essential Reading List",
+            owner: "iamwire",
+            url: "http://www.iamwire.com/2017/06/ux-design-books/153929",
+            image: "iamwire.jpg",
+            id: "iamwire-ux-design-books"
         },
         
     };

@@ -167,17 +167,19 @@ const handoffData = {
         },
         "programs": {
             "sketch": true,
-            "photoshop": true
+            // "photoshop": true
         },
         "specs": true,
+        "automatic": true,
         "measure": true,
+        "comments": true,
         "sharing": {
-            "web": true,
+            "mac": true,
         },
         "pricing": {
-            "free": false,
+            "free": true,
             "subscription": "",
-            "purchase": "$50"
+            "purchase": "?"
         },
         "integrations": {},
     }, {
@@ -315,35 +317,6 @@ const handoffData = {
         "url": "https://www.canvasflip.com/specs-the-design-hand-off.php",
         "image": {
             "background-position": "-500 -200",
-        },
-        "platforms": {
-            "mac": true
-        },
-        "programs": {
-            "sketch": true,
-        },
-        "specs": true,
-        "automatic": true,
-        "assets": true,
-        "measure": true,
-        "variables": true,
-        "guides": true,
-        "layers": true,
-        "comments": true,
-        "revisions": true,
-        "sharing": {
-            "web": true,
-        },
-        "pricing": {
-            "free": true,
-            "subscription": "$15+"
-        },
-        "integrations": {},
-    }, {
-        "name": "Zarget",
-        "url": "https://zarget.com",
-        "image": {
-            "background-position": "0 -1000",
         },
         "platforms": {
             "mac": true
