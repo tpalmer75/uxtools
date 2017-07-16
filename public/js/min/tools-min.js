@@ -33459,8 +33459,10 @@ Vue.directive('scrolltable', {
 		  var table = document.getElementById("scroll-table");
 
 		  fixedHeader.style.position = "fixed"; // to keep it hidden while loading
+		  // set initial position of fixed header
 		  fixedHeader.style.top = headerHeight + "px";
 
+		  // align column headesrs with content
 		  for (var i=0; i < columns.length; i++) {
 				var newWidth = columns[i].offsetWidth;
 				fixedHeaders[i].style.minWidth = newWidth;
@@ -33480,24 +33482,50 @@ Vue.directive('scrolltable', {
 			ticking = true;
 		  }
 
+		  // on each scroll
 		  var update = function() {
+
+
 				ticking = false;
 				var currentScrollY = latestKnownScrollY;
 				var currentScrollX = latestKnownScrollX;
 
+				
+
 				fixedHeader.style.left = -currentScrollX;
 
 				if (currentScrollY <= headerHeight) {
-				  mainHeader.style.marginTop = -currentScrollY;
-				  fixedHeader.style.top = headerHeight - currentScrollY;
-				  fixedHeader.style.boxShadow = "";
+
+					// mainHeader.style.marginTop = -currentScrollY;
+					// 	fixedHeader.style.top = headerHeight - currentScrollY;
+					// 	fixedHeader.style.boxShadow = "";
+				  
+				  // if the table can't scroll completely
+					if (scrollElement.scrollHeight < window.innerHeight) {
+						console.log('step 1');
+						// and is scrolled all the way
+						if (!(scrollElement.scrollHeight - currentScrollY <= scrollElement.clientHeight)) {
+							console.log('step 2');
+							// normal parallax
+							mainHeader.style.marginTop = -currentScrollY;
+							fixedHeader.style.top = headerHeight - currentScrollY;
+							fixedHeader.style.boxShadow = "";
+						}
+					} else {
+						// normal parallax
+						mainHeader.style.marginTop = -currentScrollY;
+						fixedHeader.style.top = headerHeight - currentScrollY;
+						fixedHeader.style.boxShadow = "";
+					}
 				} else {
 				  mainHeader.style.marginTop = -headerHeight;
 				  fixedHeader.style.top = 0;
 				  fixedHeader.style.boxShadow = "2px 2px 10px rgba(0,0,0,.15)";
 				}
 
+				// if scrolling vertically
 				if (currentScrollX > 0) {
+					// for each column
 				  for ( var i=0; i < fixedCols.length; i++ ) {
 					fixedCols[i].style.position = "fixed";
 					fixedCols[i].style.top = parseInt(fixedHeader.style.top) + fixedHeaderHeight - currentScrollY + (fixedColHeight*i);
@@ -33510,6 +33538,10 @@ Vue.directive('scrolltable', {
 					fixedCols[i].style.boxShadow = "";
 				  }
 				}
+
+				// console.log("scrolled "+currentScrollY + "height " +scrollElement.clientHeight + "scrollheight" + scrollElement.scrollHeight);
+
+
 
 		  };
 
