@@ -66,12 +66,26 @@ button, input[type="submit"] {
 	top: -9999px;
 	left: -9999px;
 }
-
+.promotions-are-blocked {
+	.promotion-missing {
+		display: block;
+	}
+}
 .promotion-missing {
-	max-width: 750px;
-	background: #f0f0f0;
-	position: absolute;
-	top: 20px;
-	left: 0;
-	right: 0;
+	display: none;
+	padding: 0 20px;
+	.content {
+		max-width: 750px;
+		background: #f0f0f0;
+		margin: auto;
+		text-align: center;
+		padding: 10px;
+	}
+	p {
+		margin: 10px 0 0;
+		font-size: 14px;
+	}
+	h4 {
+		font-size: 16px;
+	}
 }

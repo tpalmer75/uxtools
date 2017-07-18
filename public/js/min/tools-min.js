@@ -33501,11 +33501,9 @@ Vue.directive('scrolltable', {
 					// 	fixedHeader.style.boxShadow = "";
 				  
 				  // if the table can't scroll completely
-					if (scrollElement.scrollHeight < window.innerHeight) {
-						console.log('step 1');
-						// and is scrolled all the way
-						if (!(scrollElement.scrollHeight - currentScrollY <= scrollElement.clientHeight)) {
-							console.log('step 2');
+					if ((scrollElement.scrollHeight-50) < window.innerHeight) {
+						// and isn't scrolled all the way
+						if (!(scrollElement.scrollHeight - currentScrollY <= (scrollElement.clientHeight+5))) {
 							// normal parallax
 							mainHeader.style.marginTop = -currentScrollY;
 							fixedHeader.style.top = headerHeight - currentScrollY;

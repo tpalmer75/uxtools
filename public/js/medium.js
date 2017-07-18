@@ -16,7 +16,7 @@ $.ajax({
         for (var i = 0; i < values.length; i++) {
             var mediumArticle = values[i];
 
-            console.log(mediumArticle);
+            //console.log(mediumArticle);
             
             if( total < 3){
                output += '<li><div class="image-container"' + mediumArticle["content"]+ '</div><a href="' + mediumArticle["link"] + '"><h4>' + mediumArticle["title"].replace("in UX Tools", "").replace(/"/g, "") + '</h4></a></li>';
