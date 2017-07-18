@@ -1,6 +1,7 @@
 header#main-header
 	.top-bar
-		h1.screen-reader UX Tools
+		h1.screen-reader
+			block h1
 		.wrapper
 			.left
 				a(href="/")
@@ -23,12 +24,12 @@ header#main-header
 						a(href="http://newsletter.uxtools.co")
 							button.small
 								| Subscribe
-			#hamburger
+			#hamburger(@click="showMenu = true")
 				.icon
 					include ../img/icons/menu.svg
 				span Menu
-	#sidebar
-		#shade.shade
+	#sidebar(v-bind:class="{'show-menu': showMenu}")
+		#shade.shade(@click="showMenu = false")
 			.container
 				ul
 					li
@@ -47,7 +48,7 @@ header#main-header
 						a(href="http://newsletter.uxtools.co")
 							include ../img/icons/email.svg
 							span Subscribe
-				#close.close
+				#close.close(ng-click="$root.showMenu = false")
 					include ../img/icons/close.svg
 	block bottomBar
 	

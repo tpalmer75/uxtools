@@ -27,65 +27,9 @@ html
 
     body
       #library(v-bind:class="{'no-scroll':showModal || showSidebar}")
-        header#main-header
-          .top-bar
-            h1.screen-reader UX Library
-            .wrapper
-              .left
-                a(href="/")
-                  img#logo(src="/img/uxtools-logo.svg" alt="UX Tools")
-              .right
-                ul
-                  li
-                    a(href="/tools") 
-                      span Tools
-                  li
-                    a(href="/library") 
-                      span Library
-                  li
-                    a(href="https://blog.uxtools.co") 
-                      span Blog
-                  li
-                    a(href="/about.html") 
-                      span About
-                  li
-                    a(href="http://newsletter.uxtools.co")
-                      button.small
-                        | Subscribe
-              #hamburger(@click="showMenu = true")
-                .icon
-                  include ../img/icons/menu.svg
-                span Menu
-          #sidebar(v-bind:class="{'show-menu': showMenu}")
-            #shade.shade(@click="showMenu = false")
-              .container
-                ul
-                  li
-                    a(href="/tools") 
-                      span Tools
-                  li
-                    a(href="/library") 
-                      span Library
-                  li
-                    a(href="https://blog.uxtools.co") 
-                      span Blog
-                  li
-                    a(href="/about.html") 
-                      span About
-                  li
-                    a(href="http://newsletter.uxtools.co")
-                      include ../img/icons/email.svg
-                      span Subscribe
-                #close.close(ng-click="$root.showMenu = false")
-                  include ../img/icons/close.svg
-          .bottom-bar.mobile
-            .wrapper
-              a.show-library-sidebar(@click="showSidebar = true") Refine
-              .search.mobile
-                input(
-                  placeholder="Search..." 
-                  v-model="searchTerm" v-on:change="categoryData.categoryModel.tags=''")
-                include ../img/icons/magnify.svg
+        //-——— HEADER INCLUDES —————
+        include ../templates/header-library.jade
+          
                   
         section(v-cloak)
           #library-sidebar-shade(@click="showSidebar = false" v-bind:class="{'showing':showSidebar}")
