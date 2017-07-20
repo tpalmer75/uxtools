@@ -33458,8 +33458,6 @@ Vue.directive('scrolltable', {
 		  var columns = document.querySelectorAll("tr:first-of-type td");
 		  var table = document.getElementById("scroll-table");
 
-		  console.log(fixedColHeight);
-
 		  fixedHeader.style.position = "fixed"; // to keep it hidden while loading
 		  // set initial position of fixed header
 		  fixedHeader.style.top = headerHeight + "px";
@@ -33473,7 +33471,6 @@ Vue.directive('scrolltable', {
 		  var onScroll = function() {
 				latestKnownScrollX = scrollElement.scrollLeft;
 				latestKnownScrollY = scrollElement.scrollTop;
-				//console.log(latestKnownScrollX, latestKnownScrollY)
 				requestTick();
 		  };
 
@@ -33539,8 +33536,6 @@ Vue.directive('scrolltable', {
 				  }
 				}
 
-				// console.log("scrolled "+currentScrollY + "height " +scrollElement.clientHeight + "scrollheight" + scrollElement.scrollHeight);
-
 
 
 		  };
@@ -33568,6 +33563,9 @@ const designComp = {
 		computedTools: function() {
 			return _.orderBy(this.toolsData.tools, 'name')
 		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
 }
 
@@ -33583,6 +33581,9 @@ const prototypingComp = {
 		computedTools: function() {
 			return _.orderBy(this.toolsData.tools, 'name')
 		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
 }
 
@@ -33598,6 +33599,9 @@ const handoffComp = {
 		computedTools: function() {
 			return _.orderBy(this.toolsData.tools, 'name')
 		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
 }
 
@@ -33613,6 +33617,9 @@ const monitoringComp = {
 		computedTools: function() {
 			return _.orderBy(this.toolsData.tools, 'name')
 		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
 }
 
