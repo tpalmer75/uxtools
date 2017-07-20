@@ -127,15 +127,21 @@ table {
 
 	tbody tr {
 		position: relative;
+		&:hover {
+			td {
+				background: #fafafa;
+			}
+		}
 		td {
 			background: white;
 			border-right: 1px solid #eee;
+			border-bottom: 1px solid #eee;
 		}
-		&:nth-of-type(even) {
-			td {
-				background: #f0f0f0;
-			}
-		}
+		// &:nth-of-type(even) {
+		// 	td {
+		// 		background: #f0f0f0;
+		// 	}
+		// }
 	}
 	tr:last-of-type {
 		td {

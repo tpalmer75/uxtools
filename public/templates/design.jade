@@ -33,38 +33,38 @@ script(type="text/x-template" id="design-tools")
 									div(title="Linux")
 										include ../img/icons/linux.svg
 					td
-						div(v-if="app.pricing.free")
+						div(v-if="app.pricing.free" v-tooltip.bottom-center="'Free'")
 							include ../img/icons/check.svg
 					td(style="min-width: 100px;")
-						span {{app.pricing.subscription}}
+						span(v-tooltip.bottom-center="'Subscription'") {{app.pricing.subscription}}
 					td(style="min-width: 100px;")
-						span {{app.pricing.purchase}}
+						span(v-tooltip.bottom-center="'Purchase'") {{app.pricing.purchase}}
 					td
-						div(v-if="app.offline")
+						div(v-if="app.offline" v-tooltip.bottom-center="'Offline'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.penTool")
+						div(v-if="app.penTool" v-tooltip.bottom-center="'Pen Tool'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.collaboration")
+						div(v-if="app.collaboration" v-tooltip.bottom-center="'Collaboration'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.comments")
+						div(v-if="app.comments" v-tooltip.bottom-center="'Comments'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.handoff")
+						div(v-if="app.handoff" v-tooltip.bottom-center="'Handoff'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.artboards")
+						div(v-if="app.artboards" v-tooltip.bottom-center="'Artboards'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.symbols")
+						div(v-if="app.symbols" v-tooltip.bottom-center="'Symbols'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.responsive")
+						div(v-if="app.responsive" v-tooltip.bottom-center="'Responsive'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.prototyping")
+						div(v-if="app.prototyping" v-tooltip.bottom-center="'Prototyping'")
 							include ../img/icons/check.svg
 		a.new-tool(href="https://docs.google.com/forms/d/e/1FAIpQLSdTwq-eAGVFEOo6r3yjWDVExbE_h5QoryReIBmKG5PCh_b--w/viewform?usp=sf_link" title="Submit a new tool")
 			include ../img/icons/plus-box-outline.svg

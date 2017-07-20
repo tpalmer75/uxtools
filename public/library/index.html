@@ -71,7 +71,7 @@
             </div>
           </div>
         </header>
-        <section v-cloak="v-cloak">
+        <section>
           <div id="library-sidebar-shade" @click="showSidebar = false" v-bind:class="{'showing':showSidebar}">
             <div id="library-sidebar" v-bind:class="{'showing':showSidebar}" @click.stop="">
               <div @click="showSidebar = false" class="close mobile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
@@ -103,9 +103,33 @@
                   </li>
                 </ul>
               </div>
+              <div>
+                <div class="promotion-missing">
+                  <div class="content">
+                    <h4>Normally there's an ad here. 🤔</h4>
+                    <p>I run this site by myself, so it would be awesome if you turned off your ad blocker.</p>
+                  </div>
+                </div><ins style="display:block;" data-ad-client="ca-pub-2169456968850651" data-ad-slot="4605423926" data-ad-format="auto" class="adsbygoogle"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});		
+                  
+                </script>
+              </div>
             </div>
           </div>
-          <router-view></router-view>
+          <div class="books-wrapper">
+            <div class="promotion-missing">
+              <div class="content">
+                <h4>Normally there's an ad here. 🤔</h4>
+                <p>I run this site by myself, so it would be awesome if you turned off your ad blocker.</p>
+              </div>
+            </div><ins style="display:block;" data-ad-client="ca-pub-2169456968850651" data-ad-slot="4605423926" data-ad-format="auto" class="adsbygoogle"></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              
+            </script>
+            <router-view></router-view>
+          </div>
         </section>
         <transition name="grow">
           <div id="modal-wrapper" v-show="showModal" style="display: none;">
@@ -137,7 +161,7 @@
       </div>
     </body>
     <script type="text/x-template" id="book-list">
-      <div class="books-wrapper">
+      <div>
         <header v-if="listId" class="books-header">
           <div class="flex-wrapper"><a v-bind:href="bookLists[listId].url" target="_blank"><img v-bind:src="'/img/book-recommendations/'+bookLists[listId].image"/></a>
             <div class="content-wrapper">
@@ -192,15 +216,15 @@
       window['_fs_org'] = '2EJY1';
       window['_fs_namespace'] = 'FS';
       (function(m,n,e,t,l,o,g,y){
-          if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
-          g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
-          o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
-          y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
-          g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
-          g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
-          g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
-          d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
-          ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+      		if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
+      		g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+      		o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+      		y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+      		g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+      		g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+      		g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+      		d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+      		';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
       })(window,document,window['_fs_namespace'],'script','user');
     </script>
     <script>
@@ -213,10 +237,19 @@
     </script>
     <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-2169456968850651",
-      enable_page_level_ads: true
-      });
+      var adBlockEnabled = false;
+      var testAd = document.createElement('div');
+      testAd.innerHTML = '&nbsp;';
+      testAd.className = 'adsbox';
+      document.body.appendChild(testAd);
+      window.setTimeout(function() {
+      	if (testAd.offsetHeight === 0) {
+      		adBlockEnabled = true;
+      		document.body.classList.add("promotions-are-blocked");
+      	}
+      	testAd.remove();
+      	//console.log('AdBlock Enabled? ', adBlockEnabled)
+      }, 100);
     </script>
   </head>
 </html>

@@ -35,15 +35,16 @@ script(type="text/x-template" id="prototyping-tools")
 									div(title="Android")
 										include ../img/icons/android.svg
 					td
-						div(v-if="app.pricing.free")
+						div(v-if="app.pricing.free" v-tooltip.bottom-center="'Free'")
 							include ../img/icons/check.svg
 					td(style="min-width: 100px")
-						span {{app.pricing.subscription}}
+						span(v-tooltip.bottom-center="'Subscription'") {{app.pricing.subscription}}
 					td
-						span {{app.pricing.purchase}}
+						span(v-tooltip.bottom-center="'Price'") {{app.pricing.purchase}}
 					td
 						div(v-if="app.design" title="Design from scratch")
-							include ../img/icons/check.svg
+							span(v-tooltip.bottom-center="'Design'")
+								include ../img/icons/check.svg
 					td.colspan-5
 						div.flex-col
 							div(v-tooltip.bottom-center="'Sketch'")
@@ -65,16 +66,16 @@ script(type="text/x-template" id="prototyping-tools")
 								div(v-if="app.import.camera" title="camera")
 									include ../img/icons/camera.svg
 					td
-						div(v-if="app.micro")
+						div(v-if="app.micro" v-tooltip.bottom-center="'Animations'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.transition")
+						div(v-if="app.transition" v-tooltip.bottom-center="'Screen transitions'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.data")
+						div(v-if="app.data" v-tooltip.bottom-center="'Data'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.code")
+						div(v-if="app.code" v-tooltip.bottom-center="'Code'")
 							include ../img/icons/check.svg
 					td.colspan-8
 						div.flex-col
@@ -114,19 +115,19 @@ script(type="text/x-template" id="prototyping-tools")
 								div(title="Apple TV")
 									include ../img/icons/appletv.svg
 					td
-						div(v-if="app.handoff")
+						div(v-if="app.handoff" v-tooltip.bottom-center="'Handoff'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.tasks")
+						div(v-if="app.tasks" v-tooltip.bottom-center="'Tasks'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.analytics")
+						div(v-if="app.analytics" v-tooltip.bottom-center="'Analytics'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.heatmap")
+						div(v-if="app.heatmap" v-tooltip.bottom-center="'Heatmap'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.sensors")
+						div(v-if="app.sensors" v-tooltip.bottom-center="'Sensors'")
 							include ../img/icons/check.svg
 		a.new-tool(href="https://docs.google.com/forms/d/e/1FAIpQLSdTwq-eAGVFEOo6r3yjWDVExbE_h5QoryReIBmKG5PCh_b--w/viewform?usp=sf_link" title="Submit a new tool")
 			include ../img/icons/plus-box-outline.svg

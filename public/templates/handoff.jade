@@ -34,9 +34,9 @@ script(type="text/x-template" id="handoff-tools")
 						div(v-if="app.pricing.free")
 							include ../img/icons/check.svg
 					td(style="min-width: 100px")
-						span {{app.pricing.subscription}}
+						span(v-tooltip.bottom-center="'Subscription'") {{app.pricing.subscription}}
 					td
-						span {{app.pricing.purchase}}
+						span(v-tooltip.bottom-center="'Price'") {{app.pricing.purchase}}
 
 					td.colspan-2
 						div.flex-col
@@ -52,34 +52,34 @@ script(type="text/x-template" id="handoff-tools")
 							div(v-tooltip.bottom-center="'Indesign'")
 								img(src="../img/icons/indesign.png" v-if="app.programs.indesign" title="Indesign")
 					td
-						div(v-if="app.specs")
+						div(v-if="app.specs" v-tooltip.bottom-center="'Specs'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.automatic")
+						div(v-if="app.automatic"  v-tooltip.bottom-center="'Automatic'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.assets")
+						div(v-if="app.assets" v-tooltip.bottom-center="'Assets'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.measure")
+						div(v-if="app.measure" v-tooltip.bottom-center="'Measure'")
 							include ../img/icons/check.svg
 					//- td
 					//- 	div(v-if="app.css")
 					//- 		include ../img/icons/check.svg
 					td
-						div(v-if="app.variables")
+						div(v-if="app.variables" v-tooltip.bottom-center="'Variables'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.guides")
+						div(v-if="app.guides" v-tooltip.bottom-center="'Guides'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.layers")
+						div(v-if="app.layers" v-tooltip.bottom-center="'Layers'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.comments")
+						div(v-if="app.comments" v-tooltip.bottom-center="'Comments'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.revisions")
+						div(v-if="app.revisions" v-tooltip.bottom-center="'Revisions'")
 							include ../img/icons/check.svg
 					td.colspan-5
 						div.flex-col
