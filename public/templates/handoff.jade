@@ -109,8 +109,15 @@ script(type="text/x-template" id="handoff-tools")
 							div(v-if="app.sharing.androidStudio" v-tooltip.bottom-center="'Android Studio'")
 								img(src="../img/icons/androidstudio.png" title="Android Studio")
 					td(style="min-width: 100px")
-						div(v-if="app.integrations.slack" v-tooltip.bottom-center="'Slack'")
+						div.flex-col
+							div(v-if="app.integrations.slack" v-tooltip.bottom-center="'Slack'")
 								img(src="../img/icons/slack.png" title="Slack")
+						div.flex-col
+							div(v-if="app.integrations.jira" v-tooltip.bottom-center="'JIRA'")
+								img(src="../img/icons/jira.png" title="JIRA")
+						div.flex-col
+							div(v-if="app.integrations.microsoftTfs" v-tooltip.bottom-center="'Microsoft TFS'")
+								img(src="../img/icons/microsoft-tfs.png" title="Microsoft TFS")
 		a.new-tool(href="https://docs.google.com/forms/d/e/1FAIpQLSdTwq-eAGVFEOo6r3yjWDVExbE_h5QoryReIBmKG5PCh_b--w/viewform?usp=sf_link" title="Submit a new tool")
 			include ../img/icons/plus-box-outline.svg
 			span Submit a new tool

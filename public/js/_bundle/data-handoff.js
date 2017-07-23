@@ -341,6 +341,43 @@ const handoffData = {
             "subscription": "$15+"
         },
         "integrations": {},
+    }, {
+        "name": "Justinmind",
+        "url": "http://www.justinmind.com/",
+        "image": {
+            "background-position": "-400 -700",
+        },
+        "platforms": {
+            "mac": true,
+            "windows": true
+        },
+        "programs": {
+            "sketch": true,
+        },
+        "specs": true,
+        "automatic": true,
+        "assets": true,
+        "measure": true,
+        "variables": false,
+        "guides": false,
+        "layers": true,
+        "comments": true,
+        "revisions": true,
+        "sharing": {
+            "web": true,
+            "html": true,
+            "windows": true,
+            "mac": true
+        },
+        "pricing": {
+            "free": true,
+            "subscription": "$19+",
+            "purchase": "$495"
+        },
+        "integrations": {
+            "jira": true,
+            "microsoftTfs": true
+        },
     }],
 
     columns: [

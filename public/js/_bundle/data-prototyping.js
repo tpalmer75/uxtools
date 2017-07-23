@@ -636,16 +636,20 @@ const prototypingData = {
         "design": true,
         "navigation": true,
         "transition": true,
+        "micro": true,
+        "data": true,
+        "handoff": true,
         "sharing": {
             "web": true,
             "iOS": true,
-            "android": true
+            "android": true,
+            "html": true
         },
         "mobileOnly": false,
         "responsive": true,
         "pricing": {
-            "free": false,
-            "subscription": "$29+",
+            "free": true,
+            "subscription": "$19+",
             "purchase": "$495"
         }
     }, {
@@ -900,7 +904,7 @@ const prototypingData = {
         // "mobileOnly": null,
     }, {
         "name": "Launchpad by Anima",
-        "url": "https://launchpad.animaapp.com",
+        "url": "https://www.animaapp.com/u/yHhxqGR",
         "image": {
             "background-position": "-500 -900",
         },

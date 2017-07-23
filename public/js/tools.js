@@ -14,6 +14,7 @@
 // @codekit-prepend "_bundle/data-design.js"
 // @codekit-prepend "_bundle/data-prototyping.js"
 // @codekit-prepend "_bundle/data-handoff.js"
+// @codekit-prepend "_bundle/data-versioning.js"
 // @codekit-prepend "_bundle/data-monitoring.js"
 
 Vue.use(VTooltip)
@@ -104,6 +105,7 @@ Vue.directive('scrolltable', {
 					fixedCols[i].style.top = parseInt(fixedHeader.style.top) + fixedHeaderHeight - currentScrollY + (fixedColHeight*i);
 					fixedCols[i].style.boxShadow = "2px 0 5px rgba(0,0,0,.1)";
 				  }
+				  // put the column back
 				} else {
 				  for ( var i=0; i < fixedCols.length; i++ ) {
 					fixedCols[i].style.position = "absolute";
@@ -181,6 +183,24 @@ const handoffComp = {
 	}
 }
 
+const versioningComp = {
+	template: '#versioning-tools',
+	data: function () {
+		return {
+			toolsData: versioningData,
+			scroll: 0
+		}
+	},
+	computed: {
+		computedTools: function() {
+			return _.orderBy(this.toolsData.tools, 'name')
+		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	}
+}
+
 const monitoringComp = {
 	template: '#monitoring-tools',
 	data: function () {
@@ -213,6 +233,9 @@ const router = new VueRouter({
 		}, {
 			path: '/handoff', 
 			component: handoffComp,
+		}, {
+			path: '/versioning', 
+			component: versioningComp,
 		}, {
 			path: '/monitoring', 
 			component: monitoringComp,
