@@ -1,5 +1,6 @@
-// @codekit-prepend codekit-prepend "_bundle/vue.js"
-// @FOR DEV "_bundle/vue.min.js"
+// @codekit-prepend "_bundle/header.js"
+// @codekit-prepend "_bundle/vue.js"
+// @codekit-prepend "_bundle/vue.min.js"
 // @codekit-prepend "_bundle/vue-router.js"
 // @codekit-prepend "_bundle/vue-lazyload-1.0.0.js"
 // @codekit-prepend "_bundle/lodash-4.17.4.js"
@@ -223,3 +224,4 @@ new Vue({
 		},
 	}
 });
+

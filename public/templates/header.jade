@@ -1,0 +1,54 @@
+header#main-header
+	.top-bar
+		h1.screen-reader
+			block h1
+		.wrapper
+			.left
+				a(href="/")
+					img#logo(src="/img/uxtools-logo.svg" alt="UX Tools")
+			.right
+				ul
+					li
+						a(href="/tools") 
+							span Tools
+					li
+						a(href="/library") 
+							span Library
+					li
+						a(href="https://blog.uxtools.co") 
+							span Blog
+					li
+						a(href="/about.html") 
+							span About
+					li
+						a(href="http://newsletter.uxtools.co")
+							button.small
+								| Subscribe
+			#hamburger(@click="showMenu = true")
+				.icon
+					include ../img/icons/menu.svg
+				span Menu
+	#sidebar(v-bind:class="{'show-menu': showMenu}")
+		#shade.shade(@click="showMenu = false")
+			.container
+				ul
+					li
+						a(href="/tools") 
+							span Tools
+					li
+						a(href="/library") 
+							span Library
+					li
+						a(href="https://blog.uxtools.co") 
+							span Blog
+					li
+						a(href="/about.html") 
+							span About
+					li
+						a(href="http://newsletter.uxtools.co")
+							include ../img/icons/email.svg
+							span Subscribe
+				#close.close(ng-click="$root.showMenu = false")
+					include ../img/icons/close.svg
+	block bottomBar
+	

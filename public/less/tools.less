@@ -61,10 +61,7 @@ section {
 
 table {
 	width: 100%;
-	// margin-bottom: 50px;
-	@media all and (max-width: @small-size) {
-		font-size: 14px;
-	}
+	font-size: 14px;
 	a {
 		text-decoration: none;
 		color: inherit;
@@ -115,27 +112,52 @@ table {
 		&:nth-of-type(2) {
 			padding-left: 50px;
 		}
+		span {
+			display: inline;
+		}
+		svg {
+			display: inline;
+			vertical-align: middle;
+			margin-left: 5px;
+			// margin-right: 10px;
+			position: relative;
+			top: -2px;
+			path {
+				fill: #ccc;
+			}
+		}
 	}
 
 	thead {
 		position: absolute; // to keep it hidden while loading
-		border-bottom: 1px solid #ddd;
+		border-bottom: 1px solid #eee;
 		z-index: 3;
 		top: 0;
-		background: #f0f0f0;
-	}
+		background: white;
+	    font-weight: bold;
+	    color: fade(#555, 80%);
+	    // text-transform: uppercase;
+	    font-size: 14px;
+	    // letter-spacing: .5px;
+		}
 
 	tbody tr {
 		position: relative;
+		&:hover {
+			td {
+				background: #fafafa;
+			}
+		}
 		td {
 			background: white;
 			border-right: 1px solid #eee;
+			border-bottom: 1px solid #eee;
 		}
-		&:nth-of-type(even) {
-			td {
-				background: #f0f0f0;
-			}
-		}
+		// &:nth-of-type(even) {
+		// 	td {
+		// 		background: #f0f0f0;
+		// 	}
+		// }
 	}
 	tr:last-of-type {
 		td {
@@ -227,6 +249,7 @@ table {
 // }
 
 .new-tool {
+	font-size: 14px;
 	color: @blue-primary;
 	height: 50px;
 	display: flex;

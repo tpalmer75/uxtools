@@ -16,9 +16,9 @@ script(type="text/x-template" id="monitoring-tools")
 						div(v-if="app.pricing.free")
 							include ../img/icons/check.svg
 					td(style="min-width: 100px")
-						span {{app.pricing.subscription}}
-					td(style="min-width: 100px")
-						span {{app.pricing.purchase}}
+						span(v-tooltip.bottom-center="'Subscription'") {{app.pricing.subscription}}
+					td
+						span(v-tooltip.bottom-center="'Price'") {{app.pricing.purchase}}
 					//- td
 					//- 	div.flex-wrapper
 					//- 		div.flex-col
@@ -26,34 +26,36 @@ script(type="text/x-template" id="monitoring-tools")
 					//- 				div(title="Web")
 					//- 					include ../img/icons/cloud-outline.svg
 					td
-						div(v-if="app.playback")
+						div(v-if="app.playback" v-tooltip.bottom-center="'Playback'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.skipInactivity")
+						div(v-if="app.skipInactivity" v-tooltip.bottom-center="'Skip Inactivity'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.playbackSpeed")
+						div(v-if="app.playbackSpeed" v-tooltip.bottom-center="'Speed'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.jumpBack")
+						div(v-if="app.jumpBack" v-tooltip.bottom-center="'Jump Back'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.console")
+						div(v-if="app.console" v-tooltip.bottom-center="'Console'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.heatmaps")
+						div(v-if="app.heatmaps" v-tooltip.bottom-center="'Heatmaps'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.location")
+						div(v-if="app.location" v-tooltip.bottom-center="'Location'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.formAnalytics")
+						div(v-if="app.formAnalytics" v-tooltip.bottom-center="'Form Stats'")
 							include ../img/icons/check.svg
 					td
-						div(v-if="app.polls")
+						div(v-if="app.polls" v-tooltip.bottom-center="'Polls'")
 							include ../img/icons/check.svg
 					td
 						div.flex-col
 							div(v-if="app.export.html" v-tooltip.bottom-center="'Static HTML file'")
 								div(title="HTML")
 									include ../img/icons/html.svg
+		include ../templates/promotion-missing.jade
+		ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2169456968850651', data-ad-slot='8125149927', data-ad-format='auto')

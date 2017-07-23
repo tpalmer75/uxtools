@@ -1,0 +1,14 @@
+extends header.jade
+
+block h1
+	span Uxtools.co—Compare and discover the most popular books in the industry, from classics to new releases.
+
+block bottomBar
+	.bottom-bar.mobile
+		.wrapper
+			a.show-library-sidebar(@click="showSidebar = true") Refine
+			.search.mobile
+				input(
+					placeholder="Search..." 
+					v-model="searchTerm" v-on:change="categoryData.categoryModel.tags=''")
+				include ../img/icons/magnify.svg

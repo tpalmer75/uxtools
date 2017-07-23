@@ -1,135 +1,82 @@
 
 html(ng-app="uxTools")
-  head
-    title Uxtools.co – UX Tools
-    meta(name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing.")
-    meta(name="ROBOTS" content="INDEX, FOLLOW")
-    meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
-    link(rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png")
-    link(rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png")
-    link(rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png")
-    link(rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png")
-    link(rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png")
-    link(rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png")
-    link(rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png")
-    link(rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png")
-    link(rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png")
-    link(rel="icon" type="image/png" sizes="192x192"  href="../img/favicon/android-icon-192x192.png")
-    link(rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png")
-    link(rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png")
-    link(rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png")
-    link(rel="manifest" href="/manifest.json")
-    meta(name="msapplication-TileColor" content="#ffffff")
-    meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
-    meta(name="theme-color" content="#ffffff")
-    link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
-    link(href="../css/tools.css?version=1.5" rel="stylesheet" type="text/css")
+	head
+		title Uxtools.co – UX Tools
+		meta(name="description" content="Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing.")
+		meta(name="ROBOTS" content="INDEX, FOLLOW")
+		meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
+		link(rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png")
+		link(rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png")
+		link(rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png")
+		link(rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png")
+		link(rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png")
+		link(rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png")
+		link(rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png")
+		link(rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png")
+		link(rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png")
+		link(rel="icon" type="image/png" sizes="192x192"  href="../img/favicon/android-icon-192x192.png")
+		link(rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png")
+		link(rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png")
+		link(rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png")
+		link(rel="manifest" href="/manifest.json")
+		meta(name="msapplication-TileColor" content="#ffffff")
+		meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
+		meta(name="theme-color" content="#ffffff")
+		link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet")
+		link(href="../css/tools.css?version=1.5" rel="stylesheet" type="text/css")
 
-  body
-    #tools(v-bind:class="{ 'show-menu': showMenu }")
-      header#main-header
-        .top-bar
-          h1.screen-reader UX Tools
-          .wrapper
-            .left
-              a(href="/")
-                img#logo(src="../img/uxtools-logo.svg" alt="UX Tools")
-            .right
-              ul
-                li
-                  a(href="/tools") 
-                    span Tools
-                li
-                  a(href="/library") 
-                    span Library
-                li
-                  a(href="https://blog.uxtools.co") 
-                    span Blog
-                li
-                  a(href="/about.html") 
-                    span About
-                li
-                  a(href="http://newsletter.uxtools.co")
-                    button.small
-                      | Subscribe
-            #hamburger(@click="showMenu = true")
-              .icon
-                include ../img/icons/menu.svg
-              span Menu
-        #sidebar(v-bind:class="{'show-menu': showMenu}")
-          #shade.shade(@click="showMenu = false")
-            .container
-              ul
-                li
-                  a(href="/tools") 
-                    span Tools
-                li
-                  a(href="/library") 
-                    span Library
-                li
-                  a(href="https://blog.uxtools.co") 
-                    span Blog
-                li
-                  a(href="/about.html") 
-                    span About
-                li
-                  a(href="http://newsletter.uxtools.co")
-                    include ../img/icons/email.svg
-                    span Subscribe
-              #close.close(@click="showMenu = false")
-                include ../img/icons/close.svg
-        .bottom-bar
-          .scroll-tabs
-            ul
-              li
-                router-link(to="design")
-                  span Design
-              li
-                router-link(to="prototyping")
-                  span Prototyping
-              li
-                router-link(to="handoff")
-                  span Handoff
-              li
-                router-link(to="monitoring")
-                  span Monitoring
-                  
-      section#scroll-element
-        router-view
-          //- injected Vues
+	body
+		#tools(v-bind:class="{ 'show-menu': showMenu }")
 
-    include ../templates/design.html
-    include ../templates/prototyping.html
-    include ../templates/handoff.html
-    include ../templates/monitoring.html
-    script(src="../js/min/tools-min.js?ver=1.2")
-    script.
-      window['_fs_debug'] = false;
-      window['_fs_host'] = 'www.fullstory.com';
-      window['_fs_org'] = '2EJY1';
-      window['_fs_namespace'] = 'FS';
-      (function(m,n,e,t,l,o,g,y){
-          if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
-          g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
-          o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
-          y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
-          g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
-          g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
-          g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
-          d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
-          ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
-      })(window,document,window['_fs_namespace'],'script','user');
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-78846271-1', 'auto');
-      ga('send', 'pageview');
-    script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
-    script.
-      (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-2169456968850651",
-      enable_page_level_ads: true
-      });
+			//-——————— HEADER INCLUDE ————————
+			include ../templates/header-tools.jade
+									
+			section#scroll-element
+				router-view
+					//- injected Vues
+
+		include ../templates/design.jade
+		include ../templates/prototyping.jade
+		include ../templates/handoff.jade
+		include ../templates/versioning.jade
+		include ../templates/monitoring.jade
+		script(src="../js/min/tools-min.js?ver=1.3")
+		script.
+			window['_fs_debug'] = false;
+			window['_fs_host'] = 'www.fullstory.com';
+			window['_fs_org'] = '2EJY1';
+			window['_fs_namespace'] = 'FS';
+			(function(m,n,e,t,l,o,g,y){
+					if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
+					g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+					o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+					y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+					g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+					g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+					g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+					d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+					';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+			})(window,document,window['_fs_namespace'],'script','user');
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-78846271-1', 'auto');
+			ga('send', 'pageview');
+		script(async src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+		script.
+			var adBlockEnabled = false;
+			var testAd = document.createElement('div');
+			testAd.innerHTML = '&nbsp;';
+			testAd.className = 'adsbox';
+			document.body.appendChild(testAd);
+			window.setTimeout(function() {
+				if (testAd.offsetHeight === 0) {
+					adBlockEnabled = true;
+					document.body.classList.add("promotions-are-blocked");
+				}
+				testAd.remove();
+				//console.log('AdBlock Enabled? ', adBlockEnabled)
+			}, 100);

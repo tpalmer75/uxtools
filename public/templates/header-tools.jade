@@ -1,0 +1,24 @@
+extends header.jade
+
+block h1
+	span Uxtools.co—Compare and Discover Tools for User Experience Design, including prototyping, collaboration, monitoring and testing.
+
+block bottomBar
+	.bottom-bar
+		.scroll-tabs
+			ul
+				li
+					router-link(to="design")
+						span Design
+				li
+					router-link(to="prototyping")
+						span Prototyping
+				li
+					router-link(to="handoff")
+						span Handoff
+				li
+					router-link(to="versioning")
+						span Versioning
+				li
+					router-link(to="monitoring")
+						span Monitoring

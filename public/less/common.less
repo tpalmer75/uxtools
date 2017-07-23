@@ -9,7 +9,7 @@ button, input[type="submit"] {
 	color: @blue-alternate;
 	border: none;
 	outline: none;
-	border-radius: 999px;
+	border-radius: 3px;
 	font-family: @font-stack;
 	font-size: 18px;
 	height: 48px;
@@ -39,9 +39,9 @@ button, input[type="submit"] {
 		box-shadow: 0 5px 15px rgba(0,0,0,.25);
 	}
 	&.right {
-		border-radius: 0 999px 999px 0;
+		border-radius: 0 3px 3px 0;
 		@media all and (max-width: @small-size) {
-	    	border-radius: 999px;
+	    	border-radius: 3px;
 	    	margin-top: 20px;
 	    	min-width: 100%;
 	    	flex-grow: 1;
@@ -65,4 +65,29 @@ button, input[type="submit"] {
 	position: absolute;
 	top: -9999px;
 	left: -9999px;
+}
+.promotions-are-blocked {
+	.promotion-missing {
+		display: block;
+	}
+}
+.promotion-missing {
+	display: none;
+	padding: 0 20px;
+	.content {
+		max-width: 750px;
+		background: #f0f0f0;
+		margin: auto;
+		text-align: center;
+		padding: 10px;
+		border: 1px solid #ccc;
+	}
+	p {
+		margin: 10px 0 0;
+		font-size: 14px;
+		line-height: 1.2;
+	}
+	h4 {
+		font-size: 16px;
+	}
 }

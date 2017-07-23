@@ -1,3 +1,4 @@
+// @codekit-prepend "_bundle/header.js"
 // @codekit-prepend "_bundle/tether-1.4.0.js"
 // @codekit-prepend "_bundle/tether-drop-.1.4.1.js"
 // @codekit-prepend "_bundle/tether-tooltip-1.1.0.js"
@@ -13,6 +14,7 @@
 // @codekit-prepend "_bundle/data-design.js"
 // @codekit-prepend "_bundle/data-prototyping.js"
 // @codekit-prepend "_bundle/data-handoff.js"
+// @codekit-prepend "_bundle/data-versioning.js"
 // @codekit-prepend "_bundle/data-monitoring.js"
 
 Vue.use(VTooltip)
@@ -22,7 +24,7 @@ Vue.directive('scrolltable', {
 		  var scrollElement = document.getElementById("scroll-element");
 		  var fixedHeaders = document.querySelectorAll("th");
 		  var fixedCols = document.querySelectorAll(".fixed-col");
-		  var fixedColHeight = fixedCols[1].clientHeight;
+		  var fixedColHeight = fixedCols[1].offsetHeight;
 		  var mainHeader = document.getElementById("main-header");
 		  var latestKnownScrollX = 0;
 		  var latestKnownScrollY = 0;
@@ -34,8 +36,10 @@ Vue.directive('scrolltable', {
 		  var table = document.getElementById("scroll-table");
 
 		  fixedHeader.style.position = "fixed"; // to keep it hidden while loading
+		  // set initial position of fixed header
 		  fixedHeader.style.top = headerHeight + "px";
 
+		  // align column headesrs with content
 		  for (var i=0; i < columns.length; i++) {
 				var newWidth = columns[i].offsetWidth;
 				fixedHeaders[i].style.minWidth = newWidth;
@@ -44,7 +48,6 @@ Vue.directive('scrolltable', {
 		  var onScroll = function() {
 				latestKnownScrollX = scrollElement.scrollLeft;
 				latestKnownScrollY = scrollElement.scrollTop;
-				//console.log(latestKnownScrollX, latestKnownScrollY)
 				requestTick();
 		  };
 
@@ -55,29 +58,54 @@ Vue.directive('scrolltable', {
 			ticking = true;
 		  }
 
+		  // on each scroll
 		  var update = function() {
+
+
 				ticking = false;
 				var currentScrollY = latestKnownScrollY;
 				var currentScrollX = latestKnownScrollX;
 
+				
+
 				fixedHeader.style.left = -currentScrollX;
 
 				if (currentScrollY <= headerHeight) {
-				  mainHeader.style.marginTop = -currentScrollY;
-				  fixedHeader.style.top = headerHeight - currentScrollY;
-				  fixedHeader.style.boxShadow = "";
+
+					// mainHeader.style.marginTop = -currentScrollY;
+					// 	fixedHeader.style.top = headerHeight - currentScrollY;
+					// 	fixedHeader.style.boxShadow = "";
+				  
+				  // if the table can't scroll completely
+					if ((scrollElement.scrollHeight-50) < window.innerHeight) {
+						// and isn't scrolled all the way
+						if (!(scrollElement.scrollHeight - currentScrollY <= (scrollElement.clientHeight+5))) {
+							// normal parallax
+							mainHeader.style.marginTop = -currentScrollY;
+							fixedHeader.style.top = headerHeight - currentScrollY;
+							fixedHeader.style.boxShadow = "";
+						}
+					} else {
+						// normal parallax
+						mainHeader.style.marginTop = -currentScrollY;
+						fixedHeader.style.top = headerHeight - currentScrollY;
+						fixedHeader.style.boxShadow = "";
+					}
 				} else {
 				  mainHeader.style.marginTop = -headerHeight;
 				  fixedHeader.style.top = 0;
 				  fixedHeader.style.boxShadow = "2px 2px 10px rgba(0,0,0,.15)";
 				}
 
+				// if scrolling vertically
 				if (currentScrollX > 0) {
+					// for each column
 				  for ( var i=0; i < fixedCols.length; i++ ) {
 					fixedCols[i].style.position = "fixed";
 					fixedCols[i].style.top = parseInt(fixedHeader.style.top) + fixedHeaderHeight - currentScrollY + (fixedColHeight*i);
 					fixedCols[i].style.boxShadow = "2px 0 5px rgba(0,0,0,.1)";
 				  }
+				  // put the column back
 				} else {
 				  for ( var i=0; i < fixedCols.length; i++ ) {
 					fixedCols[i].style.position = "absolute";
@@ -85,6 +113,8 @@ Vue.directive('scrolltable', {
 					fixedCols[i].style.boxShadow = "";
 				  }
 				}
+
+
 
 		  };
 
@@ -111,6 +141,9 @@ const designComp = {
 		computedTools: function() {
 			return _.orderBy(this.toolsData.tools, 'name')
 		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
 }
 
@@ -126,6 +159,9 @@ const prototypingComp = {
 		computedTools: function() {
 			return _.orderBy(this.toolsData.tools, 'name')
 		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
 }
 
@@ -141,6 +177,27 @@ const handoffComp = {
 		computedTools: function() {
 			return _.orderBy(this.toolsData.tools, 'name')
 		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	}
+}
+
+const versioningComp = {
+	template: '#versioning-tools',
+	data: function () {
+		return {
+			toolsData: versioningData,
+			scroll: 0
+		}
+	},
+	computed: {
+		computedTools: function() {
+			return _.orderBy(this.toolsData.tools, 'name')
+		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
 }
 
@@ -156,6 +213,9 @@ const monitoringComp = {
 		computedTools: function() {
 			return _.orderBy(this.toolsData.tools, 'name')
 		}
+	},
+	mounted() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
 }
 
@@ -173,6 +233,9 @@ const router = new VueRouter({
 		}, {
 			path: '/handoff', 
 			component: handoffComp,
+		}, {
+			path: '/versioning', 
+			component: versioningComp,
 		}, {
 			path: '/monitoring', 
 			component: monitoringComp,
@@ -193,5 +256,5 @@ const app = new Vue({
 			name: 'foo'
 		}
 	}
-})
+});
 

@@ -570,6 +570,35 @@ const designData = {
             "subscription": "",
             "purchase": "$129"
         }
+    }, {
+        "name": "Justinmind",
+        "url": "http://www.justinmind.com/",
+        "image": {
+            "background-position": "-400 -700",
+        },
+        "platforms": {
+            "mac": true,
+            "windows": true
+        },
+        "import": {
+        },
+        "export": {
+        },
+        "offline": true,
+        "penTool": false,
+        "collaboration": true,
+        "comments": true,
+        "handoff": true,
+        "plugins": false,
+        "artboards": true,
+        "symbols": true,
+        "responsive": true,
+        "prototyping": true,
+        "pricing": {
+            "free": true,
+            "subscription": "$19",
+            "purchase": "$495"
+        }
     }]
 
 }
