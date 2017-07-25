@@ -33326,7 +33326,10 @@ const versioningData = {
         },
         pricing: {
             free: true,
-            purchase: "$99"
+            purchase: "",
+            subscription: "$5+",
+            team: "$5+"
+
         },
         import: {
             sketch: true,
@@ -33438,7 +33441,7 @@ const versioningData = {
         },
         git: false,
         symbols: false,
-        documents: false,
+        documents: true,
         branching: false,
         preview: true,
         compare: false,

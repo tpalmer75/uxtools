@@ -84,14 +84,15 @@ html
 									(adsbygoogle = window.adsbygoogle || []).push({});		
 
 					div.books-wrapper
-						include ../templates/promotion-missing.jade	
+
+						//- Injected Vues	
+						router-view
+
+						include ../templates/promotion-missing.jade 
 						//- Responsive Ads
 						ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2169456968850651', data-ad-slot='9521157922', data-ad-format='auto')
 						script.
 							(adsbygoogle = window.adsbygoogle || []).push({});
-
-						//- Injected Vues	
-						router-view
 
 
 
